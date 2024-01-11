@@ -4,7 +4,7 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
+  <book xml:id="analytic-number-theory-notes">
     <title>Analytic Number Theory Course Notes</title>
     <subtitle>Math 507, Spring 2024, Boise State University</subtitle>
 
@@ -12,7 +12,7 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-1-bertrands-postulate.ptx" />
 
 
     <!-- Include backmatter -->

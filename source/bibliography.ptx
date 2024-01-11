@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains all of the "backmatter" material -->
+<!-- In comments, we show examples of how to have hints to divisional -->
+<!-- excercies appear in a section, and then their -->
+<!-- solutions in the next. Then there is an appendix -->
+<!-- with all notation generated, and finally the index. -->
+
+<!-- https://groups.google.com/g/pretext-support/c/fJTWBhzsl54?pli=1 -->
+
+<!-- 
+<biblio type="bibtex" xml:id="CF">
+<author>J. B. Conrey and D. W. Farmer</author>
+<title>Mean values of <m>L</m>-functions and symmetry</title>
+<journal>Internat. Math. Res. Notices</journal>
+<year>2000</year>
+<volume>17</volume>
+<pages start="883" end="908"/>
+</biblio> 
+-->
+
+<!--  <biblio type="raw" xml:id="biblio-bbt-monomials">
+    Buczyńska, Weronika,
+    Jarosław Buczyński,
+    Zach Teitler,
+    <title>Waring decompositions of monomials</title>.
+    <journal>J. Algebra</journal>,
+    2013,
+    <volume>378</volume>,
+    45<ndash />57.
+  </biblio> -->
+
+<!--  <biblio type="bibtex" xml:id="biblio-bbt-monomials">
+  <author>Buczyńska, Weronika, Jarosław Buczyński, Zach Teitler</author>
+  <title>Waring decompositions of monomials</title>
+  <journal>J. Algebra</journal>
+  <year>2013</year>
+  <volume>378</volume>
+  <pages start="45" end="57"/>
+  </biblio>  -->
+
+<!--  <biblio type="bibtex" xml:id="biblio-high-rank-locus">
+  <author>Buczyński, Jarosław, Kangjin Han, Massimiliano Mella, and Zach Teitler</author>
+  <title>On the locus of points of high rank</title>
+  <journal>European Journal of Mathematics</journal>
+  <year>2018</year>
+  <volume>4</volume>
+  <pages start="113" end="136"/>
+  <doi><url href="https://doi.org/10.1007/s40879-017-0172-2" visual="DOI: 10.1007/s40879-017-0172-2" /></doi>
+  </biblio> -->
+
+
+<references xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="bibliography">
+  
+
+
+  
+   <biblio type="bibtex" xml:id="biblio-galvin-bertrand">
+     <author>Galvin, David</author>
+     <title>Erdős's proof of Bertrand's postulate</title>
+     <year>2015</year>
+     <url href="https://www3.nd.edu/~dgalvin1/pdf/bertrand.pdf" visual="https://www3.nd.edu/~dgalvin1/pdf/bertrand.pdf" />
+   </biblio>
+  
+
+
+</references>
+
