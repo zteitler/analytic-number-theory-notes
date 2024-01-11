@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-bertrand-pnt" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Prime Number Theorem</title>
+
+  <p> Write <m>\pi(x)</m> for the number of primes less than or equal to <m>x</m>.
+  The <em>Prime Number Theorem</em> (PNT) asserts that
+  <men> \pi(x) \sim \frac{x}{\log x} \quad \text{as } x \to \infty </men>,
+  that is,
+  <men> \lim_{x \to \infty} \frac{\pi(x)}{x/\log x} = 1 </men>.
+  Here <m>\log</m> is the natural logarithm.</p>
+  
+  <p> The Prime Number Theorem was proved in 1896-97 by Hadamard
+  and by de la Vallée Poussin independently. </p>
+  
+  <p> A consequence of the PNT is that for any <m>\epsilon > 0</m>
+  there exists <m>N(\epsilon)</m> such that for all <m>n \geq N(\epsilon)</m>,
+  there exists a prime <m>p</m> such that <m>n \lt p \leq (1+\epsilon)n</m>. </p>
+  
+  <p> Why does PNT imply this? The number of primes in the interval
+  <m> (n , (1+\epsilon)n] </m> is equal to
+  <me> \pi((1+\epsilon)n) - \pi(n) </me>
+  which is asymptotic to
+  <me> \frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} </me>,
+  which goes to infinity as <m>n \to \infty</m>. </p>
+  
+  <exercise>
+  <p>
+  For <m>\epsilon > 0</m>,
+  <m> \lim_{n \to \infty} \frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} = \infty </m>.</p>
+  </exercise>
+  
+  <exercise>
+  <p>
+  If <m>f(x)</m>, <m>g(x)</m>, <m>a(x)</m>, <m>b(x)</m> are positive-valued
+  functions and <m>f \sim a</m>, <m>g \sim b</m>, then <m>f+g \sim a+b</m>.
+  State and prove suitable conditions for <m>f-g \sim a-b</m>. </p>
+  </exercise>
+  
+  <p> Bertrand's postulate is relatively weak (<m>\epsilon = 1</m>)
+  but on the other hand it is claimed for all <m>n \geq 1</m>,
+  not just <m>n \geq </m> some <m>N(1)</m>. </p>
+  
+
+</section>

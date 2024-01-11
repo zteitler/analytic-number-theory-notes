@@ -8,9 +8,20 @@
     there is a prime <m>p</m> such that <m>n \lt p \leq 2n</m>.
     Our presentation mostly follows notes by David Galvin
     <xref ref="biblio-galvin-bertrand" />. </p>
+    
+    <p>
+    This statement was conjectured in 1845 by Joseph Bertrand,
+    who verified it for <m>n \lt 3 \cdot 10^6</m>.
+    In 1850, Tchebychev proved it, using analysis.
+    In 1919, Ramanujan gave a shorter proof, still using analysis.
+    In 1932, in one of his first publications (perhaps his very first),
+    Erdős gave an <lq/>elementary<rq/> proof.
+    We will show Erdős's proof, and then a fun corollary.
+    </p>
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-section-name.ptx" />
+  <xi:include href="sec-bertrand-pnt.ptx" />
+  <xi:include href="sec-bertrand-erdos-proof.ptx" />
 
 </chapter>

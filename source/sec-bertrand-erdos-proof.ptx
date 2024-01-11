@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-bertrand-erdos-proof" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Erdős's proof of Bertrand's postulate</title>
+
+  <claim>
+  <statement> <m> \binom{2n}{n} \geq \frac{4^n}{2n} </m>.
+  (<m>\binom{2n}{n}</m> is <lq/>large<rq/>.) </statement>
+  
+  <proof>
+  <p>
+  Observe
+  <men> 4^n = (1+1)^{2n} = \sum_{k=0}^{2n} \binom{2n}{k}
+  = 2 + \sum_{k=1}^{2n-1} \binom{2n}{k} </men>,
+  first using the Binomial Theorem and then grouping the first and last terms
+  <m>\binom{2n}{0} + \binom{2n}{2n} = 1+1 = 2</m>.
+  This sum has <m>2n</m> terms (including the term <m>2</m> and the <m>2n-1</m>
+  terms in the summation).
+  The largest term is the central binomial coefficient <m>\binom{2n}{n}</m>.
+  Since the largest term is at least as great as the average value of the terms,
+  we have
+  <men> \binom{2n}{n} \geq \frac{1}{2n} \left( 2 + \sum_{k=1}^{2n-1} \binom{2n}{k} \right)
+  = \frac{4^n}{2n} </men>.
+  </p>
+  </proof>
+	
+	</claim>
+  
+  
+  <p> For a prime <m>p</m> and integer <m>m</m> let <m>\nu_p(m)</m> be the
+  largest exponent of a power of <m>p</m> that divides <m>m</m>, i.e.,
+  <men> \nu_p(m) = k \text{ where } p^k \mid m \text{ and } p^{k+1} \nmid m </men>.
+  Observe that <m>\nu_p(ab) = \nu_p(a) + \nu_p(b)</m>
+  and <m>\nu_p(a/b) = \nu_p(a) - \nu_p(b)</m>
+  (assuming, of course, that <m>a/b</m> is an integer). </p>
+  
+  <claim>
+  <statement> <m>\nu_p(n!) = \sum_{k \geq 1} \lfloor \frac{n}{p^k} \rfloor 
+  = \lfloor \frac{n}{p} \rfloor + \lfloor \frac{n}{p^2} \rfloor
+  + \lfloor \frac{n}{p^3} \rfloor + \dotsb</m>. </statement>
+  
+  <proof>
+  <p> There are <m>\lfloor \frac{n}{p} \rfloor</m> multiples of <m>p</m>
+  less than or equal to <m>n</m>,
+  and they each contribute a factor of <m>p</m> to <m>n!</m>.
+  There are <m>\lfloor \frac{n}{p^2} \rfloor</m> multiples of <m>p^2</m>,
+  and they each contribute an additional factor of <m>p</m> to <m>n!</m>.
+  And so on.</p></proof>
+  </claim>
+  
+  <claim>
+  <statement> Let <m>k = \nu_p(\binom{2n}{n})</m>.
+  Then <m>p^k \leq 2n</m>. </statement>
+  
+  <proof>
+  <p> First, let <m>r</m> be an integer such that
+  <m> p^r \leq 2n \lt p^{r+1} </m>.
+  Now
+  <md>
+  <mrow> \nu_p(\binom{2n}{n}) \amp = \nu_p( (2n)! ) - 2 \nu_p(n!) </mrow>
+  <mrow> \amp = \sum_{i \geq 1} \lfloor \frac{2n}{p^i} - 2 \sum_{i \geq 1} \lfloor \frac{n}{p^i} \rfloor </mrow>
+  <mrow> \amp = \sum_{i=1}^r \left( \lfloor \frac{2n}{p^i} \rfloor - 2 \lfloor \frac{n}{p^i} \rfloor \right) </mrow>
+  </md>
+  where we can drop terms with <m>i > r</m>, since then <m>p^i > 2n</m>,
+  so <m>\frac{2n}{p^i} \lt 1</m>, meaning <m>\lfloor \frac{2n}{p^i} \rfloor = 0</m>.
+  </p>
+  
+  <exercise>
+  <p> For all real <m>x</m>,
+  <m>0 \leq \lfloor 2x \rfloor - 2 \lfloor x \rfloor \leq 1</m>. </p>
+  </exercise>
+  
+  <p> Using this, <m> k = \nu_p(\binom{2n}{n}) \leq r </m>.
+  So <m> p^k \leq p^r \leq 2n </m>. </p>
+  </proof>
+  </claim>
+  
+  <definition>
+  <p> For a real number <m>x</m>, the <term>primorial</term>
+  <m>x\#</m> is the product of the primes less than or equal to <m>x</m>,
+  <m>x\# = \prod_{p \leq x} p</m>, where the product is over primes <m>p</m>.
+  For example, <m>2\# = 2</m>, <m>3\# = 2 \cdot 3 = 6</m>,
+  and <m>10\# = 2 \cdot 3 \cdot 5 \cdot 7 = 210</m>. </p>
+  </definition>
+  
+  
+  <claim>
+  <statement> For all <m>n \geq 2</m>, <m>n\# \leq 4^n</m>. </statement>
+  
+  <proof>
+  <p> By induction on <m>n</m>.
+  First, for <m>n = 2</m>, <m>2\# = 2</m> while <m>4^2 = 16</m>.
+  For <m>n = 3</m>, <m>3\# = 6</m> while <m>4^3 = 64</m>. </p>
+  
+  <p>
+  For the inductive step, if <m>n \geq 4</m> is even,
+  then <m>n</m> is not prime, so 
+  <me> n\# = \prod_{p \leq n} p = \prod_{p \leq n-1} p = (n-1)\# \leq 4^{n-1} \leq 4^n </me>.
+  If <m>n \geq 5</m> is odd, say <m>n = 2m+1</m>, then
+  <me> n\# = \prod_{p \leq n} p = \left( \prod_{p \leq m+1} p \right)
+  	\left( \prod_{m+2 \leq p \leq 2m+1} p \right) </me>.
+  By induction this is less than or equal to
+  <me> 4^{m+1} \left( \prod_{m+2 \leq p \leq 2m+1} p \right) </me>.
+  </p>
+  
+  <p>
+  Observe that if <m>m+2 \leq p \leq 2m+1 </m> then <m>p</m> is a factor
+  in <m>(2m+1)!</m> but not in <m>m!</m> or <m>(m+1)!</m>.
+  So <m>\binom{2m+1}{m+1}</m> is divisible by <m>p</m>.
+  In fact <m>\binom{2m+1}{m+1}</m> is divisible by each prime in this range,
+  hence it is divisible by the product of these primes (why?).
+  Therefore the binomial coefficient is greater than or equal this product
+  of primes,
+  <me> \prod_{m+2 \leq p \leq 2m+1} p \leq \binom{2m+1}{m+1} </me>.
+  </p>
+  
+  <p>
+  Finally, <m>\sum_{k=0}^{2m+1} \binom{2m+1}{k} = 2^{2m+1}</m>.
+  In this sum the two largest terms are <m>\binom{2m+1}{m} = \binom{2m+1}{m+1}</m>.
+  Hence
+  <men> \binom{2m+1}{m+1} \leq \frac{1}{2} 2^{2m+1} = 2^{2m} = 4^m </men>.
+  </p>
+  
+  <p>
+  Putting it all together,
+  <md>
+  <mrow> n\# = \prod_{p \leq n} p \amp= \left( \prod_{p \leq m+1} p \right)
+  	\left( \prod_{m+2 \leq p \leq 2m+1} p \right) </mrow>
+  <mrow> \amp \leq 4^{m+1} \cdot 4^m
+  	= 4^{2m+1} = 4^n </mrow>
+  </md>.
+  </p>
+  </proof>
+    
+  </claim>
+  
+  <p>
+  In a sense there are <lq/>not too many<rq/> primes less than or equal to
+  <m>n</m> (their product is <lq/>small<rq/>) and each one contributes a
+  <lq/>small<rq/> amount to <m>\binom{2n}{n}</m> (a factor of at most <m>2n</m>),
+  yet <m>\binom{2n}{n}</m> is <lq/>large<rq/>.
+  This tension will lead to a contradiction,
+  but first we must raise the tension even higher.
+  </p>
+  
+  <claim>
+  <statement>
+  If <m>n \geq 3</m> and <m>\frac{2n}{3} \lt p \leq n</m>
+  then <m>\nu_p \binom{2n}{n} = 0</m>, that is, <m>p \nmid \binom{2n}{n}</m>.
+  </statement>
+  
+  <proof>
+  <p> Since <m>p \leq n</m>, then <m>2p \leq 2n</m>, but <m>3p > 2n</m>.
+  Since <m>n \geq 3</m> and <m>p > \frac{2n}{3}</m>, then <m>p \gt 2</m>.
+  So <m>(2n)!</m> is divisible by <m>p^2</m> but not <m>p^3</m>.
+  (We need <m>p \gt 2</m> in order to say that <m>2p</m> only contributes
+  one factor of <m>p</m>, not two.) </p>
+  
+  <p> However <m>p \leq n</m>, so <m>p \mid n!</m>.
+  Then <m>p^2 \mid (n!)^2</m>.
+  So the <m>p^2</m> factors in the numerator and denominator of
+  <m>\binom{2n}{n} = \frac{(2n)!}{(n!)^2}</m> cancel out. </p>
+  </proof>
+  </claim>
+  
+  <p> Now, we can put these claims together. </p>
+  
+  <proof>
+  <title> Erdős's proof of Bertrand's postulate </title>
+  <p> Let <m>n \geq 3</m> and suppose there is no prime <m>p</m>
+  with <m>n \lt p \leq 2n</m>. Then
+  <men> \binom{2n}{n} = \left( \prod_{p \leq \sqrt{2n}} p^{\nu_p(\binom{2n}{n})} \right)
+  	\left( \prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p^{\nu_p(\binom{2n}{n})} \right) </men>.
+  We can omit primes <m>\frac{2n}{3} \lt p \leq 2n</m>,
+  as well as primes <m>p \gt 2n</m> (why?). </p>
+  
+  <p> We know every <m>p^{\nu_p(\binom{2n}{n})} \leq 2n</m>.
+  There are at most <m>\sqrt{2n}</m> primes <m>p</m> such that
+  <m>p \leq \sqrt{2n}</m>.
+  Hence
+  <men>
+  \prod_{p \leq \sqrt{2n}} p^{\nu_p(\binom{2n}{n})} \leq \prod_{p \leq \sqrt{2n}} 2n \leq (2n)^{\sqrt{2n}}
+  </men>.
+  On the other hand, if <m>p \gt \sqrt{2n}</m>, then <m>p^2 \gt 2n</m>.
+  Since we have <m>p^{\nu_p(\binom{2n}{n})} \leq 2n</m>, it must be
+  <m>\nu_p(\binom{2n}{n}) \leq 1</m>.
+  
+  Thus
+  <men>
+  \prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p^{\nu_p(\binom{2n}{n})}
+  \leq \prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p
+  \leq \prod_{p \leq \frac{2n}{3}} p
+  = \left(\frac{2n}{3}\right)\# \leq 4^{2n/3}</men>.
+  </p>
+  
+  <p> Exercise: We proved <m>\prod_{p \leq m} p \leq 4^m</m>
+  for integers <m>m</m>.
+  What if <m>m = \frac{2n}{3}</m> is not an integer?
+  Justify this step.
+  </p>
+
+  <p>
+  Putting it together,
+  <m> \binom{2n}{n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}}</m>.
+  And since <m> \binom{2n}{n} \geq \frac{4^n}{2n}</m> we get
+  <men> \frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}} </men>.
+  </p>
+  
+  <p>
+  (This is not the end of the proof, but all that I can type right now)
+  </p>
+  
+  
+  
+  
+  </proof>
+  
+  
+  
+  
+
+</section>
