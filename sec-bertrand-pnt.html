@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Section Title</title>
+<title>Prime Number Theorem</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-bertrand-erdos-proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -118,7 +118,10 @@ window.MathJax = {
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-1-bertrands-postulate.html" class="internal"><span class="codenumber">1</span> <span class="title">Bertrand’s Postulate</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-section-name.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Section Title</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-erdos-proof.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Erdős’s proof of Bertrand’s postulate</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -128,12 +131,53 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-section-name"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Section Title</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-bertrand-pnt"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Prime Number Theorem</span>
 </h2>
-<div class="para" id="sec-section-name-2">Text of section.</div></section></div>
+<div class="para logical" id="sec-bertrand-pnt-2">
+<div class="para">Write <span class="process-math">\(\pi(x)\)</span> for the number of primes less than or equal to <span class="process-math">\(x\text{.}\)</span> The <em class="emphasis">Prime Number Theorem</em> (PNT) asserts that</div>
+<div class="displaymath process-math" id="sec-bertrand-pnt-2-4">
+\begin{equation}
+\pi(x) \sim \frac{x}{\log x} \quad \text{as } x \to \infty \text{,}\tag{1.1.1}
+\end{equation}
+</div>
+<div class="para">that is,</div>
+<div class="displaymath process-math" id="sec-bertrand-pnt-2-5">
+\begin{equation}
+\lim_{x \to \infty} \frac{\pi(x)}{x/\log x} = 1 \text{.}\tag{1.1.2}
+\end{equation}
+</div>
+<div class="para">Here <span class="process-math">\(\log\)</span> is the natural logarithm.</div>
+</div>
+<div class="para" id="sec-bertrand-pnt-3">The Prime Number Theorem was proved in 1896-97 by Hadamard and by de la Vallée Poussin independently.</div>
+<div class="para" id="sec-bertrand-pnt-4">A consequence of the PNT is that for any <span class="process-math">\(\epsilon &gt; 0\)</span> there exists <span class="process-math">\(N(\epsilon)\)</span> such that for all <span class="process-math">\(n \geq N(\epsilon)\text{,}\)</span> there exists a prime <span class="process-math">\(p\)</span> such that <span class="process-math">\(n \lt p \leq (1+\epsilon)n\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-bertrand-pnt-5">
+<div class="para">Why does PNT imply this? The number of primes in the interval <span class="process-math">\((n , (1+\epsilon)n] \)</span> is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\pi((1+\epsilon)n) - \pi(n) 
+\end{equation*}
+</div>
+<div class="para">which is asymptotic to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} \text{,}
+\end{equation*}
+</div>
+<div class="para">which goes to infinity as <span class="process-math">\(n \to \infty\text{.}\)</span>
+</div>
+</div>
+<details id="sec-bertrand-pnt-6" class="exercise exercise-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like"><div class="para" id="sec-bertrand-pnt-6-1">For <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> <span class="process-math">\(\lim_{n \to \infty} \frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} = \infty \text{.}\)</span>
+</div></article></details><details id="sec-bertrand-pnt-7" class="exercise exercise-like born-hidden-knowl"><summary><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like"><div class="para" id="sec-bertrand-pnt-7-1">If <span class="process-math">\(f(x)\text{,}\)</span> <span class="process-math">\(g(x)\text{,}\)</span> <span class="process-math">\(a(x)\text{,}\)</span> <span class="process-math">\(b(x)\)</span> are positive-valued functions and <span class="process-math">\(f \sim a\text{,}\)</span> <span class="process-math">\(g \sim b\text{,}\)</span> then <span class="process-math">\(f+g \sim a+b\text{.}\)</span> State and prove suitable conditions for <span class="process-math">\(f-g \sim a-b\text{.}\)</span>
+</div></article></details><div class="para" id="sec-bertrand-pnt-8">Bertrand’s postulate is relatively weak (<span class="process-math">\(\epsilon = 1\)</span>) but on the other hand it is claimed for all <span class="process-math">\(n \geq 1\text{,}\)</span> not just <span class="process-math">\(n \geq \)</span> some <span class="process-math">\(N(1)\text{.}\)</span>
+</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-bertrand-erdos-proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

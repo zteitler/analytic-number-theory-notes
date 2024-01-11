@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Erdős’s proof of Bertrand’s postulate</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Analytic Number Theory Course Notes">
+<meta property="book:author" content="Zach Teitler">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="analytic-number-theory-notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="analytic-number-theory-notes.html"><span class="title">Analytic Number Theory Course Notes:</span> <span class="subtitle">Math 507, Spring 2024, Boise State University</span></a></h1>
+<p class="byline">Zach Teitler</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-1-bertrands-postulate.html" class="internal"><span class="codenumber">1</span> <span class="title">Bertrand’s Postulate</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-bertrand-erdos-proof.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Erdős’s proof of Bertrand’s postulate</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="bibliography.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-bertrand-erdos-proof"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.2</span><span class="space"> </span><span class="title">Erdős’s proof of Bertrand’s postulate</span>
+</h2>
+<article class="claim theorem-like" id="sec-bertrand-erdos-proof-2"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h3>
+<span class="process-math">\(\binom{2n}{n} \geq \frac{4^n}{2n} \text{.}\)</span> (<span class="process-math">\(\binom{2n}{n}\)</span> is “large”.)</article><details id="sec-bertrand-erdos-proof-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="sec-bertrand-erdos-proof-2-2-1">
+<div class="para">Observe</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-2-2-1-1">
+\begin{equation}
+4^n = (1+1)^{2n} = \sum_{k=0}^{2n} \binom{2n}{k}
+= 2 + \sum_{k=1}^{2n-1} \binom{2n}{k} \text{,}\tag{1.2.1}
+\end{equation}
+</div>
+<div class="para">first using the Binomial Theorem and then grouping the first and last terms <span class="process-math">\(\binom{2n}{0} + \binom{2n}{2n} = 1+1 = 2\text{.}\)</span> This sum has <span class="process-math">\(2n\)</span> terms (including the term <span class="process-math">\(2\)</span> and the <span class="process-math">\(2n-1\)</span> terms in the summation). The largest term is the central binomial coefficient <span class="process-math">\(\binom{2n}{n}\text{.}\)</span> Since the largest term is at least as great as the average value of the terms, we have</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-2-2-1-7">
+\begin{equation}
+\binom{2n}{n} \geq \frac{1}{2n} \left( 2 + \sum_{k=1}^{2n-1} \binom{2n}{k} \right)
+= \frac{4^n}{2n} \text{.}\tag{1.2.2}
+\end{equation}
+</div>
+</div></article></details><div class="para logical" id="sec-bertrand-erdos-proof-3">
+<div class="para">For a prime <span class="process-math">\(p\)</span> and integer <span class="process-math">\(m\)</span> let <span class="process-math">\(\nu_p(m)\)</span> be the largest exponent of a power of <span class="process-math">\(p\)</span> that divides <span class="process-math">\(m\text{,}\)</span> i.e.,</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-3-6">
+\begin{equation}
+\nu_p(m) = k \text{ where } p^k \mid m \text{ and } p^{k+1} \nmid m \text{.}\tag{1.2.3}
+\end{equation}
+</div>
+<div class="para">Observe that <span class="process-math">\(\nu_p(ab) = \nu_p(a) + \nu_p(b)\)</span> and <span class="process-math">\(\nu_p(a/b) = \nu_p(a) - \nu_p(b)\)</span> (assuming, of course, that <span class="process-math">\(a/b\)</span> is an integer).</div>
+</div>
+<article class="claim theorem-like" id="sec-bertrand-erdos-proof-4"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h3>
+<span class="process-math">\(\nu_p(n!) = \sum_{k \geq 1} \lfloor \frac{n}{p^k} \rfloor 
+= \lfloor \frac{n}{p} \rfloor + \lfloor \frac{n}{p^2} \rfloor
++ \lfloor \frac{n}{p^3} \rfloor + \dotsb\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-4-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-4-2-1">There are <span class="process-math">\(\lfloor \frac{n}{p} \rfloor\)</span> multiples of <span class="process-math">\(p\)</span> less than or equal to <span class="process-math">\(n\text{,}\)</span> and they each contribute a factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> There are <span class="process-math">\(\lfloor \frac{n}{p^2} \rfloor\)</span> multiples of <span class="process-math">\(p^2\text{,}\)</span> and they each contribute an additional factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> And so on.</div></article></details><article class="claim theorem-like" id="sec-bertrand-erdos-proof-5"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(k = \nu_p(\binom{2n}{n})\text{.}\)</span> Then <span class="process-math">\(p^k \leq 2n\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-5-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="sec-bertrand-erdos-proof-5-2-1">
+<div class="para">First, let <span class="process-math">\(r\)</span> be an integer such that <span class="process-math">\(p^r \leq 2n \lt p^{r+1} \text{.}\)</span> Now</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-5-2-1-3">
+\begin{align*}
+\nu_p(\binom{2n}{n}) \amp = \nu_p( (2n)! ) - 2 \nu_p(n!) \\
+\amp = \sum_{i \geq 1} \lfloor \frac{2n}{p^i} - 2 \sum_{i \geq 1} \lfloor \frac{n}{p^i} \rfloor \\
+\amp = \sum_{i=1}^r \left( \lfloor \frac{2n}{p^i} \rfloor - 2 \lfloor \frac{n}{p^i} \rfloor \right) 
+\end{align*}
+</div>
+<div class="para">where we can drop terms with <span class="process-math">\(i &gt; r\text{,}\)</span> since then <span class="process-math">\(p^i &gt; 2n\text{,}\)</span> so <span class="process-math">\(\frac{2n}{p^i} \lt 1\text{,}\)</span> meaning <span class="process-math">\(\lfloor \frac{2n}{p^i} \rfloor = 0\text{.}\)</span>
+</div>
+</div> <details id="sec-bertrand-erdos-proof-5-2-2" class="exercise exercise-like born-hidden-knowl"><summary></summary><article class="exercise exercise-like"></article></details> <div class="para" id="sec-bertrand-erdos-proof-5-2-3">Using this, <span class="process-math">\(k = \nu_p(\binom{2n}{n}) \leq r \text{.}\)</span> So <span class="process-math">\(p^k \leq p^r \leq 2n \text{.}\)</span>
+</div></article></details><article class="definition definition-like" id="sec-bertrand-erdos-proof-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-bertrand-erdos-proof-6-1">For a real number <span class="process-math">\(x\text{,}\)</span> the <dfn class="terminology">primorial</dfn> <span class="process-math">\(x\#\)</span> is the product of the primes less than or equal to <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x\# = \prod_{p \leq x} p\text{,}\)</span> where the product is over primes <span class="process-math">\(p\text{.}\)</span> For example, <span class="process-math">\(2\# = 2\text{,}\)</span> <span class="process-math">\(3\# = 2 \cdot 3 = 6\text{,}\)</span> and <span class="process-math">\(10\# = 2 \cdot 3 \cdot 5 \cdot 7 = 210\text{.}\)</span>
+</div></article><article class="claim theorem-like" id="sec-bertrand-erdos-proof-7"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3>For all <span class="process-math">\(n \geq 2\text{,}\)</span> <span class="process-math">\(n\# \leq 4^n\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-7-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-7-2-1">By induction on <span class="process-math">\(n\text{.}\)</span> First, for <span class="process-math">\(n = 2\text{,}\)</span> <span class="process-math">\(2\# = 2\)</span> while <span class="process-math">\(4^2 = 16\text{.}\)</span> For <span class="process-math">\(n = 3\text{,}\)</span> <span class="process-math">\(3\# = 6\)</span> while <span class="process-math">\(4^3 = 64\text{.}\)</span>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-7-2-2">
+<div class="para">For the inductive step, if <span class="process-math">\(n \geq 4\)</span> is even, then <span class="process-math">\(n\)</span> is not prime, so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n\# = \prod_{p \leq n} p = \prod_{p \leq n-1} p = (n-1)\# \leq 4^{n-1} \leq 4^n \text{.}
+\end{equation*}
+</div>
+<div class="para">If <span class="process-math">\(n \geq 5\)</span> is odd, say <span class="process-math">\(n = 2m+1\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n\# = \prod_{p \leq n} p = \left( \prod_{p \leq m+1} p \right)
+\left( \prod_{m+2 \leq p \leq 2m+1} p \right) \text{.}
+\end{equation*}
+</div>
+<div class="para">By induction this is less than or equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4^{m+1} \left( \prod_{m+2 \leq p \leq 2m+1} p \right) \text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-7-2-3">
+<div class="para">Observe that if <span class="process-math">\(m+2 \leq p \leq 2m+1 \)</span> then <span class="process-math">\(p\)</span> is a factor in <span class="process-math">\((2m+1)!\)</span> but not in <span class="process-math">\(m!\)</span> or <span class="process-math">\((m+1)!\text{.}\)</span> So <span class="process-math">\(\binom{2m+1}{m+1}\)</span> is divisible by <span class="process-math">\(p\text{.}\)</span> In fact <span class="process-math">\(\binom{2m+1}{m+1}\)</span> is divisible by each prime in this range, hence it is divisible by the product of these primes (why?). Therefore the binomial coefficient is greater than or equal this product of primes,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\prod_{m+2 \leq p \leq 2m+1} p \leq \binom{2m+1}{m+1} \text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-7-2-4">
+<div class="para">Finally, <span class="process-math">\(\sum_{k=0}^{2m+1} \binom{2m+1}{k} = 2^{2m+1}\text{.}\)</span> In this sum the two largest terms are <span class="process-math">\(\binom{2m+1}{m} = \binom{2m+1}{m+1}\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-7-2-4-3">
+\begin{equation}
+\binom{2m+1}{m+1} \leq \frac{1}{2} 2^{2m+1} = 2^{2m} = 4^m \text{.}\tag{1.2.4}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-7-2-5">
+<div class="para">Putting it all together,</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-7-2-5-1">
+\begin{align*}
+n\# = \prod_{p \leq n} p \amp= \left( \prod_{p \leq m+1} p \right)
+\left( \prod_{m+2 \leq p \leq 2m+1} p \right) \\
+\amp \leq 4^{m+1} \cdot 4^m
+= 4^{2m+1} = 4^n \text{.}
+\end{align*}
+</div>
+</div></article></details><div class="para" id="sec-bertrand-erdos-proof-8">In a sense there are “not too many” primes less than or equal to <span class="process-math">\(n\)</span> (their product is “small”) and each one contributes a “small” amount to <span class="process-math">\(\binom{2n}{n}\)</span> (a factor of at most <span class="process-math">\(2n\)</span>), yet <span class="process-math">\(\binom{2n}{n}\)</span> is “large”. This tension will lead to a contradiction, but first we must raise the tension even higher.</div>
+<article class="claim theorem-like" id="sec-bertrand-erdos-proof-9"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h3>If <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(\frac{2n}{3} \lt p \leq n\)</span> then <span class="process-math">\(\nu_p \binom{2n}{n} = 0\text{,}\)</span> that is, <span class="process-math">\(p \nmid \binom{2n}{n}\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-9-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-9-2-1">Since <span class="process-math">\(p \leq n\text{,}\)</span> then <span class="process-math">\(2p \leq 2n\text{,}\)</span> but <span class="process-math">\(3p &gt; 2n\text{.}\)</span> Since <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(p &gt; \frac{2n}{3}\text{,}\)</span> then <span class="process-math">\(p \gt 2\text{.}\)</span> So <span class="process-math">\((2n)!\)</span> is divisible by <span class="process-math">\(p^2\)</span> but not <span class="process-math">\(p^3\text{.}\)</span> (We need <span class="process-math">\(p \gt 2\)</span> in order to say that <span class="process-math">\(2p\)</span> only contributes one factor of <span class="process-math">\(p\text{,}\)</span> not two.)</div> <div class="para" id="sec-bertrand-erdos-proof-9-2-2">However <span class="process-math">\(p \leq n\text{,}\)</span> so <span class="process-math">\(p \mid n!\text{.}\)</span> Then <span class="process-math">\(p^2 \mid (n!)^2\text{.}\)</span> So the <span class="process-math">\(p^2\)</span> factors in the numerator and denominator of <span class="process-math">\(\binom{2n}{n} = \frac{(2n)!}{(n!)^2}\)</span> cancel out.</div></article></details><div class="para" id="sec-bertrand-erdos-proof-10">Now, we can put these claims together.</div>
+<details id="sec-bertrand-erdos-proof-11" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Erdős’s proof of Bertrand’s postulate.</span></h3></summary><article class="hiddenproof"> <div class="para logical" id="sec-bertrand-erdos-proof-11-2">
+<div class="para">Let <span class="process-math">\(n \geq 3\)</span> and suppose there is no prime <span class="process-math">\(p\)</span> with <span class="process-math">\(n \lt p \leq 2n\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-2-4">
+\begin{equation}
+\binom{2n}{n} = \left( \prod_{p \leq \sqrt{2n}} p^{\nu_p(\binom{2n}{n})} \right)
+\left( \prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p^{\nu_p(\binom{2n}{n})} \right) \text{.}\tag{1.2.5}
+\end{equation}
+</div>
+<div class="para">We can omit primes <span class="process-math">\(\frac{2n}{3} \lt p \leq 2n\text{,}\)</span> as well as primes <span class="process-math">\(p \gt 2n\)</span> (why?).</div>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-11-3">
+<div class="para">We know every <span class="process-math">\(p^{\nu_p(\binom{2n}{n})} \leq 2n\text{.}\)</span> There are at most <span class="process-math">\(\sqrt{2n}\)</span> primes <span class="process-math">\(p\)</span> such that <span class="process-math">\(p \leq \sqrt{2n}\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-3-5">
+\begin{equation}
+\prod_{p \leq \sqrt{2n}} p^{\nu_p(\binom{2n}{n})} \leq \prod_{p \leq \sqrt{2n}} 2n \leq (2n)^{\sqrt{2n}}\text{.}\tag{1.2.6}
+\end{equation}
+</div>
+<div class="para">On the other hand, if <span class="process-math">\(p \gt \sqrt{2n}\text{,}\)</span> then <span class="process-math">\(p^2 \gt 2n\text{.}\)</span> Since we have <span class="process-math">\(p^{\nu_p(\binom{2n}{n})} \leq 2n\text{,}\)</span> it must be <span class="process-math">\(\nu_p(\binom{2n}{n}) \leq 1\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-3-10">
+\begin{equation}
+\prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p^{\nu_p(\binom{2n}{n})}
+\leq \prod_{\sqrt{2n} \lt p \leq \frac{2n}{3}} p
+\leq \prod_{p \leq \frac{2n}{3}} p
+= \left(\frac{2n}{3}\right)\# \leq 4^{2n/3}\text{.}\tag{1.2.7}
+\end{equation}
+</div>
+</div> <div class="para" id="sec-bertrand-erdos-proof-11-4">Exercise: We proved <span class="process-math">\(\prod_{p \leq m} p \leq 4^m\)</span> for integers <span class="process-math">\(m\text{.}\)</span> What if <span class="process-math">\(m = \frac{2n}{3}\)</span> is not an integer? Justify this step.</div> <div class="para logical" id="sec-bertrand-erdos-proof-11-5">
+<div class="para">Putting it together, <span class="process-math">\(\binom{2n}{n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}}\text{.}\)</span> And since <span class="process-math">\(\binom{2n}{n} \geq \frac{4^n}{2n}\)</span> we get</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-5-3">
+\begin{equation}
+\frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}} \text{.}\tag{1.2.8}
+\end{equation}
+</div>
+</div> <div class="para" id="sec-bertrand-erdos-proof-11-6">(This is not the end of the proof, but all that I can type right now)</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
