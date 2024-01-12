@@ -65,10 +65,8 @@
   so <m>\frac{2n}{p^i} \lt 1</m>, meaning <m>\lfloor \frac{2n}{p^i} \rfloor = 0</m>.
   </p>
   
-  <exercise>
-  <p> For all real <m>x</m>,
+  <p> Exercise: For all real <m>x</m>,
   <m>0 \leq \lfloor 2x \rfloor - 2 \lfloor x \rfloor \leq 1</m>. </p>
-  </exercise>
   
   <p> Using this, <m> k = \nu_p(\binom{2n}{n}) \leq r </m>.
   So <m> p^k \leq p^r \leq 2n </m>. </p>
