@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-bertrand-corollaries.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -121,6 +121,14 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-bertrand-erdos-proof.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Erdős’s proof of Bertrand’s postulate</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bertrand-corollaries.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Corollaries</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Primes between consecutive squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Pairs that add up to primes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Explicit bounds for the PNT</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -137,7 +145,8 @@ window.MathJax = {
 <article class="claim theorem-like" id="sec-bertrand-erdos-proof-2"><h3 class="heading">
 <span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
 </h3>
-<span class="process-math">\(\binom{2n}{n} \geq \frac{4^n}{2n} \text{.}\)</span> (<span class="process-math">\(\binom{2n}{n}\)</span> is “large”.)</article><details id="sec-bertrand-erdos-proof-2-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="sec-bertrand-erdos-proof-2-2-1">
+<span class="process-math">\(\binom{2n}{n} \geq \frac{4^n}{2n} \text{.}\)</span> (<span class="process-math">\(\binom{2n}{n}\)</span> is “large”.)</article><article class="proof" id="sec-bertrand-erdos-proof-2-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-bertrand-erdos-proof-2-2-1">
 <div class="para">Observe</div>
 <div class="displaymath process-math" id="sec-bertrand-erdos-proof-2-2-1-1">
 \begin{equation}
@@ -152,7 +161,7 @@ window.MathJax = {
 = \frac{4^n}{2n} \text{.}\tag{1.2.2}
 \end{equation}
 </div>
-</div></article></details><div class="para logical" id="sec-bertrand-erdos-proof-3">
+</div></article><div class="para logical" id="sec-bertrand-erdos-proof-3">
 <div class="para">For a prime <span class="process-math">\(p\)</span> and integer <span class="process-math">\(m\)</span> let <span class="process-math">\(\nu_p(m)\)</span> be the largest exponent of a power of <span class="process-math">\(p\)</span> that divides <span class="process-math">\(m\text{,}\)</span> i.e.,</div>
 <div class="displaymath process-math" id="sec-bertrand-erdos-proof-3-6">
 \begin{equation}
@@ -166,9 +175,11 @@ window.MathJax = {
 </h3>
 <span class="process-math">\(\nu_p(n!) = \sum_{k \geq 1} \lfloor \frac{n}{p^k} \rfloor 
 = \lfloor \frac{n}{p} \rfloor + \lfloor \frac{n}{p^2} \rfloor
-+ \lfloor \frac{n}{p^3} \rfloor + \dotsb\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-4-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-4-2-1">There are <span class="process-math">\(\lfloor \frac{n}{p} \rfloor\)</span> multiples of <span class="process-math">\(p\)</span> less than or equal to <span class="process-math">\(n\text{,}\)</span> and they each contribute a factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> There are <span class="process-math">\(\lfloor \frac{n}{p^2} \rfloor\)</span> multiples of <span class="process-math">\(p^2\text{,}\)</span> and they each contribute an additional factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> And so on.</div></article></details><article class="claim theorem-like" id="sec-bertrand-erdos-proof-5"><h3 class="heading">
++ \lfloor \frac{n}{p^3} \rfloor + \dotsb\text{.}\)</span></article><article class="proof" id="sec-bertrand-erdos-proof-4-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para" id="sec-bertrand-erdos-proof-4-2-1">There are <span class="process-math">\(\lfloor \frac{n}{p} \rfloor\)</span> multiples of <span class="process-math">\(p\)</span> less than or equal to <span class="process-math">\(n\text{,}\)</span> and they each contribute a factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> There are <span class="process-math">\(\lfloor \frac{n}{p^2} \rfloor\)</span> multiples of <span class="process-math">\(p^2\text{,}\)</span> and they each contribute an additional factor of <span class="process-math">\(p\)</span> to <span class="process-math">\(n!\text{.}\)</span> And so on.</div></article><article class="claim theorem-like" id="sec-bertrand-erdos-proof-5"><h3 class="heading">
 <span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
-</h3>Let <span class="process-math">\(k = \nu_p(\binom{2n}{n})\text{.}\)</span> Then <span class="process-math">\(p^k \leq 2n\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-5-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="sec-bertrand-erdos-proof-5-2-1">
+</h3>Let <span class="process-math">\(k = \nu_p(\binom{2n}{n})\text{.}\)</span> Then <span class="process-math">\(p^k \leq 2n\text{.}\)</span></article><article class="proof" id="sec-bertrand-erdos-proof-5-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-bertrand-erdos-proof-5-2-1">
 <div class="para">First, let <span class="process-math">\(r\)</span> be an integer such that <span class="process-math">\(p^r \leq 2n \lt p^{r+1} \text{.}\)</span> Now</div>
 <div class="displaymath process-math" id="sec-bertrand-erdos-proof-5-2-1-3">
 \begin{align*}
@@ -180,13 +191,14 @@ window.MathJax = {
 <div class="para">where we can drop terms with <span class="process-math">\(i &gt; r\text{,}\)</span> since then <span class="process-math">\(p^i &gt; 2n\text{,}\)</span> so <span class="process-math">\(\frac{2n}{p^i} \lt 1\text{,}\)</span> meaning <span class="process-math">\(\lfloor \frac{2n}{p^i} \rfloor = 0\text{.}\)</span>
 </div>
 </div> <details id="sec-bertrand-erdos-proof-5-2-2" class="exercise exercise-like born-hidden-knowl"><summary></summary><article class="exercise exercise-like"></article></details> <div class="para" id="sec-bertrand-erdos-proof-5-2-3">Using this, <span class="process-math">\(k = \nu_p(\binom{2n}{n}) \leq r \text{.}\)</span> So <span class="process-math">\(p^k \leq p^r \leq 2n \text{.}\)</span>
-</div></article></details><article class="definition definition-like" id="sec-bertrand-erdos-proof-6"><h3 class="heading">
+</div></article><article class="definition definition-like" id="sec-bertrand-erdos-proof-6"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
 </h3>
 <div class="para" id="sec-bertrand-erdos-proof-6-1">For a real number <span class="process-math">\(x\text{,}\)</span> the <dfn class="terminology">primorial</dfn> <span class="process-math">\(x\#\)</span> is the product of the primes less than or equal to <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(x\# = \prod_{p \leq x} p\text{,}\)</span> where the product is over primes <span class="process-math">\(p\text{.}\)</span> For example, <span class="process-math">\(2\# = 2\text{,}\)</span> <span class="process-math">\(3\# = 2 \cdot 3 = 6\text{,}\)</span> and <span class="process-math">\(10\# = 2 \cdot 3 \cdot 5 \cdot 7 = 210\text{.}\)</span>
 </div></article><article class="claim theorem-like" id="sec-bertrand-erdos-proof-7"><h3 class="heading">
 <span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
-</h3>For all <span class="process-math">\(n \geq 2\text{,}\)</span> <span class="process-math">\(n\# \leq 4^n\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-7-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-7-2-1">By induction on <span class="process-math">\(n\text{.}\)</span> First, for <span class="process-math">\(n = 2\text{,}\)</span> <span class="process-math">\(2\# = 2\)</span> while <span class="process-math">\(4^2 = 16\text{.}\)</span> For <span class="process-math">\(n = 3\text{,}\)</span> <span class="process-math">\(3\# = 6\)</span> while <span class="process-math">\(4^3 = 64\text{.}\)</span>
+</h3>For all <span class="process-math">\(n \geq 2\text{,}\)</span> <span class="process-math">\(n\# \leq 4^n\text{.}\)</span></article><article class="proof" id="sec-bertrand-erdos-proof-7-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para" id="sec-bertrand-erdos-proof-7-2-1">By induction on <span class="process-math">\(n\text{.}\)</span> First, for <span class="process-math">\(n = 2\text{,}\)</span> <span class="process-math">\(2\# = 2\)</span> while <span class="process-math">\(4^2 = 16\text{.}\)</span> For <span class="process-math">\(n = 3\text{,}\)</span> <span class="process-math">\(3\# = 6\)</span> while <span class="process-math">\(4^3 = 64\text{.}\)</span>
 </div> <div class="para logical" id="sec-bertrand-erdos-proof-7-2-2">
 <div class="para">For the inductive step, if <span class="process-math">\(n \geq 4\)</span> is even, then <span class="process-math">\(n\)</span> is not prime, so</div>
 <div class="displaymath process-math">
@@ -231,11 +243,12 @@ n\# = \prod_{p \leq n} p \amp= \left( \prod_{p \leq m+1} p \right)
 = 4^{2m+1} = 4^n \text{.}
 \end{align*}
 </div>
-</div></article></details><div class="para" id="sec-bertrand-erdos-proof-8">In a sense there are “not too many” primes less than or equal to <span class="process-math">\(n\)</span> (their product is “small”) and each one contributes a “small” amount to <span class="process-math">\(\binom{2n}{n}\)</span> (a factor of at most <span class="process-math">\(2n\)</span>), yet <span class="process-math">\(\binom{2n}{n}\)</span> is “large”. This tension will lead to a contradiction, but first we must raise the tension even higher.</div>
+</div></article><div class="para" id="sec-bertrand-erdos-proof-8">In a sense there are “not too many” primes less than or equal to <span class="process-math">\(n\)</span> (their product is “small”) and each one contributes a “small” amount to <span class="process-math">\(\binom{2n}{n}\)</span> (a factor of at most <span class="process-math">\(2n\)</span>), yet <span class="process-math">\(\binom{2n}{n}\)</span> is “large”. This tension will lead to a contradiction, but first we must raise the tension even higher.</div>
 <article class="claim theorem-like" id="sec-bertrand-erdos-proof-9"><h3 class="heading">
 <span class="type">Claim</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
-</h3>If <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(\frac{2n}{3} \lt p \leq n\)</span> then <span class="process-math">\(\nu_p \binom{2n}{n} = 0\text{,}\)</span> that is, <span class="process-math">\(p \nmid \binom{2n}{n}\text{.}\)</span></article><details id="sec-bertrand-erdos-proof-9-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="sec-bertrand-erdos-proof-9-2-1">Since <span class="process-math">\(p \leq n\text{,}\)</span> then <span class="process-math">\(2p \leq 2n\text{,}\)</span> but <span class="process-math">\(3p &gt; 2n\text{.}\)</span> Since <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(p &gt; \frac{2n}{3}\text{,}\)</span> then <span class="process-math">\(p \gt 2\text{.}\)</span> So <span class="process-math">\((2n)!\)</span> is divisible by <span class="process-math">\(p^2\)</span> but not <span class="process-math">\(p^3\text{.}\)</span> (We need <span class="process-math">\(p \gt 2\)</span> in order to say that <span class="process-math">\(2p\)</span> only contributes one factor of <span class="process-math">\(p\text{,}\)</span> not two.)</div> <div class="para" id="sec-bertrand-erdos-proof-9-2-2">However <span class="process-math">\(p \leq n\text{,}\)</span> so <span class="process-math">\(p \mid n!\text{.}\)</span> Then <span class="process-math">\(p^2 \mid (n!)^2\text{.}\)</span> So the <span class="process-math">\(p^2\)</span> factors in the numerator and denominator of <span class="process-math">\(\binom{2n}{n} = \frac{(2n)!}{(n!)^2}\)</span> cancel out.</div></article></details><div class="para" id="sec-bertrand-erdos-proof-10">Now, we can put these claims together.</div>
-<details id="sec-bertrand-erdos-proof-11" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Erdős’s proof of Bertrand’s postulate.</span></h3></summary><article class="hiddenproof"> <div class="para logical" id="sec-bertrand-erdos-proof-11-2">
+</h3>If <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(\frac{2n}{3} \lt p \leq n\)</span> then <span class="process-math">\(\nu_p \binom{2n}{n} = 0\text{,}\)</span> that is, <span class="process-math">\(p \nmid \binom{2n}{n}\text{.}\)</span></article><article class="proof" id="sec-bertrand-erdos-proof-9-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para" id="sec-bertrand-erdos-proof-9-2-1">Since <span class="process-math">\(p \leq n\text{,}\)</span> then <span class="process-math">\(2p \leq 2n\text{,}\)</span> but <span class="process-math">\(3p &gt; 2n\text{.}\)</span> Since <span class="process-math">\(n \geq 3\)</span> and <span class="process-math">\(p &gt; \frac{2n}{3}\text{,}\)</span> then <span class="process-math">\(p \gt 2\text{.}\)</span> So <span class="process-math">\((2n)!\)</span> is divisible by <span class="process-math">\(p^2\)</span> but not <span class="process-math">\(p^3\text{.}\)</span> (We need <span class="process-math">\(p \gt 2\)</span> in order to say that <span class="process-math">\(2p\)</span> only contributes one factor of <span class="process-math">\(p\text{,}\)</span> not two.)</div> <div class="para" id="sec-bertrand-erdos-proof-9-2-2">However <span class="process-math">\(p \leq n\text{,}\)</span> so <span class="process-math">\(p \mid n!\text{.}\)</span> Then <span class="process-math">\(p^2 \mid (n!)^2\text{.}\)</span> So the <span class="process-math">\(p^2\)</span> factors in the numerator and denominator of <span class="process-math">\(\binom{2n}{n} = \frac{(2n)!}{(n!)^2}\)</span> cancel out.</div></article><div class="para" id="sec-bertrand-erdos-proof-10">Now, we can put these claims together.</div>
+<article class="proof" id="sec-bertrand-erdos-proof-11"><h3 class="heading"><span class="title">Erdős’s proof of Bertrand’s postulate.</span></h3> <div class="para logical" id="sec-bertrand-erdos-proof-11-2">
 <div class="para">Let <span class="process-math">\(n \geq 3\)</span> and suppose there is no prime <span class="process-math">\(p\)</span> with <span class="process-math">\(n \lt p \leq 2n\text{.}\)</span> Then</div>
 <div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-2-4">
 \begin{equation}
@@ -267,9 +280,38 @@ n\# = \prod_{p \leq n} p \amp= \left( \prod_{p \leq m+1} p \right)
 \frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}} \text{.}\tag{1.2.8}
 \end{equation}
 </div>
-</div> <div class="para" id="sec-bertrand-erdos-proof-11-6">(This is not the end of the proof, but all that I can type right now)</div></article></details></section></div>
+<div class="para">That is,</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-5-4">
+\begin{equation}
+4^{\frac{1}{3}n} \leq (2n)^{\sqrt{2n}+1} \text{.}\tag{1.2.9}
+\end{equation}
+</div>
+<div class="para">Taking the logarithm of each side gives</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-5-5">
+\begin{equation}
+\frac{\log 4}{3} n \leq (\sqrt{2n}+1) \log(2n) \text{.}\tag{1.2.10}
+\end{equation}
+</div>
+<div class="para">We know <span class="process-math">\(\log(2n)\)</span> grows more slowly than <span class="process-math">\(\sqrt{n}\text{,}\)</span> so the whole right side grows more slowly than <span class="process-math">\(n\text{.}\)</span> Therefore the left side grows more quickly than the right side. And yet the left side is supposed to be less than or equal to the right side! This shows that our assumption, that there is no prime <span class="process-math">\(p\)</span> such that <span class="process-math">\(n \lt p \leq 2n\text{,}\)</span> leads to a contradiction.</div>
+</div> <div class="para" id="sec-bertrand-erdos-proof-11-6">In more detail: the function <span class="process-math">\(f(x) = (\sqrt{2x}+1)\log(2x)\)</span> is concave down. (Exercise: Check that <span class="process-math">\(f''(x) \lt 0\text{.}\)</span>) So for any linear function the inequality <span class="process-math">\(ax+b \leq f(x)\)</span> is valid on an interval (why?).</div> <div class="para" id="sec-bertrand-erdos-proof-11-7">In this case, <span class="process-math">\(\frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}}\)</span> is valid for <span class="process-math">\(n = 467\)</span> but not for <span class="process-math">\(n = 468\text{.}\)</span> (We can check this on a calculator. To find these numbers, we try different values of <span class="process-math">\(n\)</span> and narrow down on the largest value of <span class="process-math">\(n\)</span> where the inequality is valid, or the smallest value where it is not valid.)</div> <div class="para" id="sec-bertrand-erdos-proof-11-8">This shows: If there is no prime <span class="process-math">\(p\)</span> with <span class="process-math">\(n \lt p \leq 2n\text{,}\)</span> then <span class="process-math">\(n \leq 467\text{.}\)</span> Equivalently: If <span class="process-math">\(n \geq 468\text{,}\)</span> then there is a prime <span class="process-math">\(p\)</span> such that <span class="process-math">\(n \lt p \leq 2n\text{.}\)</span>
+</div> <div class="para logical" id="sec-bertrand-erdos-proof-11-9">
+<div class="para">Finally, to take care of <span class="process-math">\(n \leq 467\)</span> consider the sequence of primes</div>
+<div class="displaymath process-math" id="sec-bertrand-erdos-proof-11-9-2">
+\begin{equation}
+2, 3, 5, 7, 13, 23, 43, 83, 163, 317, 631 \text{.}\tag{1.2.11}
+\end{equation}
+</div>
+<div class="para">These satisfy <span class="process-math">\(p_{k-1} \lt p_k \lt 2p_{k-1}\text{.}\)</span> For any <span class="process-math">\(n \leq 467\text{,}\)</span> choose <span class="process-math">\(p_{k-1} \leq n \lt p_k\text{.}\)</span> Then we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+n \lt p_k \lt 2p_{k-1} \leq 2n \text{,}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(p_k\)</span> is a prime in the interval <span class="process-math">\((n,2n]\text{.}\)</span>
+</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-bertrand-pnt.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-bertrand-corollaries.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
