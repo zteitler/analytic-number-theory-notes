@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-bertrand-corollaries" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Corollaries</title>
+  
+  
+  <subsection>
+  <title> Primes between consecutive squares </title>
+
+  
+  <question>
+  Is it true that for all <m>n \geq 2</m>,
+  there is a prime <m>p</m> such that <m>n^2 \lt p \lt (n+1)^2</m>?
+  </question>
+  
+  <exercise>
+  <statement>
+  What does the PNT say about this problem?
+  </statement>
+  </exercise>
+  
+  <p> We get:
+  <md>
+  <mrow> \pi((n+1)^2) - \pi(n^2) \amp \sim \frac{(n+1)^2}{\log(n+1)^2} - \frac{n^2}{\log n^2} </mrow>
+  <mrow> \amp \approx \frac{n}{\log n} </mrow>
+  </md>
+  Before we continue, let us justify the approximation in the last step.
+  Let <m>f(x) = \frac{x^2}{\log(x^2)} = \frac{x^2}{2 \log x}</m>.
+  By the Mean Value Theorem,
+  <m> f(n+1) - f(n) = 1 \cdot f'(x) </m>
+  for some <m>n \lt x \lt n+1</m>.
+  We have
+  <me> f'(x) = \frac{4x \log x - 4}{4(\log x)^2}
+  = \frac{x}{\log x} - \frac{1}{(\log x)^2} </me>.
+  Since <m> \frac{1}{(\log x)^2} \to 0 </m>
+  we get the approximation.
+  </p>
+  
+  <p>
+  Since <m>\pi((n+1)^2) - \pi(n^2) \approx \frac{n}{\log n} \to \infty</m>,
+  there should be primes between <m>n^2</m> and <m>(n+1)^2</m>.
+  So, why doesn't this answer the question?
+  </p>
+  
+  <p>
+  The problem is the error term in the PNT.
+  Suppose the error in the approximation <m>\pi(x) \approx \frac{x}{\log x}</m>
+  is of the order <m>\sqrt{x}</m>.
+  In this case, around <m>n^2</m> and <m>(n+1)^2</m> we would end up
+  with errors of order <m>n</m>;
+  our approximation would be something like
+  <m>\pi((n+1)^2) - \pi(n^2) \approx \frac{n}{\log n} \pm n</m>,
+  which is not informative.
+  We need better control of errors in the PNT!
+  </p>
+  
+  </subsection>
+  
+  
+  <subsection>
+  <title> Pairs that add up to primes </title>
+  
+  <theorem>
+  <statement> (Greenfield<ndash/>Greenfield, 1998)
+  For <m>n \geq 1</m> the set <m>\{1,2,\dotsc,2n\}</m>
+  can be partitioned into <m>n</m> pairs
+  <m>\{a_1,b_1\}, \dotsc, \{a_n,b_n\}</m>
+  such that each <m>a_i+b_i</m> is prime.
+  </statement>
+  
+  <proof>
+  <p> By induction on <m>n</m>.
+  For <m>n = 1</m>, our set is <m>\{1,2\}</m>.
+  There is one pair, with <m>1+2=3</m>, prime.
+  For <m>n \gt 1</m>, let <m>p</m> be a prime such that
+  <m>2n \lt p \leq 4n</m>.
+  In fact it must be <m>p \lt 4n</m>.
+  Write <m>p = 2n+m</m>, where <m>1 \leq m \lt 2n</m>.
+  Here <m>m</m> is odd.
+  We can form pairs:
+  <men>
+  \{2n,m\}, \{2n-1,m+1\}, \{2n-2,m+2\}, \dotsc,
+    \{n + \lceil \frac{m}{2} \rceil, n + \lfloor \frac{m}{2} \rfloor\}
+  </men>.
+  Each of these pairs adds up to <m>p</m>.
+  They take care of all the numbers <m>m,m+1,\dotsc,2n</m>.
+  What's left is <m>\{1,2,\dotsc,m-1\}</m>.
+  Since <m>m</m> is odd, <m>m-1</m> is even,
+  and so this remaining set can be paired off inductively.
+  </p>
+  </proof>
+  </theorem>
+  
+  </subsection>
+  
+  
+  
+  <subsection>
+  <title> Explicit bounds for the PNT </title>
+  
+  <p> Another corollary of our work so far gives
+  explicit bounds for the PNT. </p>
+  
+  <corollary>
+  <statement> There are constants <m> c, C \gt 0 </m>
+  such that for all <m>x \geq 2</m>,
+  <men> c \frac{x}{\log x} \leq \pi(x) \leq C \frac{x}{\log x} </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  First, the upper bound. We have
+  <me> \prod_{p \leq x} p \leq 4^x </me>.
+  There are <m>\pi(x) - \pi(\sqrt{x})</m> primes in the interval
+  <m>(\sqrt{x},x]</m>, and they are greater than <m>\sqrt{x}</m>, so
+  <men> \sqrt{x}^{\pi(x) - \pi(\sqrt{x})} \leq \prod_{p \leq x} p \leq 4^x </men>.
+  Taking logarithms,
+  <me> (\pi(x) - \pi(\sqrt{x})) \log \sqrt{x} \leq x \log 4 </me>
+  so
+  <md>
+  <mrow> \pi(x) \amp \leq \log 4 \frac{x}{\log \sqrt{x}} + \pi(\sqrt{x}) </mrow>
+  <mrow> \amp = 2 \log 4 \frac{x}{\log x} + \pi(\sqrt{x}) </mrow>
+  <mrow> \amp \leq 2 \log 4 \frac{x}{\log x} + \sqrt{x} </mrow>
+  <mrow> \amp \leq 4 \frac{x}{\log x} </mrow>
+  </md>
+  for all <m>x \geq 2</m>.
+  This gives an upper bound with <m>C = 4</m>.
+  </p>
+  
+  <p>
+  Exercise: Find the maximum value of
+  <m>f(x) = \frac{\log x}{\sqrt{x}} + 2 \log 4</m> for <m>x \geq 2</m>,
+  and show that it is strictly less than <m>4</m>.
+  Use <m>\frac{\log x}{\sqrt{x}} + 2 \log 4 \lt 4</m>
+  to get
+  <me> 2 \log 4 \frac{x}{\log x} + \sqrt{x} \lt 4 \frac{x}{\log x} </me>.
+  </p>
+  
+  <p>
+  The lower bound is more difficult.
+  Let <m>x \geq 2</m>, and let <m>2n</m> be the least (smallest)
+  even integer not less than <m>x</m>, so <m>2n-2 \lt x \leq 2n</m>.
+  First of all, <m>2n \lt x+2</m>.
+  Second, <m>\pi(2n) \leq \pi(x)+1</m>: there is at most one extra prime
+  <m>x \lt p \leq 2n</m> counted by <m>\pi(2n)</m> but not by <m>\pi(x)</m>,
+  namely <m>p = 2n-1</m> if it is prime and <m>x \lt 2n-1</m>.
+  So <m>\pi(x) \geq \pi(2n)-1</m>.
+  </p>
+  
+  <p>
+  Let <m>p_1,\dotsc,p_\ell</m> be all the primes dividing
+  <m>\binom{2n}{n}</m>.
+  They are all less than or equal to <m>2n</m>, so
+  <m>\pi(2n) \geq \ell</m>.
+  We can write
+  <men>
+  \binom{2n}{n} = \prod_{i=1}^{\ell} p_i^{\nu_{p_i}(\binom{2n}{n})}
+  \leq \prod_{i=1}^{\ell} 2n = (2n)^\ell
+  </men>.
+  Therefore
+  <m> \log \binom{2n}{n} \leq \ell \cdot \log 2n </m>,
+  or
+  <m> \ell \geq \frac{\log \binom{2n}{n}}{\log 2n} </m>.
+  This shows
+  <men>
+  \pi(x) \geq \pi(2n)-1 \geq \ell-1 \geq \frac{\log \binom{2n}{n}}{\log 2n} - 1
+  </men>.
+  </p>
+  
+  <p>
+  Now use the inequality
+  <men>
+  \binom{2n}{n} \geq \frac{4^n}{2n} = \frac{2^{2n}}{2n}
+  \geq \frac{2^x}{2n} \gt \frac{2^x}{x+2}
+  </men>
+  to get
+  <md>
+  <mrow> \pi(x) \amp \geq \frac{\log\left( \frac{2^x}{x+2} \right)}{ \log(x+2) } - 1 </mrow>
+  <mrow> \amp = \frac{(\log 2) x - 2 \log(x+2)}{\log(x+2)} </mrow>
+  <mrow> \amp \geq \frac{ \left( \frac{\log 2}{2} \right) x }{ \log(x+2)} </mrow>
+  </md>
+  where the last inequality holds when
+  <m> \left( \frac{\log 2}{2} \right) x \geq 2 \log(x+2) </m>.
+  Exponentiating both sides, this is equivalent to
+  <m> 2^x \geq (x+2)^4 </m>.
+  By trying some values of <m>x</m> (or plotting a graph)
+  we find that this last inequality is valid for <m>x = 17</m>.
+  (Exercise: Find <m>2^{17} - 19^4</m>. Is this number prime?)
+  Exercise: Show that <m>\frac{\log 2}{2} \geq \frac{2}{x+2}</m>
+  for <m>x \geq 17</m>, so <m>(((\log 2)/2) x)' \geq (2/\log(x+2))'</m>.
+  This implies the last inequality is valid for all <m>x \geq 17</m>.
+  </p>
+  
+  <p>
+  So for <m>x \geq 17</m> we have
+  <md>
+  <mrow> \pi(x) \amp \geq \left(\frac{\log 2}{2} \right) \frac{x}{\log(x+2)} </mrow>
+  <mrow> \amp = \left(\frac{\log 2}{2} \right) \frac{x}{\log x} \frac{\log x}{\log(x+2)} </mrow>
+  <mrow> \amp \geq \left(\frac{\log 2}{4} \right) \frac{x}{\log x} </mrow>
+  </md>,
+  where the last inequality holds when
+  <m> \frac{\log x}{\log(x+2)} \geq \frac{1}{2} </m>.
+  </p>
+  
+  <p>
+  Exercise: Factor <m>x^2-x-2</m> and show that
+  <m>\frac{\log x}{\log(x+2)} \geq \frac{1}{2}</m>
+  for all <m>x \geq 2</m>.
+  </p>
+  
+  <p>
+  This shows <m>\pi(x) \geq \left( \frac{\log 2}{4} \right) \frac{x}{\log x} </m>
+  for all <m> x \geq 17 </m>.
+  Here <m>\frac{\log 2}{4} = 0.173286795139986\ldots</m>.
+  </p>
+  
+  <p>
+  To find a lower bound value <m>c</m> that works for all <m>x \geq 2</m>
+  we might need to use a slightly smaller <m>c</m>.
+  </p>
+  
+  </proof>
+  
+  </corollary>
+  
+  
+  </subsection>
+  
+  
+  
+  
+  
+  
+
+</section>

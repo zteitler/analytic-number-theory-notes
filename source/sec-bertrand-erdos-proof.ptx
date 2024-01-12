@@ -204,19 +204,54 @@
   <m> \binom{2n}{n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}}</m>.
   And since <m> \binom{2n}{n} \geq \frac{4^n}{2n}</m> we get
   <men> \frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}} </men>.
+  That is,
+  <men> 4^{\frac{1}{3}n} \leq (2n)^{\sqrt{2n}+1} </men>.
+  Taking the logarithm of each side gives
+  <men> \frac{\log 4}{3} n \leq (\sqrt{2n}+1) \log(2n) </men>.
+  We know <m>\log(2n)</m> grows more slowly than <m>\sqrt{n}</m>,
+  so the whole right side grows more slowly than <m>n</m>.
+  Therefore the left side grows more quickly than the right side.
+  And yet the left side is supposed to be less than or equal to the
+  right side!
+  This shows that our assumption, that there is no prime <m>p</m>
+  such that <m>n \lt p \leq 2n</m>, leads to a contradiction.
   </p>
   
   <p>
-  (This is not the end of the proof, but all that I can type right now)
+  In more detail: the function
+  <m>f(x) = (\sqrt{2x}+1)\log(2x)</m> is concave down.
+  (Exercise: Check that <m>f''(x) \lt 0</m>.)
+  So for any linear function the inequality <m>ax+b \leq f(x)</m>
+  is valid on an interval (why?).
   </p>
   
+  <p>
+  In this case, <m>\frac{4^n}{2n} \leq (2n)^{\sqrt{2n}} 4^{\frac{2n}{3}}</m>
+  is valid for <m>n = 467</m> but not for <m>n = 468</m>.
+  (We can check this on a calculator.
+  To find these numbers, we try different values of <m>n</m>
+  and narrow down on the largest value of <m>n</m> where the inequality
+  is valid, or the smallest value where it is not valid.)
+  </p>
   
+  <p>
+  This shows: If there is no prime <m>p</m> with <m>n \lt p \leq 2n</m>,
+  then <m>n \leq 467</m>.
+  Equivalently: If <m>n \geq 468</m>, then there is a prime <m>p</m>
+  such that <m>n \lt p \leq 2n</m>.
+  </p>
   
-  
+  <p>
+  Finally, to take care of <m>n \leq 467</m> consider the sequence
+  of primes
+  <men> 2, 3, 5, 7, 13, 23, 43, 83, 163, 317, 631 </men>.
+  These satisfy <m>p_{k-1} \lt p_k \lt 2p_{k-1}</m>.
+  For any <m>n \leq 467</m>, choose <m>p_{k-1} \leq n \lt p_k</m>.
+  Then we get
+  <me> n \lt p_k \lt 2p_{k-1} \leq 2n </me>,
+  so <m>p_k</m> is a prime in the interval <m>(n,2n]</m>.
+  </p>
   </proof>
-  
-  
-  
   
 
 </section>
