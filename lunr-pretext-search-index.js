@@ -154,6 +154,150 @@ var ptx_lunr_docs = [
   "body": " There are constants such that for all , .   First, the upper bound. We have . There are primes in the interval , and they are greater than , so . Taking logarithms, so for all . This gives an upper bound with .  Exercise: Find the maximum value of for , and show that it is strictly less than . Use to get .  The lower bound is more difficult. Let , and let be the least (smallest) even integer not less than , so . First of all, . Second, : there is at most one extra prime counted by but not by , namely if it is prime and . So .  Let be all the primes dividing . They are all less than or equal to , so . We can write . Therefore , or . This shows .  Now use the inequality to get where the last inequality holds when . Exponentiating both sides, this is equivalent to . By trying some values of (or plotting a graph) we find that this last inequality is valid for . (Exercise: Find . Is this number prime?) Exercise: Show that for , so . This implies the last inequality is valid for all .  So for we have , where the last inequality holds when .  Exercise: Factor and show that for all .  This shows for all . Here .  To find a lower bound value that works for all we might need to use a slightly smaller .   "
 },
 {
+  "id": "sec-af1-examples",
+  "level": "1",
+  "url": "sec-af1-examples.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Examples of arithmetic functions",
+  "body": " Examples of arithmetic functions  An arithmetic function is a function with domain and codomain the complex numbers .  Here are a number of arithmetic functions:  Euler totient: is the number of such that and  : number of positive divisors of . . (This function is also often denoted .)  sum of positive divisors of . .  for all . (In Crisman's book this function was denoted .)  for all  . (In Crisman's book this function was denoted .)  . So , .  Möbius function:   Liouville function: (In particular as all .)  Von Mangoldt function:   : number of distinct prime divisors of  : number of prime divisors of counted with multiplicity, i.e., where .  Observe .  Think of the Von Mangoldt function as a modification of the prime indicator function. The prime indicator function is the function that equals on primes, and on non-primes. The Von Mangoldt function changes the value to instead of , and detects powers of primes along with the primes themselves.   For a prime and , .  There are multiples of less than or equal to ; all other integers in the interval are coprime to .    For all , .   Let . . So . We used that the union is disjoint. Next, every value has some gcd with , and the gcd must be a divisor of . As runs through the divisors of , so does . This shows that the union is equal to the set of .     Note that the sets are not at all disjoint; for example they all contain .         If then      The first two are left as exercises. The numbers coprime to are the non-multiples of . There are multiples of in the interval .  The Chinese Remainder Theorem gives an isomorphism of rings . Among other things, this gives an isomorphism of the groups of units (invertible elements): . (It is left as an exercise that for rings in general, .) Now , and .  Finally for we have     "
+},
+{
+  "id": "sec-af1-examples-2",
+  "level": "2",
+  "url": "sec-af1-examples.html#sec-af1-examples-2",
+  "type": "Definition",
+  "number": "2.1.1",
+  "title": "",
+  "body": "An arithmetic function is a function with domain and codomain the complex numbers . "
+},
+{
+  "id": "sec-af1-examples-5",
+  "level": "2",
+  "url": "sec-af1-examples.html#sec-af1-examples-5",
+  "type": "Theorem",
+  "number": "2.1.2",
+  "title": "",
+  "body": " For a prime and , .  There are multiples of less than or equal to ; all other integers in the interval are coprime to .  "
+},
+{
+  "id": "sec-af1-examples-6",
+  "level": "2",
+  "url": "sec-af1-examples.html#sec-af1-examples-6",
+  "type": "Theorem",
+  "number": "2.1.3",
+  "title": "",
+  "body": " For all , .   Let . . So . We used that the union is disjoint. Next, every value has some gcd with , and the gcd must be a divisor of . As runs through the divisors of , so does . This shows that the union is equal to the set of .   "
+},
+{
+  "id": "sec-af1-examples-7",
+  "level": "2",
+  "url": "sec-af1-examples.html#sec-af1-examples-7",
+  "type": "Remark",
+  "number": "2.1.4",
+  "title": "",
+  "body": " Note that the sets are not at all disjoint; for example they all contain .  "
+},
+{
+  "id": "sec-af1-examples-8",
+  "level": "2",
+  "url": "sec-af1-examples.html#sec-af1-examples-8",
+  "type": "Theorem",
+  "number": "2.1.5",
+  "title": "",
+  "body": "      If then      The first two are left as exercises. The numbers coprime to are the non-multiples of . There are multiples of in the interval .  The Chinese Remainder Theorem gives an isomorphism of rings . Among other things, this gives an isomorphism of the groups of units (invertible elements): . (It is left as an exercise that for rings in general, .) Now , and .  Finally for we have    "
+},
+{
+  "id": "sec-af1-multiplicative",
+  "level": "1",
+  "url": "sec-af1-multiplicative.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Multiplicative functions",
+  "body": " Multiplicative functions  An arithmetic function is multiplicative when it satisfies: if then . It is completely multiplicative when it satisfies: for all , .  We saw that is multiplicative. However it is not completely multiplicative: .  The Möbius function is multiplicative, but not completely multiplicative, since but . The Liouville function is completely multiplicative.  Observe that for a multiplicative (or completely multiplicative) function we must have or . Indeed, , and the only solutions are or . Furthermore if (and still assuming is multiplicative or completely multiplicative) then for all , because , using that .  A completely multiplicative function is entirely determined by its values at primes. That is, the values for prime are enough to determine for all . Indeed, for we must have .  A multiplicative function is entirely determined by its values at powers of primes, because .  The functions , , and are completely multiplicative. The functions are multiplicative, but not completely multiplicative. (For example , but .) The proof that are multiplicative will be given in the next section, as part of a more general statement about Dirichlet products of multiplicative functions.  "
+},
+{
+  "id": "sec-af1-multiplicative-2",
+  "level": "2",
+  "url": "sec-af1-multiplicative.html#sec-af1-multiplicative-2",
+  "type": "Definition",
+  "number": "2.2.1",
+  "title": "",
+  "body": "An arithmetic function is multiplicative when it satisfies: if then . It is completely multiplicative when it satisfies: for all , . "
+},
+{
+  "id": "sec-af1-dirichlet-product",
+  "level": "1",
+  "url": "sec-af1-dirichlet-product.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "Dirichlet product",
+  "body": " Dirichlet product  Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is .  Other notable operations on arithmetic functions include:  The sum:   The pointwise product:   The composition: (assuming has values in , the domain of )     The Dirichlet product is associative, commutative, and distributes over the sum.   For associativity:   For commutativity:   Distributivity is left as an exercise.     If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.     For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .     Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .    Let be arithmetic functions. If and are multiplicative, then so is .   ...    "
+},
+{
+  "id": "sec-af1-dirichlet-product-2",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2",
+  "type": "Definition",
+  "number": "2.3.1",
+  "title": "",
+  "body": "Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is . "
+},
+{
+  "id": "sec-af1-dirichlet-product-4",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-4",
+  "type": "Theorem",
+  "number": "2.3.2",
+  "title": "",
+  "body": " The Dirichlet product is associative, commutative, and distributes over the sum.   For associativity:   For commutativity:   Distributivity is left as an exercise.   "
+},
+{
+  "id": "sec-af1-dirichlet-product-5",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-5",
+  "type": "Theorem",
+  "number": "2.3.3",
+  "title": "",
+  "body": " If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.   "
+},
+{
+  "id": "sec-af1-dirichlet-product-6",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-6",
+  "type": "Corollary",
+  "number": "2.3.4",
+  "title": "",
+  "body": " For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .   "
+},
+{
+  "id": "sec-af1-dirichlet-product-7",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-7",
+  "type": "Remark",
+  "number": "2.3.5",
+  "title": "",
+  "body": " Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .  "
+},
+{
+  "id": "sec-af1-dirichlet-product-8",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-8",
+  "type": "Theorem",
+  "number": "2.3.6",
+  "title": "",
+  "body": " Let be arithmetic functions. If and are multiplicative, then so is .   ...   "
+},
+{
+  "id": "sec-af1-mobius-inversion",
+  "level": "1",
+  "url": "sec-af1-mobius-inversion.html",
+  "type": "Section",
+  "number": "2.4",
+  "title": "Möbius inversion",
+  "body": " Möbius inversion  "
+},
+{
   "id": "bibliography",
   "level": "1",
   "url": "bibliography.html",

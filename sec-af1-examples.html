@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Examples of arithmetic functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Analytic Number Theory Course Notes">
+<meta property="book:author" content="Zach Teitler">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body id="analytic-number-theory-notes" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="analytic-number-theory-notes.html"><span class="title">Analytic Number Theory Course Notes:</span> <span class="subtitle">Math 507, Spring 2024, Boise State University</span></a></h1>
+<p class="byline">Zach Teitler</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-2-arithmetic-functions-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-arithmetic-functions-1.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-af1-multiplicative.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb C}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-bertrands-postulate.html" class="internal"><span class="codenumber">1</span> <span class="title">Bertrand’s Postulate</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-erdos-proof.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Erdős’s proof of Bertrand’s postulate</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-bertrand-corollaries.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Corollaries</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-2" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Primes between consecutive squares</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-3" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Pairs that add up to primes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-bertrand-corollaries.html#sec-bertrand-corollaries-4" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Explicit bounds for the PNT</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-2-arithmetic-functions-1.html" class="internal"><span class="codenumber">2</span> <span class="title">Arithmetic Functions I</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-af1-examples.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Examples of arithmetic functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-multiplicative.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Multiplicative functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-dirichlet-product.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dirichlet product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Möbius inversion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="bibliography.html" class="internal"><span class="title">References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-af1-examples"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Examples of arithmetic functions</span>
+</h2>
+<article class="definition definition-like" id="sec-af1-examples-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h3>An <dfn class="terminology">arithmetic function</dfn> is a function with domain <span class="process-math">\(\bbN = \{1,2,\dotsc\}\)</span> and codomain the complex numbers <span class="process-math">\(\bbC\text{.}\)</span></article><div class="para logical" id="sec-af1-examples-3">
+<div class="para">Here are a number of arithmetic functions:</div>
+<ol class="decimal">
+<li id="sec-af1-examples-3-1-1"><div class="para" id="p-derived-sec-af1-examples-3-1-1">
+<span class="process-math">\(\phi\)</span> Euler totient: <span class="process-math">\(\phi(n)\)</span> is the number of <span class="process-math">\(k\)</span> such that <span class="process-math">\(1 \leq k \leq n\)</span> and <span class="process-math">\((n,k)=1\)</span>
+</div></li>
+<li id="sec-af1-examples-3-1-2"><div class="para" id="p-derived-sec-af1-examples-3-1-2">
+<span class="process-math">\(d(n)\text{:}\)</span> number of positive divisors of <span class="process-math">\(n\text{.}\)</span> <span class="process-math">\(d(n) = \sum_{k \mid n} 1\text{.}\)</span> (This function is also often denoted <span class="process-math">\(\tau\text{.}\)</span>)</div></li>
+<li id="sec-af1-examples-3-1-3"><div class="para" id="p-derived-sec-af1-examples-3-1-3">
+<span class="process-math">\(\sigma\)</span> sum of positive divisors of <span class="process-math">\(n\text{.}\)</span> <span class="process-math">\(\sigma(n) = \sum_{k \mid n} k\text{.}\)</span>
+</div></li>
+<li id="sec-af1-examples-3-1-4"><div class="para" id="p-derived-sec-af1-examples-3-1-4">
+<span class="process-math">\(1(n) = 1\)</span> for all <span class="process-math">\(n\text{.}\)</span> (In Crisman’s book this function was denoted <span class="process-math">\(u\text{.}\)</span>)</div></li>
+<li id="sec-af1-examples-3-1-5"><div class="para" id="p-derived-sec-af1-examples-3-1-5">
+<span class="process-math">\(N(n) = n\)</span> for all <span class="process-math">\(n\)</span>
+</div></li>
+<li id="sec-af1-examples-3-1-6"><div class="para" id="p-derived-sec-af1-examples-3-1-6">
+<span class="process-math">\(e(n) = \begin{cases} 1 \amp \text{if } n=1 \\ 0 \amp \text{otherwise } \end{cases} \text{.}\)</span> (In Crisman’s book this function was denoted <span class="process-math">\(I\text{.}\)</span>)</div></li>
+<li id="sec-af1-examples-3-1-7"><div class="para" id="p-derived-sec-af1-examples-3-1-7">
+<span class="process-math">\(\sigma_s(n) = \sum_{k \mid n} k^s\text{.}\)</span> So <span class="process-math">\(d = \sigma_0\text{,}\)</span> <span class="process-math">\(\sigma = \sigma_1\text{.}\)</span>
+</div></li>
+<li id="sec-af1-examples-3-1-8"><div class="para" id="p-derived-sec-af1-examples-3-1-8">Möbius function:<div class="displaymath process-math" id="sec-af1-examples-3-1-8-1">
+\begin{equation}
+\mu(n) = \begin{cases}
+1 \amp \text{if } n = 1 \\
+(-1)^k \amp \text{if } n = p_1 \dotsm p_k, \text{ where }
+p_1,\dotsc,p_k \text{ are distinct primes} \\
+0 \amp \text{if } p^2 \mid n \text{ for some } p 
+\end{cases}\tag{2.1.1}
+\end{equation}
+</div>
+</div></li>
+<li id="sec-af1-examples-3-1-9"><div class="para" id="p-derived-sec-af1-examples-3-1-9">Liouville function:<div class="displaymath process-math" id="sec-af1-examples-3-1-9-1">
+\begin{equation}
+\lambda(n) = (-1)^{a_1+\dotsb+a_k} \text{ where }
+n = p_1^{a_1} \dotsm p_k^{a_k} \tag{2.1.2}
+\end{equation}
+</div>(In particular <span class="process-math">\(\lambda(1)=1\)</span> as all <span class="process-math">\(a_i=0\text{.}\)</span>)</div></li>
+<li id="sec-af1-examples-3-1-10"><div class="para" id="p-derived-sec-af1-examples-3-1-10">Von Mangoldt function:<div class="displaymath process-math" id="sec-af1-examples-3-1-10-1">
+\begin{equation}
+\Lambda(n) = \begin{cases}
+\log p \amp \text{if } n = p^k \text{ for some prime } p \\
+0 \amp \text{if } n \text{ is not a power of a prime}
+\end{cases} \tag{2.1.3}
+\end{equation}
+</div>
+</div></li>
+<li id="sec-af1-examples-3-1-11"><div class="para" id="p-derived-sec-af1-examples-3-1-11">
+<span class="process-math">\(\omega(n)\text{:}\)</span> number of distinct prime divisors of <span class="process-math">\(n\)</span>
+</div></li>
+<li id="sec-af1-examples-3-1-12"><div class="para" id="p-derived-sec-af1-examples-3-1-12">
+<span class="process-math">\(\Omega(n)\text{:}\)</span> number of prime divisors of <span class="process-math">\(n\)</span> counted with multiplicity, i.e., <span class="process-math">\(\Omega(n) = \sum a_i\)</span> where <span class="process-math">\(n = p_1^{a_1} \dotsm p_k^{a_k}\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Observe <span class="process-math">\(\lambda(n) = (-1)^{\Omega(n)}\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-af1-examples-4">Think of the Von Mangoldt function as a modification of the prime indicator function. The prime indicator function is the function that equals <span class="process-math">\(1\)</span> on primes, and <span class="process-math">\(0\)</span> on non-primes. The Von Mangoldt function changes the value to <span class="process-math">\(\log p\)</span> instead of <span class="process-math">\(1\text{,}\)</span> and detects powers of primes along with the primes themselves.</div>
+<article class="theorem theorem-like" id="sec-af1-examples-5"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h3>For a prime <span class="process-math">\(p\)</span> and <span class="process-math">\(k \geq 1\text{,}\)</span> <span class="process-math">\(\phi(p^k) = p^k - p^{k-1} = p^k(1 - \frac{1}{p})\text{.}\)</span></article><article class="proof" id="sec-af1-examples-5-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>There are <span class="process-math">\(p^k / p = p^{k-1}\)</span> multiples of <span class="process-math">\(p\)</span> less than or equal to <span class="process-math">\(p^k\text{;}\)</span> all other integers in the interval <span class="process-math">\([1,p^k]\)</span> are coprime to <span class="process-math">\(p^k\text{.}\)</span></article><article class="theorem theorem-like" id="sec-af1-examples-6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h3>For all <span class="process-math">\(n \geq 1\text{,}\)</span> <span class="process-math">\(\sum_{d \mid n} \phi(d) = n\text{.}\)</span></article><article class="proof" id="sec-af1-examples-6-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-af1-examples-6-2-1">
+<div class="para">Let <span class="process-math">\(d \mid n \text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-af1-examples-6-2-1-2">
+\begin{align*}
+\phi(d) \amp = \# \{ k : 1 \leq k \leq d, (k,d)=1 \} \\
+\amp = \# \{ k : \frac{n}{d} \leq k \frac{n}{d} \leq n, (k \frac{n}{d}, n) = \frac{n}{d} \} \\
+\amp = \# \{ m : \frac{n}{d} \leq m \leq n, (m, n) = \frac{n}{d} \} \\
+\amp = \# \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} \text{.}
+\end{align*}
+</div>
+<div class="para">So</div>
+<div class="displaymath process-math" id="sec-af1-examples-6-2-1-3">
+\begin{align*}
+\sum_{d \mid n} \phi(d) \amp = \sum_{d \mid n} \# \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} \\
+\amp = \# \bigcup_{d \mid n} \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} \\
+\amp = \# \{ m : 1 \leq m \leq n \} \\
+\amp = n \text{.}
+\end{align*}
+</div>
+<div class="para">We used that the union is disjoint. Next, every value <span class="process-math">\(1 \leq m \leq n\)</span> has some gcd with <span class="process-math">\(n\text{,}\)</span> and the gcd must be a divisor of <span class="process-math">\(n\text{.}\)</span> As <span class="process-math">\(d\)</span> runs through the divisors of <span class="process-math">\(n\text{,}\)</span> so does <span class="process-math">\(n/d\text{.}\)</span> This shows that the union is equal to the set of <span class="process-math">\(1 \leq m \leq n\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="sec-af1-examples-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-af1-examples-7-1">Note that the sets <span class="process-math">\(\{k : 1 \leq k \leq d, (k,d)=1 \}\)</span> are not at all disjoint; for example they all contain <span class="process-math">\(1\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="sec-af1-examples-8"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h3>
+<ol class="decimal">
+<li id="sec-af1-examples-8-1-1-1"><div class="para" id="p-derived-sec-af1-examples-8-1-1-1"><span class="process-math">\(\displaystyle \phi(1) = 1\)</span></div></li>
+<li id="sec-af1-examples-8-1-1-2"><div class="para" id="p-derived-sec-af1-examples-8-1-1-2"><span class="process-math">\(\displaystyle \phi(p) = p-1\)</span></div></li>
+<li id="sec-af1-examples-8-1-1-3"><div class="para" id="p-derived-sec-af1-examples-8-1-1-3"><span class="process-math">\(\displaystyle \phi(p^k) = p^k - p^{k-1} = p ( 1 - \frac{1}{p})\)</span></div></li>
+<li id="sec-af1-examples-8-1-1-4"><div class="para" id="p-derived-sec-af1-examples-8-1-1-4">If <span class="process-math">\((m,n) = 1\)</span> then <span class="process-math">\(\phi(mn) = \phi(m)\phi(n)\)</span>
+</div></li>
+<li id="sec-af1-examples-8-1-1-5"><div class="para" id="p-derived-sec-af1-examples-8-1-1-5"><span class="process-math">\(\displaystyle \phi(n) = n \prod_{p \mid n} ( 1 - \frac{1}{p} )\)</span></div></li>
+</ol></article><article class="proof" id="sec-af1-examples-8-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para" id="sec-af1-examples-8-2-1">The first two are left as exercises. The numbers coprime to <span class="process-math">\(p^k\)</span> are the non-multiples of <span class="process-math">\(p\text{.}\)</span> There are <span class="process-math">\(p^k/p = p^{k-1}\)</span> multiples of <span class="process-math">\(p\)</span> in the interval <span class="process-math">\([1,p^k]\text{.}\)</span>
+</div> <div class="para logical" id="sec-af1-examples-8-2-2">
+<div class="para">The Chinese Remainder Theorem gives an isomorphism of rings <span class="process-math">\(\bbZ_{mn} \cong \bbZ_{m} \times \bbZ_{n}\text{.}\)</span> Among other things, this gives an isomorphism of the groups of units (invertible elements):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bbZ_{mn}^\times \cong (\bbZ_m \times \bbZ_n)^\times
+\cong \bbZ_m^{\times} \times \bbZ_n^{\times}\text{.}
+\end{equation*}
+</div>
+<div class="para">(It is left as an exercise that for rings <span class="process-math">\(R,S\)</span> in general, <span class="process-math">\((R \times S)^\times \cong R^\times \times S^\times\text{.}\)</span>) Now <span class="process-math">\(\#(\bbZ_{mn}^\times) = \phi(mn)\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\#(\bbZ_m^\times \times \bbZ_n^\times)
+= (\# \bbZ_m^\times) \cdot (\# \bbZ_n^\times)
+= \phi(m) \phi(n)\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-af1-examples-8-2-3">
+<div class="para">Finally for <span class="process-math">\(n = \prod p_i^{a_i}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(n) = \prod \phi(p_i^{a_i}) = \prod p_i^{a_i} ( 1 - \frac{1}{p_i} )
+= n \prod ( 1 - \frac{1}{p_i} ).
+\end{equation*}
+</div>
+</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-2-arithmetic-functions-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-af1-multiplicative.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
