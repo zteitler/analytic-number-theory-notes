@@ -26,6 +26,9 @@
   <theorem>
   <statement>
   The Dirichlet product is associative, commutative, and distributes over the sum.
+  The function <m>e</m> (defined by <m>e(n)=1</m> if <m>n=1</m>,
+  otherwise <m>e(n)=0</m>) is an identity for the Dirichlet product,
+  that is, <m>f*e = f</m> for any arithmetic function <m>f</m>.
   </statement>
   
   <proof>
@@ -49,9 +52,29 @@
   </p>
   
   <p> Distributivity is left as an exercise. </p>
+  
+  <p> Let <m>f</m> be any arithmetic function. Then
+  <men> (f*e)(n) \amp = \sum_{d \mid n} f(d) e(n/d) = f(n) e(n/n) = f(n) </men>,
+  since <m>e(n/d) = 0</m>for all <m>d</m> other than <m>d=n</m>.
+  So <m>f*e = f</m>. </p>
   </proof>
   </theorem>
   
+  <theorem>
+  <statement> Let <m>f</m> be an arithmetic function.
+  There exists a Dirichlet inverse <m>g</m> such that <m>f*g = e</m>
+  if and only if <m>f(1) \neq 0</m>.
+  If <m>f(1) \neq 0</m>, then <m>g</m> is defined recursively by
+  <m>g(1) = \frac{1}{f(1)}</m> and for <m>n \gt 1</m>,
+  <men> g(n) = -\frac{1}{f(1)} \sum_{1 \lt d \mid n} f(d)g(n/d) </men>.
+  </statement>
+  
+  <proof>
+  <p> If <m>f*g = e</m> then <m>f(1)g(1) = e(1) = 1</m>, so <m>f(1) \neq 0</m>.
+  The converse direction is left as an exercise. </p>
+  </proof>
+	</theorem>
+
   
   <theorem>
   <statement> If <m>f,g</m> are both multiplicative,
@@ -64,12 +87,58 @@
   and <m>d_2 e_2 = n_2</m>.
   (Simply, <m>d_1</m> is the product of prime factors that are in <m>d</m>
   and <m>n_1</m>, <m>d_2</m> is the product of prime factors that are in
-  <m>d</m> and <m>n_2</m>, and so on.)
+  <m>d</m> and <m>n_2</m>, and so on.) 
+  Observe that in this factorization, <m>(d_1,d_2) = (e_1,e_2) = 1</m>. </p>
+  
+  <p> Now we have
+  <md>
+  <mrow> (f*g)(n_1 n_2) \amp = \sum_{de = n_1 n_2} f(d) g(e) </mrow>
+  <mrow> \amp = \sum_{d_1 d_2 e_1 e_2 = n_1 n_2} f(d_1 d_2) g(e_1 e_2) </mrow>
+  <mrow> \amp = \sum_{d_1 e_1 = n_1} \sum_{d_2 e_2 = n_2} f(d_1) f(d_2) g(e_1) g(e_2) </mrow>
+  <mrow> \amp = \left( \sum_{d_1 e_1 = n_1} f(d_1) g(e_1) \right)
+  	\left( \sum_{d_2 e_2 = n_2} f(d_2) g(e_2) \right) </mrow>
+  <mrow> \amp = (f*g)(n_1) (f*g)(n_2) </mrow>
+  </md>.
+  This shows that <m>f*g</m> is multiplicative.
   </p>
   </proof>
   </theorem>
+	
+	<corollary>
+	<statement> For all <m>s</m>, <m>\sigma_s</m> is multiplicative. </statement>
+	
+	<proof>
+	<p> Let <m>g(n) = n^s</m>, so <m>g</m> is multiplicative
+	(in fact, completely multiplicative).
+	Then <m>\sigma_s = g * 1</m> where <m>1</m> denotes the arithmetic function
+	<m>1(n) = 1</m> for all <m>n</m>.
+	Here <m>1</m> is completely multiplicative.
+	Since <m>g</m> and <m>1</m> are multiplicative, so is <m>\sigma_s</m>. </p>
+	</proof>
+	</corollary>
+	
+	<remark>
+	<p> Even if both <m>f</m> and <m>g</m> are completely multiplicative,
+	in general <m>f*g</m> is only multiplicative, not necessarily completely
+	multiplicative.
+	For example let <m>f = g = 1</m>,
+	then <m>(f*g)(n) = \sum_{d \mid n} 1 = d(n) = \sigma_0(n)</m>,
+	the number of positive divisors of <m>n</m>.
+	This is multiplicative but not completely multiplicative,
+	for example <m>d(4) = 3 \neq d(2)^2</m>. </p>
+	</remark>
+	
+	<theorem>
+	<statement> Let <m>f,g</m> be arithmetic functions with <m>f(1) \neq 0</m>.
+	If <m>f</m> and <m>f*g</m> are multiplicative, then so is <m>g</m>. </statement>
+	
+	<proof>
+	<p>
+	...
+	</p>
+	</proof>
+	</theorem>
 
 
-  
 
 </section>

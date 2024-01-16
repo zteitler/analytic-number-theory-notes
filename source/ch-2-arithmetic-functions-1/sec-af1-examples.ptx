@@ -15,10 +15,12 @@
   <li><m>\phi</m> Euler totient: <m>\phi(n)</m> is the number of <m>k</m>
     such that <m>1 \leq k \leq n</m> and <m>(n,k)=1</m></li>
   <li><m>d(n)</m>: number of positive divisors of <m>n</m>.
-    <m>d(n) = \sum_{k \mid n} 1</m>.</li>
+    <m>d(n) = \sum_{k \mid n} 1</m>.
+    (This function is also often denoted <m>\tau</m>.)</li>
   <li><m>\sigma</m> sum of positive divisors of <m>n</m>.
     <m>\sigma(n) = \sum_{k \mid n} k</m>.</li>
-  <li><m>1(n) = 1</m> for all <m>n</m></li>
+  <li><m>1(n) = 1</m> for all <m>n</m>.
+  	(In Crisman's book this function was denoted <m>u</m>.)</li>
   <li><m>N(n) = n</m> for all <m>n</m></li>
   <li><m>e(n) = \begin{cases} 1 \amp \text{if } n=1 \\ 0 \amp \text{otherwise } \end{cases} </m>.
     (In Crisman's book this function was denoted <m>I</m>.)</li>
