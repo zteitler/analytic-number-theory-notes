@@ -21,8 +21,8 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-bertrand-pnt.ptx" />
-  <xi:include href="sec-bertrand-erdos-proof.ptx" />
-  <xi:include href="sec-bertrand-corollaries.ptx" />
+  <xi:include href="ch-1-bertrands-postulate/sec-bertrand-pnt.ptx" />
+  <xi:include href="ch-1-bertrands-postulate/sec-bertrand-erdos-proof.ptx" />
+  <xi:include href="ch-1-bertrands-postulate/sec-bertrand-corollaries.ptx" />
 
 </chapter>

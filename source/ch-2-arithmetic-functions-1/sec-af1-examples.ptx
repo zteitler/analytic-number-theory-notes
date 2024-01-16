@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-af1-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Examples of arithmetic functions</title>
+  
+  <definition>
+  An <term>arithmetic function</term> is a function with domain
+  <m>\bbN = \{1,2,\dotsc\}</m> and codomain the complex numbers
+  <m>\bbC</m>.
+  </definition>
+  
+  <p>
+  Here are a number of arithmetic functions:
+  <ol>
+  <li><m>\phi</m> Euler totient: <m>\phi(n)</m> is the number of <m>k</m>
+    such that <m>1 \leq k \leq n</m> and <m>(n,k)=1</m></li>
+  <li><m>d(n)</m>: number of positive divisors of <m>n</m>.
+    <m>d(n) = \sum_{k \mid n} 1</m>.</li>
+  <li><m>\sigma</m> sum of positive divisors of <m>n</m>.
+    <m>\sigma(n) = \sum_{k \mid n} k</m>.</li>
+  <li><m>1(n) = 1</m> for all <m>n</m></li>
+  <li><m>N(n) = n</m> for all <m>n</m></li>
+  <li><m>e(n) = \begin{cases} 1 \amp \text{if } n=1 \\ 0 \amp \text{otherwise } \end{cases} </m>.
+    (In Crisman's book this function was denoted <m>I</m>.)</li>
+  <li><m>\sigma_s(n) = \sum_{k \mid n} k^s</m>. So <m>d = \sigma_0</m>,
+    <m>\sigma = \sigma_1</m>.</li>
+  <li>Möbius function:
+  <men> \mu(n) = \begin{cases}
+    1 \amp \text{if } n = 1 \\
+    (-1)^k \amp \text{if } n = p_1 \dotsm p_k, \text{ where }
+      p_1,\dotsc,p_k \text{ are distinct primes} \\
+    0 \amp \text{if } p^2 \mid n \text{ for some } p 
+    \end{cases}
+  </men>
+  </li>
+  <li>Liouville function:
+  <men> \lambda(n) = (-1)^{a_1+\dotsb+a_k} \text{ where }
+    n = p_1^{a_1} \dotsm p_k^{a_k} </men>
+  (In particular <m>\lambda(1)=1</m> as all <m>a_i=0</m>.)</li>
+  <li>Von Mangoldt function:
+  <men> \Lambda(n) = \begin{cases}
+    \log p \amp \text{if } n = p^k \text{ for some prime } p \\
+    0 \amp \text{if } n \text{ is not a power of a prime}
+    \end{cases} </men>
+  </li>
+  <li><m>\omega(n)</m>: number of distinct prime divisors of <m>n</m></li>
+  <li><m>\Omega(n)</m>: number of prime divisors of <m>n</m>
+    counted with multiplicity, i.e., <m>\Omega(n) = \sum a_i</m>
+    where <m>n = p_1^{a_1} \dotsm p_k^{a_k}</m>.</li>
+  </ol>
+  Observe <m>\lambda(n) = (-1)^{\Omega(n)}</m>.
+  </p>
+  
+  <p>
+  Think of the Von Mangoldt function as a modification of
+  the prime indicator function.
+  The prime indicator function is the function that equals <m>1</m>
+  on primes, and <m>0</m> on non-primes.
+  The Von Mangoldt function changes the value to <m>\log p</m>
+  instead of <m>1</m>, and detects powers of primes along with
+  the primes themselves.
+  </p>
+  
+  <theorem>
+  <statement>
+  For a prime <m>p</m> and <m>k \geq 1</m>,
+  <m>\phi(p^k) = p^k - p^{k-1} = p^k(1 - \frac{1}{p})</m>.
+  </statement>
+  
+  <proof>
+  There are <m>p^k / p = p^{k-1}</m> multiples of <m>p</m> less than
+  or equal to <m>p^k</m>; all other integers in the interval <m>[1,p^k]</m>
+  are coprime to <m>p^k</m>.
+  </proof>
+  </theorem>
+
+  
+  <theorem>
+  <statement>
+  For all <m>n \geq 1</m>,
+  <m>\sum_{d \mid n} \phi(d) = n</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  Let <m> d \mid n </m>.
+  <md>
+  <mrow> \phi(d) \amp = \# \{ k : 1 \leq k \leq d, (k,d)=1 \} </mrow>
+  <mrow> \amp = \# \{ k : \frac{n}{d} \leq k \frac{n}{d} \leq n, (k \frac{n}{d}, n) = \frac{n}{d} \} </mrow>
+  <mrow> \amp = \# \{ m : \frac{n}{d} \leq m \leq n, (m, n) = \frac{n}{d} \} </mrow>
+  <mrow> \amp = \# \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} </mrow>
+  </md>.
+  So
+  <md>
+  <mrow> \sum_{d \mid n} \phi(d) \amp = \sum_{d \mid n} \# \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} </mrow>
+  <mrow> \amp = \# \bigcup_{d \mid n} \{ m : 1 \leq m \leq n, (m,n) = \frac{n}{d} \} </mrow>
+  <mrow> \amp = \# \{ m : 1 \leq m \leq n \} </mrow>
+  <mrow> \amp = n </mrow>
+  </md>.
+  We used that the union is disjoint.
+  Next, every value <m>1 \leq m \leq n</m> has some gcd with <m>n</m>,
+  and the gcd must be a divisor of <m>n</m>.
+  As <m>d</m> runs through the divisors of <m>n</m>,
+  so does <m>n/d</m>.
+  This shows that the union is equal to the set of <m>1 \leq m \leq n</m>.
+  </p>
+  </proof>
+  
+  </theorem>
+  
+  <remark>
+  <p> Note that the sets <m>\{k : 1 \leq k \leq d, (k,d)=1 \}</m>
+  are not at all disjoint; for example they all contain <m>1</m>. </p>
+  </remark>
+  
+  <theorem>
+  <statement>
+  <ol>
+  <li><m>\phi(1) = 1</m></li>
+  <li><m>\phi(p) = p-1</m></li>
+  <li><m>\phi(p^k) = p^k - p^{k-1} = p ( 1 - \frac{1}{p})</m></li>
+  <li>If <m>(m,n) = 1</m> then <m>\phi(mn) = \phi(m)\phi(n)</m></li>
+  <li><m>\phi(n) = n \prod_{p \mid n} ( 1 - \frac{1}{p} )</m></li>
+  </ol>
+  </statement>
+  
+  <proof>
+  <p> The first two are left as exercises. The numbers coprime to
+  <m>p^k</m> are the non-multiples of <m>p</m>.
+  There are <m>p^k/p = p^{k-1}</m> multiples of <m>p</m> in the
+  interval <m>[1,p^k]</m>.</p>
+  
+  <p> The Chinese Remainder Theorem gives an isomorphism of rings
+  <m>\bbZ_{mn} \cong \bbZ_{m} \times \bbZ_{n}</m>.
+  Among other things, this gives an isomorphism of the groups of
+  units (invertible elements):
+  <me>
+    \bbZ_{mn}^\times \cong (\bbZ_m \times \bbZ_n)^\times
+      \cong \bbZ_m^{\times} \times \bbZ_n^{\times}
+  </me>.
+  (It is left as an exercise that for rings <m>R,S</m> in general,
+  <m>(R \times S)^\times \cong R^\times \times S^\times</m>.)
+  Now <m>\#(\bbZ_{mn}^\times) = \phi(mn)</m>,
+  and
+  <me>\#(\bbZ_m^\times \times \bbZ_n^\times)
+    = (\# \bbZ_m^\times) \cdot (\# \bbZ_n^\times)
+    = \phi(m) \phi(n)
+  </me>.
+  </p>
+  
+  <p>
+  Finally for <m>n = \prod p_i^{a_i}</m> we have
+  <me> \phi(n) = \prod \phi(p_i^{a_i}) = \prod p_i^{a_i} ( 1 - \frac{1}{p_i} )
+    = n \prod ( 1 - \frac{1}{p_i} ).
+  </me>
+  </p>
+
+  </proof>
+  </theorem>
+  
+  
+  
+
+</section>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-2-arithmetic-functions-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Arithmetic Functions I</title>
+
+  <introduction>
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="ch-2-arithmetic-functions-1/sec-af1-examples.ptx" />
+  <xi:include href="ch-2-arithmetic-functions-1/sec-af1-multiplicative.ptx" />
+  <xi:include href="ch-2-arithmetic-functions-1/sec-af1-dirichlet-product.ptx" />
+  <xi:include href="ch-2-arithmetic-functions-1/sec-af1-mobius-inversion.ptx" />
+
+</chapter>

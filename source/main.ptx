@@ -13,6 +13,8 @@
 
     <!-- Include chapters -->
     <xi:include href="./ch-1-bertrands-postulate.ptx" />
+    
+    <xi:include href="./ch-2-arithmetic-functions-1.ptx" />
 
 
     <!-- Include backmatter -->

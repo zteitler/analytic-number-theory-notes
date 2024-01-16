@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-af1-dirichlet-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dirichlet product</title>
+  
+  <definition>
+  Let <m>f,g</m> be arithmetic functions.
+  The <term>Dirichlet product</term> of <m>f</m> and <m>g</m>,
+  denoted <m>f * g</m>, is the arithmetic function defined by
+  <men> (f * g)(n) = \sum_{d \mid n} f(d) g(n/d) = \sum_{de = n} f(d) g(e) </men>
+  where the first sum is over positive divisors of <m>n</m>
+  and the second sum is over pairs <m>(d,e)</m> of positive integers
+  whose product is <m>n</m>.
+  </definition>
+
+  <p>
+  Other notable operations on arithmetic functions include:
+  <ol>
+  <li> The sum: <m>(f+g)(n) = f(n)+g(n)</m> </li>
+  <li> The pointwise product: <m> (fg)(n) = f(n) g(n)</m> </li>
+  <li> The composition: <m> (f \circ g)(n) = f(g(n))</m>
+    (assuming <m>g</m> has values in <m>\bbN</m>, the domain of <m>f</m>) </li>
+  </ol>
+  </p>
+  
+  <theorem>
+  <statement>
+  The Dirichlet product is associative, commutative, and distributes over the sum.
+  </statement>
+  
+  <proof>
+  <p> For associativity:
+  <md>
+  <mrow> (f*(g*h))(n) \amp = \sum_{d_1 e = n} f(d_1) (g*h)(e) </mrow>
+  <mrow> \amp = \sum_{d_1 e = n} f(d_1) \sum_{d_2 d_3 = e} g(d_2) h(d_3) </mrow>
+  <mrow> \amp = \sum_{d_1 d_2 d_3 = n} f(d_1) g(d_2) h(d_3) </mrow>
+  <mrow> \amp = \sum_{c d_3 = n} \left( \sum_{d_1 d_2 = c} f(d_1) g(d_2) \right) h(d_3) </mrow>
+  <mrow> \amp = \sum_{c d_3 = n} (f*g)(c) h(d_3) </mrow>
+  <mrow> \amp = ((f*g)*h)(n) </mrow>
+  </md>
+  </p>
+  
+  <p> For commutativity:
+  <md>
+  <mrow> (f*g)(n) \amp = \sum_{de = n} f(d) g(e) </mrow>
+  <mrow> \amp = \sum_{ed = n} g(e) f(d) </mrow>
+  <mrow> \amp = (g*f)(n) </mrow>
+  </md>
+  </p>
+  
+  <p> Distributivity is left as an exercise. </p>
+  </proof>
+  </theorem>
+  
+  
+  <theorem>
+  <statement> If <m>f,g</m> are both multiplicative,
+  then so is <m> f * g </m>. </statement>
+  
+  <proof>
+  <p> Suppose <m>(n_1,n_2) = 1</m>.
+  Observe that if <m>de = n_1 n_2</m> then there exist factorizations
+  <m>d = d_1 d_2</m>, <m>e = e_1 e_2</m>, such that <m>d_1 e_1 = n_1</m>
+  and <m>d_2 e_2 = n_2</m>.
+  (Simply, <m>d_1</m> is the product of prime factors that are in <m>d</m>
+  and <m>n_1</m>, <m>d_2</m> is the product of prime factors that are in
+  <m>d</m> and <m>n_2</m>, and so on.)
+  </p>
+  </proof>
+  </theorem>
+
+
+  
+
+</section>

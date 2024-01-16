@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-af1-multiplicative" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Multiplicative functions</title>
+  
+  <definition>
+  An arithmetic function <m>f</m> is <term>multiplicative</term>
+  when it satisfies: if <m>(m,n) = 1</m> then <m>f(mn) = f(m)f(n)</m>.
+  It is <term>completely multiplicative</term>
+  when it satisfies: for all <m>m,n</m>, <m>f(mn) = f(m)f(n)</m>.
+  </definition>
+  
+  <p>
+  We saw that <m>\phi</m> is multiplicative. However it is not
+  completely multiplicative: <m>\phi(p^2) \neq \phi(p)^2</m>.
+  </p>
+
+  <p> The Möbius function is multiplicative, but not completely
+  multiplicative, since <m>\mu(p) = -1</m> but <m>\mu(p^2) = 0</m>.
+  The Liouville function
+  <m>\lambda(p_1^{a_1} \dotsm p_k^{a_k}) = (-1)^{a_1+\dotsb+a_k}</m>
+  is completely multiplicative. </p>
+  
+  <p> Observe that for a multiplicative (or completely multiplicative)
+  function <m>f</m> we must have <m>f(1) = 1</m> or <m>0</m>.
+  Indeed, <m>f(1) = f(1 \cdot 1) = f(1)^2</m>, and the only solutions
+  are <m>f(1) = 1</m> or <m>0</m>.
+  Furthermore if <m>f(1)=0</m> (and still assuming <m>f</m> is
+  multiplicative or completely multiplicative)
+  then <m>f(n)=0</m> for all <m>n</m>, because
+  <m>f(n) = f(1 \cdot n) = f(1)f(n) = 0</m>,
+  using that <m>(1,n) = 1</m>. </p>
+  
+  <p>
+  A completely multiplicative function <m>f</m> is entirely determined
+  by its values at primes.
+  That is, the values <m>f(p)</m> for <m>p</m> prime are enough
+  to determine <m>f(n)</m> for all <m>n \geq 1</m>.
+  Indeed, for <m>n = p_1^{a_1} \dotsm p_k^{a_k}</m>
+  we must have <m>f(n) = f(p_1)^{a_1} \dotsm f(p_k)^{a_k}</m>. 
+  </p>
+  
+  <p>
+  A multiplicative function <m>f</m> is entirely determined
+  by its values at powers of primes, because
+  <m>f(p_1^{a_1} \dotsc p_k^{a_k}) = \prod f(p_i^{a_i})</m>.
+  </p>
+  
+  <p> The functions <m>1</m>, <m>N</m>, and <m>e</m>
+  are completely multiplicative.
+  The functions <m>\sigma_s</m> are multiplicative,
+  but not completely multiplicative.
+  (For example <m>\sigma_s(2)=1+2^s</m>, but
+  <m>\sigma_s(4)=1+2^s+4^s \neq \sigma_s(2)^s</m>.)
+  The proof that <m>\sigma_s</m> are multiplicative will be given
+  in the next section, as part of a more general statement
+  about Dirichlet products of multiplicative functions. </p>
+
+
+
+</section>
