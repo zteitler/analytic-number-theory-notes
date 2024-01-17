@@ -214,7 +214,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Multiplicative functions",
-  "body": " Multiplicative functions  An arithmetic function is multiplicative when it satisfies: if then . It is completely multiplicative when it satisfies: for all , .  We saw that is multiplicative. However it is not completely multiplicative: .  The Möbius function is multiplicative, but not completely multiplicative, since but . The Liouville function is completely multiplicative.  Observe that for a multiplicative (or completely multiplicative) function we must have or . Indeed, , and the only solutions are or . Furthermore if (and still assuming is multiplicative or completely multiplicative) then for all , because , using that .  A completely multiplicative function is entirely determined by its values at primes. That is, the values for prime are enough to determine for all . Indeed, for we must have .  A multiplicative function is entirely determined by its values at powers of primes, because .  The functions , , and are completely multiplicative. The functions are multiplicative, but not completely multiplicative. (For example , but .) The proof that are multiplicative will be given in the next section, as part of a more general statement about Dirichlet products of multiplicative functions.  "
+  "body": " Multiplicative functions  An arithmetic function is multiplicative when it satisfies:   is not identically zero, and  if then .  It is completely multiplicative when it is not identically zero, and satisfies: for all , .   Crisman allowed the identically zero function to be considered multiplicative. That forces a lot of statements to say if is multiplicative and not identically zero, then... .   We saw that is multiplicative. However it is not completely multiplicative: .  The Möbius function is multiplicative, but not completely multiplicative, since but . The Liouville function is completely multiplicative.  Observe that for a multiplicative (or completely multiplicative) function we must have . Indeed, , and the only solutions are or . However if (and still assuming is multiplicative or completely multiplicative) then for all , because , using that . That is, if has the multiplicative property and , then is identically zero. Since we require multiplicative functions to not be identically zero, then they must have . So it must be .  A completely multiplicative function is entirely determined by its values at primes. That is, the values for prime are enough to determine for all . Indeed, for we must have .  A multiplicative function is entirely determined by its values at powers of primes, because .  The functions , , and are completely multiplicative. The functions are multiplicative, but not completely multiplicative. (For example , but .) The proof that are multiplicative will be given in the next section, as part of a more general statement about Dirichlet products of multiplicative functions.  "
 },
 {
   "id": "sec-af1-multiplicative-2",
@@ -223,7 +223,16 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.2.1",
   "title": "",
-  "body": "An arithmetic function is multiplicative when it satisfies: if then . It is completely multiplicative when it satisfies: for all , . "
+  "body": "An arithmetic function is multiplicative when it satisfies:   is not identically zero, and  if then .  It is completely multiplicative when it is not identically zero, and satisfies: for all , . "
+},
+{
+  "id": "sec-af1-multiplicative-3",
+  "level": "2",
+  "url": "sec-af1-multiplicative.html#sec-af1-multiplicative-3",
+  "type": "Remark",
+  "number": "2.2.2",
+  "title": "",
+  "body": " Crisman allowed the identically zero function to be considered multiplicative. That forces a lot of statements to say if is multiplicative and not identically zero, then... .  "
 },
 {
   "id": "sec-af1-dirichlet-product",
@@ -232,61 +241,106 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Dirichlet product",
-  "body": " Dirichlet product  Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is .  Other notable operations on arithmetic functions include:  The sum:   The pointwise product:   The composition: (assuming has values in , the domain of )     The Dirichlet product is associative, commutative, and distributes over the sum.   For associativity:   For commutativity:   Distributivity is left as an exercise.     If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.     For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .     Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .    Let be arithmetic functions. If and are multiplicative, then so is .   ...    "
+  "body": " Dirichlet product   Basic properties of Dirichlet product  Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is .    : Here is the Euler totient function, is the function for all , and is the function for all . We have shown that . We can rewrite this as , where the left hand side is . This shows that as claimed.   Other notable operations on arithmetic functions include:  The sum:   The pointwise product:   The composition: (assuming has values in , the domain of )  The Cauchy product, defined by . (I'm not sure if there is a common notation for the Cauchy product.)     The Dirichlet product is associative, commutative, and distributes over the sum. The function (defined by if , otherwise ) is an identity for the Dirichlet product, that is, for any arithmetic function .   For associativity:   For commutativity:   Distributivity is left as an exercise.  Let be any arithmetic function. Then , since for all other than . So .     Let be an arithmetic function. There exists a Dirichlet inverse such that if and only if . If , then is defined recursively by and for , .   If then , so . The converse direction is left as an exercise.      Dirichlet product of multiplicative functions   If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.     For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .     Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .    Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .     If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.     The set of arithmetic functions with is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.     Explanation of Dirichlet product   A power series centered at is an infinite sum . The are the coefficients of the power series. This sum defines a function of provided that it converges.  A Dirichlet series is an infinite sum . Again, the are coefficients of the Dirichlet series. The sum defines a function of provided that it converges.   Multiplication of power series corresponds to the Cauchy product of coefficients, and multiplication of Dirichlet series corresponds to the Dirichlet product of coefficients.  (add example here)   "
 },
 {
-  "id": "sec-af1-dirichlet-product-2",
+  "id": "sec-af1-dirichlet-product-2-2",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2-2",
   "type": "Definition",
   "number": "2.3.1",
   "title": "",
   "body": "Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is . "
 },
 {
-  "id": "sec-af1-dirichlet-product-4",
+  "id": "sec-af1-dirichlet-product-2-3",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-4",
-  "type": "Theorem",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2-3",
+  "type": "Example",
   "number": "2.3.2",
   "title": "",
-  "body": " The Dirichlet product is associative, commutative, and distributes over the sum.   For associativity:   For commutativity:   Distributivity is left as an exercise.   "
+  "body": "  : Here is the Euler totient function, is the function for all , and is the function for all . We have shown that . We can rewrite this as , where the left hand side is . This shows that as claimed.  "
 },
 {
-  "id": "sec-af1-dirichlet-product-5",
+  "id": "sec-af1-dirichlet-product-2-5",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-5",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2-5",
   "type": "Theorem",
   "number": "2.3.3",
+  "title": "",
+  "body": " The Dirichlet product is associative, commutative, and distributes over the sum. The function (defined by if , otherwise ) is an identity for the Dirichlet product, that is, for any arithmetic function .   For associativity:   For commutativity:   Distributivity is left as an exercise.  Let be any arithmetic function. Then , since for all other than . So .   "
+},
+{
+  "id": "sec-af1-dirichlet-product-2-6",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2-6",
+  "type": "Theorem",
+  "number": "2.3.4",
+  "title": "",
+  "body": " Let be an arithmetic function. There exists a Dirichlet inverse such that if and only if . If , then is defined recursively by and for , .   If then , so . The converse direction is left as an exercise.   "
+},
+{
+  "id": "sec-af1-dirichlet-product-3-2",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-2",
+  "type": "Theorem",
+  "number": "2.3.5",
   "title": "",
   "body": " If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.   "
 },
 {
-  "id": "sec-af1-dirichlet-product-6",
+  "id": "sec-af1-dirichlet-product-3-3",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-6",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-3",
   "type": "Corollary",
-  "number": "2.3.4",
+  "number": "2.3.6",
   "title": "",
   "body": " For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .   "
 },
 {
-  "id": "sec-af1-dirichlet-product-7",
+  "id": "sec-af1-dirichlet-product-3-4",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-7",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-4",
   "type": "Remark",
-  "number": "2.3.5",
+  "number": "2.3.7",
   "title": "",
   "body": " Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .  "
 },
 {
-  "id": "sec-af1-dirichlet-product-8",
+  "id": "sec-af1-dirichlet-product-3-5",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-8",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-5",
   "type": "Theorem",
-  "number": "2.3.6",
+  "number": "2.3.8",
   "title": "",
-  "body": " Let be arithmetic functions. If and are multiplicative, then so is .   ...   "
+  "body": " Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .   "
+},
+{
+  "id": "sec-af1-dirichlet-product-3-6",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-6",
+  "type": "Corollary",
+  "number": "2.3.9",
+  "title": "",
+  "body": " If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.   "
+},
+{
+  "id": "sec-af1-dirichlet-product-3-7",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-7",
+  "type": "Corollary",
+  "number": "2.3.10",
+  "title": "",
+  "body": " The set of arithmetic functions with is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.  "
+},
+{
+  "id": "sec-af1-dirichlet-product-4-2",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-4-2",
+  "type": "Definition",
+  "number": "2.3.11",
+  "title": "",
+  "body": " A power series centered at is an infinite sum . The are the coefficients of the power series. This sum defines a function of provided that it converges.  A Dirichlet series is an infinite sum . Again, the are coefficients of the Dirichlet series. The sum defines a function of provided that it converges.  "
 },
 {
   "id": "sec-af1-mobius-inversion",

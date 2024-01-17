@@ -140,7 +140,14 @@ window.MathJax = {
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-examples.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Examples of arithmetic functions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-multiplicative.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Multiplicative functions</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-af1-dirichlet-product.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dirichlet product</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-af1-dirichlet-product.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Dirichlet product</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-2" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Basic properties of Dirichlet product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Dirichlet product of multiplicative functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-4" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Explanation of Dirichlet product</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Möbius inversion</span></a></div></li>
 </ul>
 </li>
@@ -155,28 +162,36 @@ window.MathJax = {
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-af1-dirichlet-product"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">Dirichlet product</span>
 </h2>
-<article class="definition definition-like" id="sec-af1-dirichlet-product-2"><h3 class="heading">
+<section class="subsection" id="sec-af1-dirichlet-product-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">Basic properties of Dirichlet product</span>
+</h3>
+<article class="definition definition-like" id="sec-af1-dirichlet-product-2-2"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
-</h3>Let <span class="process-math">\(f,g\)</span> be arithmetic functions. The <dfn class="terminology">Dirichlet product</dfn> of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> denoted <span class="process-math">\(f * g\text{,}\)</span> is the arithmetic function defined by<div class="displaymath process-math" id="sec-af1-dirichlet-product-2-6">
+</h4>Let <span class="process-math">\(f,g\)</span> be arithmetic functions. The <dfn class="terminology">Dirichlet product</dfn> of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{,}\)</span> denoted <span class="process-math">\(f * g\text{,}\)</span> is the arithmetic function defined by<div class="displaymath process-math" id="sec-af1-dirichlet-product-2-2-6">
 \begin{equation}
 (f * g)(n) = \sum_{d \mid n} f(d) g(n/d) = \sum_{de = n} f(d) g(e) \tag{2.3.1}
 \end{equation}
-</div>where the first sum is over positive divisors of <span class="process-math">\(n\)</span> and the second sum is over pairs <span class="process-math">\((d,e)\)</span> of positive integers whose product is <span class="process-math">\(n\text{.}\)</span></article><div class="para logical" id="sec-af1-dirichlet-product-3">
+</div>where the first sum is over positive divisors of <span class="process-math">\(n\)</span> and the second sum is over pairs <span class="process-math">\((d,e)\)</span> of positive integers whose product is <span class="process-math">\(n\text{.}\)</span></article><article class="example example-like" id="sec-af1-dirichlet-product-2-3"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-af1-dirichlet-product-2-3-1">
+<span class="process-math">\(\phi * 1 = N \text{:}\)</span> Here <span class="process-math">\(\phi\)</span> is the Euler totient function, <span class="process-math">\(1\)</span> is the function <span class="process-math">\(1(n) = 1\)</span> for all <span class="process-math">\(n\text{,}\)</span> and <span class="process-math">\(N\)</span> is the function <span class="process-math">\(N(n) = n\)</span> for all <span class="process-math">\(n\text{.}\)</span> We have shown that <span class="process-math">\(\sum_{d \mid n} \phi(d) = n\text{.}\)</span> We can rewrite this as <span class="process-math">\(\sum_{d \mid n} \phi(d) 1(n/d) = N(n)\text{,}\)</span> where the left hand side is <span class="process-math">\((\phi * 1)(n)\text{.}\)</span> This shows that <span class="process-math">\(\phi * 1 = N\)</span> as claimed.</div></article><div class="para logical" id="sec-af1-dirichlet-product-2-4">
 <div class="para">Other notable operations on arithmetic functions include:</div>
 <ol class="decimal">
-<li id="sec-af1-dirichlet-product-3-1-1"><div class="para" id="p-derived-sec-af1-dirichlet-product-3-1-1">The sum: <span class="process-math">\((f+g)(n) = f(n)+g(n)\)</span>
+<li id="sec-af1-dirichlet-product-2-4-1-1"><div class="para" id="p-derived-sec-af1-dirichlet-product-2-4-1-1">The sum: <span class="process-math">\((f+g)(n) = f(n)+g(n)\)</span>
 </div></li>
-<li id="sec-af1-dirichlet-product-3-1-2"><div class="para" id="p-derived-sec-af1-dirichlet-product-3-1-2">The pointwise product: <span class="process-math">\((fg)(n) = f(n) g(n)\)</span>
+<li id="sec-af1-dirichlet-product-2-4-1-2"><div class="para" id="p-derived-sec-af1-dirichlet-product-2-4-1-2">The pointwise product: <span class="process-math">\((fg)(n) = f(n) g(n)\)</span>
 </div></li>
-<li id="sec-af1-dirichlet-product-3-1-3"><div class="para" id="p-derived-sec-af1-dirichlet-product-3-1-3">The composition: <span class="process-math">\((f \circ g)(n) = f(g(n))\)</span> (assuming <span class="process-math">\(g\)</span> has values in <span class="process-math">\(\bbN\text{,}\)</span> the domain of <span class="process-math">\(f\)</span>)</div></li>
+<li id="sec-af1-dirichlet-product-2-4-1-3"><div class="para" id="p-derived-sec-af1-dirichlet-product-2-4-1-3">The composition: <span class="process-math">\((f \circ g)(n) = f(g(n))\)</span> (assuming <span class="process-math">\(g\)</span> has values in <span class="process-math">\(\bbN\text{,}\)</span> the domain of <span class="process-math">\(f\)</span>)</div></li>
+<li id="sec-af1-dirichlet-product-2-4-1-4"><div class="para" id="p-derived-sec-af1-dirichlet-product-2-4-1-4">The Cauchy product, defined by <span class="process-math">\(\sum_{d=0}^n f(d)g(n-d) \text{.}\)</span> (I’m not sure if there is a common notation for the Cauchy product.)</div></li>
 </ol>
 </div>
-<article class="theorem theorem-like" id="sec-af1-dirichlet-product-4"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
-</h3>The Dirichlet product is associative, commutative, and distributes over the sum.</article><article class="proof" id="sec-af1-dirichlet-product-4-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
-<div class="para logical" id="sec-af1-dirichlet-product-4-2-1">
+<article class="theorem theorem-like" id="sec-af1-dirichlet-product-2-5"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
+</h4>The Dirichlet product is associative, commutative, and distributes over the sum. The function <span class="process-math">\(e\)</span> (defined by <span class="process-math">\(e(n)=1\)</span> if <span class="process-math">\(n=1\text{,}\)</span> otherwise <span class="process-math">\(e(n)=0\)</span>) is an identity for the Dirichlet product, that is, <span class="process-math">\(f*e = f\)</span> for any arithmetic function <span class="process-math">\(f\text{.}\)</span></article><article class="proof" id="sec-af1-dirichlet-product-2-5-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-af1-dirichlet-product-2-5-2-1">
 <div class="para">For associativity:</div>
-<div class="displaymath process-math" id="sec-af1-dirichlet-product-4-2-1-1">
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-2-5-2-1-1">
 \begin{align*}
 (f*(g*h))(n) \amp = \sum_{d_1 e = n} f(d_1) (g*h)(e) \\
 \amp = \sum_{d_1 e = n} f(d_1) \sum_{d_2 d_3 = e} g(d_2) h(d_3) \\
@@ -186,22 +201,41 @@ window.MathJax = {
 \amp = ((f*g)*h)(n) 
 \end{align*}
 </div>
-</div> <div class="para logical" id="sec-af1-dirichlet-product-4-2-2">
+</div> <div class="para logical" id="sec-af1-dirichlet-product-2-5-2-2">
 <div class="para">For commutativity:</div>
-<div class="displaymath process-math" id="sec-af1-dirichlet-product-4-2-2-1">
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-2-5-2-2-1">
 \begin{align*}
 (f*g)(n) \amp = \sum_{de = n} f(d) g(e) \\
 \amp = \sum_{ed = n} g(e) f(d) \\
 \amp = (g*f)(n) 
 \end{align*}
 </div>
-</div> <div class="para" id="sec-af1-dirichlet-product-4-2-3">Distributivity is left as an exercise.</div></article><article class="theorem theorem-like" id="sec-af1-dirichlet-product-5"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span>
-</h3>If <span class="process-math">\(f,g\)</span> are both multiplicative, then so is <span class="process-math">\(f * g \text{.}\)</span></article><article class="proof" id="sec-af1-dirichlet-product-5-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
-<div class="para" id="sec-af1-dirichlet-product-5-2-1">Suppose <span class="process-math">\((n_1,n_2) = 1\text{.}\)</span> Observe that if <span class="process-math">\(de = n_1 n_2\)</span> then there exist factorizations <span class="process-math">\(d = d_1 d_2\text{,}\)</span> <span class="process-math">\(e = e_1 e_2\text{,}\)</span> such that <span class="process-math">\(d_1 e_1 = n_1\)</span> and <span class="process-math">\(d_2 e_2 = n_2\text{.}\)</span> (Simply, <span class="process-math">\(d_1\)</span> is the product of prime factors that are in <span class="process-math">\(d\)</span> and <span class="process-math">\(n_1\text{,}\)</span> <span class="process-math">\(d_2\)</span> is the product of prime factors that are in <span class="process-math">\(d\)</span> and <span class="process-math">\(n_2\text{,}\)</span> and so on.) Observe that in this factorization, <span class="process-math">\((d_1,d_2) = (e_1,e_2) = 1\text{.}\)</span>
-</div> <div class="para logical" id="sec-af1-dirichlet-product-5-2-2">
+</div> <div class="para" id="sec-af1-dirichlet-product-2-5-2-3">Distributivity is left as an exercise.</div> <div class="para logical" id="sec-af1-dirichlet-product-2-5-2-4">
+<div class="para">Let <span class="process-math">\(f\)</span> be any arithmetic function. Then</div>
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-2-5-2-4-2">
+\begin{equation}
+(f*e)(n) = \sum_{d \mid n} f(d) e(n/d) = f(n) e(n/n) = f(n) \text{,}\tag{2.3.2}
+\end{equation}
+</div>
+<div class="para">since <span class="process-math">\(e(n/d) = 0\)</span> for all <span class="process-math">\(d\)</span> other than <span class="process-math">\(d=n\text{.}\)</span> So <span class="process-math">\(f*e = f\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="sec-af1-dirichlet-product-2-6"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(f\)</span> be an arithmetic function. There exists a Dirichlet inverse <span class="process-math">\(g\)</span> such that <span class="process-math">\(f*g = e\)</span> if and only if <span class="process-math">\(f(1) \neq 0\text{.}\)</span> If <span class="process-math">\(f(1) \neq 0\text{,}\)</span> then <span class="process-math">\(g\)</span> is defined recursively by <span class="process-math">\(g(1) = \frac{1}{f(1)}\)</span> and for <span class="process-math">\(n \gt 1\text{,}\)</span><div class="displaymath process-math" id="sec-af1-dirichlet-product-2-6-1-9">
+\begin{equation}
+g(n) = -\frac{1}{f(1)} \sum_{1 \lt d \mid n} f(d)g(n/d) \text{.}\tag{2.3.3}
+\end{equation}
+</div></article><article class="proof" id="sec-af1-dirichlet-product-2-6-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-dirichlet-product-2-6-2-1">If <span class="process-math">\(f*g = e\)</span> then <span class="process-math">\(f(1)g(1) = e(1) = 1\text{,}\)</span> so <span class="process-math">\(f(1) \neq 0\text{.}\)</span> The converse direction is left as an exercise.</div></article></section><section class="subsection" id="sec-af1-dirichlet-product-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Dirichlet product of multiplicative functions</span>
+</h3>
+<article class="theorem theorem-like" id="sec-af1-dirichlet-product-3-2"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</h4>If <span class="process-math">\(f,g\)</span> are both multiplicative, then so is <span class="process-math">\(f * g \text{.}\)</span></article><article class="proof" id="sec-af1-dirichlet-product-3-2-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-dirichlet-product-3-2-2-1">Suppose <span class="process-math">\((n_1,n_2) = 1\text{.}\)</span> Observe that if <span class="process-math">\(de = n_1 n_2\)</span> then there exist factorizations <span class="process-math">\(d = d_1 d_2\text{,}\)</span> <span class="process-math">\(e = e_1 e_2\text{,}\)</span> such that <span class="process-math">\(d_1 e_1 = n_1\)</span> and <span class="process-math">\(d_2 e_2 = n_2\text{.}\)</span> (Simply, <span class="process-math">\(d_1\)</span> is the product of prime factors that are in <span class="process-math">\(d\)</span> and <span class="process-math">\(n_1\text{,}\)</span> <span class="process-math">\(d_2\)</span> is the product of prime factors that are in <span class="process-math">\(d\)</span> and <span class="process-math">\(n_2\text{,}\)</span> and so on.) Observe that in this factorization, <span class="process-math">\((d_1,d_2) = (e_1,e_2) = 1\text{.}\)</span>
+</div> <div class="para logical" id="sec-af1-dirichlet-product-3-2-2-2">
 <div class="para">Now we have</div>
-<div class="displaymath process-math" id="sec-af1-dirichlet-product-5-2-2-1">
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-3-2-2-2-1">
 \begin{align*}
 (f*g)(n_1 n_2) \amp = \sum_{de = n_1 n_2} f(d) g(e) \\
 \amp = \sum_{d_1 d_2 e_1 e_2 = n_1 n_2} f(d_1 d_2) g(e_1 e_2) \\
@@ -212,18 +246,63 @@ window.MathJax = {
 \end{align*}
 </div>
 <div class="para">This shows that <span class="process-math">\(f*g\)</span> is multiplicative.</div>
-</div></article><article class="corollary theorem-like" id="sec-af1-dirichlet-product-6"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span>
-</h3>For all <span class="process-math">\(s\text{,}\)</span> <span class="process-math">\(\sigma_s\)</span> is multiplicative.</article><article class="proof" id="sec-af1-dirichlet-product-6-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
-<div class="para" id="sec-af1-dirichlet-product-6-2-1">Let <span class="process-math">\(g(n) = n^s\text{,}\)</span> so <span class="process-math">\(g\)</span> is multiplicative (in fact, completely multiplicative). Then <span class="process-math">\(\sigma_s = g * 1\)</span> where <span class="process-math">\(1\)</span> denotes the arithmetic function <span class="process-math">\(1(n) = 1\)</span> for all <span class="process-math">\(n\text{.}\)</span> Here <span class="process-math">\(1\)</span> is completely multiplicative. Since <span class="process-math">\(g\)</span> and <span class="process-math">\(1\)</span> are multiplicative, so is <span class="process-math">\(\sigma_s\text{.}\)</span>
-</div></article><article class="remark remark-like" id="sec-af1-dirichlet-product-7"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
+</div></article><article class="corollary theorem-like" id="sec-af1-dirichlet-product-3-3"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
+</h4>For all <span class="process-math">\(s\text{,}\)</span> <span class="process-math">\(\sigma_s\)</span> is multiplicative.</article><article class="proof" id="sec-af1-dirichlet-product-3-3-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-dirichlet-product-3-3-2-1">Let <span class="process-math">\(g(n) = n^s\text{,}\)</span> so <span class="process-math">\(g\)</span> is multiplicative (in fact, completely multiplicative). Then <span class="process-math">\(\sigma_s = g * 1\)</span> where <span class="process-math">\(1\)</span> denotes the arithmetic function <span class="process-math">\(1(n) = 1\)</span> for all <span class="process-math">\(n\text{.}\)</span> Here <span class="process-math">\(1\)</span> is completely multiplicative. Since <span class="process-math">\(g\)</span> and <span class="process-math">\(1\)</span> are multiplicative, so is <span class="process-math">\(\sigma_s\text{.}\)</span>
+</div></article><article class="remark remark-like" id="sec-af1-dirichlet-product-3-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-af1-dirichlet-product-3-4-1">Even if both <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are completely multiplicative, in general <span class="process-math">\(f*g\)</span> is only multiplicative, not necessarily completely multiplicative. For example let <span class="process-math">\(f = g = 1\text{,}\)</span> then <span class="process-math">\((f*g)(n) = \sum_{d \mid n} 1 = d(n) = \sigma_0(n)\text{,}\)</span> the number of positive divisors of <span class="process-math">\(n\text{.}\)</span> This is multiplicative but not completely multiplicative, for example <span class="process-math">\(d(4) = 3 \neq d(2)^2\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="sec-af1-dirichlet-product-3-5"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(f,g\)</span> be arithmetic functions. If <span class="process-math">\(g\)</span> and <span class="process-math">\(f*g\)</span> are multiplicative, then so is <span class="process-math">\(f\text{.}\)</span></article><article class="proof" id="sec-af1-dirichlet-product-3-5-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-dirichlet-product-3-5-2-1">First of all we have <span class="process-math">\((f*g)(1) = 1\)</span> and <span class="process-math">\(g(1) = 1\)</span> since <span class="process-math">\(f*g\)</span> and <span class="process-math">\(g\)</span>are multiplicative. By definition of Dirichlet product, <span class="process-math">\((f*g)(1) = f(1)g(1)\text{.}\)</span> Therefore <span class="process-math">\(f(1) = 1\text{.}\)</span> We have <span class="process-math">\(f(1 \cdot 1) = 1\text{,}\)</span> that is, <span class="process-math">\(f(mn) = 1\)</span> for <span class="process-math">\(m=n=1\text{.}\)</span>
+</div> <div class="para logical" id="sec-af1-dirichlet-product-3-5-2-2">
+<div class="para">We will prove the following statement by induction on <span class="process-math">\(N\text{:}\)</span> <span class="process-math">\(f(mn) = f(m)f(n)\)</span> for all <span class="process-math">\(m,n\)</span> such that <span class="process-math">\((m,n)=1\)</span> and <span class="process-math">\(mn \leq N\text{.}\)</span> We have seen that this holds for <span class="process-math">\(N=1\text{.}\)</span> Suppose inductively that it holds for <span class="process-math">\(N-1\text{,}\)</span> and suppose <span class="process-math">\(m,n\)</span> are positive integers such that <span class="process-math">\((m,n)=1\)</span> and <span class="process-math">\(mn=N\text{.}\)</span> Since <span class="process-math">\(f*g\)</span> is multiplicative we have</div>
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-3-5-2-2-12">
+\begin{align*}
+(f*g)(mn) \amp = \sum_{d \mid mn} f(d) g(\frac{mn}{d}) \\
+\amp = \sum_{d \mid m, e \mid n} f(de) g(\frac{mn}{de}) \\
+\amp = \sum_{d \mid m, e \mid n, de \lt mn} f(de) g(\frac{mn}{de}) + f(mn)g(1) \\
+\amp = \sum_{d \mid m, e \mid n, de \lt mn} f(d)f(e)g(\frac{m}{d})g(\frac{n}{d}) + f(mn) \\
+\amp = \left( \sum_{d \mid m} f(d)g(\frac{m}{d}) \right)
+\left( \sum_{e \mid n} f(e)g(\frac{n}{e}) \right) - f(m)f(n) + f(mn) \\
+\amp = (f*g)(m) (f*g)(n) - f(m)f(n) + f(mn) \\
+\amp = (f*g)(mn) - f(m)f(n) + f(mn) \text{.}
+\end{align*}
+</div>
+<div class="para">Here we use that <span class="process-math">\(f(de) = f(d)f(e)\)</span> for <span class="process-math">\(de \lt mn\text{,}\)</span> where <span class="process-math">\((d,e)=1\)</span> since <span class="process-math">\(d \mid m\)</span> and <span class="process-math">\(e \mid n\text{;}\)</span> we use that <span class="process-math">\((m/d,n/e) = 1\)</span> and that <span class="process-math">\(g\)</span> is multiplicative; at the end we use that <span class="process-math">\(f*g\)</span> is multiplicative.</div>
+</div> <div class="para" id="sec-af1-dirichlet-product-3-5-2-3">It follows that <span class="process-math">\(f(mn) = f(m)f(n)\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="sec-af1-dirichlet-product-3-6"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
+</h4>If <span class="process-math">\(f\)</span> is multiplicative then its Dirichlet inverse <span class="process-math">\(f^{-1}\)</span> is also multiplicative.</article><article class="proof" id="sec-af1-dirichlet-product-3-6-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-dirichlet-product-3-6-2-1">Both <span class="process-math">\(f\)</span> and <span class="process-math">\(f*f^{-1} = e\)</span> are multiplicative.</div></article><article class="corollary theorem-like" id="sec-af1-dirichlet-product-3-7"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.3.10</span><span class="period">.</span>
+</h4>The set of arithmetic functions <span class="process-math">\(f\)</span> with <span class="process-math">\(f(1) \neq 0\)</span> is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.</article></section><section class="subsection" id="sec-af1-dirichlet-product-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="space"> </span><span class="title">Explanation of Dirichlet product</span>
 </h3>
-<div class="para" id="sec-af1-dirichlet-product-7-1">Even if both <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are completely multiplicative, in general <span class="process-math">\(f*g\)</span> is only multiplicative, not necessarily completely multiplicative. For example let <span class="process-math">\(f = g = 1\text{,}\)</span> then <span class="process-math">\((f*g)(n) = \sum_{d \mid n} 1 = d(n) = \sigma_0(n)\text{,}\)</span> the number of positive divisors of <span class="process-math">\(n\text{.}\)</span> This is multiplicative but not completely multiplicative, for example <span class="process-math">\(d(4) = 3 \neq d(2)^2\text{.}\)</span>
-</div></article><article class="theorem theorem-like" id="sec-af1-dirichlet-product-8"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
-</h3>Let <span class="process-math">\(f,g\)</span> be arithmetic functions. If <span class="process-math">\(f\)</span> and <span class="process-math">\(f*g\)</span> are multiplicative, then so is <span class="process-math">\(g\text{.}\)</span></article><article class="proof" id="sec-af1-dirichlet-product-8-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
-<div class="para" id="sec-af1-dirichlet-product-8-2-1">...</div></article></section></div>
+<article class="definition definition-like" id="sec-af1-dirichlet-product-4-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-af1-dirichlet-product-4-2-1">
+<div class="para">A <dfn class="terminology">power series</dfn> centered at <span class="process-math">\(c\)</span> is an infinite sum</div>
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-4-2-1-3">
+\begin{equation}
+f(z) = \sum_{k=0}^{\infty} a_k (z-c)^k \text{.}\tag{2.3.4}
+\end{equation}
+</div>
+<div class="para">The <span class="process-math">\(a_k\)</span> are the <dfn class="terminology">coefficients</dfn> of the power series. This sum defines a function of <span class="process-math">\(z\)</span> provided that it converges.</div>
+</div> <div class="para logical" id="sec-af1-dirichlet-product-4-2-2">
+<div class="para">A <dfn class="terminology">Dirichlet series</dfn> is an infinite sum</div>
+<div class="displaymath process-math" id="sec-af1-dirichlet-product-4-2-2-2">
+\begin{equation}
+f(s) = \sum_{n=1}^{\infty} \frac{a_n}{n^s} \text{.}\tag{2.3.5}
+\end{equation}
+</div>
+<div class="para">Again, the <span class="process-math">\(a_n\)</span> are <dfn class="terminology">coefficients</dfn> of the Dirichlet series. The sum defines a function of <span class="process-math">\(s\)</span> provided that it converges.</div>
+</div></article><div class="para" id="sec-af1-dirichlet-product-4-3">Multiplication of power series corresponds to the Cauchy product of coefficients, and multiplication of Dirichlet series corresponds to the Dirichlet product of coefficients.</div>
+<div class="para" id="sec-af1-dirichlet-product-4-4">(add example here)</div></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-af1-multiplicative.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-af1-mobius-inversion.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
