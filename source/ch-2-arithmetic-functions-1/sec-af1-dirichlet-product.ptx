@@ -3,6 +3,10 @@
 <section xml:id="sec-af1-dirichlet-product" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Dirichlet product</title>
   
+  
+  <subsection>
+  <title>Basic properties of Dirichlet product</title>
+  
   <definition>
   Let <m>f,g</m> be arithmetic functions.
   The <term>Dirichlet product</term> of <m>f</m> and <m>g</m>,
@@ -12,6 +16,17 @@
   and the second sum is over pairs <m>(d,e)</m> of positive integers
   whose product is <m>n</m>.
   </definition>
+  
+  <example>
+  <p> <m> \phi * 1 = N </m>: Here <m>\phi</m> is the Euler totient
+  function, <m>1</m> is the function <m>1(n) = 1</m> for all <m>n</m>,
+  and <m>N</m> is the function <m>N(n) = n</m> for all <m>n</m>.
+  We have shown that <m>\sum_{d \mid n} \phi(d) = n</m>.
+  We can rewrite this as <m>\sum_{d \mid n} \phi(d) 1(n/d) = N(n)</m>,
+  where the left hand side is <m>(\phi * 1)(n)</m>. This shows
+  that <m>\phi * 1 = N</m> as claimed. </p>
+  </example>
+
 
   <p>
   Other notable operations on arithmetic functions include:
@@ -20,6 +35,8 @@
   <li> The pointwise product: <m> (fg)(n) = f(n) g(n)</m> </li>
   <li> The composition: <m> (f \circ g)(n) = f(g(n))</m>
     (assuming <m>g</m> has values in <m>\bbN</m>, the domain of <m>f</m>) </li>
+  <li> The Cauchy product, defined by <m> \sum_{d=0}^n f(d)g(n-d) </m>.
+    (I'm not sure if there is a common notation for the Cauchy product.) </li>
   </ol>
   </p>
   
@@ -54,8 +71,8 @@
   <p> Distributivity is left as an exercise. </p>
   
   <p> Let <m>f</m> be any arithmetic function. Then
-  <men> (f*e)(n) \amp = \sum_{d \mid n} f(d) e(n/d) = f(n) e(n/n) = f(n) </men>,
-  since <m>e(n/d) = 0</m>for all <m>d</m> other than <m>d=n</m>.
+  <men> (f*e)(n) = \sum_{d \mid n} f(d) e(n/d) = f(n) e(n/n) = f(n) </men>,
+  since <m>e(n/d) = 0</m> for all <m>d</m> other than <m>d=n</m>.
   So <m>f*e = f</m>. </p>
   </proof>
   </theorem>
@@ -74,7 +91,11 @@
   The converse direction is left as an exercise. </p>
   </proof>
 	</theorem>
-
+	
+	</subsection>
+  
+  <subsection>
+  <title>Dirichlet product of multiplicative functions</title>
   
   <theorem>
   <statement> If <m>f,g</m> are both multiplicative,
@@ -129,16 +150,95 @@
 	</remark>
 	
 	<theorem>
-	<statement> Let <m>f,g</m> be arithmetic functions with <m>f(1) \neq 0</m>.
-	If <m>f</m> and <m>f*g</m> are multiplicative, then so is <m>g</m>. </statement>
+	<statement> Let <m>f,g</m> be arithmetic functions.
+	If <m>g</m> and <m>f*g</m> are multiplicative, then so is <m>f</m>. </statement>
 	
 	<proof>
 	<p>
-	...
+	First of all we have <m>(f*g)(1) = 1</m> and <m>g(1) = 1</m> since
+	<m>f*g</m> and <m>g</m>are multiplicative.
+	By definition of Dirichlet product, <m>(f*g)(1) = f(1)g(1)</m>.
+	Therefore <m>f(1) = 1</m>.
+	We have <m>f(1 \cdot 1) = 1</m>, that is, <m>f(mn) = 1</m>
+	for <m>m=n=1</m>.
 	</p>
+	
+	<p> We will prove the following statement by induction on <m>N</m>:
+	<m>f(mn) = f(m)f(n)</m>
+	for all <m>m,n</m> such that <m>(m,n)=1</m> and <m>mn \leq N</m>.
+	We have seen that this holds for <m>N=1</m>.
+	Suppose inductively that it holds for <m>N-1</m>,
+	and suppose <m>m,n</m> are positive integers such that
+	<m>(m,n)=1</m> and <m>mn=N</m>.
+	Since <m>f*g</m> is multiplicative we have
+	<md>
+	<mrow> (f*g)(mn) \amp = \sum_{d \mid mn} f(d) g(\frac{mn}{d}) </mrow>
+	<mrow> \amp = \sum_{d \mid m, e \mid n} f(de) g(\frac{mn}{de}) </mrow>
+	<mrow> \amp = \sum_{d \mid m, e \mid n, de \lt mn} f(de) g(\frac{mn}{de}) + f(mn)g(1) </mrow>
+	<mrow> \amp = \sum_{d \mid m, e \mid n, de \lt mn} f(d)f(e)g(\frac{m}{d})g(\frac{n}{d}) + f(mn) </mrow>
+	<mrow> \amp = \left( \sum_{d \mid m} f(d)g(\frac{m}{d}) \right)
+	  \left( \sum_{e \mid n} f(e)g(\frac{n}{e}) \right) - f(m)f(n) + f(mn) </mrow>
+	<mrow> \amp = (f*g)(m) (f*g)(n) - f(m)f(n) + f(mn) </mrow>
+	<mrow> \amp = (f*g)(mn) - f(m)f(n) + f(mn) </mrow>
+	</md>.
+	Here we use that <m>f(de) = f(d)f(e)</m> for <m>de \lt mn</m>,
+	where <m>(d,e)=1</m> since <m>d \mid m</m> and <m>e \mid n</m>;
+	we use that <m>(m/d,n/e) = 1</m> and that <m>g</m> is multiplicative;
+	at the end we use that <m>f*g</m> is multiplicative.
+	</p>
+	
+	<p>
+	It follows that <m>f(mn) = f(m)f(n)</m>.
+  </p>
 	</proof>
 	</theorem>
-
+	
+	<corollary>
+	<statement>
+	If <m>f</m> is multiplicative then its Dirichlet inverse <m>f^{-1}</m>
+	is also multiplicative.
+	</statement>
+  
+  <proof>
+  <p> Both <m>f</m> and <m>f*f^{-1} = e</m> are multiplicative. </p>
+  </proof>
+  </corollary>
+  
+  <corollary>
+  <statement>
+  The set of arithmetic functions <m>f</m> with <m>f(1) \neq 0</m>
+  is an abelian group under Dirichlet product.
+  The subset consisting of multiplicative functions is a subgroup.
+  </statement>
+  </corollary>
+  
+  </subsection>
+  
+  <subsection>
+  <title>Explanation of Dirichlet product</title>
+  
+  <definition>
+  <p> A <term>power series</term> centered at <m>c</m>
+  is an infinite sum
+  <men> f(z) = \sum_{k=0}^{\infty} a_k (z-c)^k </men>.
+  The <m>a_k</m> are the <term>coefficients</term> of the power series.
+  This sum defines a function of <m>z</m> provided that it converges. </p>
+  
+  <p> A <term>Dirichlet series</term> is an infinite sum
+  <men> f(s) = \sum_{n=1}^{\infty} \frac{a_n}{n^s} </men>.
+  Again, the <m>a_n</m> are <term>coefficients</term> of the
+  Dirichlet series. The sum defines a function of <m>s</m>
+  provided that it converges. </p>
+  </definition>
+  
+  <p> Multiplication of power series corresponds to the Cauchy product
+  of coefficients, and multiplication of Dirichlet series corresponds
+  to the Dirichlet product of coefficients. </p>
+  
+  <p> (add example here) </p>
+  
+  </subsection>
+  
 
 
 </section>

@@ -5,11 +5,22 @@
   
   <definition>
   An arithmetic function <m>f</m> is <term>multiplicative</term>
-  when it satisfies: if <m>(m,n) = 1</m> then <m>f(mn) = f(m)f(n)</m>.
+  when it satisfies:
+  <ol>
+  <li> <m>f</m> is not identically zero, and </li>
+  <li> if <m>(m,n) = 1</m> then <m>f(mn) = f(m)f(n)</m>. </li>
+  </ol>
   It is <term>completely multiplicative</term>
-  when it satisfies: for all <m>m,n</m>, <m>f(mn) = f(m)f(n)</m>.
+  when it is not identically zero, and satisfies:
+  for all <m>m,n</m>, <m>f(mn) = f(m)f(n)</m>.
   </definition>
   
+  <remark>
+  <p> Crisman allowed the identically zero function to be considered
+  multiplicative. That forces a lot of statements to say
+  <lq/>if <m>f</m> is multiplicative and not identically zero, then...<rq/>. </p>
+  </remark>
+
   <p>
   We saw that <m>\phi</m> is multiplicative. However it is not
   completely multiplicative: <m>\phi(p^2) \neq \phi(p)^2</m>.
@@ -22,14 +33,19 @@
   is completely multiplicative. </p>
   
   <p> Observe that for a multiplicative (or completely multiplicative)
-  function <m>f</m> we must have <m>f(1) = 1</m> or <m>0</m>.
+  function <m>f</m> we must have <m>f(1) = 1</m>.
   Indeed, <m>f(1) = f(1 \cdot 1) = f(1)^2</m>, and the only solutions
   are <m>f(1) = 1</m> or <m>0</m>.
-  Furthermore if <m>f(1)=0</m> (and still assuming <m>f</m> is
+  However if <m>f(1)=0</m> (and still assuming <m>f</m> is
   multiplicative or completely multiplicative)
   then <m>f(n)=0</m> for all <m>n</m>, because
   <m>f(n) = f(1 \cdot n) = f(1)f(n) = 0</m>,
-  using that <m>(1,n) = 1</m>. </p>
+  using that <m>(1,n) = 1</m>.
+  That is, if <m>f</m> has the multiplicative property and
+  <m>f(1)=0</m>, then <m>f</m> is identically zero.
+  Since we require <lq/>multiplicative<rq/> functions to not be
+  identically zero, then they must have <m>f(1) \neq 0</m>.
+  So it must be <m>f(1)=1</m>. </p>
   
   <p>
   A completely multiplicative function <m>f</m> is entirely determined
