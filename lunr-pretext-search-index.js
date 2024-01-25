@@ -349,7 +349,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Möbius inversion",
-  "body": " Möbius inversion  "
+  "body": " Möbius inversion   Möbius function   The following arithmetic functions are all equal:  defined in terms of factorization:   defined in terms of coefficients of a product: For any we define by . Here the product is over all primes that divide , while the sum is over all (positive) divisors of . The symbol is a formal variable; alternatively we can interpret this as saying that the two sides of the equation are equal for all complex numbers . (We follow normal exponent rules, and .) We assert that this function is well-defined in the sense that if and , then has the same coefficient whether the product is taken over the primes that divide , or primes that divide . In fact is the coefficient of in the infinite product over all primes (this is a formal product in the sense that we don't worry about whether it converges).  defined recursively: We define and for , we define by setting .  defined as the Dirichlet inverse of the arithmetic function for all .  That is, for all , .    For example, . This shows that , , , and .  Likewise, . This gives , agreeing with the result when the product was taken over primes instead of . In addition we see that .    The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  (proof that )   The function defined in the above theorem is called the Möbius function and we henceforth denote it by .    Möbius function and Dirichlet product    Applications of Möbius inversion   "
+},
+{
+  "id": "sec-af1-mobius-inversion-2-2",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-2",
+  "type": "Theorem",
+  "number": "2.4.1",
+  "title": "",
+  "body": " The following arithmetic functions are all equal:  defined in terms of factorization:   defined in terms of coefficients of a product: For any we define by . Here the product is over all primes that divide , while the sum is over all (positive) divisors of . The symbol is a formal variable; alternatively we can interpret this as saying that the two sides of the equation are equal for all complex numbers . (We follow normal exponent rules, and .) We assert that this function is well-defined in the sense that if and , then has the same coefficient whether the product is taken over the primes that divide , or primes that divide . In fact is the coefficient of in the infinite product over all primes (this is a formal product in the sense that we don't worry about whether it converges).  defined recursively: We define and for , we define by setting .  defined as the Dirichlet inverse of the arithmetic function for all .  That is, for all , .  "
+},
+{
+  "id": "sec-af1-mobius-inversion-2-3",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-3",
+  "type": "Example",
+  "number": "2.4.2",
+  "title": "",
+  "body": " For example, . This shows that , , , and .  Likewise, . This gives , agreeing with the result when the product was taken over primes instead of . In addition we see that .  "
+},
+{
+  "id": "sec-af1-mobius-inversion-2-4",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-4",
+  "type": "Proof",
+  "number": "2.4.1.1",
+  "title": "",
+  "body": " The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  (proof that )  "
+},
+{
+  "id": "sec-af1-mobius-inversion-2-5",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-5",
+  "type": "Definition",
+  "number": "2.4.3",
+  "title": "",
+  "body": "The function defined in the above theorem is called the Möbius function and we henceforth denote it by . "
 },
 {
   "id": "bibliography",
