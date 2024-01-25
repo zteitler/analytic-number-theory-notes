@@ -3,6 +3,153 @@
 <section xml:id="sec-af1-mobius-inversion" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Möbius inversion</title>
   
+  <subsection>
+  <title>Möbius function</title>
   
+  <theorem>
+  <statement>
+  The following arithmetic functions are all equal:
+  <ol>
+  <li><m>\mu_1</m> defined in terms of factorization:
+  	<men> \mu_1(n) = \begin{cases}
+  		1 \amp \text{if } n = 1 \\
+  		(-1)^k \amp \text{if } n = p_1 p_2 \dotsm p_k \\
+  		0 \amp \text{if some } p^2 \mid n
+  		\end{cases}
+		</men>
+	</li>
+	<li><m>\mu_2</m> defined in terms of coefficients of a product:
+		For any <m>n</m> we define <m>\mu_2</m> by
+		<men> \prod_{p \mid n} \left( 1 - \frac{1}{p^s} \right) = \sum_{d \mid n} \frac{\mu_2(d)}{d^s} </men>.
+		Here the product is over all primes <m>p</m> that divide <m>n</m>,
+		while the sum is over all (positive) divisors of <m>n</m>.
+		The symbol <m>s</m> is a formal variable; alternatively we can interpret
+		this as saying that the two sides of the equation are equal for all
+		complex numbers <m>s</m>.
+		(We follow normal exponent rules, <m>1^s = 1</m> and <m>a^s b^s = (ab)^s</m>.)
+		We assert that this function <m>\mu_2</m> is well-defined in the sense
+		that if <m>d \mid n</m> and <m>d \mid n'</m>, then <m>\frac{1}{d^s}</m> has
+		the same coefficient whether the product is taken over the primes that
+		divide <m>n</m>, or primes that divide <m>n'</m>.
+		In fact <m>\mu_2(d)</m> is the coefficient of <m>\frac{1}{d^s}</m>
+		in the infinite product <m>\prod_p \left( 1 - \frac{1}{p^s} \right)</m>
+		over all primes (this is a formal product in the sense that we don't worry
+		about whether it converges).
+	</li>
+	<li><m>\mu_3</m> defined recursively: We define <m>\mu_3(1) = 1</m>
+		and for <m>n \gt 1</m>, we define <m>\mu_3(n)</m> by setting
+		<m>\sum_{d \mid n} \mu_3(d) = 0</m>.
+	</li>
+	<li><m>\mu_4</m> defined as the Dirichlet inverse of the arithmetic function
+		<m>1(n) = 1</m> for all <m>n</m>.
+	</li>
+	</ol>
+	That is, for all <m>n</m>, <m>\mu_1(n) = \mu_2(n) = \mu_3(n) = \mu_4(n)</m>.
+	</statement>
+	</theorem>
+
+	<example>
+	<p>
+	For example,
+	<men>
+		\prod_{p \mid 6} \left( 1 - \frac{1}{p^s} \right)
+		= \left( 1 - \frac{1}{2^s} \right) \left( 1 - \frac{1}{3^s} \right)
+		= 1 - \frac{1}{2^s} - \frac{1}{3^s} + \frac{1}{6^s}
+	</men>.
+	This shows that <m>\mu_2(1) = 1</m>, <m>\mu_2(2) = -1</m>,
+	<m>\mu_2(3) = -1</m>, and <m>\mu_2(6) = 1</m>.
+	</p>
+	
+	<p>
+	Likewise,
+	<men>
+		\prod_{p \mid 4} \left( 1 - \frac{1}{p^s} \right)
+		= 1 - \frac{1}{2^s}
+		= 1 - \frac{1}{2^s} + \frac{0}{4^s}
+	</men>.
+	This gives <m>\mu_2(2) = -1</m>, agreeing with the result when the product
+	was taken over primes <m>p \mid 6</m> instead of <m>p \mid 4</m>.
+	In addition we see that <m>\mu_2(4) = 0</m>.
+	</p>
+
+	</example>
+	
+	<proof>
+	<p>
+	The recursive definition of <m>\mu_3</m> means precisely that
+	<m>\mu_3 * 1 = e</m>.
+	Therefore <m>\mu_3</m> is the Dirichlet inverse of <m>1</m>,
+	so <m>\mu_3 = \mu_4</m>.
+	(Note: Dirichlet inverses are unique: if <m>f * g_1 = f * g_2 = e</m>,
+	then <m>g_1 = g_2</m> (why?).)
+	</p>
+	
+	<p>
+	Suppose <m>d \mid n</m>, <m>d \gt 1</m>,
+	and <m>d = p_1^{a_1} \dotsm p_k^{a_k}</m>
+	where the <m>p_i</m> are distinct primes and each <m>a_i \geq 1</m>.
+	First, each <m>p_i</m> divides <m>n</m> as well,
+	so the product in the definition of <m>\mu_2</m> includes all of the primes
+	<m>p_i</m> appearing in the prime factorization of <m>d</m>.
+	If any <m>p_i^2 \mid d</m> then <m>\mu_2(d) = 0</m>,
+	since the product only includes one factor of <m>1/p_i^s</m>;
+	there is no <m>1/(p_i^2)^s</m>.
+	(Here is where the formal variable <m>s</m> plays a role:
+	without it, we could have <m>1/p_i = p_i / p_i^2</m>,
+	and the sum could be rewritten to include a term with denominator <m>p_i^s</m>.
+	With the <m>s</m> however, we have <m>1/p_i^s = p_i^s / (p_i^2)^s</m>,
+	and we are requiring that the numerators only involve <m>\mu_2(d)</m>'s,
+	without any <m>s</m>.)
+	Otherwise, if each <m>a_i = 1</m>, so <m>d = p_1 p_2 \dotsm p_k</m>,
+	then
+	<men> \frac{\mu_2(d)}{d^s} = \frac{-1}{p_1^s} \frac{-1}{p_2^s} \dotsm \frac{-1}{p_k^s}
+		= \frac{(-1)^k}{(p_1 \dotsm p_k)^s} </men>.
+	This shows that in this case <m>\mu_2(d) = (-1)^k</m>.
+	Finally for <m>d = 1</m> we have <m>\mu_2(1) = 1</m>
+	because the term of the product with denominator <m>1^s = 1</m>
+	is given by multiplying <m>1</m> for each prime <m>p \mid n</m>.
+	</p>
+	
+	<p>
+	This shows that <m>\mu_2(d) = \mu_1(d)</m> for all <m>d \mid n</m>.
+	In particular, <m>\mu_2(d)</m> doesn't actually depend on which multiple
+	<m>n</m> of <m>d</m> is used.
+	Therefore <m>\mu_2 = \mu_1</m>.
+	The fact that we can take the infinite product follows from the observation
+	that including factors <m>1 - \frac{1}{p^s}</m> where <m>p \gt d</m>
+	has no effect on the coefficient of <m>\frac{1}{d^s}</m>.
+	</p>
+
+	<p>
+	(proof that <m>\mu_2 = \mu_3</m>)
+	</p>
+
+	</proof>
+
+
+	
+	
+	<definition>
+	The function <m>\mu_1=\mu_2=\mu_3=\mu_4</m> defined in the above theorem
+	is called the <term>Möbius function</term>
+	and we henceforth denote it by <m>\mu</m>.
+	</definition>
+
+	
+  
+  </subsection>
+	
+	
+	<subsection>
+	<title>Möbius function and Dirichlet product</title>
+	
+	</subsection>
+	
+	
+	<subsection>
+	<title>Applications of Möbius inversion</title>
+	
+	</subsection>
+
 
 </section>
