@@ -97,7 +97,7 @@
   <subsection>
   <title>Dirichlet product of multiplicative functions</title>
   
-  <theorem>
+  <theorem xml:id="theorem-dirichlet-product-of-multiplicative-functions">
   <statement> If <m>f,g</m> are both multiplicative,
   then so is <m> f * g </m>. </statement>
   
@@ -148,6 +148,36 @@
 	This is multiplicative but not completely multiplicative,
 	for example <m>d(4) = 3 \neq d(2)^2</m>. </p>
 	</remark>
+	
+	<corollary>
+	<statement>
+	Let <m>f</m> be a multiplicative function.
+	For all <m>n \geq 1</m> we have
+	<men> \sum_{d \mid n} f(d) = \prod_{p^a \Mid n} (1 + f(p) + f(p^2) + \dotsb + f(p^a)) </men>.
+	</statement>
+  <p>
+  (Recall that <m>p^a \Mid n</m> means <m>p^a \mid n</m>, but <m>p^{a+1} \nmid n</m>.)
+  An equivalent way to write this theorem is
+  <me> \sum_{d \mid n} f(d) = \prod_{p \mid n} (1 + f(p) + f(p^2) + \dotsb + f(p^{\nu_p(n)})) </me>.
+  </p>
+  <proof>
+  <p>
+  The left hand side is <m>(f * 1)(n)</m>.
+  Since <m>f</m> and <m>1</m> are multiplicative, then so is <m>f * 1</m>.
+  Let <m>n</m> have prime factorization <m>n = p_1^{a_1} \dotsb p_k^{a_k}</m>.
+  It follows that
+  <md>
+  <mrow> \sum_{d \mid n} f(d) \amp = (f * 1)(n) </mrow>
+  <mrow> \amp = \prod_{j=1}^k (f * 1)(p_j^{a_j}) </mrow>
+  <mrow> \amp = \prod_{j=1}^k \sum_{d \mid p_j^{a_j}} f(d) </mrow>
+  <mrow> \amp = \prod_{j=1}^k (f(1) + f(p_j) + f(p_j^2) + \dotsb + f(p_j^{a_j})) </mrow>
+  </md>.
+  Finally note <m>f(1) = 1</m>.
+  </p>
+  </proof>
+
+	</corollary>
+
 	
 	<theorem>
 	<statement> Let <m>f,g</m> be arithmetic functions.

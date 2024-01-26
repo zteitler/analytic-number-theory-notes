@@ -121,12 +121,63 @@
 	</p>
 
 	<p>
-	(proof that <m>\mu_2 = \mu_3</m>)
+  Finally we prove that <m>\mu_1 * 1 = e</m>, which gives <m>\mu_1 = \mu_4</m>.
+  We have <m>(\mu_1 * 1)(1) = \mu_1(1) 1(1) = 1 = e(1)</m> by definition.
+  For <m>n \gt 1</m>, say <m>n = p_1^{a_1} \dotsm p_k^{a_k}</m>
+  where the <m>p_i</m> are distinct primes and each <m>a_i \geq 1</m>.
+  Let <m>d \mid n</m> and write <m>d = p_1^{b_1} \dotsb p_k^{b_k}</m>.
+  By definition of <m>\mu_1</m>, if any <m>b_i \gt 1</m>
+  then <m>\mu_1(d) = 0</m>.
+  So in the sum <m>(\mu_1 * 1)(n) = \sum_{d \mid n} \mu_1(d)</m>
+  we can ignore such terms, and only include terms <m>d \mid n</m>
+  such that in the prime factorization, every prime appears with
+  power <m>0</m> or <m>1</m>.
+	</p>
+	
+	<p>
+	Let <m>[k] = \{1,\dotsc,k\}</m>.
+	For a subset <m>S \subseteq [k]</m> let <m>d_S = \prod_{i \in S} p_i</m>,
+	that is, <m>d_S</m>is the product of primes in the prime factorization
+	of <m>n</m> corresponding to elements of <m>n</m>.
+	In particular if <m>S = \varnothing</m> then <m>d_{\varnothing} = 1</m>.
+	By the definition of <m>\mu_1</m>, <m>\mu_1(d_S) = (-1)^{|S|}</m>.
+	Now
+	<md>
+	<mrow> (\mu_1 * 1)(n) \amp = \sum_{d \mid n} \mu_1(d) </mrow>
+	<mrow> \amp = \sum_{S \subseteq [k]} (-1)^{|S|} </mrow>
+	<mrow> \amp = \sum_{j = 0}^k \binom{k}{j} (-1)^j </mrow>
+	<mrow> \amp = (1-1)^k </mrow>
+	<mrow> \amp = 0 </mrow>
+	<mrow> \amp = e(n) </mrow>
+	</md>.
+  This shows that <m>\mu_1 * 1 = e</m>, and hence <m>\mu_1 = \mu_4</m>,
+  as claimed.
 	</p>
 
 	</proof>
-
-
+  
+  <proof>
+  <title>Alternative proof of <m>\mu_1=\mu_4</m></title>
+  <p>
+  We know that the arithmetic functions <m>1(n) = 1</m> and <m>e</m>
+  are multiplicative (in fact completely multiplicative).
+  In addition <m>\mu_1</m> is multiplicative
+  (although not completely multiplicative) (exercise).
+  Therefore <m>\mu_1 * 1</m> is multiplicative by
+  <xref ref="theorem-dirichlet-product-of-multiplicative-functions" />.
+  We compute the value
+  <md>
+  <mrow> (\mu_1 * 1)(p^a) \amp = \mu_1(1) + \mu_1(p) + \mu_1(p^2) + \mu_1(p^3) + \dotsb + \mu_1(p^a) </mrow>
+  <mrow> \amp = 1 - 1 + 0 + 0 + \dotsb + 0 </mrow>
+  <mrow> \amp = 0 </mrow>
+  <mrow> \amp = e(p^a) </mrow>
+  </md>.
+  This shows that <m>(\mu_1 * 1)(p^a) = e(p^a)</m> for every prime
+  power <m>p^a</m>.
+  Since both <m>\mu_1 * 1</m> and <m>e</m> are multiplicative,
+  it follows that <m>\mu_1 * 1 = e</m>.
+  </p>
+  </proof>
 	
 	
 	<definition>
@@ -143,13 +194,132 @@
 	<subsection>
 	<title>Möbius function and Dirichlet product</title>
 	
+	<p>
+	We have seen that <m>\mu * 1 = e</m>.
+	Therefore if <m>f</m> and <m>g</m> are any arithmetic functions
+	such that <m>f * 1 = g</m>, then <m>f = g * \mu</m>.
+	This is called <em>Möbius inversion</em>.
+	</p>
+	
+	<theorem>
+	<title>Möbius inversion</title>
+	<statement>
+	<m>f * 1 = g</m> if and only if <m>f = g * \mu</m>.
+	That is,
+	<men> g(n) = \sum_{d \mid n} f(d) </men>
+	if and only if
+	<men> f(n) = \sum_{d \mid n} g(d) \mu\left(\frac{n}{d}\right) </men>.
+	</statement>
+  <proof>
+  Exercise.
+  </proof>
+  </theorem>
+  
+  
+  <p>
+  For example we have <m> \phi * 1 = N </m>,
+  and therefore <m> \phi = N * \mu </m>:
+  <corollary>
+  <statement>
+  For all <m>n \geq 1</m>,
+  <m>\phi(n) = \sum_{d \mid n} d \mu\left(\frac{n}{d} \right)</m>.
+  </statement>
+  </corollary>
+  (As an exercise, how does this relate to our earlier result
+  <m>\phi(n) = n \prod_{p \mid n} (1 - 1/p)</m>?)
+  </p>
+  
+  <p>
+  This gives another proof that <m>\phi</m> is multiplicative:
+  Since <m>\phi = N * \mu</m>, and <m>N</m> and <m>\mu</m> are
+  multiplicative,
+  <xref ref="theorem-dirichlet-product-of-multiplicative-functions" />
+  shows that <m>\phi</m> is multiplicative.
+  </p>
+  
+  <p>
+  Recall that the Von Mangoldt function <m>\Lambda</m> is
+  defined by
+  <men> \Lambda(n) = \begin{cases}
+    \log p, \amp \text{if } n = p^a \\
+    0 , \amp \text{otherwise}
+    \end{cases}
+  </men>
+  That is, <m>\Lambda(p^a) = \log p</m> for any prime power
+  <m>p^a \gt 1</m>, but <m>\Lambda(1)=0</m> and <m>\Lambda(n) = 0</m>
+  when <m>n</m> is not a prime power.
+  </p>
+
+  <theorem>
+  <statement>
+  We have <m>\Lambda * 1 = \log</m>. That is,
+  <men>
+    \sum_{d \mid n} \Lambda(d) = \log n
+  </men>
+  for all <m>n \geq 1</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  For <m>n = 1</m> we have <m>\Lambda(1) = 0</m>,
+  so <m>(\Lambda * 1)(1) = 0</m>.
+  And <m>\log(1) = 0</m>.
+  So <m>(\Lambda * 1)(1) = \log(1)</m>.
+  </p>
+
+  <p>
+  Let <m>n \gt 1</m> with prime factorization
+  <m>n = p_1^{a_1} \dotsm p_k^{a_k}</m>.
+  For <m>d \mid n</m>, we have <m>\Lambda(d) = 0</m>
+  unless <m>d</m> is a prime power.
+  Therefore
+  <md>
+  <mrow> (\Lambda * 1)(n) \amp = \sum_{d \mid n} \Lambda(d) </mrow>
+  <mrow> \amp = \sum_{j = 1}^k \Lambda(p_j) + \Lambda(p_j^2) + \dotsb + \Lambda(p_j^{a_j}) </mrow>
+  <mrow> \amp = \sum_{j = 1}^k \log(p_j) + \log(p_j) + \dotsb + \log(p_j) \qquad (a_j \text{ terms}) </mrow>
+  <mrow> \amp = \sum_{j = 1}^k a_j \log(p_j) </mrow>
+  <mrow> \amp = \log(p_1^{a_1}) + \log(p_2^{a_2}) + \dotsb + \log(p_k^{a_k}) </mrow>
+  <mrow> \amp = \log(n) </mrow>
+  </md>.
+  </p>
+  </proof>
+  </theorem>
+  
+  <corollary>
+  <statement>
+  For <m>n \geq 1</m> we have
+  <men>
+    \Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d}
+      = - \sum_{d \mid n} \mu(d) \log d
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  Since <m>\Lambda * 1 = \log</m>, by Möbius inversion we get
+  <m>\Lambda = \mu * \log</m>.
+  This shows
+  <me> \Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d} </me>.
+  Now,
+  <md>
+  <mrow> \sum_{d \mid n} \mu(d) \log \frac{n}{d}
+         \amp = \sum_{d \mid n} \mu(d) (\log n - \log d) </mrow>
+  <mrow> \amp = \sum_{d \mid n} \mu(d) \log n - \sum_{d \mid n} \mu(d) \log d </mrow>
+  <mrow> \amp = (\log n) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d </mrow>
+  <mrow> \amp = 0 - \sum_{d \mid n} \mu(d) \log d </mrow>
+  </md>.
+  The reason <m> (\log n) \sum_{d \mid n} \mu(d) = 0 </m> is the following.
+  If <m>n \gt 1</m> then <m>\sum_{d \mid n} \mu(d) = 0</m>,
+  by the recursive version of the definition of <m>\mu</m>.
+  And if <m>n = 1</m> then <m>\log n = 0</m>.
+  </p>
+  </proof>
+  </corollary>
+  
+
+	
 	</subsection>
 	
-	
-	<subsection>
-	<title>Applications of Möbius inversion</title>
-	
-	</subsection>
 
 
 </section>

@@ -25,6 +25,7 @@
   \newcommand{\bbQ}{\mathbb Q}
   \newcommand{\bbR}{\mathbb R}
   \newcommand{\bbC}{\mathbb C}
+  \newcommand{\Mid}{\mathrel{\Vert}} % double vertical bar for "exactly divides"
   </macros>
 
   <!-- If you put any latex-image elements you can include preambles -->
