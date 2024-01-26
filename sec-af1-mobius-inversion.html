@@ -111,6 +111,7 @@ window.MathJax = {
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
 \newcommand{\bbC}{\mathbb C}
+\newcommand{\Mid}{\mathrel{\Vert}} 
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -153,7 +154,6 @@ window.MathJax = {
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Möbius function</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Möbius function and Dirichlet product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-4" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Applications of Möbius inversion</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -235,13 +235,113 @@ window.MathJax = {
 <div class="para">This shows that in this case <span class="process-math">\(\mu_2(d) = (-1)^k\text{.}\)</span> Finally for <span class="process-math">\(d = 1\)</span> we have <span class="process-math">\(\mu_2(1) = 1\)</span> because the term of the product with denominator <span class="process-math">\(1^s = 1\)</span> is given by multiplying <span class="process-math">\(1\)</span> for each prime <span class="process-math">\(p \mid n\text{.}\)</span>
 </div>
 </div> <div class="para" id="sec-af1-mobius-inversion-2-4-3">This shows that <span class="process-math">\(\mu_2(d) = \mu_1(d)\)</span> for all <span class="process-math">\(d \mid n\text{.}\)</span> In particular, <span class="process-math">\(\mu_2(d)\)</span> doesn’t actually depend on which multiple <span class="process-math">\(n\)</span> of <span class="process-math">\(d\)</span> is used. Therefore <span class="process-math">\(\mu_2 = \mu_1\text{.}\)</span> The fact that we can take the infinite product follows from the observation that including factors <span class="process-math">\(1 - \frac{1}{p^s}\)</span> where <span class="process-math">\(p \gt d\)</span> has no effect on the coefficient of <span class="process-math">\(\frac{1}{d^s}\text{.}\)</span>
-</div> <div class="para" id="sec-af1-mobius-inversion-2-4-4">(proof that <span class="process-math">\(\mu_2 = \mu_3\)</span>)</div></article><article class="definition definition-like" id="sec-af1-mobius-inversion-2-5"><h4 class="heading">
+</div> <div class="para" id="sec-af1-mobius-inversion-2-4-4">Finally we prove that <span class="process-math">\(\mu_1 * 1 = e\text{,}\)</span> which gives <span class="process-math">\(\mu_1 = \mu_4\text{.}\)</span> We have <span class="process-math">\((\mu_1 * 1)(1) = \mu_1(1) 1(1) = 1 = e(1)\)</span> by definition. For <span class="process-math">\(n \gt 1\text{,}\)</span> say <span class="process-math">\(n = p_1^{a_1} \dotsm p_k^{a_k}\)</span> where the <span class="process-math">\(p_i\)</span> are distinct primes and each <span class="process-math">\(a_i \geq 1\text{.}\)</span> Let <span class="process-math">\(d \mid n\)</span> and write <span class="process-math">\(d = p_1^{b_1} \dotsb p_k^{b_k}\text{.}\)</span> By definition of <span class="process-math">\(\mu_1\text{,}\)</span> if any <span class="process-math">\(b_i \gt 1\)</span> then <span class="process-math">\(\mu_1(d) = 0\text{.}\)</span> So in the sum <span class="process-math">\((\mu_1 * 1)(n) = \sum_{d \mid n} \mu_1(d)\)</span> we can ignore such terms, and only include terms <span class="process-math">\(d \mid n\)</span> such that in the prime factorization, every prime appears with power <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{.}\)</span>
+</div> <div class="para logical" id="sec-af1-mobius-inversion-2-4-5">
+<div class="para">Let <span class="process-math">\([k] = \{1,\dotsc,k\}\text{.}\)</span> For a subset <span class="process-math">\(S \subseteq [k]\)</span> let <span class="process-math">\(d_S = \prod_{i \in S} p_i\text{,}\)</span> that is, <span class="process-math">\(d_S\)</span>is the product of primes in the prime factorization of <span class="process-math">\(n\)</span> corresponding to elements of <span class="process-math">\(n\text{.}\)</span> In particular if <span class="process-math">\(S = \varnothing\)</span> then <span class="process-math">\(d_{\varnothing} = 1\text{.}\)</span> By the definition of <span class="process-math">\(\mu_1\text{,}\)</span> <span class="process-math">\(\mu_1(d_S) = (-1)^{|S|}\text{.}\)</span> Now</div>
+<div class="displaymath process-math" id="sec-af1-mobius-inversion-2-4-5-11">
+\begin{align*}
+(\mu_1 * 1)(n) \amp = \sum_{d \mid n} \mu_1(d) \\
+\amp = \sum_{S \subseteq [k]} (-1)^{|S|} \\
+\amp = \sum_{j = 0}^k \binom{k}{j} (-1)^j \\
+\amp = (1-1)^k \\
+\amp = 0 \\
+\amp = e(n) \text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\mu_1 * 1 = e\text{,}\)</span> and hence <span class="process-math">\(\mu_1 = \mu_4\text{,}\)</span> as claimed.</div>
+</div></article><article class="proof" id="sec-af1-mobius-inversion-2-5"><h4 class="heading"><span class="title">Alternative proof of <span class="process-math">\(\mu_1=\mu_4\)</span>.</span></h4> <div class="para logical" id="sec-af1-mobius-inversion-2-5-2">
+<div class="para">We know that the arithmetic functions <span class="process-math">\(1(n) = 1\)</span> and <span class="process-math">\(e\)</span> are multiplicative (in fact completely multiplicative). In addition <span class="process-math">\(\mu_1\)</span> is multiplicative (although not completely multiplicative) (exercise). Therefore <span class="process-math">\(\mu_1 * 1\)</span> is multiplicative by <a href="" class="xref" data-knowl="./knowl/xref/theorem-dirichlet-product-of-multiplicative-functions.html" title="Theorem 2.3.5">Theorem 2.3.5</a>. We compute the value</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/theorem-dirichlet-product-of-multiplicative-functions.html" id="sec-af1-mobius-inversion-2-5-2-6">
+\begin{align*}
+(\mu_1 * 1)(p^a) \amp = \mu_1(1) + \mu_1(p) + \mu_1(p^2) + \mu_1(p^3) + \dotsb + \mu_1(p^a) \\
+\amp = 1 - 1 + 0 + 0 + \dotsb + 0 \\
+\amp = 0 \\
+\amp = e(p^a) \text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\((\mu_1 * 1)(p^a) = e(p^a)\)</span> for every prime power <span class="process-math">\(p^a\text{.}\)</span> Since both <span class="process-math">\(\mu_1 * 1\)</span> and <span class="process-math">\(e\)</span> are multiplicative, it follows that <span class="process-math">\(\mu_1 * 1 = e\text{.}\)</span>
+</div>
+</div></article><article class="definition definition-like" id="sec-af1-mobius-inversion-2-6"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
 </h4>The function <span class="process-math">\(\mu_1=\mu_2=\mu_3=\mu_4\)</span> defined in the above theorem is called the <dfn class="terminology">Möbius function</dfn> and we henceforth denote it by <span class="process-math">\(\mu\text{.}\)</span></article></section><section class="subsection" id="sec-af1-mobius-inversion-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="space"> </span><span class="title">Möbius function and Dirichlet product</span>
-</h3></section><section class="subsection" id="sec-af1-mobius-inversion-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Applications of Möbius inversion</span>
-</h3></section></section></div>
+</h3>
+<div class="para" id="sec-af1-mobius-inversion-3-2">We have seen that <span class="process-math">\(\mu * 1 = e\text{.}\)</span> Therefore if <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are any arithmetic functions such that <span class="process-math">\(f * 1 = g\text{,}\)</span> then <span class="process-math">\(f = g * \mu\text{.}\)</span> This is called <em class="emphasis">Möbius inversion</em>.</div>
+<article class="theorem theorem-like" id="sec-af1-mobius-inversion-3-3"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Möbius inversion.</span>
+</h4>
+<span class="process-math">\(f * 1 = g\)</span> if and only if <span class="process-math">\(f = g * \mu\text{.}\)</span> That is,<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-3-2-3">
+\begin{equation}
+g(n) = \sum_{d \mid n} f(d) \tag{2.4.6}
+\end{equation}
+</div>if and only if<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-3-2-4">
+\begin{equation}
+f(n) = \sum_{d \mid n} g(d) \mu\left(\frac{n}{d}\right) \text{.}\tag{2.4.7}
+\end{equation}
+</div></article><article class="proof" id="sec-af1-mobius-inversion-3-3-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>Exercise.</article><div class="para" id="sec-af1-mobius-inversion-3-4">For example we have <span class="process-math">\(\phi * 1 = N \text{,}\)</span> and therefore <span class="process-math">\(\phi = N * \mu \text{:}\)</span> <article class="corollary theorem-like" id="sec-af1-mobius-inversion-3-4-3"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h4>For all <span class="process-math">\(n \geq 1\text{,}\)</span> <span class="process-math">\(\phi(n) = \sum_{d \mid n} d \mu\left(\frac{n}{d} \right)\text{.}\)</span></article> (As an exercise, how does this relate to our earlier result <span class="process-math">\(\phi(n) = n \prod_{p \mid n} (1 - 1/p)\text{?}\)</span>)</div>
+<div class="para" id="sec-af1-mobius-inversion-3-5">This gives another proof that <span class="process-math">\(\phi\)</span> is multiplicative: Since <span class="process-math">\(\phi = N * \mu\text{,}\)</span> and <span class="process-math">\(N\)</span> and <span class="process-math">\(\mu\)</span> are multiplicative, <a href="" class="xref" data-knowl="./knowl/xref/theorem-dirichlet-product-of-multiplicative-functions.html" title="Theorem 2.3.5">Theorem 2.3.5</a> shows that <span class="process-math">\(\phi\)</span> is multiplicative.</div>
+<div class="para logical" id="sec-af1-mobius-inversion-3-6">
+<div class="para">Recall that the Von Mangoldt function <span class="process-math">\(\Lambda\)</span> is defined by</div>
+<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-6-2">
+\begin{equation}
+\Lambda(n) = \begin{cases}
+\log p, \amp \text{if } n = p^a \\
+0 , \amp \text{otherwise}
+\end{cases}\tag{2.4.8}
+\end{equation}
+</div>
+<div class="para">That is, <span class="process-math">\(\Lambda(p^a) = \log p\)</span> for any prime power <span class="process-math">\(p^a \gt 1\text{,}\)</span> but <span class="process-math">\(\Lambda(1)=0\)</span> and <span class="process-math">\(\Lambda(n) = 0\)</span> when <span class="process-math">\(n\)</span> is not a prime power.</div>
+</div>
+<article class="theorem theorem-like" id="sec-af1-mobius-inversion-3-7"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span>
+</h4>We have <span class="process-math">\(\Lambda * 1 = \log\text{.}\)</span> That is,<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-7-1-2">
+\begin{equation}
+\sum_{d \mid n} \Lambda(d) = \log n\tag{2.4.9}
+\end{equation}
+</div>for all <span class="process-math">\(n \geq 1\text{.}\)</span></article><article class="proof" id="sec-af1-mobius-inversion-3-7-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-af1-mobius-inversion-3-7-2-1">For <span class="process-math">\(n = 1\)</span> we have <span class="process-math">\(\Lambda(1) = 0\text{,}\)</span> so <span class="process-math">\((\Lambda * 1)(1) = 0\text{.}\)</span> And <span class="process-math">\(\log(1) = 0\text{.}\)</span> So <span class="process-math">\((\Lambda * 1)(1) = \log(1)\text{.}\)</span>
+</div> <div class="para logical" id="sec-af1-mobius-inversion-3-7-2-2">
+<div class="para">Let <span class="process-math">\(n \gt 1\)</span> with prime factorization <span class="process-math">\(n = p_1^{a_1} \dotsm p_k^{a_k}\text{.}\)</span> For <span class="process-math">\(d \mid n\text{,}\)</span> we have <span class="process-math">\(\Lambda(d) = 0\)</span> unless <span class="process-math">\(d\)</span> is a prime power. Therefore</div>
+<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-7-2-2-6">
+\begin{align*}
+(\Lambda * 1)(n) \amp = \sum_{d \mid n} \Lambda(d) \\
+\amp = \sum_{j = 1}^k \Lambda(p_j) + \Lambda(p_j^2) + \dotsb + \Lambda(p_j^{a_j}) \\
+\amp = \sum_{j = 1}^k \log(p_j) + \log(p_j) + \dotsb + \log(p_j) \qquad (a_j \text{ terms}) \\
+\amp = \sum_{j = 1}^k a_j \log(p_j) \\
+\amp = \log(p_1^{a_1}) + \log(p_2^{a_2}) + \dotsb + \log(p_k^{a_k}) \\
+\amp = \log(n) \text{.}
+\end{align*}
+</div>
+</div></article><article class="corollary theorem-like" id="sec-af1-mobius-inversion-3-8"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
+</h4>For <span class="process-math">\(n \geq 1\)</span> we have<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-8-1-2">
+\begin{equation}
+\Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d}
+= - \sum_{d \mid n} \mu(d) \log d\text{.}\tag{2.4.10}
+\end{equation}
+</div></article><article class="proof" id="sec-af1-mobius-inversion-3-8-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-af1-mobius-inversion-3-8-2-1">
+<div class="para">Since <span class="process-math">\(\Lambda * 1 = \log\text{,}\)</span> by Möbius inversion we get <span class="process-math">\(\Lambda = \mu * \log\text{.}\)</span> This shows</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d} \text{.}
+\end{equation*}
+</div>
+<div class="para">Now,</div>
+<div class="displaymath process-math" id="sec-af1-mobius-inversion-3-8-2-1-4">
+\begin{align*}
+\sum_{d \mid n} \mu(d) \log \frac{n}{d}
+\amp = \sum_{d \mid n} \mu(d) (\log n - \log d) \\
+\amp = \sum_{d \mid n} \mu(d) \log n - \sum_{d \mid n} \mu(d) \log d \\
+\amp = (\log n) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d \\
+\amp = 0 - \sum_{d \mid n} \mu(d) \log d \text{.}
+\end{align*}
+</div>
+<div class="para">The reason <span class="process-math">\((\log n) \sum_{d \mid n} \mu(d) = 0 \)</span> is the following. If <span class="process-math">\(n \gt 1\)</span> then <span class="process-math">\(\sum_{d \mid n} \mu(d) = 0\text{,}\)</span> by the recursive version of the definition of <span class="process-math">\(\mu\text{.}\)</span> And if <span class="process-math">\(n = 1\)</span> then <span class="process-math">\(\log n = 0\text{.}\)</span>
+</div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-af1-dirichlet-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

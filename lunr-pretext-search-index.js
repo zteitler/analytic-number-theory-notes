@@ -241,7 +241,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Dirichlet product",
-  "body": " Dirichlet product   Basic properties of Dirichlet product  Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is .    : Here is the Euler totient function, is the function for all , and is the function for all . We have shown that . We can rewrite this as , where the left hand side is . This shows that as claimed.   Other notable operations on arithmetic functions include:  The sum:   The pointwise product:   The composition: (assuming has values in , the domain of )  The Cauchy product, defined by . (I'm not sure if there is a common notation for the Cauchy product.)     The Dirichlet product is associative, commutative, and distributes over the sum. The function (defined by if , otherwise ) is an identity for the Dirichlet product, that is, for any arithmetic function .   For associativity:   For commutativity:   Distributivity is left as an exercise.  Let be any arithmetic function. Then , since for all other than . So .     Let be an arithmetic function. There exists a Dirichlet inverse such that if and only if . If , then is defined recursively by and for , .   If then , so . The converse direction is left as an exercise.      Dirichlet product of multiplicative functions   If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.     For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .     Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .    Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .     If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.     The set of arithmetic functions with is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.     Explanation of Dirichlet product   A power series centered at is an infinite sum . The are the coefficients of the power series. This sum defines a function of provided that it converges.  A Dirichlet series is an infinite sum . Again, the are coefficients of the Dirichlet series. The sum defines a function of provided that it converges.   Multiplication of power series corresponds to the Cauchy product of coefficients, and multiplication of Dirichlet series corresponds to the Dirichlet product of coefficients.  Let us multiply two power series: That is, This shows that the product of power series with sequences of coefficients and is given by the power series with coefficients given by the Cauchy product of and .  Similarly, the Dirichlet product corresponds to multiplication of Dirichlet series. Let us multiply two Dirichlet series: In general,    "
+  "body": " Dirichlet product   Basic properties of Dirichlet product  Let be arithmetic functions. The Dirichlet product of and , denoted , is the arithmetic function defined by where the first sum is over positive divisors of and the second sum is over pairs of positive integers whose product is .    : Here is the Euler totient function, is the function for all , and is the function for all . We have shown that . We can rewrite this as , where the left hand side is . This shows that as claimed.   Other notable operations on arithmetic functions include:  The sum:   The pointwise product:   The composition: (assuming has values in , the domain of )  The Cauchy product, defined by . (I'm not sure if there is a common notation for the Cauchy product.)     The Dirichlet product is associative, commutative, and distributes over the sum. The function (defined by if , otherwise ) is an identity for the Dirichlet product, that is, for any arithmetic function .   For associativity:   For commutativity:   Distributivity is left as an exercise.  Let be any arithmetic function. Then , since for all other than . So .     Let be an arithmetic function. There exists a Dirichlet inverse such that if and only if . If , then is defined recursively by and for , .   If then , so . The converse direction is left as an exercise.      Dirichlet product of multiplicative functions   If are both multiplicative, then so is .   Suppose . Observe that if then there exist factorizations , , such that and . (Simply, is the product of prime factors that are in and , is the product of prime factors that are in and , and so on.) Observe that in this factorization, .  Now we have . This shows that is multiplicative.     For all , is multiplicative.   Let , so is multiplicative (in fact, completely multiplicative). Then where denotes the arithmetic function for all . Here is completely multiplicative. Since and are multiplicative, so is .     Even if both and are completely multiplicative, in general is only multiplicative, not necessarily completely multiplicative. For example let , then , the number of positive divisors of . This is multiplicative but not completely multiplicative, for example .    Let be a multiplicative function. For all we have .  (Recall that means , but .) An equivalent way to write this theorem is .   The left hand side is . Since and are multiplicative, then so is . Let have prime factorization . It follows that . Finally note .     Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .     If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.     The set of arithmetic functions with is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.     Explanation of Dirichlet product   A power series centered at is an infinite sum . The are the coefficients of the power series. This sum defines a function of provided that it converges.  A Dirichlet series is an infinite sum . Again, the are coefficients of the Dirichlet series. The sum defines a function of provided that it converges.   Multiplication of power series corresponds to the Cauchy product of coefficients, and multiplication of Dirichlet series corresponds to the Dirichlet product of coefficients.  Let us multiply two power series: That is, This shows that the product of power series with sequences of coefficients and is given by the power series with coefficients given by the Cauchy product of and .  Similarly, the Dirichlet product corresponds to multiplication of Dirichlet series. Let us multiply two Dirichlet series: In general,    "
 },
 {
   "id": "sec-af1-dirichlet-product-2-2",
@@ -280,9 +280,9 @@ var ptx_lunr_docs = [
   "body": " Let be an arithmetic function. There exists a Dirichlet inverse such that if and only if . If , then is defined recursively by and for , .   If then , so . The converse direction is left as an exercise.   "
 },
 {
-  "id": "sec-af1-dirichlet-product-3-2",
+  "id": "theorem-dirichlet-product-of-multiplicative-functions",
   "level": "2",
-  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-2",
+  "url": "sec-af1-dirichlet-product.html#theorem-dirichlet-product-of-multiplicative-functions",
   "type": "Theorem",
   "number": "2.3.5",
   "title": "",
@@ -310,19 +310,19 @@ var ptx_lunr_docs = [
   "id": "sec-af1-dirichlet-product-3-5",
   "level": "2",
   "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-5",
-  "type": "Theorem",
+  "type": "Corollary",
   "number": "2.3.8",
   "title": "",
-  "body": " Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .   "
+  "body": " Let be a multiplicative function. For all we have .  (Recall that means , but .) An equivalent way to write this theorem is .   The left hand side is . Since and are multiplicative, then so is . Let have prime factorization . It follows that . Finally note .   "
 },
 {
   "id": "sec-af1-dirichlet-product-3-6",
   "level": "2",
   "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-6",
-  "type": "Corollary",
+  "type": "Theorem",
   "number": "2.3.9",
   "title": "",
-  "body": " If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.   "
+  "body": " Let be arithmetic functions. If and are multiplicative, then so is .   First of all we have and since and are multiplicative. By definition of Dirichlet product, . Therefore . We have , that is, for .  We will prove the following statement by induction on : for all such that and . We have seen that this holds for . Suppose inductively that it holds for , and suppose are positive integers such that and . Since is multiplicative we have . Here we use that for , where since and ; we use that and that is multiplicative; at the end we use that is multiplicative.  It follows that .   "
 },
 {
   "id": "sec-af1-dirichlet-product-3-7",
@@ -331,6 +331,15 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "2.3.10",
   "title": "",
+  "body": " If is multiplicative then its Dirichlet inverse is also multiplicative.   Both and are multiplicative.   "
+},
+{
+  "id": "sec-af1-dirichlet-product-3-8",
+  "level": "2",
+  "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-3-8",
+  "type": "Corollary",
+  "number": "2.3.11",
+  "title": "",
   "body": " The set of arithmetic functions with is an abelian group under Dirichlet product. The subset consisting of multiplicative functions is a subgroup.  "
 },
 {
@@ -338,7 +347,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-af1-dirichlet-product.html#sec-af1-dirichlet-product-4-2",
   "type": "Definition",
-  "number": "2.3.11",
+  "number": "2.3.12",
   "title": "",
   "body": " A power series centered at is an infinite sum . The are the coefficients of the power series. This sum defines a function of provided that it converges.  A Dirichlet series is an infinite sum . Again, the are coefficients of the Dirichlet series. The sum defines a function of provided that it converges.  "
 },
@@ -349,7 +358,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Möbius inversion",
-  "body": " Möbius inversion   Möbius function   The following arithmetic functions are all equal:  defined in terms of factorization:   defined in terms of coefficients of a product: For any we define by . Here the product is over all primes that divide , while the sum is over all (positive) divisors of . The symbol is a formal variable; alternatively we can interpret this as saying that the two sides of the equation are equal for all complex numbers . (We follow normal exponent rules, and .) We assert that this function is well-defined in the sense that if and , then has the same coefficient whether the product is taken over the primes that divide , or primes that divide . In fact is the coefficient of in the infinite product over all primes (this is a formal product in the sense that we don't worry about whether it converges).  defined recursively: We define and for , we define by setting .  defined as the Dirichlet inverse of the arithmetic function for all .  That is, for all , .    For example, . This shows that , , , and .  Likewise, . This gives , agreeing with the result when the product was taken over primes instead of . In addition we see that .    The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  (proof that )   The function defined in the above theorem is called the Möbius function and we henceforth denote it by .    Möbius function and Dirichlet product    Applications of Möbius inversion   "
+  "body": " Möbius inversion   Möbius function   The following arithmetic functions are all equal:  defined in terms of factorization:   defined in terms of coefficients of a product: For any we define by . Here the product is over all primes that divide , while the sum is over all (positive) divisors of . The symbol is a formal variable; alternatively we can interpret this as saying that the two sides of the equation are equal for all complex numbers . (We follow normal exponent rules, and .) We assert that this function is well-defined in the sense that if and , then has the same coefficient whether the product is taken over the primes that divide , or primes that divide . In fact is the coefficient of in the infinite product over all primes (this is a formal product in the sense that we don't worry about whether it converges).  defined recursively: We define and for , we define by setting .  defined as the Dirichlet inverse of the arithmetic function for all .  That is, for all , .    For example, . This shows that , , , and .  Likewise, . This gives , agreeing with the result when the product was taken over primes instead of . In addition we see that .    The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  Finally we prove that , which gives . We have by definition. For , say where the are distinct primes and each . Let and write . By definition of , if any then . So in the sum we can ignore such terms, and only include terms such that in the prime factorization, every prime appears with power or .  Let . For a subset let , that is, is the product of primes in the prime factorization of corresponding to elements of . In particular if then . By the definition of , . Now . This shows that , and hence , as claimed.    Alternative proof of  We know that the arithmetic functions and are multiplicative (in fact completely multiplicative). In addition is multiplicative (although not completely multiplicative) (exercise). Therefore is multiplicative by . We compute the value . This shows that for every prime power . Since both and are multiplicative, it follows that .   The function defined in the above theorem is called the Möbius function and we henceforth denote it by .    Möbius function and Dirichlet product  We have seen that . Therefore if and are any arithmetic functions such that , then . This is called Möbius inversion .   Möbius inversion   if and only if . That is, if and only if .  Exercise.   For example we have , and therefore :  For all , .  (As an exercise, how does this relate to our earlier result ?)  This gives another proof that is multiplicative: Since , and and are multiplicative, shows that is multiplicative.  Recall that the Von Mangoldt function is defined by That is, for any prime power , but and when is not a prime power.   We have . That is, for all .   For we have , so . And . So .  Let with prime factorization . For , we have unless is a prime power. Therefore .     For we have .   Since , by Möbius inversion we get . This shows . Now, . The reason is the following. If then , by the recursive version of the definition of . And if then .     "
 },
 {
   "id": "sec-af1-mobius-inversion-2-2",
@@ -376,16 +385,61 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "2.4.1.1",
   "title": "",
-  "body": " The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  (proof that )  "
+  "body": " The recursive definition of means precisely that . Therefore is the Dirichlet inverse of , so . (Note: Dirichlet inverses are unique: if , then (why?).)  Suppose , , and where the are distinct primes and each . First, each divides as well, so the product in the definition of includes all of the primes appearing in the prime factorization of . If any then , since the product only includes one factor of ; there is no . (Here is where the formal variable plays a role: without it, we could have , and the sum could be rewritten to include a term with denominator . With the however, we have , and we are requiring that the numerators only involve 's, without any .) Otherwise, if each , so , then . This shows that in this case . Finally for we have because the term of the product with denominator is given by multiplying for each prime .  This shows that for all . In particular, doesn't actually depend on which multiple of is used. Therefore . The fact that we can take the infinite product follows from the observation that including factors where has no effect on the coefficient of .  Finally we prove that , which gives . We have by definition. For , say where the are distinct primes and each . Let and write . By definition of , if any then . So in the sum we can ignore such terms, and only include terms such that in the prime factorization, every prime appears with power or .  Let . For a subset let , that is, is the product of primes in the prime factorization of corresponding to elements of . In particular if then . By the definition of , . Now . This shows that , and hence , as claimed.  "
 },
 {
   "id": "sec-af1-mobius-inversion-2-5",
   "level": "2",
   "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-5",
+  "type": "Proof",
+  "number": "2.4.1.2",
+  "title": "Alternative proof of <span class=\"process-math\">\\(\\mu_1=\\mu_4\\)<\/span>.",
+  "body": " Alternative proof of  We know that the arithmetic functions and are multiplicative (in fact completely multiplicative). In addition is multiplicative (although not completely multiplicative) (exercise). Therefore is multiplicative by . We compute the value . This shows that for every prime power . Since both and are multiplicative, it follows that .  "
+},
+{
+  "id": "sec-af1-mobius-inversion-2-6",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-2-6",
   "type": "Definition",
   "number": "2.4.3",
   "title": "",
   "body": "The function defined in the above theorem is called the Möbius function and we henceforth denote it by . "
+},
+{
+  "id": "sec-af1-mobius-inversion-3-3",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3-3",
+  "type": "Theorem",
+  "number": "2.4.4",
+  "title": "Möbius inversion.",
+  "body": " Möbius inversion   if and only if . That is, if and only if .  Exercise.  "
+},
+{
+  "id": "sec-af1-mobius-inversion-3-4-3",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3-4-3",
+  "type": "Corollary",
+  "number": "2.4.5",
+  "title": "",
+  "body": " For all , .  "
+},
+{
+  "id": "sec-af1-mobius-inversion-3-7",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3-7",
+  "type": "Theorem",
+  "number": "2.4.6",
+  "title": "",
+  "body": " We have . That is, for all .   For we have , so . And . So .  Let with prime factorization . For , we have unless is a prime power. Therefore .   "
+},
+{
+  "id": "sec-af1-mobius-inversion-3-8",
+  "level": "2",
+  "url": "sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3-8",
+  "type": "Corollary",
+  "number": "2.4.7",
+  "title": "",
+  "body": " For we have .   Since , by Möbius inversion we get . This shows . Now, . The reason is the following. If then , by the recursive version of the definition of . And if then .   "
 },
 {
   "id": "bibliography",
