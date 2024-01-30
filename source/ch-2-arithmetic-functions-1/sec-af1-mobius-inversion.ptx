@@ -137,7 +137,7 @@
 	<p>
 	Let <m>[k] = \{1,\dotsc,k\}</m>.
 	For a subset <m>S \subseteq [k]</m> let <m>d_S = \prod_{i \in S} p_i</m>,
-	that is, <m>d_S</m>is the product of primes in the prime factorization
+	that is, <m>d_S</m> is the product of primes in the prime factorization
 	of <m>n</m> corresponding to elements of <m>n</m>.
 	In particular if <m>S = \varnothing</m> then <m>d_{\varnothing} = 1</m>.
 	By the definition of <m>\mu_1</m>, <m>\mu_1(d_S) = (-1)^{|S|}</m>.

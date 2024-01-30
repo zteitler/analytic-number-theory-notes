@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-elementary-properties" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elementary properties of the floor function</title>
+  
+  <p>
+  The floor function has many elementary properties listed in the textbook.
+  Here are a few.
+  </p>
+
+	<proposition>
+	<statement>
+	For any real numbers <m>x</m> and <m>y</m>, and integer <m>n</m>:
+	<ol>
+	<li> <m>\lfloor n + x \rfloor = n + \lfloor x \rfloor </m> </li>
+	<li> <m>\lfloor x \rfloor + \lfloor y \rfloor
+		\leq \lfloor x + y \rfloor \leq \lfloor x \rfloor + \lfloor y \rfloor + 1 </m> </li>
+	<li> <m>\lfloor -x \rfloor = - \lceil x \rceil </m> </li>
+	</ol>
+	</statement>
+	
+	<proof>
+	<p>
+	For the first statement, <m>n + \lfloor x \rfloor</m> is an integer
+	which is less than or equal to <m>n + x</m>.
+	Since <m>\lfloor n + x \rfloor</m> is defined as the greatest integer
+	less than or equal to <m>n + x</m>, it must be that this integer
+	<m>n + \lfloor x \rfloor</m> is less than or equal to the greatest integer,
+	so <m>n + \lfloor x \rfloor \leq \lfloor n + x \rfloor</m>.
+	</p>
+
+	<p>
+	On the other hand, <m>\lfloor n + x \rfloor - n</m> is an integer
+	which is less than or equal to <m>(n+x)-n = x</m>.
+	Therefore <m>\lfloor n + x \rfloor - n \leq \lfloor x \rfloor</m>.
+	This shows that <m>lfloor n + x \rfloor \leq n + \lfloor x \rfloor </m>.
+	</p>
+
+	<p>
+	For the second statement,
+	observe that <m>\lfloor x \rfloor + \lfloor y \rfloor</m> is an integer
+	which is less than or equal to <m>x + y</m>.
+	Therefore it is less than or equal to <m>\lfloor x + y \rfloor</m>.
+	</p>
+	
+	<p>
+	As before, <m>\lfloor x + y \rfloor - \lfloor x \rfloor</m>
+	is an integer which is less than or equal to <m>x + y - \lfloor x \rfloor</m>.
+	We have <m>x - \lfloor x \rfloor \leq 1</m> (in fact, strictly less)
+	(because if <m>x - \lfloor x \rfloor \geq 1</m> then <m>\lfloor x \rfloor + 1 \leq x</m>,
+	contradicting the maximality of <m>\lfloor x \rfloor</m>).
+	Putting it together we have
+	<me>
+		\lfloor x + y \rfloor - \lfloor x \rfloor \leq x + y - \lfloor x \rfloor
+			\leq y + 1
+	</me>.
+	Therefore
+	<me>
+		\lfloor x + y \rfloor - \lfloor x \rfloor \leq \lfloor y+1 \rfloor = \lfloor y + \rfloor + 1
+	</me>.
+	</p>
+	
+	<p>
+	Finally, to see that <m>\lfloor -x \rfloor = - \lceil x \rceil</m>,
+	observe that <m>m \leq -x</m> if and only if <m>-m \geq x</m>.
+	</p>
+
+	
+	</proof>
+
+	</proposition>
+
+
+		
+
+
+</section>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-hermite-identity" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Hermite's Identity</title>
+  
+  <theorem>
+  <title>Hermite's Identity</title>
+  <statement>
+  For any real <m>x</m> and positive integer <m>n</m>,
+  <men>
+  	\sum_{0 \leq k \leq n-1} \left\lfloor x + \frac{k}{n} \right\rfloor
+  	= \lfloor n x \rfloor
+  </men>
+	</statement>
+	</theorem>
+
+	<example>
+	If <m>n=1</m> the statement says:
+	<me>
+		\sum_{k=0} \left\lfloor x + \frac{k}{1} \right\rfloor
+		= \lfloor x + 0 \rfloor
+		= \lfloor 1 x \rfloor
+	</me>.
+	If <m>n=2</m> the statement says:
+	<me>
+		\sum_{0 \leq k \leq 1} \left\lfloor x + \frac{k}{n} \right\rfloor
+		= \lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor
+	</me>.
+	Say <m>\lfloor x \rfloor = m</m>.
+	If <m>m \leq x \lt m + \frac{1}{2}</m> then
+	<me>
+		\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor
+		= m + m = 2m
+	</me>
+	and
+	<me> \lfloor 2x \rfloor = 2m </me>
+	because <m>2m \leq 2x \lt 2m+1</m>.
+	Otherwise if <m>m + \frac{1}{2} \leq x \lt m+1</m> then
+	<me>
+		\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor
+		= m + (m+1) = 2m+1 = \lfloor 2x \rfloor
+	</me>
+	because <m>2m+1 \leq 2x \lt 2m+2</m>.
+	</example>
+	
+	
+	<p>
+	The textbook gives several generalizations of this theorem,
+	for example summing <m>0 \leq k \leq m-1</m> where <m>m</m>
+	can be a different integer than <m>n</m>.
+	For class we'll just give a direct proof of Hermite's identity
+	rather than one of the generalizations.
+	</p>
+
+	
+	<proof>
+	<p>
+	Let <m>m</m> be the integer such that
+	<me> \frac{m}{n} \leq x \lt \frac{m+1}{n} </me>,
+	in other words <m> m = \lfloor n x </m>.
+	Write <m>m = q n + r</m> where <m>0 \leq r \lt n</m>.
+	Observe that <m>q + \frac{r}{n} \leq x \lt q + \frac{r+1}{n}</m>.
+	In particular <m>\lfloor x \rfloor = q</m>.
+	</p>
+	
+	<p>
+	For <m>0 \leq k \leq n - r - 1</m> we have
+	<md>
+	<mrow> q \amp \leq x </mrow>
+	<mrow> \amp \leq x + \frac{k}{n} </mrow>
+	<mrow> \amp \lt \frac{m+1}{n} + \frac{k}{n} </mrow>
+	<mrow> \amp \leq \frac{q n + r + 1 + (n-r-1)}{n} </mrow>
+	<mrow> \amp = q + 1 </mrow>
+	</md>.
+	That is,
+	<me> q \leq x + \frac{k}{n} \lt q+1 </me>.
+	Then <m> \left\lfloor x + \frac{k}{n} \right\rfloor = q </m>.
+	</p>
+	
+	<p>
+	For <m>n-r \leq k \leq n-1</m> we have
+	<md>
+	<mrow> q+1 \amp \leq 
+	
+	</proof>
+
+
+	
+
+
+</section>

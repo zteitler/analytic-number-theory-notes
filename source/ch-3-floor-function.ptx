@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-3-floor-function" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Floor Function</title>
+
+  <introduction>
+  
+  <definition>
+  The <term>floor</term> of a real number <m>x</m>,
+  denoted <m>\lfloor x \rfloor</m>, is the greatest integer less than or equal to <m>x</m>.
+  The floor is also denoted <m>[x]</m>, mostly in older texts.
+  Related functions include:
+  <ol>
+  <li> <m>\lceil x \rceil = \min \{ n \in \bbZ : n \geq x \}</m>,
+  the <term>ceiling</term> of <m>x</m> </li>
+  <li> <m>\{x\} = x - \lfloor x \rfloor</m>,
+  the <term>fractional part</term> of <m>x</m> </li>
+  </ol>
+	</definition>
+
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="ch-3-floor-function/sec-elementary-properties.ptx" />
+  <xi:include href="ch-3-floor-function/sec-hermite-identity.ptx" />
+
+</chapter>
