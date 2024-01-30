@@ -96,7 +96,7 @@
 	there is no <m>1/(p_i^2)^s</m>.
 	(Here is where the formal variable <m>s</m> plays a role:
 	without it, we could have <m>1/p_i = p_i / p_i^2</m>,
-	and the sum could be rewritten to include a term with denominator <m>p_i^s</m>.
+	and the sum could be rewritten to include a term with denominator <m>p_i^2</m>.
 	With the <m>s</m> however, we have <m>1/p_i^s = p_i^s / (p_i^2)^s</m>,
 	and we are requiring that the numerators only involve <m>\mu_2(d)</m>'s,
 	without any <m>s</m>.)
@@ -222,7 +222,7 @@
   <corollary>
   <statement>
   For all <m>n \geq 1</m>,
-  <m>\phi(n) = \sum_{d \mid n} d \mu\left(\frac{n}{d} \right)</m>.
+  <m>\phi(n) = \sum_{d \mid n} \frac{n}{d} \mu(d)</m>.
   </statement>
   </corollary>
   (As an exercise, how does this relate to our earlier result
