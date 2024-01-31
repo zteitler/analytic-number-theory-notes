@@ -57,7 +57,7 @@
 	<p>
 	Let <m>m</m> be the integer such that
 	<me> \frac{m}{n} \leq x \lt \frac{m+1}{n} </me>,
-	in other words <m> m = \lfloor n x </m>.
+	in other words <m> m = \lfloor n x \rfloor</m>.
 	Write <m>m = q n + r</m> where <m>0 \leq r \lt n</m>.
 	Observe that <m>q + \frac{r}{n} \leq x \lt q + \frac{r+1}{n}</m>.
 	In particular <m>\lfloor x \rfloor = q</m>.
@@ -80,7 +80,25 @@
 	<p>
 	For <m>n-r \leq k \leq n-1</m> we have
 	<md>
-	<mrow> q+1 \amp \leq 
+	<mrow> q+1 \amp = q + \frac{r}{n} + \frac{n-r}{n} </mrow>
+	<mrow> \amp \leq x + \frac{k}{n} </mrow>
+	<mrow> \amp \lt \frac{m+1}{n} + \frac{k}{n} </mrow>
+	<mrow> \amp \leq \frac{q n + r + n-1}{n} </mrow>
+	<mrow> \amp \leq \frac{q n + n + n}{n} </mrow>
+	<mrow> \amp = q + 2 </mrow>
+	</md>.
+	So <m>q+1 \leq x + \frac{k}{n} \lt q+2</m>.
+	Therefore <m>\left\lfloor x + \frac{k}{n} \right\rfloor = q+1</m>.
+	</p>
+
+  <p>
+  Now the sum in Hermite's identity has <m>n-r</m> terms
+  that are equal to <m>q</m>, and <m>r</m> terms that are
+  equal to <m>q+1</m>.
+  So the sum is equal to <m>(n-r)q + r(q+1)</m>,
+  which is equal to <m>nq+r = m = \lfloor n x \rfloor</m>.
+  </p>
+
 	
 	</proof>
 
