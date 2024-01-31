@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Analytic Number Theory Course Notes</title>
+<title>Hermite’s Identity</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><span class="up-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></span><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-elementary-properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-3-floor-function.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -158,11 +158,11 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-3-floor-function.html" class="internal"><span class="codenumber">3</span> <span class="title">Floor Function</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-properties.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Elementary properties of the floor function</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-identity.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Hermite’s Identity</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hermite-identity.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -173,15 +173,91 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="analytic-number-theory-notes"><nav class="summary-links"><ul>
-<li><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></li>
-<li><a href="ch-1-bertrands-postulate.html" class="internal"><span class="codenumber">1</span> <span class="title">Bertrand’s Postulate</span></a></li>
-<li><a href="ch-2-arithmetic-functions-1.html" class="internal"><span class="codenumber">2</span> <span class="title">Arithmetic Functions I</span></a></li>
-<li><a href="ch-3-floor-function.html" class="internal"><span class="codenumber">3</span> <span class="title">Floor Function</span></a></li>
-<li><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></li>
-</ul></nav></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hermite-identity"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.2</span><span class="space"> </span><span class="title">Hermite’s Identity</span>
+</h2>
+<article class="theorem theorem-like" id="sec-hermite-identity-2"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Hermite’s Identity.</span>
+</h3>For any real <span class="process-math">\(x\)</span> and positive integer <span class="process-math">\(n\text{,}\)</span><div class="displaymath process-math" id="sec-hermite-identity-2-2-3">
+\begin{equation}
+\sum_{0 \leq k \leq n-1} \left\lfloor x + \frac{k}{n} \right\rfloor
+= \lfloor n x \rfloor\tag{3.2.1}
+\end{equation}
+</div></article><article class="example example-like" id="sec-hermite-identity-3"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span>
+</h3>If <span class="process-math">\(n=1\)</span> the statement says:<div class="displaymath process-math">
+\begin{equation*}
+\sum_{k=0} \left\lfloor x + \frac{k}{1} \right\rfloor
+= \lfloor x + 0 \rfloor
+= \lfloor 1 x \rfloor\text{.}
+\end{equation*}
+</div>If <span class="process-math">\(n=2\)</span> the statement says:<div class="displaymath process-math">
+\begin{equation*}
+\sum_{0 \leq k \leq 1} \left\lfloor x + \frac{k}{n} \right\rfloor
+= \lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor\text{.}
+\end{equation*}
+</div>Say <span class="process-math">\(\lfloor x \rfloor = m\text{.}\)</span> If <span class="process-math">\(m \leq x \lt m + \frac{1}{2}\)</span> then<div class="displaymath process-math">
+\begin{equation*}
+\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor
+= m + m = 2m
+\end{equation*}
+</div>and<div class="displaymath process-math">
+\begin{equation*}
+\lfloor 2x \rfloor = 2m 
+\end{equation*}
+</div>because <span class="process-math">\(2m \leq 2x \lt 2m+1\text{.}\)</span> Otherwise if <span class="process-math">\(m + \frac{1}{2} \leq x \lt m+1\)</span> then<div class="displaymath process-math">
+\begin{equation*}
+\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor
+= m + (m+1) = 2m+1 = \lfloor 2x \rfloor
+\end{equation*}
+</div>because <span class="process-math">\(2m+1 \leq 2x \lt 2m+2\text{.}\)</span></article><div class="para" id="sec-hermite-identity-4">The textbook gives several generalizations of this theorem, for example summing <span class="process-math">\(0 \leq k \leq m-1\)</span> where <span class="process-math">\(m\)</span> can be a different integer than <span class="process-math">\(n\text{.}\)</span> For class we’ll just give a direct proof of Hermite’s identity rather than one of the generalizations.</div>
+<article class="proof" id="sec-hermite-identity-5"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-hermite-identity-5-1">
+<div class="para">Let <span class="process-math">\(m\)</span> be the integer such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{m}{n} \leq x \lt \frac{m+1}{n} \text{,}
+\end{equation*}
+</div>
+<div class="para">in other words <span class="process-math">\(m = \lfloor n x \rfloor\text{.}\)</span> Write <span class="process-math">\(m = q n + r\)</span> where <span class="process-math">\(0 \leq r \lt n\text{.}\)</span> Observe that <span class="process-math">\(q + \frac{r}{n} \leq x \lt q + \frac{r+1}{n}\text{.}\)</span> In particular <span class="process-math">\(\lfloor x \rfloor = q\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-hermite-identity-5-2">
+<div class="para">For <span class="process-math">\(0 \leq k \leq n - r - 1\)</span> we have</div>
+<div class="displaymath process-math" id="sec-hermite-identity-5-2-2">
+\begin{align*}
+q \amp \leq x \\
+\amp \leq x + \frac{k}{n} \\
+\amp \lt \frac{m+1}{n} + \frac{k}{n} \\
+\amp \leq \frac{q n + r + 1 + (n-r-1)}{n} \\
+\amp = q + 1 \text{.}
+\end{align*}
+</div>
+<div class="para">That is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+q \leq x + \frac{k}{n} \lt q+1 \text{.}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\left\lfloor x + \frac{k}{n} \right\rfloor = q \text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-hermite-identity-5-3">
+<div class="para">For <span class="process-math">\(n-r \leq k \leq n-1\)</span> we have</div>
+<div class="displaymath process-math" id="sec-hermite-identity-5-3-2">
+\begin{align*}
+q+1 \amp = q + \frac{r}{n} + \frac{n-r}{n} \\
+\amp \leq x + \frac{k}{n} \\
+\amp \lt \frac{m+1}{n} + \frac{k}{n} \\
+\amp \leq \frac{q n + r + n-1}{n} \\
+\amp \leq \frac{q n + n + n}{n} \\
+\amp = q + 2 \text{.}
+\end{align*}
+</div>
+<div class="para">So <span class="process-math">\(q+1 \leq x + \frac{k}{n} \lt q+2\text{.}\)</span> Therefore <span class="process-math">\(\left\lfloor x + \frac{k}{n} \right\rfloor = q+1\text{.}\)</span>
+</div>
+</div> <div class="para" id="sec-hermite-identity-5-4">Now the sum in Hermite’s identity has <span class="process-math">\(n-r\)</span> terms that are equal to <span class="process-math">\(q\text{,}\)</span> and <span class="process-math">\(r\)</span> terms that are equal to <span class="process-math">\(q+1\text{.}\)</span> So the sum is equal to <span class="process-math">\((n-r)q + r(q+1)\text{,}\)</span> which is equal to <span class="process-math">\(nq+r = m = \lfloor n x \rfloor\text{.}\)</span>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-elementary-properties.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -442,6 +442,60 @@ var ptx_lunr_docs = [
   "body": " For we have .   Since , by Möbius inversion we get . This shows . Now, . The reason is the following. If then , by the recursive version of the definition of . And if then .   "
 },
 {
+  "id": "sec-elementary-properties",
+  "level": "1",
+  "url": "sec-elementary-properties.html",
+  "type": "Section",
+  "number": "3.1",
+  "title": "Elementary properties of the floor function",
+  "body": " Elementary properties of the floor function  The floor function has many elementary properties listed in the textbook. Here are a few.   For any real numbers and , and integer :              For the first statement, is an integer which is less than or equal to . Since is defined as the greatest integer less than or equal to , it must be that this integer is less than or equal to the greatest integer, so .  On the other hand, is an integer which is less than or equal to . Therefore . This shows that .  For the second statement, observe that is an integer which is less than or equal to . Therefore it is less than or equal to .  As before, is an integer which is less than or equal to . We have (in fact, strictly less) (because if then , contradicting the maximality of ). Putting it together we have . Therefore .  Finally, to see that , observe that if and only if .    "
+},
+{
+  "id": "sec-elementary-properties-3",
+  "level": "2",
+  "url": "sec-elementary-properties.html#sec-elementary-properties-3",
+  "type": "Proposition",
+  "number": "3.1.1",
+  "title": "",
+  "body": " For any real numbers and , and integer :              For the first statement, is an integer which is less than or equal to . Since is defined as the greatest integer less than or equal to , it must be that this integer is less than or equal to the greatest integer, so .  On the other hand, is an integer which is less than or equal to . Therefore . This shows that .  For the second statement, observe that is an integer which is less than or equal to . Therefore it is less than or equal to .  As before, is an integer which is less than or equal to . We have (in fact, strictly less) (because if then , contradicting the maximality of ). Putting it together we have . Therefore .  Finally, to see that , observe that if and only if .   "
+},
+{
+  "id": "sec-hermite-identity",
+  "level": "1",
+  "url": "sec-hermite-identity.html",
+  "type": "Section",
+  "number": "3.2",
+  "title": "Hermite’s Identity",
+  "body": " Hermite's Identity   Hermite's Identity  For any real and positive integer ,    If the statement says: . If the statement says: . Say . If then and because . Otherwise if then because .  The textbook gives several generalizations of this theorem, for example summing where can be a different integer than . For class we'll just give a direct proof of Hermite's identity rather than one of the generalizations.   Let be the integer such that , in other words . Write where . Observe that . In particular .  For we have . That is, . Then .  For we have . So . Therefore .  Now the sum in Hermite's identity has terms that are equal to , and terms that are equal to . So the sum is equal to , which is equal to .   "
+},
+{
+  "id": "sec-hermite-identity-2",
+  "level": "2",
+  "url": "sec-hermite-identity.html#sec-hermite-identity-2",
+  "type": "Theorem",
+  "number": "3.2.1",
+  "title": "Hermite’s Identity.",
+  "body": " Hermite's Identity  For any real and positive integer ,   "
+},
+{
+  "id": "sec-hermite-identity-3",
+  "level": "2",
+  "url": "sec-hermite-identity.html#sec-hermite-identity-3",
+  "type": "Example",
+  "number": "3.2.2",
+  "title": "",
+  "body": "If the statement says: . If the statement says: . Say . If then and because . Otherwise if then because . "
+},
+{
+  "id": "sec-hermite-identity-5",
+  "level": "2",
+  "url": "sec-hermite-identity.html#sec-hermite-identity-5",
+  "type": "Proof",
+  "number": "3.2.1",
+  "title": "",
+  "body": " Let be the integer such that , in other words . Write where . Observe that . In particular .  For we have . That is, . Then .  For we have . So . Therefore .  Now the sum in Hermite's identity has terms that are equal to , and terms that are equal to . So the sum is equal to , which is equal to .  "
+},
+{
   "id": "bibliography",
   "level": "1",
   "url": "bibliography.html",

@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-af1-dirichlet-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-arithmetic-functions-1.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-af1-dirichlet-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-2-arithmetic-functions-1.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-3-floor-function.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -156,6 +156,13 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-af1-mobius-inversion.html#sec-af1-mobius-inversion-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Möbius function and Dirichlet product</span></a></div></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-3-floor-function.html" class="internal"><span class="codenumber">3</span> <span class="title">Floor Function</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-properties.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Elementary properties of the floor function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-identity.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -237,7 +244,7 @@ window.MathJax = {
 </div> <div class="para" id="sec-af1-mobius-inversion-2-4-3">This shows that <span class="process-math">\(\mu_2(d) = \mu_1(d)\)</span> for all <span class="process-math">\(d \mid n\text{.}\)</span> In particular, <span class="process-math">\(\mu_2(d)\)</span> doesn’t actually depend on which multiple <span class="process-math">\(n\)</span> of <span class="process-math">\(d\)</span> is used. Therefore <span class="process-math">\(\mu_2 = \mu_1\text{.}\)</span> The fact that we can take the infinite product follows from the observation that including factors <span class="process-math">\(1 - \frac{1}{p^s}\)</span> where <span class="process-math">\(p \gt d\)</span> has no effect on the coefficient of <span class="process-math">\(\frac{1}{d^s}\text{.}\)</span>
 </div> <div class="para" id="sec-af1-mobius-inversion-2-4-4">Finally we prove that <span class="process-math">\(\mu_1 * 1 = e\text{,}\)</span> which gives <span class="process-math">\(\mu_1 = \mu_4\text{.}\)</span> We have <span class="process-math">\((\mu_1 * 1)(1) = \mu_1(1) 1(1) = 1 = e(1)\)</span> by definition. For <span class="process-math">\(n \gt 1\text{,}\)</span> say <span class="process-math">\(n = p_1^{a_1} \dotsm p_k^{a_k}\)</span> where the <span class="process-math">\(p_i\)</span> are distinct primes and each <span class="process-math">\(a_i \geq 1\text{.}\)</span> Let <span class="process-math">\(d \mid n\)</span> and write <span class="process-math">\(d = p_1^{b_1} \dotsb p_k^{b_k}\text{.}\)</span> By definition of <span class="process-math">\(\mu_1\text{,}\)</span> if any <span class="process-math">\(b_i \gt 1\)</span> then <span class="process-math">\(\mu_1(d) = 0\text{.}\)</span> So in the sum <span class="process-math">\((\mu_1 * 1)(n) = \sum_{d \mid n} \mu_1(d)\)</span> we can ignore such terms, and only include terms <span class="process-math">\(d \mid n\)</span> such that in the prime factorization, every prime appears with power <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{.}\)</span>
 </div> <div class="para logical" id="sec-af1-mobius-inversion-2-4-5">
-<div class="para">Let <span class="process-math">\([k] = \{1,\dotsc,k\}\text{.}\)</span> For a subset <span class="process-math">\(S \subseteq [k]\)</span> let <span class="process-math">\(d_S = \prod_{i \in S} p_i\text{,}\)</span> that is, <span class="process-math">\(d_S\)</span>is the product of primes in the prime factorization of <span class="process-math">\(n\)</span> corresponding to elements of <span class="process-math">\(n\text{.}\)</span> In particular if <span class="process-math">\(S = \varnothing\)</span> then <span class="process-math">\(d_{\varnothing} = 1\text{.}\)</span> By the definition of <span class="process-math">\(\mu_1\text{,}\)</span> <span class="process-math">\(\mu_1(d_S) = (-1)^{|S|}\text{.}\)</span> Now</div>
+<div class="para">Let <span class="process-math">\([k] = \{1,\dotsc,k\}\text{.}\)</span> For a subset <span class="process-math">\(S \subseteq [k]\)</span> let <span class="process-math">\(d_S = \prod_{i \in S} p_i\text{,}\)</span> that is, <span class="process-math">\(d_S\)</span> is the product of primes in the prime factorization of <span class="process-math">\(n\)</span> corresponding to elements of <span class="process-math">\(n\text{.}\)</span> In particular if <span class="process-math">\(S = \varnothing\)</span> then <span class="process-math">\(d_{\varnothing} = 1\text{.}\)</span> By the definition of <span class="process-math">\(\mu_1\text{,}\)</span> <span class="process-math">\(\mu_1(d_S) = (-1)^{|S|}\text{.}\)</span> Now</div>
 <div class="displaymath process-math" id="sec-af1-mobius-inversion-2-4-5-11">
 \begin{align*}
 (\mu_1 * 1)(n) \amp = \sum_{d \mid n} \mu_1(d) \\
@@ -343,7 +350,7 @@ f(n) = \sum_{d \mid n} g(d) \mu\left(\frac{n}{d}\right) \text{.}\tag{2.4.7}
 </div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-af1-dirichlet-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-af1-dirichlet-product.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-3-floor-function.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
