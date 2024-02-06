@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Prime Number Theorem</title>
+<title>Applications of Hermite’s Identity</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-1-bertrands-postulate.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-bertrand-erdos-proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-hermite-identity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-3-floor-function.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -121,10 +121,10 @@ window.MathJax = {
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-1-bertrands-postulate.html" class="internal"><span class="codenumber">1</span> <span class="title">Bertrand’s Postulate</span></a></div>
-<ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-pnt.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Prime Number Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-bertrand-erdos-proof.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Erdős’s proof of Bertrand’s postulate</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-bertrand-corollaries.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Corollaries</span></a></div>
@@ -158,12 +158,12 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-3-floor-function.html" class="internal"><span class="codenumber">3</span> <span class="title">Floor Function</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-properties.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Elementary properties of the floor function</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-identity.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Hermite’s Identity</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -174,53 +174,136 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-bertrand-pnt"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Prime Number Theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hermite-applications"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Applications of Hermite’s Identity</span>
 </h2>
-<div class="para logical" id="sec-bertrand-pnt-2">
-<div class="para">Write <span class="process-math">\(\pi(x)\)</span> for the number of primes less than or equal to <span class="process-math">\(x\text{.}\)</span> The <em class="emphasis">Prime Number Theorem</em> (PNT) asserts that</div>
-<div class="displaymath process-math" id="sec-bertrand-pnt-2-4">
+<div class="para" id="sec-hermite-applications-2">Here are a few examples illustrating uses of Hermite’s identity.</div>
+<article class="proposition theorem-like" id="sec-hermite-applications-3"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(n \in \bbN\text{.}\)</span> Then<div class="displaymath process-math" id="sec-hermite-applications-3-1-2">
 \begin{equation}
-\pi(x) \sim \frac{x}{\log x} \quad \text{as } x \to \infty \text{,}\tag{1.1.1}
+n = \left\lfloor \frac{n+1}{2} \right\rfloor
++ \left\lfloor \frac{n+2}{2^2} \right\rfloor
++ \left\lfloor \frac{n+2^2}{2^3} \right\rfloor
++ \left\lfloor \frac{n+2^3}{2^4} \right\rfloor
++ \dotsb\text{.}\tag{3.3.1}
 \end{equation}
-</div>
-<div class="para">that is,</div>
-<div class="displaymath process-math" id="sec-bertrand-pnt-2-5">
-\begin{equation}
-\lim_{x \to \infty} \frac{\pi(x)}{x/\log x} = 1 \text{.}\tag{1.1.2}
-\end{equation}
-</div>
-<div class="para">Here <span class="process-math">\(\log\)</span> is the natural logarithm.</div>
-</div>
-<div class="para" id="sec-bertrand-pnt-3">The Prime Number Theorem was proved in 1896-97 by Hadamard and by de la Vallée Poussin independently.</div>
-<div class="para" id="sec-bertrand-pnt-4">A consequence of the PNT is that for any <span class="process-math">\(\epsilon &gt; 0\)</span> there exists <span class="process-math">\(N(\epsilon)\)</span> such that for all <span class="process-math">\(n \geq N(\epsilon)\text{,}\)</span> there exists a prime <span class="process-math">\(p\)</span> such that <span class="process-math">\(n \lt p \leq (1+\epsilon)n\text{.}\)</span>
-</div>
-<div class="para logical" id="sec-bertrand-pnt-5">
-<div class="para">Why does PNT imply this? The number of primes in the interval <span class="process-math">\((n , (1+\epsilon)n] \)</span> is equal to</div>
+</div></article><article class="proof" id="sec-hermite-applications-3-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-hermite-applications-3-2-1">
+<div class="para">For sufficiently large <span class="process-math">\(k\text{,}\)</span> observe that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\pi((1+\epsilon)n) - \pi(n) 
+\left\lfloor \frac{n+2^k}{2^{k+1}} \right\rfloor
+= \left\lfloor \frac{1}{2} + \frac{n}{2^{k+1}} \right\rfloor
+= 0
 \end{equation*}
 </div>
-<div class="para">which is asymptotic to</div>
+<div class="para">(as soon as <span class="process-math">\(n/2^{k+1} \lt 1/2\)</span>). So the sum is actually a finite sum.</div>
+</div> <div class="para logical" id="sec-hermite-applications-3-2-2">
+<div class="para">Now we use Hermite’s identity: From</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} \text{,}
+\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor = \lfloor 2x \rfloor
 \end{equation*}
 </div>
-<div class="para">which goes to infinity as <span class="process-math">\(n \to \infty\text{.}\)</span>
+<div class="para">we get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\lfloor x + \frac{1}{2} \right\rfloor = \lfloor 2x \rfloor - \lfloor x \rfloor\text{.}
+\end{equation*}
 </div>
+</div> <div class="para logical" id="sec-hermite-applications-3-2-3">
+<div class="para">Applying this to the right hand side of the equation, we have</div>
+<div class="displaymath process-math" id="sec-hermite-applications-3-2-3-1">
+\begin{align*}
+\left\lfloor \frac{n+1}{2} \right\rfloor
+\amp
++ \left\lfloor \frac{n+2}{2^2} \right\rfloor
++ \left\lfloor \frac{n+2^2}{2^3} \right\rfloor
++ \left\lfloor \frac{n+2^3}{2^4} \right\rfloor
++ \dotsb\\
+\amp = \left\lfloor \frac{1}{2} + \frac{n}{2} \right\rfloor
++ \left\lfloor \frac{1}{2} + \frac{n}{2^2} \right\rfloor
++ \left\lfloor \frac{1}{2} + \frac{n}{2^3} \right\rfloor
++ \dotsb\\
+\amp = \left( \lfloor n \rfloor - \left\lfloor \frac{n}{2} \right\rfloor \right)
++ \left( \left\lfloor \frac{n}{2} \right\rfloor - \left\lfloor \frac{n}{2^2} \right\rfloor \right)
++ \left( \left\lfloor \frac{n}{2^2} \right\rfloor - \left\lfloor \frac{n}{2^3} \right\rfloor \right)
++ \dotsb
+\end{align*}
 </div>
-<details id="sec-bertrand-pnt-6" class="exercise exercise-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like"><div class="para" id="sec-bertrand-pnt-6-1">For <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> <span class="process-math">\(\lim_{n \to \infty} \frac{(1+\epsilon)n}{\log((1+\epsilon)n)} - \frac{n}{\log n} = \infty \text{.}\)</span>
-</div></article></details><details id="sec-bertrand-pnt-7" class="exercise exercise-like born-hidden-knowl"><summary><h3 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
-</h3></summary><article class="exercise exercise-like"><div class="para" id="sec-bertrand-pnt-7-1">If <span class="process-math">\(f(x)\text{,}\)</span> <span class="process-math">\(g(x)\text{,}\)</span> <span class="process-math">\(a(x)\text{,}\)</span> <span class="process-math">\(b(x)\)</span> are positive-valued functions and <span class="process-math">\(f \sim a\text{,}\)</span> <span class="process-math">\(g \sim b\text{,}\)</span> then <span class="process-math">\(f+g \sim a+b\text{.}\)</span> State and prove suitable conditions for <span class="process-math">\(f-g \sim a-b\text{.}\)</span>
-</div></article></details><div class="para" id="sec-bertrand-pnt-8">Bertrand’s postulate is relatively weak (<span class="process-math">\(\epsilon = 1\)</span>) but on the other hand it is claimed for all <span class="process-math">\(n \geq 1\text{,}\)</span> not just <span class="process-math">\(n \geq \)</span> some <span class="process-math">\(N(1)\text{.}\)</span>
-</div></section></div>
+<div class="para">and the sum telescopes to <span class="process-math">\(\lfloor n \rfloor\)</span> which is equal to <span class="process-math">\(n\text{.}\)</span>
+</div>
+</div></article><article class="proposition theorem-like" id="sec-hermite-applications-4"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> be relatively prime positive integers. Then<div class="displaymath process-math" id="sec-hermite-applications-4-1-3">
+\begin{equation}
+\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor = \frac{(a-1)(b-1)}{4}\text{.}\tag{3.3.2}
+\end{equation}
+</div></article><article class="proof" id="sec-hermite-applications-4-2"><h3 class="heading"><span class="title">Proof (given in textbook).</span></h3> <div class="para logical" id="sec-hermite-applications-4-2-2">
+<div class="para">Observe that the sum is unchanged if <span class="process-math">\(k\)</span> is replaced by <span class="process-math">\(b-k\text{.}\)</span> So,</div>
+<div class="displaymath process-math" id="sec-hermite-applications-4-2-2-3">
+\begin{align*}
+\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+\amp = \sum_{k=1}^{b-1} \left\lfloor \frac{(b-k) a}{b} \right\rfloor\\
+\amp = \sum_{k=1}^{b-1} \left\lfloor a - \frac{k a}{b} \right\rfloor\\
+\amp = (b-1)a + \sum_{k=1}^{b-1} \left\lfloor \frac{ - k a}{b} \right\rfloor\text{.}
+\end{align*}
+</div>
+<div class="para">Now, we have seen that <span class="process-math">\(\lfloor -x \rfloor = - \lceil x \rceil\text{.}\)</span> If <span class="process-math">\(x\)</span> is not an integer, then <span class="process-math">\(\lceil x \rceil = \lfloor x \rfloor + 1\text{.}\)</span> In this case, <span class="process-math">\(\lfloor -x \rfloor = - \lfloor x \rfloor - 1\text{.}\)</span> In our sum, for <span class="process-math">\(1 \leq k \leq b-1\text{,}\)</span> <span class="process-math">\(\frac{k a}{b}\)</span> is not an integer, by our assumption that <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are relatively prime (why is this?). Therefore</div>
+<div class="displaymath process-math" id="sec-hermite-applications-4-2-2-12">
+\begin{align*}
+\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+\amp = (b-1)a + \sum_{k=1}^{b-1} \left\lfloor \frac{ - k a}{b} \right\rfloor\\
+\amp = (b-1)a + \sum_{k=1}^{b-1} - \left\lfloor \frac{k a}{b} \right\rfloor - 1\\
+\amp = (b-1)a - \sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor - (b-1)\\
+\amp = (a-1)(b-1) - \sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor\text{.}
+\end{align*}
+</div>
+<div class="para">Finally, solving for the sum gives the result.</div>
+</div></article><article class="proof" id="sec-hermite-applications-4-3"><h3 class="heading"><span class="title">Proof (using Hermite’s identity and lattice point counting).</span></h3> <div class="para logical" id="sec-hermite-applications-4-3-2">
+<div class="para">First, observe that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\lfloor \frac{k a}{b} \right\rfloor
+= \sum_{j=0}^{a-1} \left\lfloor \frac{k}{b} + \frac{j}{a} \right\rfloor
+\end{equation*}
+</div>
+<div class="para">by Hermite’s identity. So the sum is</div>
+<div class="displaymath process-math" id="sec-hermite-applications-4-3-2-2">
+\begin{equation}
+\sum_{k=0}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+= \sum_{k=0}^{b-1} \sum_{j=0}^{a-1} \left\lfloor \frac{k}{b} + \frac{j}{a} \right\rfloor\text{.}\tag{3.3.3}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec-hermite-applications-4-3-3">
+<div class="para">Next, observe that <span class="process-math">\(0 \leq \frac{k}{b}, \frac{j}{a} \lt 1\)</span> for <span class="process-math">\(0 \leq k \leq b-1\)</span> and <span class="process-math">\(0 \leq j \leq a-1\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \leq \frac{k}{b} + \frac{j}{a} \lt 2\text{.}
+\end{equation*}
+</div>
+<div class="para">This means that the floor of the sum of fractions is either <span class="process-math">\(0\)</span> or <span class="process-math">\(1\text{.}\)</span> So our sum is equal to the number of pairs <span class="process-math">\((j,k)\)</span> such that <span class="process-math">\(\frac{k}{b} + \frac{j}{a} \geq 1\text{.}\)</span>
+</div>
+</div> <div class="para" id="sec-hermite-applications-4-3-4">Each pair <span class="process-math">\((j,k)\)</span> with <span class="process-math">\(0 \leq j \leq a-1\)</span> and <span class="process-math">\(0 \leq k \leq b-1\)</span> corresponds to a lattice point in the rectangle <span class="process-math">\([0,a) \times [0,b)\text{.}\)</span> The pairs <span class="process-math">\((j,k)\)</span> such that <span class="process-math">\(\frac{k}{b} + \frac{j}{a} \geq 1\)</span> correspond to lattice points that lie on or above the line defined by <span class="process-math">\(\frac{y}{b} + \frac{x}{a} = 1\text{.}\)</span> This is the line that cuts the rectangle diagonally from <span class="process-math">\((0,b)\)</span> in the upper left to <span class="process-math">\((a,0)\)</span> in the lower right.</div> <div class="para logical" id="sec-hermite-applications-4-3-5">
+<div class="para">First, observe that no lattice points lie on the interior of this diagonal line. That is, the only lattice points on this diagonal line, in the segment where it intersects the rectangle, are the endpoints, the corners of the rectangle. This is because of the hypothesis that <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are relatively prime. If there were a lattice point <span class="process-math">\((x,y)\)</span> on the line, then we could write the slope of the line in two ways, as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-\frac{b}{a} = -\frac{b-y}{x}\text{.}
+\end{equation*}
+</div>
+<div class="para">But the hypothesis means that <span class="process-math">\(b/a\)</span> is already in lowest terms.</div>
+</div> <div class="para" id="sec-hermite-applications-4-3-6">By symmetry, exactly half of the lattice points in the closed rectangle <span class="process-math">\([0,a] \times [0,b]\)</span> (other than the two corner endpoints of the diagonal) lie above the line, and exactly half lie below. There are <span class="process-math">\((a+1)(b+1)\)</span> lattice points in this closed rectangle. So <span class="process-math">\((ab+a+b-1)/2\)</span> of them lie above the diagonal.</div> <div class="para logical" id="sec-hermite-applications-4-3-7">
+<div class="para">However we are only counting lattice points in the half-open rectangle <span class="process-math">\([0,a) \times [0,b)\text{.}\)</span> So we have to take away the lattice points on the north and east (upper and right) sides of the rectangle. There are <span class="process-math">\(a+b-1\)</span> of these (why?). Therefore the number of lattice points, giving us the sum we are seeking, is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{ab+a+b-1}{2} - (a+b-1) = \frac{ab-a-b+1}{2} = \frac{(a-1)(b-1)}{2}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-1-bertrands-postulate.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-bertrand-erdos-proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-hermite-identity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

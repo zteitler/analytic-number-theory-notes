@@ -466,7 +466,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Hermite’s Identity",
-  "body": " Hermite's Identity   Hermite's Identity  For any real and positive integer ,    If the statement says: . If the statement says: . Say . If then and because . Otherwise if then because .  The textbook gives several generalizations of this theorem, for example summing where can be a different integer than . For class we'll just give a direct proof of Hermite's identity rather than one of the generalizations.   Let be the integer such that , in other words . Write where . Observe that . In particular .  For we have . That is, . Then .  For we have . So . Therefore .  Now the sum in Hermite's identity has terms that are equal to , and terms that are equal to . So the sum is equal to , which is equal to .   "
+  "body": " Hermite's Identity   Hermite's Identity  For any real and positive integer ,    If the statement says: . If the sum is: . Say . If then and because . Otherwise if then because .  The textbook gives several generalizations of this theorem, for example summing where can be a different integer than . For class we'll just give a direct proof of Hermite's identity rather than one of the generalizations.   Let be the integer such that , in other words . Write where . Observe that . In particular .  For we have . That is, . Then .  For we have . So . Therefore .  Now the sum in Hermite's identity has terms that are equal to , and terms that are equal to . So the sum is equal to , which is equal to .   "
 },
 {
   "id": "sec-hermite-identity-2",
@@ -484,7 +484,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.2",
   "title": "",
-  "body": "If the statement says: . If the statement says: . Say . If then and because . Otherwise if then because . "
+  "body": "If the statement says: . If the sum is: . Say . If then and because . Otherwise if then because . "
 },
 {
   "id": "sec-hermite-identity-5",
@@ -494,6 +494,33 @@ var ptx_lunr_docs = [
   "number": "3.2.1",
   "title": "",
   "body": " Let be the integer such that , in other words . Write where . Observe that . In particular .  For we have . That is, . Then .  For we have . So . Therefore .  Now the sum in Hermite's identity has terms that are equal to , and terms that are equal to . So the sum is equal to , which is equal to .  "
+},
+{
+  "id": "sec-hermite-applications",
+  "level": "1",
+  "url": "sec-hermite-applications.html",
+  "type": "Section",
+  "number": "3.3",
+  "title": "Applications of Hermite’s Identity",
+  "body": " Applications of Hermite's Identity  Here are a few examples illustrating uses of Hermite's identity.   Let . Then .   For sufficiently large , observe that (as soon as ). So the sum is actually a finite sum.  Now we use Hermite's identity: From we get .  Applying this to the right hand side of the equation, we have and the sum telescopes to which is equal to .     Let and be relatively prime positive integers. Then .   Proof (given in textbook)  Observe that the sum is unchanged if is replaced by . So, . Now, we have seen that . If is not an integer, then . In this case, . In our sum, for , is not an integer, by our assumption that and are relatively prime (why is this?). Therefore . Finally, solving for the sum gives the result.    Proof (using Hermite's identity and lattice point counting)  First, observe that by Hermite's identity. So the sum is .  Next, observe that for and . Therefore . This means that the floor of the sum of fractions is either or . So our sum is equal to the number of pairs such that .  Each pair with and corresponds to a lattice point in the rectangle . The pairs such that correspond to lattice points that lie on or above the line defined by . This is the line that cuts the rectangle diagonally from in the upper left to in the lower right.  First, observe that no lattice points lie on the interior of this diagonal line. That is, the only lattice points on this diagonal line, in the segment where it intersects the rectangle, are the endpoints, the corners of the rectangle. This is because of the hypothesis that and are relatively prime. If there were a lattice point on the line, then we could write the slope of the line in two ways, as . But the hypothesis means that is already in lowest terms.  By symmetry, exactly half of the lattice points in the closed rectangle (other than the two corner endpoints of the diagonal) lie above the line, and exactly half lie below. There are lattice points in this closed rectangle. So of them lie above the diagonal.  However we are only counting lattice points in the half-open rectangle . So we have to take away the lattice points on the north and east (upper and right) sides of the rectangle. There are of these (why?). Therefore the number of lattice points, giving us the sum we are seeking, is as claimed.    "
+},
+{
+  "id": "sec-hermite-applications-3",
+  "level": "2",
+  "url": "sec-hermite-applications.html#sec-hermite-applications-3",
+  "type": "Proposition",
+  "number": "3.3.1",
+  "title": "",
+  "body": " Let . Then .   For sufficiently large , observe that (as soon as ). So the sum is actually a finite sum.  Now we use Hermite's identity: From we get .  Applying this to the right hand side of the equation, we have and the sum telescopes to which is equal to .   "
+},
+{
+  "id": "sec-hermite-applications-4",
+  "level": "2",
+  "url": "sec-hermite-applications.html#sec-hermite-applications-4",
+  "type": "Proposition",
+  "number": "3.3.2",
+  "title": "",
+  "body": " Let and be relatively prime positive integers. Then .   Proof (given in textbook)  Observe that the sum is unchanged if is replaced by . So, . Now, we have seen that . If is not an integer, then . In this case, . In our sum, for , is not an integer, by our assumption that and are relatively prime (why is this?). Therefore . Finally, solving for the sum gives the result.    Proof (using Hermite's identity and lattice point counting)  First, observe that by Hermite's identity. So the sum is .  Next, observe that for and . Therefore . This means that the floor of the sum of fractions is either or . So our sum is equal to the number of pairs such that .  Each pair with and corresponds to a lattice point in the rectangle . The pairs such that correspond to lattice points that lie on or above the line defined by . This is the line that cuts the rectangle diagonally from in the upper left to in the lower right.  First, observe that no lattice points lie on the interior of this diagonal line. That is, the only lattice points on this diagonal line, in the segment where it intersects the rectangle, are the endpoints, the corners of the rectangle. This is because of the hypothesis that and are relatively prime. If there were a lattice point on the line, then we could write the slope of the line in two ways, as . But the hypothesis means that is already in lowest terms.  By symmetry, exactly half of the lattice points in the closed rectangle (other than the two corner endpoints of the diagonal) lie above the line, and exactly half lie below. There are lattice points in this closed rectangle. So of them lie above the diagonal.  However we are only counting lattice points in the half-open rectangle . So we have to take away the lattice points on the north and east (upper and right) sides of the rectangle. There are of these (why?). Therefore the number of lattice points, giving us the sum we are seeking, is as claimed.   "
 },
 {
   "id": "bibliography",
