@@ -21,7 +21,7 @@
 		= \lfloor x + 0 \rfloor
 		= \lfloor 1 x \rfloor
 	</me>.
-	If <m>n=2</m> the statement says:
+	If <m>n=2</m> the sum is:
 	<me>
 		\sum_{0 \leq k \leq 1} \left\lfloor x + \frac{k}{n} \right\rfloor
 		= \lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor

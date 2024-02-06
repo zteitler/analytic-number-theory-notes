@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-hermite-applications" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Applications of Hermite's Identity</title>
+  
+  <p>
+  Here are a few examples illustrating uses of Hermite's identity.
+  </p>
+	
+	<proposition>
+	<statement>
+	Let <m>n \in \bbN</m>. Then
+	<men>
+		n = \left\lfloor \frac{n+1}{2} \right\rfloor
+			+ \left\lfloor \frac{n+2}{2^2} \right\rfloor
+			+ \left\lfloor \frac{n+2^2}{2^3} \right\rfloor
+			+ \left\lfloor \frac{n+2^3}{2^4} \right\rfloor
+			+ \dotsb
+	</men>.
+	</statement>
+	
+	<proof>
+	<p>
+	For sufficiently large <m>k</m>, observe that
+	<me>
+		\left\lfloor \frac{n+2^k}{2^{k+1}} \right\rfloor
+		= \left\lfloor \frac{1}{2} + \frac{n}{2^{k+1}} \right\rfloor
+		= 0
+	</me>
+	(as soon as <m>n/2^{k+1} \lt 1/2</m>).
+	So the sum is actually a finite sum.
+	</p>
+	
+	<p>
+	Now we use Hermite's identity:
+	From
+	<me>
+		\lfloor x \rfloor + \left\lfloor x + \frac{1}{2} \right\rfloor = \lfloor 2x \rfloor
+	</me>
+	we get
+	<me>
+		\left\lfloor x + \frac{1}{2} \right\rfloor = \lfloor 2x \rfloor - \lfloor x \rfloor
+	</me>.
+	</p>
+	
+	<p>
+	Applying this to the right hand side of the equation, we have
+	<md>
+	<mrow>
+		\left\lfloor \frac{n+1}{2} \right\rfloor
+			\amp
+			+ \left\lfloor \frac{n+2}{2^2} \right\rfloor
+			+ \left\lfloor \frac{n+2^2}{2^3} \right\rfloor
+			+ \left\lfloor \frac{n+2^3}{2^4} \right\rfloor
+			+ \dotsb
+	</mrow>
+	<mrow>
+		\amp = \left\lfloor \frac{1}{2} + \frac{n}{2} \right\rfloor
+			+ \left\lfloor \frac{1}{2} + \frac{n}{2^2} \right\rfloor
+			+ \left\lfloor \frac{1}{2} + \frac{n}{2^3} \right\rfloor
+			+ \dotsb
+	</mrow>
+	<mrow>
+		\amp = \left( \lfloor n \rfloor - \left\lfloor \frac{n}{2} \right\rfloor \right)
+			+ \left( \left\lfloor \frac{n}{2} \right\rfloor - \left\lfloor \frac{n}{2^2} \right\rfloor \right)
+			+ \left( \left\lfloor \frac{n}{2^2} \right\rfloor - \left\lfloor \frac{n}{2^3} \right\rfloor \right)
+			+ \dotsb
+	</mrow>
+	</md>
+	and the sum telescopes to <m>\lfloor n \rfloor</m> which is equal to <m>n</m>.
+	</p>
+	</proof>
+	</proposition>
+	
+	<proposition>
+	<statement>
+	Let <m>a</m> and <m>b</m> be relatively prime positive integers. Then
+	<men>
+		\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor = \frac{(a-1)(b-1)}{4}
+	</men>.
+	</statement>
+	
+	<proof>
+	<title>Proof (given in textbook)</title>
+	<p>
+	Observe that the sum is unchanged if <m>k</m> is replaced by <m>b-k</m>.
+	So,
+	<md>
+	<mrow>
+		\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+			\amp = \sum_{k=1}^{b-1} \left\lfloor \frac{(b-k) a}{b} \right\rfloor
+	</mrow>
+	<mrow>
+		\amp = \sum_{k=1}^{b-1} \left\lfloor a - \frac{k a}{b} \right\rfloor
+	</mrow>
+	<mrow>
+		\amp = (b-1)a + \sum_{k=1}^{b-1} \left\lfloor \frac{ - k a}{b} \right\rfloor
+	</mrow>
+	</md>.
+	Now, we have seen that <m>\lfloor -x \rfloor = - \lceil x \rceil</m>.
+	If <m>x</m> is not an integer, then <m>\lceil x \rceil = \lfloor x \rfloor + 1</m>.
+	In this case, <m>\lfloor -x \rfloor = - \lfloor x \rfloor - 1</m>.
+	In our sum, for <m>1 \leq k \leq b-1</m>,
+	<m>\frac{k a}{b}</m> is not an integer,
+	by our assumption that <m>a</m> and <m>b</m> are relatively prime (why is this?).
+	Therefore
+	<md>
+	<mrow>
+		\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+			\amp = (b-1)a + \sum_{k=1}^{b-1} \left\lfloor \frac{ - k a}{b} \right\rfloor
+	</mrow>
+	<mrow>
+		\amp = (b-1)a + \sum_{k=1}^{b-1} - \left\lfloor \frac{k a}{b} \right\rfloor - 1
+	</mrow>
+	<mrow>
+		\amp = (b-1)a - \sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor - (b-1)
+	</mrow>
+	<mrow>
+		\amp = (a-1)(b-1) - \sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+	</mrow>
+	</md>.
+	Finally, solving for the sum gives the result.
+	</p>
+	</proof>
+	
+	<proof>
+	<title>Proof (using Hermite's identity and lattice point counting)</title>
+	<p>
+	First, observe that
+	<me>
+		\left\lfloor \frac{k a}{b} \right\rfloor
+		= \sum_{j=0}^{a-1} \left\lfloor \frac{k}{b} + \frac{j}{a} \right\rfloor
+	</me>
+	by Hermite's identity.
+	So the sum is
+	<men>
+		\sum_{k=0}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor
+		= \sum_{k=0}^{b-1} \sum_{j=0}^{a-1} \left\lfloor \frac{k}{b} + \frac{j}{a} \right\rfloor
+	</men>.
+	</p>
+	
+	<p>
+	Next, observe that <m>0 \leq \frac{k}{b}, \frac{j}{a} \lt 1</m>
+	for <m>0 \leq k \leq b-1</m> and <m>0 \leq j \leq a-1</m>.
+	Therefore
+	<me>
+		0 \leq \frac{k}{b} + \frac{j}{a} \lt 2
+	</me>.
+	This means that the floor of the sum of fractions is either <m>0</m> or <m>1</m>.
+	So our sum is equal to the number of pairs <m>(j,k)</m>
+	such that <m>\frac{k}{b} + \frac{j}{a} \geq 1</m>.
+	</p>
+	
+	<p>
+	Each pair <m>(j,k)</m> with <m>0 \leq j \leq a-1</m> and <m>0 \leq k \leq b-1</m>
+	corresponds to a lattice point in the rectangle <m>[0,a) \times [0,b)</m>.
+	The pairs <m>(j,k)</m> such that <m>\frac{k}{b} + \frac{j}{a} \geq 1</m>
+	correspond to lattice points that lie on or above the line defined by
+	<m>\frac{y}{b} + \frac{x}{a} = 1</m>.
+	This is the line that cuts the rectangle diagonally from <m>(0,b)</m> in the upper left
+	to <m>(a,0)</m> in the lower right.
+	</p>
+	
+	<p>
+	First, observe that no lattice points lie on the interior of this diagonal line.
+	That is, the only lattice points on this diagonal line, in the segment
+	where it intersects the rectangle, are the endpoints, the corners of the rectangle.
+	This is because of the hypothesis that <m>a</m> and <m>b</m> are relatively prime.
+	If there were a lattice point <m>(x,y)</m> on the line,
+	then we could write the slope of the line in two ways, as
+	<me>
+		-\frac{b}{a} = -\frac{b-y}{x}
+	</me>.
+	But the hypothesis means that <m>b/a</m> is already in lowest terms.
+	</p>
+	
+	<p>
+	By symmetry, exactly half of the lattice points in the closed rectangle
+	<m>[0,a] \times [0,b]</m>
+	(other than the two corner endpoints of the diagonal)
+	lie above the line, and exactly half lie below.
+	There are <m>(a+1)(b+1)</m> lattice points in this closed rectangle.
+	So <m>(ab+a+b-1)/2</m> of them lie above the diagonal.
+	</p>
+
+	<p>
+	However we are only counting lattice points in the half-open rectangle
+	<m>[0,a) \times [0,b)</m>.
+	So we have to take away the lattice points on the north and east (upper and right)
+	sides of the rectangle.
+	There are <m>a+b-1</m> of these (why?).
+	Therefore the number of lattice points, giving us the sum we are seeking,
+	is
+	<me>
+		\frac{ab+a+b-1}{2} - (a+b-1) = \frac{ab-a-b+1}{2} = \frac{(a-1)(b-1)}{2}
+	</me>
+	as claimed.
+	</p>
+	</proof>
+	</proposition>
+			 
+
+	
+
+
+</section>

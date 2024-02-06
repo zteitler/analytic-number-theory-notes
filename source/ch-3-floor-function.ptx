@@ -24,5 +24,6 @@
   <!-- include sections -->
   <xi:include href="ch-3-floor-function/sec-elementary-properties.ptx" />
   <xi:include href="ch-3-floor-function/sec-hermite-identity.ptx" />
+  <xi:include href="ch-3-floor-function/sec-hermite-applications.ptx" />
 
 </chapter>
