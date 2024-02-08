@@ -76,7 +76,7 @@
 	<statement>
 	Let <m>a</m> and <m>b</m> be relatively prime positive integers. Then
 	<men>
-		\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor = \frac{(a-1)(b-1)}{4}
+		\sum_{k=1}^{b-1} \left\lfloor \frac{k a}{b} \right\rfloor = \frac{(a-1)(b-1)}{2}
 	</men>.
 	</statement>
 	
