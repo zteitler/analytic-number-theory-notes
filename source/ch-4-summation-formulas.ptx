@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-4-summation-formulas" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Summation Formulas</title>
+
+  <!-- include sections -->
+  <xi:include href="ch-4-summation-formulas/sec-big-o.ptx" />
+
+  <xi:include href="ch-4-summation-formulas/sec-sums-monotone.ptx" />
+
+</chapter>

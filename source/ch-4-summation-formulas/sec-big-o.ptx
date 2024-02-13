@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-big-o" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Big O Notation And Friends</title>
+  
+  <subsection>
+  <title>Big O Notation</title>
+  
+	<definition>
+	Let <m>f : [a,\infty) \to \bbR</m>
+	and <m>g : [a,\infty) \to \bbR</m>
+	be functions such that <m>g(x) \gt 0</m> for all <m>x</m>.
+	We say <m>f = O(g)</m> (or <m>f(x) = O(g(x))</m>, or <m>f \ll g</m>)
+	if there is a constant <m>M \in \bbR</m> such that
+	<m>|f(x)| \leq M g(x)</m> for all sufficiently large <m>x</m>;
+	that is, there exists some <m>x_0</m> such that
+	<m>|f(x)| \leq M g(x)</m> for all <m>x \geq x_0</m>.
+	In other words, <m>|f(x)|</m> is eventually bounded by <m>M g(x)</m>.
+	</definition>
+	
+	<p>
+	It is equivalent to say that
+	<me>
+		\limsup \frac{|f(x)|}{g(x)} \lt \infty
+	</me>.
+	</p>
+	
+	<p>
+	Let us compare two closely related conditions:
+	<ol>
+	<li>There exist <m>M</m> and <m>x_0</m> such that <m>|f(x)| \leq M g(x)</m> for all <m>x \geq x_0</m></li>
+	<li>There exists <m>M'</m> such that <m>|f(x)| \leq M' g(x)</m> for all <m>x \geq a</m></li>
+	</ol>
+	Of course the second condition implies the first one (with <m>x_0 = a</m>).
+	The first condition often implies the second one.
+	If the ratio <m>|f(x)|/g(x)</m> is bounded on the interval <m>[a,x_0]</m>,
+	say by some value <m>K</m>, then we can set <m>M'</m> to be the maximum of
+	<m>M</m> and <m>K</m>.
+	The only way this ratio can fail to be bounded is if
+	<m>|f(x)|</m> approaches <m>\infty</m> or <m>g</m> approaches <m>0</m>.
+	If <m>f</m> is bounded and <m>g</m> is bounded away from zero
+	(bounded below) then the ratio <m>f/g</m> is bounded.
+	This will be the case if both <m>f</m> and <m>g</m> are continuous.
+	(Exercise: if <m>g</m> is continuous and <m>g(x) \gt 0</m> for all <m>x</m>,
+	then there exists <m>\epsilon \gt 0</m> such that <m>g(x) \geq \epsilon</m>
+	for all <m>x</m>.)
+	Therefore, the two conditions above are equivalent for continuous <m>f</m> and <m>g</m>
+	(or, with suitable boundedness assumptions instead of continuity).
+	In those cases we can ignore the issue of <lq/>eventuality<rq/>.
+	Of course, the values <m>M</m> and <m>M'</m> may be different.
+	</p>
+	
+	<p>
+	Sometimes the notation <m>O(g(x))</m> represents
+	an unspecified function <m>f</m> that is <m>O(g)</m> in the sense defined above.
+	</p>
+
+	
+	<example>
+	<p>
+	<ol>
+	<li>
+	<p>
+	Any polynomial of degree <m>d</m> is <m>O(x^d)</m>.
+	</p>
+	<p>
+	Indeed, let <m>C</m> be the largest absolute value of a coefficient of any term
+	in the polynomial; for <m>x \gt 1</m> the polynomial is bounded by
+	<m>C(d+1)x^d</m> since there are at most <m>d+1</m> terms,
+	each bounded by <m>Cx^d</m>.
+	</p>
+	</li>
+	<li><m>x^a = O(x^b)</m> if and only if <m>a \leq b</m> (here we allow <m>a, b \leq 0</m>). (Exercise.)</li>
+	<li><m>f</m> is bounded if and only if <m>f</m> is <m>O(1)</m>. (Exercise.)</li>
+	<li><m>O(g_1) O(g_2) = O(g_1 g_2)</m>. (Exercise.)</li>
+	<li><m>O(g_1) + O(g_2) = O(g_1 + g_2)</m>. (Exercise.)</li>
+	<li><m>\ll</m> is transitive. (Exercise.)</li>
+	</ol>
+	</p>
+
+	</example>
+	
+	<definition>
+	If <m>f = O(g)</m> and <m>g = O(f)</m> (that is, <m>f \ll g</m> and <m>g \ll f</m>)
+	we write <m>f \asymp g</m> and say that <m>f</m> and <m>g</m>
+	have <term>the same order of magnitude</term>.
+	</definition>
+	
+	<example>
+	Two polynomials have the same order of magnitude if and only if
+	they have the same degree.
+	Two rational functions (ratios of polynomials) <m>f/g</m>, <m>f'/g'</m>
+	have the same order of magnitude if and only if
+	<m>\deg f - \deg g = \deg f' - \deg g'</m>.
+	</example>
+	
+	<exercise>
+	<p>
+	Is it true in general that <m>f/g \asymp f'/g'</m>
+	if and only if <m>f g' \asymp f' g</m>,
+	for any suitable functions <m>f,f',g,g'</m>;
+	say assuming they are all strictly positive?
+	</p>
+	</exercise>
+
+
+	
+	</subsection>
+	
+	<subsection>
+	<title>Little o Notation</title>
+	
+	<definition>
+	For <m>f,g : [a,\infty) \to \bbR</m> with <m>g(x) \gt 0</m> for all <m>x</m>,
+	we say <m>f = o(g)</m> (or <m>f(x) = o(g(x))</m>) if
+	<m>\lim_{x \to \infty} \frac{f(x)}{g(x)} = 0</m>.
+	</definition>
+	
+	<p>
+	<m>f = o(g)</m> implies <m>f = O(g)</m>, but not conversely.
+	</p>
+	
+	<definition>
+	For <m>f, g : [a, \infty) \to \bbR</m> we say <m>f</m> is asymptotic to <m>g</m>,
+	denoted <m>f \sim g</m>,
+	if <m>\lim_{x \to \infty} \frac{f(x)}{g(x)} = 1</m>.
+	This makes sense as long as <m>g(x) \neq 0</m> for all sufficiently large <m>x</m>;
+	we don't need to assume <m>g(x) \gt 0</m> for all <m>x</m> in the domain.
+	</definition>
+	
+	<example>
+	Two polynomials <m>f,g</m> are asymptotic (<m>f \sim g</m>) if and only if
+	they have the same degree and the same leading coefficient.
+	</example>
+	
+	<p>
+	Even if <m>f \sim g</m>, the difference <m>f-g</m> may be unbounded.
+	For example, <m>x^2+x \sim x^2</m>, but the difference <m>x \to \infty</m>.
+	On the other hand, the <em>relative difference</em> <m>(f-g)/g \to 0</m>.
+	</p>
+
+	
+	
+	
+
+	
+	
+	</subsection>
+
+
+</section>

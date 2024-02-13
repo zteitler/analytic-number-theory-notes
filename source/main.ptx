@@ -18,6 +18,8 @@
     
     <xi:include href="./ch-3-floor-function.ptx" />
 
+    <xi:include href="./ch-4-summation-formulas.ptx" />
+
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

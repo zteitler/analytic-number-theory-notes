@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-sums-monotone" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Sums of Monotone Functions</title>
+  
+	<p>
+	Our goal here is to compare sums with integrals,
+	<me>
+		\sum_{y \lt n \leq x} f(n),
+		\qquad
+		\int_y^x f(t) dt
+	</me>.
+	In general these should be <lq/>close<rq/>:
+	the integral represents the area under the graph of <m>f</m> between
+	<m>y</m> and <m>x</m>,
+	while
+	the sum represents the total area of a <lq/>histogram<rq/>
+	with bars of width <m>1</m> and height <m>f(n)</m>.
+	This is, roughly, a Riemann sum for the integral.
+	In this section we'll make this more precise.
+	</p>
+	
+	<definition>
+	Let <m>I</m> be an interval and <m>g : I \to \bbR</m>.
+	<m>g</m> is called <term>monotone</term> on <m>I</m>
+	if it is either increasing or decreasing on <m>I</m>.
+	(This is meant non-strictly.)
+	<m>g</m> is called <term>unimodal</term> on <m>I</m>
+	if there exists an <m>x_0 \in I</m> such that
+	<m>g</m> is (non-strictly) increasing on <m>(-\infty,x_0] \cap I</m>
+	and (non-strictly) decreasing on <m>[x_0,\infty) \cap I</m>.
+	</definition>
+	
+	<p>
+	By standard results in real analysis,
+	every monotone function is integrable (even if it is not continuous).
+	Likewise, every unimodal function is integrable.
+	So, it makes sense to talk about the integrals in this context.
+	</p>
+	
+	<p>
+	The comparison between sum and integral is straightforward
+	when the interval has integer endpoints:
+	</p>
+
+	
+	<theorem>
+	<statement>
+	If <m>a</m> and <m>b</m> are integers with <m>a \lt b</m>
+	and <m>f</m> is (non-strictly) monotone on <m>[a,b]</m>, then
+	<men>
+		\min\{f(a),f(b)\} \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt \leq \max\{f(a),f(b)\}
+	</men>.
+	</statement>
+	
+	<proof>
+	<p>
+	First suppose <m>f</m> is monotone increasing.
+	The minimum on the left is <m>f(a)</m> and the maximum on the right is <m>f(b)</m>.
+	For every integer <m>a \leq n \lt b</m> and every real number <m>t \in [n,n+1]</m>
+	we have
+	<me>
+		f(a) \leq f(n) \leq f(t) \leq f(n+1) \leq f(b)
+	</me>.
+	Therefore
+	<me>
+		f(n) = \int_n^{n+1} f(n) dt \leq \int_n^{n+1} f(t) dt \leq \int_n^{n+1} f(n+1) dt = f(n+1)
+	</me>.
+	The first and last equalities are simply integrals of constant values
+	over an interval of length <m>1</m>.
+	</p>
+	
+	<p>
+	Adding up these inequalities gives
+	<me>
+		\int_a^b f(t) dt = \sum_{n=a}^{b-1} \int_n^{n+1} f(t) dt \leq \sum_{n=a}^{b-1} f(n+1)
+		= \sum_{n=a+1}^b f(n)
+	</me>.
+	Adding <m>f(a)</m> to both sides and subtracting the integral to the right gives
+	<me>
+		f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt
+	</me>.
+	The inequality <m>\leq f(b)</m> is similar,
+	as is the case that <m>f</m> is decreasing instead of increasing
+	(or, deduce the decreasing case by applying the increasing case to <m>-f</m>).
+	</p>
+	</proof>
+	</theorem>
+	
+	<p>
+	When the interval has arbitrary endpoints,
+	we will obtain a similar comparison,
+	although takes a bit more work.
+	</p>
+	
+	<p>
+	In the following statement, the textbook adds the condition
+	<m>y \lt \lfloor x \rfloor </m>.
+	This seems unnecessary.
+	</p>
+
+	
+	<theorem>
+	<statement>
+	If <m>x,y \in \bbR</m> with <m>y \lt x</m>
+	and <m>f</m> is nonnegative and (non-strictly) monotone on <m>[y,x]</m>, then
+	<men>
+		\left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t) dt \right| \leq \max\{f(y),f(x)\}
+	</men>.
+	</statement>
+	
+	<proof>
+	<p>
+	First, take the case <m>y \geq \lfloor x \rfloor</m>.
+	This means that there is no integer <m>n</m> such that <m>y \lt n \leq x</m>.
+	Then the sum is empty, so its value is zero.
+	At the same time, the interval <m>[y,x]</m> has width at most <m>1</m>.
+	So the value of the integral is less than or equal to the maximum value of
+	<m>f</m> on the interval; by monotonicity this is a value at an endpoint.
+	So the claimed inequality holds in this case.
+	</p>
+	
+	<p>
+	To do: write rest of proof.
+	Idea: compare integral, with lower and upper Riemann sums with integer endpoints.
+	Three sources of difference: the "triangle" areas at the top of each column,
+	the left and right vertical strips from <m>(y,\lceil y \rceil)</m>
+	and <m>(\lfloor x \rfloor, x)</m>.
+	</p>
+</proof>
+</theorem>
+
+
+
+
+
+</section>
