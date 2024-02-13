@@ -22,7 +22,7 @@ var ptx_lunr_docs = [
   "id": "sec-bertrand-pnt-6",
   "level": "2",
   "url": "sec-bertrand-pnt.html#sec-bertrand-pnt-6",
-  "type": "Checkpoint",
+  "type": "Exercise",
   "number": "1.1.1",
   "title": "",
   "body": "For , . "
@@ -31,7 +31,7 @@ var ptx_lunr_docs = [
   "id": "sec-bertrand-pnt-7",
   "level": "2",
   "url": "sec-bertrand-pnt.html#sec-bertrand-pnt-7",
-  "type": "Checkpoint",
+  "type": "Exercise",
   "number": "1.1.2",
   "title": "",
   "body": "If , , , are positive-valued functions and , , then . State and prove suitable conditions for . "
@@ -130,7 +130,7 @@ var ptx_lunr_docs = [
   "id": "sec-bertrand-corollaries-2-3",
   "level": "2",
   "url": "sec-bertrand-corollaries.html#sec-bertrand-corollaries-2-3",
-  "type": "Checkpoint",
+  "type": "Exercise",
   "number": "1.3.2",
   "title": "",
   "body": "What does the PNT say about this problem? "
@@ -521,6 +521,123 @@ var ptx_lunr_docs = [
   "number": "3.3.2",
   "title": "",
   "body": " Let and be relatively prime positive integers. Then .   Proof (given in textbook)  Observe that the sum is unchanged if is replaced by . So, . Now, we have seen that . If is not an integer, then . In this case, . In our sum, for , is not an integer, by our assumption that and are relatively prime (why is this?). Therefore . Finally, solving for the sum gives the result.    Proof (using Hermite's identity and lattice point counting)  First, observe that by Hermite's identity. So the sum is .  Next, observe that for and . Therefore . This means that the floor of the sum of fractions is either or . So our sum is equal to the number of pairs such that .  Each pair with and corresponds to a lattice point in the rectangle . The pairs such that correspond to lattice points that lie on or above the line defined by . This is the line that cuts the rectangle diagonally from in the upper left to in the lower right.  First, observe that no lattice points lie on the interior of this diagonal line. That is, the only lattice points on this diagonal line, in the segment where it intersects the rectangle, are the endpoints, the corners of the rectangle. This is because of the hypothesis that and are relatively prime. If there were a lattice point on the line, then we could write the slope of the line in two ways, as . But the hypothesis means that is already in lowest terms.  By symmetry, exactly half of the lattice points in the closed rectangle (other than the two corner endpoints of the diagonal) lie above the line, and exactly half lie below. There are lattice points in this closed rectangle. So of them lie above the diagonal.  However we are only counting lattice points in the half-open rectangle . So we have to take away the lattice points on the north and east (upper and right) sides of the rectangle. There are of these (why?). Therefore the number of lattice points, giving us the sum we are seeking, is as claimed.   "
+},
+{
+  "id": "sec-big-o",
+  "level": "1",
+  "url": "sec-big-o.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Big O Notation And Friends",
+  "body": " Big O Notation And Friends   Big O Notation  Let and be functions such that for all . We say (or , or ) if there is a constant such that for all sufficiently large ; that is, there exists some such that for all . In other words, is eventually bounded by .  It is equivalent to say that .  Let us compare two closely related conditions:  There exist and such that for all  There exists such that for all  Of course the second condition implies the first one (with ). The first condition often implies the second one. If the ratio is bounded on the interval , say by some value , then we can set to be the maximum of and . The only way this ratio can fail to be bounded is if approaches or approaches . If is bounded and is bounded away from zero (bounded below) then the ratio is bounded. This will be the case if both and are continuous. (Exercise: if is continuous and for all , then there exists such that for all .) Therefore, the two conditions above are equivalent for continuous and (or, with suitable boundedness assumptions instead of continuity). In those cases we can ignore the issue of eventuality . Of course, the values and may be different.  Sometimes the notation represents an unspecified function that is in the sense defined above.      Any polynomial of degree is .  Indeed, let be the largest absolute value of a coefficient of any term in the polynomial; for the polynomial is bounded by since there are at most terms, each bounded by .   if and only if (here we allow ). (Exercise.)  is bounded if and only if is . (Exercise.)  . (Exercise.)  . (Exercise.)  is transitive. (Exercise.)     If and (that is, and ) we write and say that and have the same order of magnitude .  Two polynomials have the same order of magnitude if and only if they have the same degree. Two rational functions (ratios of polynomials) , have the same order of magnitude if and only if .  Is it true in general that if and only if , for any suitable functions ; say assuming they are all strictly positive?    Little o Notation  For with for all , we say (or ) if .   implies , but not conversely.  For we say is asymptotic to , denoted , if . This makes sense as long as for all sufficiently large ; we don't need to assume for all in the domain.  Two polynomials are asymptotic ( ) if and only if they have the same degree and the same leading coefficient.  Even if , the difference may be unbounded. For example, , but the difference . On the other hand, the relative difference  .   "
+},
+{
+  "id": "sec-big-o-2-2",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-2-2",
+  "type": "Definition",
+  "number": "4.1.1",
+  "title": "",
+  "body": "Let and be functions such that for all . We say (or , or ) if there is a constant such that for all sufficiently large ; that is, there exists some such that for all . In other words, is eventually bounded by . "
+},
+{
+  "id": "sec-big-o-2-6",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-2-6",
+  "type": "Example",
+  "number": "4.1.2",
+  "title": "",
+  "body": "    Any polynomial of degree is .  Indeed, let be the largest absolute value of a coefficient of any term in the polynomial; for the polynomial is bounded by since there are at most terms, each bounded by .   if and only if (here we allow ). (Exercise.)  is bounded if and only if is . (Exercise.)  . (Exercise.)  . (Exercise.)  is transitive. (Exercise.)    "
+},
+{
+  "id": "sec-big-o-2-7",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-2-7",
+  "type": "Definition",
+  "number": "4.1.3",
+  "title": "",
+  "body": "If and (that is, and ) we write and say that and have the same order of magnitude . "
+},
+{
+  "id": "sec-big-o-2-8",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-2-8",
+  "type": "Example",
+  "number": "4.1.4",
+  "title": "",
+  "body": "Two polynomials have the same order of magnitude if and only if they have the same degree. Two rational functions (ratios of polynomials) , have the same order of magnitude if and only if . "
+},
+{
+  "id": "sec-big-o-2-9",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-2-9",
+  "type": "Exercise",
+  "number": "4.1.5",
+  "title": "",
+  "body": "Is it true in general that if and only if , for any suitable functions ; say assuming they are all strictly positive? "
+},
+{
+  "id": "sec-big-o-3-2",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-3-2",
+  "type": "Definition",
+  "number": "4.1.6",
+  "title": "",
+  "body": "For with for all , we say (or ) if . "
+},
+{
+  "id": "sec-big-o-3-4",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-3-4",
+  "type": "Definition",
+  "number": "4.1.7",
+  "title": "",
+  "body": "For we say is asymptotic to , denoted , if . This makes sense as long as for all sufficiently large ; we don't need to assume for all in the domain. "
+},
+{
+  "id": "sec-big-o-3-5",
+  "level": "2",
+  "url": "sec-big-o.html#sec-big-o-3-5",
+  "type": "Example",
+  "number": "4.1.8",
+  "title": "",
+  "body": "Two polynomials are asymptotic ( ) if and only if they have the same degree and the same leading coefficient. "
+},
+{
+  "id": "sec-sums-monotone",
+  "level": "1",
+  "url": "sec-sums-monotone.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Sums of Monotone Functions",
+  "body": " Sums of Monotone Functions  Our goal here is to compare sums with integrals, . In general these should be close : the integral represents the area under the graph of between and , while the sum represents the total area of a histogram with bars of width and height . This is, roughly, a Riemann sum for the integral. In this section we'll make this more precise.  Let be an interval and . is called monotone on if it is either increasing or decreasing on . (This is meant non-strictly.) is called unimodal on if there exists an such that is (non-strictly) increasing on and (non-strictly) decreasing on .  By standard results in real analysis, every monotone function is integrable (even if it is not continuous). Likewise, every unimodal function is integrable. So, it makes sense to talk about the integrals in this context.  The comparison between sum and integral is straightforward when the interval has integer endpoints:   If and are integers with and is (non-strictly) monotone on , then .   First suppose is monotone increasing. The minimum on the left is and the maximum on the right is . For every integer and every real number we have . Therefore . The first and last equalities are simply integrals of constant values over an interval of length .  Adding up these inequalities gives . Adding to both sides and subtracting the integral to the right gives . The inequality is similar, as is the case that is decreasing instead of increasing (or, deduce the decreasing case by applying the increasing case to ).    When the interval has arbitrary endpoints, we will obtain a similar comparison, although takes a bit more work.  In the following statement, the textbook adds the condition . This seems unnecessary.   If with and is nonnegative and (non-strictly) monotone on , then .   First, take the case . This means that there is no integer such that . Then the sum is empty, so its value is zero. At the same time, the interval has width at most . So the value of the integral is less than or equal to the maximum value of on the interval; by monotonicity this is a value at an endpoint. So the claimed inequality holds in this case.  To do: write rest of proof. Idea: compare integral, with lower and upper Riemann sums with integer endpoints. Three sources of difference: the \"triangle\" areas at the top of each column, the left and right vertical strips from and .    "
+},
+{
+  "id": "sec-sums-monotone-3",
+  "level": "2",
+  "url": "sec-sums-monotone.html#sec-sums-monotone-3",
+  "type": "Definition",
+  "number": "4.2.1",
+  "title": "",
+  "body": "Let be an interval and . is called monotone on if it is either increasing or decreasing on . (This is meant non-strictly.) is called unimodal on if there exists an such that is (non-strictly) increasing on and (non-strictly) decreasing on . "
+},
+{
+  "id": "sec-sums-monotone-6",
+  "level": "2",
+  "url": "sec-sums-monotone.html#sec-sums-monotone-6",
+  "type": "Theorem",
+  "number": "4.2.2",
+  "title": "",
+  "body": " If and are integers with and is (non-strictly) monotone on , then .   First suppose is monotone increasing. The minimum on the left is and the maximum on the right is . For every integer and every real number we have . Therefore . The first and last equalities are simply integrals of constant values over an interval of length .  Adding up these inequalities gives . Adding to both sides and subtracting the integral to the right gives . The inequality is similar, as is the case that is decreasing instead of increasing (or, deduce the decreasing case by applying the increasing case to ).   "
+},
+{
+  "id": "sec-sums-monotone-9",
+  "level": "2",
+  "url": "sec-sums-monotone.html#sec-sums-monotone-9",
+  "type": "Theorem",
+  "number": "4.2.3",
+  "title": "",
+  "body": " If with and is nonnegative and (non-strictly) monotone on , then .   First, take the case . This means that there is no integer such that . Then the sum is empty, so its value is zero. At the same time, the interval has width at most . So the value of the integral is less than or equal to the maximum value of on the interval; by monotonicity this is a value at an endpoint. So the claimed inequality holds in this case.  To do: write rest of proof. Idea: compare integral, with lower and upper Riemann sums with integer endpoints. Three sources of difference: the \"triangle\" areas at the top of each column, the left and right vertical strips from and .   "
 },
 {
   "id": "bibliography",
