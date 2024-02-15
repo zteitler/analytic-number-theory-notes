@@ -251,7 +251,118 @@ f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt\text{.}
 \left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t) dt \right| \leq \max\{f(y),f(x)\}\text{.}\tag{4.2.2}
 \end{equation}
 </div></article><article class="proof" id="sec-sums-monotone-9-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
-<div class="para" id="sec-sums-monotone-9-2-1">First, take the case <span class="process-math">\(y \geq \lfloor x \rfloor\text{.}\)</span> This means that there is no integer <span class="process-math">\(n\)</span> such that <span class="process-math">\(y \lt n \leq x\text{.}\)</span> Then the sum is empty, so its value is zero. At the same time, the interval <span class="process-math">\([y,x]\)</span> has width at most <span class="process-math">\(1\text{.}\)</span> So the value of the integral is less than or equal to the maximum value of <span class="process-math">\(f\)</span> on the interval; by monotonicity this is a value at an endpoint. So the claimed inequality holds in this case.</div> <div class="para" id="sec-sums-monotone-9-2-2">To do: write rest of proof. Idea: compare integral, with lower and upper Riemann sums with integer endpoints. Three sources of difference: the "triangle" areas at the top of each column, the left and right vertical strips from <span class="process-math">\((y,\lceil y \rceil)\)</span> and <span class="process-math">\((\lfloor x \rfloor, x)\text{.}\)</span>
+<div class="para" id="sec-sums-monotone-9-2-1">First, take the case <span class="process-math">\(y \geq \lfloor x \rfloor\text{.}\)</span> This means that there is no integer <span class="process-math">\(n\)</span> such that <span class="process-math">\(y \lt n \leq x\text{.}\)</span> Then the sum is empty, so its value is zero. At the same time, the interval <span class="process-math">\([y,x]\)</span> has width at most <span class="process-math">\(1\text{.}\)</span> So the value of the integral is less than or equal to the maximum value of <span class="process-math">\(f\)</span> on the interval; by monotonicity this is a value at an endpoint. So the claimed inequality holds in this case.</div> <div class="para" id="sec-sums-monotone-9-2-2">Now suppose <span class="process-math">\(y \lt \lfloor x \rfloor\text{,}\)</span> so there is at least one integer <span class="process-math">\(n\)</span> such that <span class="process-math">\(y \lt n \leq x\text{.}\)</span> Suppose that <span class="process-math">\(f\)</span> is (non-strictly) increasing. We will compare the integral <span class="process-math">\(\int_y^x f(t) dt\)</span> with the sum <span class="process-math">\(\sum_{y \lt n \leq x} f(n)\text{.}\)</span> This is not precisely a Riemann sum for the integral, but it is close. Let us regard the sum as being equal to the total area of the following figure: for each integer <span class="process-math">\(n\)</span> with <span class="process-math">\(y \lt n \leq x\text{,}\)</span> we take the rectangle whose base is the interval from <span class="process-math">\(n-1\)</span> to <span class="process-math">\(n\)</span> on the horizontal axis, and whose height is equal to <span class="process-math">\(f(n)\text{;}\)</span> i.e., the right-hand endpoint of the base interval. So, this is something like a right-hand Riemann sum. It is not precisely a Riemann sum because the first interval may extend to the left of <span class="process-math">\(y\text{,}\)</span> and the last interval (ending at <span class="process-math">\(\lfloor x \rfloor\)</span>) may end to the left of <span class="process-math">\(x\text{.}\)</span>
+</div> <div class="para" id="sec-sums-monotone-9-2-3">So, this sum (that is, the total area of the rectangles) differs from the integral (the total area under the graph of <span class="process-math">\(f\)</span>) in three ways. First, in each interval <span class="process-math">\([n-1,n]\)</span> the rectangle extends above the graph. This is because the function <span class="process-math">\(f\)</span> is increasing, and the rectangle’s height is given by the height of the right-hand endpoint, ie., the highest endpoint on that interval. So, each rectangle includes a “triangle” region on top of the graph. Second, the leftmost rectangle includes a vertical strip over the base <span class="process-math">\([\lfloor y \rfloor, y]\)</span> that is not included in the integral. Third, in contrast, the integral includes a vertical strip of area over the base <span class="process-math">\([\lfloor x \rfloor, x]\)</span> which is not covered by any rectangle.</div> <div class="para" id="sec-sums-monotone-9-2-4">First consider the area covered by the rectangles but not the integral. These are the first and second types of error in the previous paragraph. We claim this adds up to at most <span class="process-math">\(f(x)\text{.}\)</span> This is because the “error regions” in each rectangle are at disjoint heights: in the rectangle over base <span class="process-math">\([n-1,n]\text{,}\)</span> the “error region” is in heights <span class="process-math">\(f(n-1)\)</span> to <span class="process-math">\(f(n)\text{.}\)</span> Here, the leftmost strip is an exception, as it may include an “error region” going down to height <span class="process-math">\(0\text{.}\)</span> Still, if we horizontally slide these regions into one single strip, they will not overlap. Therefore their total area is at most the width of that strip (which is <span class="process-math">\(1\)</span>) times the height of that strip, which is <span class="process-math">\(f(\lfloor x \rfloor)\text{,}\)</span> the greatest height of any rectangle involved in the sum. So the total of these errors is at most <span class="process-math">\(f(\lfloor x \rfloor)\text{.}\)</span> This is less than or equal to <span class="process-math">\(f(x)\text{.}\)</span>
+</div> <div class="para" id="sec-sums-monotone-9-2-5">Next consider the area covered by the integral but not the rectangles. This is the vertical strip on the right of the region, over the base <span class="process-math">\([\lfloor x \rfloor, x]\text{.}\)</span> This is contained in a rectangle with that same base, and height <span class="process-math">\(f(x)\text{.}\)</span> The width of that base is at most <span class="process-math">\(1\text{.}\)</span> So, the area of this rectangle is at most <span class="process-math">\(f(x)\text{.}\)</span> And then, the error from this source is at most <span class="process-math">\(f(x)\text{.}\)</span>
+</div> <div class="para logical" id="sec-sums-monotone-9-2-6">
+<div class="para">Now, the total error, the difference between the sum and the integral, is the <em class="emphasis">difference</em> of these separate errors, namely, the errors counting area in the rectangles but not the integral, and the errors counting area in the integral but not the rectangles. Since each type of error separately is at most <span class="process-math">\(f(x)\)</span> (and each of them is nonnegative), then their difference has magnitude at most <span class="process-math">\(f(x)\text{.}\)</span> In other words, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t) dt \right| \leq f(x) = \max\{f(y),f(x)\}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div> <div class="para" id="sec-sums-monotone-9-2-7">What remains is to show the other case, if <span class="process-math">\(f\)</span> is decreasing. This follows similarly (using the left-hand sum).</div></article><article class="corollary theorem-like" id="sec-sums-monotone-10"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h3>If <span class="process-math">\(x, y \in \bbR\text{,}\)</span> <span class="process-math">\(y \lt x\text{,}\)</span> and <span class="process-math">\(f\)</span> is nonnegative and monotone on <span class="process-math">\([y,x]\text{,}\)</span> then<div class="displaymath process-math" id="sec-sums-monotone-10-1-5">
+\begin{equation}
+\sum_{y \lt n \leq x} = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})\text{.}\tag{4.2.3}
+\end{equation}
+</div>
+<div class="para" id="sec-sums-monotone-10-2">I believe the intention here is to regard <span class="process-math">\(y\)</span> as a fixed number, and everything else as a function of <span class="process-math">\(x\text{.}\)</span> The sum and the integral are functions of <span class="process-math">\(x\)</span> explicitly. If <span class="process-math">\(f\)</span> is increasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(x)) = O(f)\text{.}\)</span> If <span class="process-math">\(f\)</span> is decreasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(y)) = O(1)\text{.}\)</span>
+</div></article><article class="proof" id="sec-sums-monotone-10-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>We have seen that<div class="displaymath process-math" id="sec-sums-monotone-10-3-1">
+\begin{equation}
+\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \leq \max\{f(y),f(x)\}\tag{4.2.4}
+\end{equation}
+</div>for all <span class="process-math">\(x \gt y\text{.}\)</span> So<div class="displaymath process-math">
+\begin{equation*}
+\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt = c(x) \max\{f(y),f(x)\}
+\end{equation*}
+</div>where <span class="process-math">\(-1 \leq c(x) \leq 1\text{;}\)</span> this is <span class="process-math">\(O(\max\{f(y),f(x)\})\text{.}\)</span></article><article class="corollary theorem-like" id="sec-sums-monotone-11"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h3>If <span class="process-math">\(f\)</span> is nonnegative and unimodal on <span class="process-math">\([1,\infty)\)</span> then<div class="displaymath process-math" id="sec-sums-monotone-11-1-3">
+\begin{equation}
+\sum_{n \leq x} f(n) = \int_1^x f(t)dt + O(1)\text{.}\tag{4.2.5}
+\end{equation}
+</div>
+<div class="para" id="sec-sums-monotone-11-2">The book says that <span class="process-math">\(f\)</span> should be unimodal on <span class="process-math">\([1,x]\text{.}\)</span> But requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for all <span class="process-math">\(x \gt 1\)</span> is equivalent to requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,\infty)\)</span> (exercise). And it must be intended to require unimodality for all <span class="process-math">\(x\text{;}\)</span> we can require <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for a particular <span class="process-math">\(x\text{,}\)</span> but then “<span class="process-math">\(O(1)\)</span>” doesn’t make sense.</div></article><article class="proof" id="sec-sums-monotone-11-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>Say <span class="process-math">\(f\)</span> is increasing for <span class="process-math">\(x \lt x_0\)</span> and decreasing for <span class="process-math">\(x \gt x_0\text{.}\)</span> Then for <span class="process-math">\(x \gt x_0\)</span> we have<div class="displaymath process-math" id="sec-sums-monotone-11-3-5">
+\begin{align*}
+\left| \sum_{n \leq x} f(n) - \int_1^x f(t)dt \right|
+\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right|
++ \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| \\
+\amp \leq f(1) + \max\{f(1),f(x_0)\} + \max\{f(x_0),f(x)\} \\
+\amp = f(1) + 2 f(x_0) \text{.}
+\end{align*}
+</div>This is bounded, hence <span class="process-math">\(O(1)\text{.}\)</span></article><article class="example example-like" id="sec-sums-monotone-12"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-sums-monotone-12-1">
+<div class="para">Let <span class="process-math">\(\alpha \geq 0\text{.}\)</span> Then:</div>
+<div class="displaymath process-math" id="sec-sums-monotone-12-1-2">
+\begin{equation}
+\sum_{n \leq x} n^\alpha = \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha)\text{.}\tag{4.2.6}
+\end{equation}
+</div>
+<div class="para">Indeed,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n \leq x} n^\alpha = \int_1^x t^\alpha dt + O(\max\{1^\alpha,x^\alpha\})\text{.}
+\end{equation*}
+</div>
+</div></article><article class="example example-like" id="sec-sums-monotone-13"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-sums-monotone-13-1">
+<div class="para">For <span class="process-math">\(\alpha \gt 0\text{,}\)</span> <span class="process-math">\(\alpha \neq 1\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="sec-sums-monotone-13-1-3">
+\begin{equation}
+\sum_{n \leq x} \frac{1}{n^\alpha} = \frac{x^{-\alpha+1}}{-\alpha+1} + O(1)\text{.}\tag{4.2.7}
+\end{equation}
+</div>
+<div class="para">Indeed,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n \leq x} \frac{1}{n^\alpha} = \int_1^x \frac{1}{t^\alpha} dt + O(\max\{1/1^\alpha,1/x^\alpha\})\text{.}
+\end{equation*}
+</div>
+<div class="para">The maximum on the right is <span class="process-math">\(O(1)\text{.}\)</span> Evaluating the integral gives the result.</div>
+</div></article><article class="example example-like" id="sec-sums-monotone-14"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="sec-sums-monotone-14-1">
+<div class="para">Let <span class="process-math">\(\alpha \gt 1\text{.}\)</span> Then:</div>
+<div class="displaymath process-math" id="sec-sums-monotone-14-1-2">
+\begin{equation}
+\sum_{n \gt x} \frac{1}{n^\alpha} = O(x^{-\alpha + 1})\text{.}\tag{4.2.8}
+\end{equation}
+</div>
+<div class="para">Exercise.</div>
+</div> <div class="para logical" id="sec-sums-monotone-14-2">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="sec-sums-monotone-14-2-1">
+\begin{equation}
+\sum_{n \leq x} \frac{1}{n} = \log x + O(1)\tag{4.2.9}
+\end{equation}
+</div>
+<div class="para">Exercise.</div>
+</div> <div class="para logical" id="sec-sums-monotone-14-3">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="sec-sums-monotone-14-3-1">
+\begin{equation}
+\sum_{n \leq x} \log n = x \log x - x + O(\log x)\text{.}\tag{4.2.10}
+\end{equation}
+</div>
+<div class="para">Exercise.</div>
+</div> <div class="para logical" id="sec-sums-monotone-14-4">
+<div class="para">Let <span class="process-math">\(\alpha \geq 0\text{.}\)</span> Then:</div>
+<div class="displaymath process-math" id="sec-sums-monotone-14-4-2">
+\begin{equation}
+\sum_{n \leq x} n^\alpha \log n
+= \frac{x^{\alpha+1}}{\alpha+1} \left( \log x - \frac{1}{\alpha+1} \right)
++ O(x^\alpha \log x)\text{.}\tag{4.2.11}
+\end{equation}
+</div>
+<div class="para">Exercise.</div>
 </div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-big-o.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
