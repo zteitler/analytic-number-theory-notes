@@ -121,17 +121,217 @@
 	</p>
 	
 	<p>
-	To do: write rest of proof.
-	Idea: compare integral, with lower and upper Riemann sums with integer endpoints.
-	Three sources of difference: the "triangle" areas at the top of each column,
-	the left and right vertical strips from <m>(y,\lceil y \rceil)</m>
-	and <m>(\lfloor x \rfloor, x)</m>.
+	Now suppose <m>y \lt \lfloor x \rfloor</m>, so there is at least one integer
+	<m>n</m> such that <m>y \lt n \leq x</m>.
+	Suppose that <m>f</m> is (non-strictly) increasing.
+	We will compare the integral <m>\int_y^x f(t) dt</m>
+	with the sum <m>\sum_{y \lt n \leq x} f(n)</m>.
+	This is not precisely a Riemann sum for the integral, but it is close.
+	Let us regard the sum as being equal to the total area of the following
+	figure:
+	for each integer <m>n</m> with <m>y \lt n \leq x</m>,
+	we take the rectangle whose base is the interval from <m>n-1</m> to <m>n</m>
+	on the horizontal axis, and whose height is equal to <m>f(n)</m>;
+	i.e., the right-hand endpoint of the base interval.
+	So, this is something like a right-hand Riemann sum.
+	It is not precisely a Riemann sum because the first interval may extend
+	to the left of <m>y</m>, and the last interval (ending at <m>\lfloor x \rfloor</m>)
+	may end to the left of <m>x</m>.
 	</p>
+	
+	<p>
+	So, this sum (that is, the total area of the rectangles) differs from the
+	integral (the total area under the graph of <m>f</m>) in three ways.
+	First, in each interval <m>[n-1,n]</m> the rectangle extends above the graph.
+	This is because the function <m>f</m> is increasing, and the rectangle's
+	height is given by the height of the right-hand endpoint, ie., the highest
+	endpoint on that interval.
+	So, each rectangle includes a <lq/>triangle<rq/> region on top of the graph.
+	Second, the leftmost rectangle includes a vertical strip over the base
+	<m>[\lfloor y \rfloor, y]</m> that is not included in the integral.
+	Third, in contrast, the integral includes a vertical strip of area over the
+	base <m>[\lfloor x \rfloor, x]</m> which is not covered by any rectangle.
+	</p>
+	
+	<p>
+	First consider the area covered by the rectangles but not the integral.
+	These are the first and second types of error in the previous paragraph.
+	We claim this adds up to at most <m>f(x)</m>.
+	This is because the <lq/>error regions<rq/> in each rectangle are at
+	disjoint heights:
+	in the rectangle over base <m>[n-1,n]</m>, the <lq/>error region<rq/>
+	is in heights <m>f(n-1)</m> to <m>f(n)</m>.
+	Here, the leftmost strip is an exception,
+	as it may include an <lq/>error region<rq/> going down to height <m>0</m>.
+	Still, if we horizontally slide these regions into one single strip,
+	they will not overlap.
+	Therefore their total area is at most the width of that strip (which is <m>1</m>)
+	times the height of that strip, which is <m>f(\lfloor x \rfloor)</m>,
+	the greatest height of any rectangle involved in the sum.
+	So the total of these errors is at most <m>f(\lfloor x \rfloor)</m>.
+	This is less than or equal to <m>f(x)</m>.
+	</p>
+	
+	<p>
+	Next consider the area covered by the integral but not the rectangles.
+	This is the vertical strip on the right of the region, over the base
+	<m>[\lfloor x \rfloor, x]</m>.
+	This is contained in a rectangle with that same base, and height <m>f(x)</m>.
+	The width of that base is at most <m>1</m>.
+	So, the area of this rectangle is at most <m>f(x)</m>.
+	And then, the error from this source is at most <m>f(x)</m>.
+	</p>
+	
+	<p>
+	Now, the total error, the difference between the sum and the integral,
+	is the <em>difference</em> of these separate errors, namely,
+	the errors counting area in the rectangles but not the integral,
+	and the errors counting area in the integral but not the rectangles.
+	Since each type of error separately is at most <m>f(x)</m>
+	(and each of them is nonnegative),
+	then their difference has magnitude at most <m>f(x)</m>.
+	In other words, we have
+	<me>
+		\left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t) dt \right| \leq f(x) = \max\{f(y),f(x)\}
+	</me>
+	as claimed.
+	</p>
+	
+	<p>
+	What remains is to show the other case, if <m>f</m> is decreasing.
+	This follows similarly (using the left-hand sum).
+	</p>
+	
 </proof>
 </theorem>
 
 
+<corollary>
+<statement>
+If <m>x, y \in \bbR</m>, <m>y \lt x</m>, and <m>f</m> is nonnegative
+and monotone on <m>[y,x]</m>, then
+<men>
+	\sum_{y \lt n \leq x} = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})
+</men>.
+</statement>
 
+<p>
+I believe the intention here is to regard <m>y</m> as a fixed number,
+and everything else as a function of <m>x</m>.
+The sum and the integral are functions of <m>x</m> explicitly.
+If <m>f</m> is increasing, then <m>O(\max\{f(y),f(x)\}) = O(f(x)) = O(f)</m>.
+If <m>f</m> is decreasing, then <m>O(\max\{f(y),f(x)\}) = O(f(y)) = O(1)</m>.
+</p>
+
+<proof>
+We have seen that
+<men>
+	\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \leq \max\{f(y),f(x)\}
+</men>
+for all <m>x \gt y</m>.
+So
+<me>
+	\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt = c(x) \max\{f(y),f(x)\}
+</me>
+where <m>-1 \leq c(x) \leq 1</m>; this is <m>O(\max\{f(y),f(x)\})</m>.
+</proof>.
+</corollary>
+
+<corollary>
+<statement>
+If <m>f</m> is nonnegative and unimodal on <m>[1,\infty)</m> then
+<men>
+	\sum_{n \leq x} f(n) = \int_1^x f(t)dt + O(1)
+</men>.
+</statement>
+
+<p>
+The book says that <m>f</m> should be unimodal on <m>[1,x]</m>.
+But requiring <m>f</m> to be unimodal on <m>[1,x]</m> for all <m>x \gt 1</m>
+is equivalent to requiring <m>f</m> to be unimodal on <m>[1,\infty)</m>
+(exercise).
+And it must be intended to require unimodality for all <m>x</m>;
+we can require <m>f</m> to be unimodal on <m>[1,x]</m> for a particular <m>x</m>,
+but then <lq/><m>O(1)</m><rq/> doesn't make sense.
+</p>
+
+<proof>
+Say <m>f</m> is increasing for <m>x \lt x_0</m> and decreasing for <m>x \gt x_0</m>.
+Then for <m>x \gt x_0</m> we have
+<md>
+<mrow> \left| \sum_{n \leq x} f(n) - \int_1^x f(t)dt \right|
+	\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right|
+		+ \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| </mrow>
+<mrow> \amp \leq f(1) + \max\{f(1),f(x_0)\} + \max\{f(x_0),f(x)\} </mrow>
+<mrow> \amp = f(1) + 2 f(x_0) </mrow>
+</md>.
+This is bounded, hence <m>O(1)</m>.
+</proof>
+</corollary>
+
+<example>
+<p>
+Let <m>\alpha \geq 0</m>. Then:
+<men>
+	\sum_{n \leq x} n^\alpha = \frac{x^{\alpha+1}}{\alpha+1} + O(x^\alpha)
+</men>.
+Indeed,
+<me>
+	\sum_{n \leq x} n^\alpha = \int_1^x t^\alpha dt + O(\max\{1^\alpha,x^\alpha\})
+</me>.
+</p>
+</example>
+
+<example>
+<p>
+For <m>\alpha \gt 0</m>, <m>\alpha \neq 1</m>, we have
+<men>
+	\sum_{n \leq x} \frac{1}{n^\alpha} = \frac{x^{-\alpha+1}}{-\alpha+1} + O(1)
+</men>.
+Indeed,
+<me>
+	\sum_{n \leq x} \frac{1}{n^\alpha} = \int_1^x \frac{1}{t^\alpha} dt + O(\max\{1/1^\alpha,1/x^\alpha\})
+</me>.
+The maximum on the right is <m>O(1)</m>.
+Evaluating the integral gives the result.
+</p>
+</example>
+
+<example>
+<p>
+Let <m>\alpha \gt 1</m>. Then:
+<men>
+	\sum_{n \gt x} \frac{1}{n^\alpha} = O(x^{-\alpha + 1})
+</men>.
+Exercise.
+</p>
+
+<p>
+We have
+<men>
+	\sum_{n \leq x} \frac{1}{n} = \log x + O(1)
+</men>
+Exercise.
+</p>
+
+<p>
+We have
+<men>
+	\sum_{n \leq x} \log n = x \log x - x + O(\log x)
+</men>.
+Exercise.
+</p>
+
+<p>
+Let <m>\alpha \geq 0</m>. Then:
+<men>
+	\sum_{n \leq x} n^\alpha \log n
+	= \frac{x^{\alpha+1}}{\alpha+1} \left( \log x - \frac{1}{\alpha+1} \right)
+	+ O(x^\alpha \log x)
+</men>.
+Exercise.
+</p>
+</example>
 
 
 </section>
