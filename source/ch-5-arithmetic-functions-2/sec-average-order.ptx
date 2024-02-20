@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-average-order" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Average Order of Growth</title>
+  
+  <introduction>
+	<p>
+	Recall some of the previously defined arithmetic functions:
+	<ol>
+	<li><m>d(n)</m>: number of positive divisors of <m>n</m></li>
+	<li><m>\sigma(n)</m>: sum of positive divisors of <m>n</m></li>
+	</ol>
+	These can <lq/>oscillate<rq/> wildly:
+	for example <m>d(n)</m> can be arbitrarily large (<m>d(2^{k-1}) = k</m>)
+	and it also drops down to <m>d(n)=2</m> infinitely often (specifically, at primes).
+	We can <lq/>smooth out the oscillations<rq/> by averaging.
+	That is, for any <m>x \gt 1</m>, we consider
+	the average value of <m>d(n)</m> for all <m>n</m> up to <m>x</m>:
+	<me> \frac{1}{x} \sum_{n \leq x} d(n) </me>.
+	Similarly for <m>\sigma</m> and any other arithmetic function.
+	</p>
+	
+	<p>
+	The book uses capital letters for averages.
+	Thus if <m>f</m> is an arithmetic function, then
+	<m>F</m> is the average,
+	<me> F(x) = \frac{1}{x} \sum_{n \leq x} f(n) </me>.
+	Unless confusion seems likely, it may be preferable to use an overline,
+	as in <m>\overline{f}</m>:
+	<me> \overline{f}(x) = \frac{1}{x} \sum_{n \leq x} f(n) </me>.
+	</p>
+	
+	<p>
+	Observe that the domain of the average function is the real numbers
+	rather than the positive integers.
+	At this point, this is a more or less arbitrary choice (<lq/>why not<rq/>).
+	</p>
+	
+	<definition>
+	<p>
+	Let <m>f</m> be an arithmetic function.
+	We say <m>g</m> is an <term>average order</term> of <m>f</m>
+	if <m>g</m> is positive and
+	<men> \overline{f}(n) \sim \frac{1}{x} \sum_{n \leq x} g(n) </men>.
+	Typically we require <m>g</m> to be monotone.
+	</p>
+	</definition>
+	
+	<p>
+	The average order is not unique.
+	For example, if <m>g</m> is an average order for <m>f</m>
+	and <m>g'(n) = g(n)</m> for all but finitely many <m>n</m>,
+	then <m>g'</m> is also an average order for <m>f</m>.
+	Indeed, the difference between summing <m>g(n)</m> and summing <m>g'(n)</m>
+	is some constant (finite) value; after dividing by <m>x</m>,
+	the difference goes to zero as <m>x \to \infty</m>.
+	</p>
+	
+	</introduction>
+	
+	<subsection>
+	<title>Average order of number of divisors</title>
+	
+	<p>
+	We work out the average order of <m>d(n)</m>, the number of divisors.
+	</p>
+	
+	</subsection>
+
+
+</section>
