@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-big-o.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-4-summation-formulas.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-big-o.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-4-summation-formulas.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-5-arithmetic-functions-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -178,6 +178,13 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-sums-monotone.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Sums of Monotone Functions</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-5-arithmetic-functions-2.html" class="internal"><span class="codenumber">5</span> <span class="title">Arithmetic Functions II</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-average-order.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Average Order of Growth</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-average-order.html#sec-average-order-3" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Average order of number of divisors</span></a></div></li></ul>
+</li></ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -264,37 +271,43 @@ f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt\text{.}
 <div class="para">as claimed.</div>
 </div> <div class="para" id="sec-sums-monotone-9-2-7">What remains is to show the other case, if <span class="process-math">\(f\)</span> is decreasing. This follows similarly (using the left-hand sum).</div></article><article class="corollary theorem-like" id="sec-sums-monotone-10"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
-</h3>If <span class="process-math">\(x, y \in \bbR\text{,}\)</span> <span class="process-math">\(y \lt x\text{,}\)</span> and <span class="process-math">\(f\)</span> is nonnegative and monotone on <span class="process-math">\([y,x]\text{,}\)</span> then<div class="displaymath process-math" id="sec-sums-monotone-10-1-5">
+</h3>If <span class="process-math">\(y \in \bbR\)</span> and <span class="process-math">\(f\)</span> is nonnegative and monotone on <span class="process-math">\([y,\infty)\text{,}\)</span> then<div class="displaymath process-math" id="sec-sums-monotone-10-1-4">
 \begin{equation}
-\sum_{y \lt n \leq x} = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})\text{.}\tag{4.2.3}
+\sum_{y \lt n \leq x} f(n) = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})\text{.}\tag{4.2.3}
 \end{equation}
 </div>
-<div class="para" id="sec-sums-monotone-10-2">I believe the intention here is to regard <span class="process-math">\(y\)</span> as a fixed number, and everything else as a function of <span class="process-math">\(x\text{.}\)</span> The sum and the integral are functions of <span class="process-math">\(x\)</span> explicitly. If <span class="process-math">\(f\)</span> is increasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(x)) = O(f)\text{.}\)</span> If <span class="process-math">\(f\)</span> is decreasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(y)) = O(1)\text{.}\)</span>
-</div></article><article class="proof" id="sec-sums-monotone-10-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>We have seen that<div class="displaymath process-math" id="sec-sums-monotone-10-3-1">
+<article class="remark remark-like" id="sec-sums-monotone-10-2"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-sums-monotone-10-2-1">I believe the intention here is to regard <span class="process-math">\(y\)</span> as a fixed number, and everything else as a function of <span class="process-math">\(x\text{.}\)</span> The sum and the integral are functions of <span class="process-math">\(x\)</span> explicitly. If <span class="process-math">\(f\)</span> is increasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(x)) = O(f)\text{.}\)</span> If <span class="process-math">\(f\)</span> is decreasing, then <span class="process-math">\(O(\max\{f(y),f(x)\}) = O(f(y)) = O(1)\text{.}\)</span>
+</div></article></article><article class="proof" id="sec-sums-monotone-10-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>We have seen that<div class="displaymath process-math" id="sec-sums-monotone-10-3-1">
 \begin{equation}
-\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \leq \max\{f(y),f(x)\}\tag{4.2.4}
+\left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \right| \leq \max\{f(y),f(x)\}\tag{4.2.4}
 \end{equation}
 </div>for all <span class="process-math">\(x \gt y\text{.}\)</span> So<div class="displaymath process-math">
 \begin{equation*}
 \sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt = c(x) \max\{f(y),f(x)\}
 \end{equation*}
 </div>where <span class="process-math">\(-1 \leq c(x) \leq 1\text{;}\)</span> this is <span class="process-math">\(O(\max\{f(y),f(x)\})\text{.}\)</span></article><article class="corollary theorem-like" id="sec-sums-monotone-11"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
 </h3>If <span class="process-math">\(f\)</span> is nonnegative and unimodal on <span class="process-math">\([1,\infty)\)</span> then<div class="displaymath process-math" id="sec-sums-monotone-11-1-3">
 \begin{equation}
 \sum_{n \leq x} f(n) = \int_1^x f(t)dt + O(1)\text{.}\tag{4.2.5}
 \end{equation}
 </div>
-<div class="para" id="sec-sums-monotone-11-2">The book says that <span class="process-math">\(f\)</span> should be unimodal on <span class="process-math">\([1,x]\text{.}\)</span> But requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for all <span class="process-math">\(x \gt 1\)</span> is equivalent to requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,\infty)\)</span> (exercise). And it must be intended to require unimodality for all <span class="process-math">\(x\text{;}\)</span> we can require <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for a particular <span class="process-math">\(x\text{,}\)</span> but then “<span class="process-math">\(O(1)\)</span>” doesn’t make sense.</div></article><article class="proof" id="sec-sums-monotone-11-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>Say <span class="process-math">\(f\)</span> is increasing for <span class="process-math">\(x \lt x_0\)</span> and decreasing for <span class="process-math">\(x \gt x_0\text{.}\)</span> Then for <span class="process-math">\(x \gt x_0\)</span> we have<div class="displaymath process-math" id="sec-sums-monotone-11-3-5">
+<article class="remark remark-like" id="sec-sums-monotone-11-2"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-sums-monotone-11-2-1">The book says that <span class="process-math">\(f\)</span> should be unimodal on <span class="process-math">\([1,x]\text{.}\)</span> But requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for all <span class="process-math">\(x \gt 1\)</span> is equivalent to requiring <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,\infty)\)</span> (exercise). And it must be intended to require unimodality for all <span class="process-math">\(x\text{;}\)</span> we can require <span class="process-math">\(f\)</span> to be unimodal on <span class="process-math">\([1,x]\)</span> for a particular <span class="process-math">\(x\text{,}\)</span> but then “<span class="process-math">\(O(1)\)</span>” doesn’t make sense.</div></article></article><article class="proof" id="sec-sums-monotone-11-3"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>Say <span class="process-math">\(f\)</span> is increasing for <span class="process-math">\(x \lt x_0\)</span> and decreasing for <span class="process-math">\(x \gt x_0\text{.}\)</span> Then for <span class="process-math">\(x \gt x_0\)</span> we have<div class="displaymath process-math" id="sec-sums-monotone-11-3-5">
 \begin{align*}
 \left| \sum_{n \leq x} f(n) - \int_1^x f(t)dt \right|
-\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right|
-+ \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| \\
+\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right| \\
+\amp \quad + \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| \\
 \amp \leq f(1) + \max\{f(1),f(x_0)\} + \max\{f(x_0),f(x)\} \\
 \amp = f(1) + 2 f(x_0) \text{.}
 \end{align*}
 </div>This is bounded, hence <span class="process-math">\(O(1)\text{.}\)</span></article><article class="example example-like" id="sec-sums-monotone-12"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="sec-sums-monotone-12-1">
 <div class="para">Let <span class="process-math">\(\alpha \geq 0\text{.}\)</span> Then:</div>
@@ -310,7 +323,7 @@ f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt\text{.}
 \end{equation*}
 </div>
 </div></article><article class="example example-like" id="sec-sums-monotone-13"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="sec-sums-monotone-13-1">
 <div class="para">For <span class="process-math">\(\alpha \gt 0\text{,}\)</span> <span class="process-math">\(\alpha \neq 1\text{,}\)</span> we have</div>
@@ -327,7 +340,7 @@ f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt\text{.}
 </div>
 <div class="para">The maximum on the right is <span class="process-math">\(O(1)\text{.}\)</span> Evaluating the integral gives the result.</div>
 </div></article><article class="example example-like" id="sec-sums-monotone-14"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.8</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="sec-sums-monotone-14-1">
 <div class="para">Let <span class="process-math">\(\alpha \gt 1\text{.}\)</span> Then:</div>
@@ -365,7 +378,7 @@ f(a) \leq \sum_{n=a}^b f(n) - \int_a^b f(t) dt\text{.}
 <div class="para">Exercise.</div>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-big-o.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-big-o.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-5-arithmetic-functions-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
