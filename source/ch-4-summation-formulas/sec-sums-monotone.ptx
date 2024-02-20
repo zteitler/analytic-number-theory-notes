@@ -208,13 +208,15 @@
 
 <corollary>
 <statement>
-If <m>x, y \in \bbR</m>, <m>y \lt x</m>, and <m>f</m> is nonnegative
-and monotone on <m>[y,x]</m>, then
+If <m>y \in \bbR</m> and <m>f</m> is nonnegative
+and monotone on <m>[y,\infty)</m>, then
 <men>
-	\sum_{y \lt n \leq x} = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})
+	\sum_{y \lt n \leq x} f(n) = \int_y^x f(t) dt + O(\max\{f(y),f(x)\})
 </men>.
 </statement>
 
+
+<remark>
 <p>
 I believe the intention here is to regard <m>y</m> as a fixed number,
 and everything else as a function of <m>x</m>.
@@ -222,11 +224,12 @@ The sum and the integral are functions of <m>x</m> explicitly.
 If <m>f</m> is increasing, then <m>O(\max\{f(y),f(x)\}) = O(f(x)) = O(f)</m>.
 If <m>f</m> is decreasing, then <m>O(\max\{f(y),f(x)\}) = O(f(y)) = O(1)</m>.
 </p>
+</remark>
 
 <proof>
 We have seen that
 <men>
-	\sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \leq \max\{f(y),f(x)\}
+	\left| \sum_{y \lt n \leq x} f(n) - \int_y^x f(t)dt \right| \leq \max\{f(y),f(x)\}
 </men>
 for all <m>x \gt y</m>.
 So
@@ -245,6 +248,7 @@ If <m>f</m> is nonnegative and unimodal on <m>[1,\infty)</m> then
 </men>.
 </statement>
 
+<remark>
 <p>
 The book says that <m>f</m> should be unimodal on <m>[1,x]</m>.
 But requiring <m>f</m> to be unimodal on <m>[1,x]</m> for all <m>x \gt 1</m>
@@ -254,14 +258,15 @@ And it must be intended to require unimodality for all <m>x</m>;
 we can require <m>f</m> to be unimodal on <m>[1,x]</m> for a particular <m>x</m>,
 but then <lq/><m>O(1)</m><rq/> doesn't make sense.
 </p>
+</remark>
 
 <proof>
 Say <m>f</m> is increasing for <m>x \lt x_0</m> and decreasing for <m>x \gt x_0</m>.
 Then for <m>x \gt x_0</m> we have
 <md>
 <mrow> \left| \sum_{n \leq x} f(n) - \int_1^x f(t)dt \right|
-	\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right|
-		+ \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| </mrow>
+	\amp \leq \left| f(1) + \sum_{1 \lt n \leq x_0} f(n) - \int_1^{x_0} f(t)dt \right| </mrow>
+<mrow>		\amp \quad + \left| \sum_{x_0 \lt n \leq x} f(n) - \int_{x_0}^x f(t)dt \right| </mrow>
 <mrow> \amp \leq f(1) + \max\{f(1),f(x_0)\} + \max\{f(x_0),f(x)\} </mrow>
 <mrow> \amp = f(1) + 2 f(x_0) </mrow>
 </md>.
