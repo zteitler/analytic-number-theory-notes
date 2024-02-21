@@ -691,7 +691,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.1",
   "title": "Average Order of Growth",
-  "body": " Average Order of Growth   Recall some of the previously defined arithmetic functions:  : number of positive divisors of  : sum of positive divisors of  These can oscillate wildly: for example can be arbitrarily large ( ) and it also drops down to infinitely often (specifically, at primes). We can smooth out the oscillations by averaging. That is, for any , we consider the average value of for all up to : . Similarly for and any other arithmetic function.  The book uses capital letters for averages. Thus if is an arithmetic function, then is the average, . Unless confusion seems likely, it may be preferable to use an overline, as in : .  Observe that the domain of the average function is the real numbers rather than the positive integers. At this point, this is a more or less arbitrary choice ( why not ).   Let be an arithmetic function. We say is an average order of if is positive and . Typically we require to be monotone.   The average order is not unique. For example, if is an average order for and for all but finitely many , then is also an average order for . Indeed, the difference between summing and summing is some constant (finite) value; after dividing by , the difference goes to zero as .    Average order of number of divisors  We work out the average order of , the number of divisors.   "
+  "body": " Average Order of Growth   Recall some of the previously defined arithmetic functions:  : number of positive divisors of  : sum of positive divisors of  These can oscillate wildly: for example can be arbitrarily large ( ) and it also drops down to infinitely often (specifically, at primes). We can smooth out the oscillations by averaging. That is, for any , we consider the average value of for all up to : . Similarly for and any other arithmetic function.  The book uses capital letters for averages. Thus if is an arithmetic function, then is the average, . Unless confusion seems likely, it may be preferable to use an overline, as in : .  Observe that the domain of the average function is the real numbers rather than the positive integers. At this point, this is a more or less arbitrary choice ( why not ).   Let be an arithmetic function. We say is an average order of if is positive and . Typically we require to be monotone.   The average order is not unique. For example, if is an average order for and for all but finitely many , then is also an average order for . Indeed, the difference between summing and summing is some constant (finite) value; after dividing by , the difference goes to zero as .  Nevertheless we will say the average order instead of an average order , just because it sounds nicer.    Average order of number of divisors   For , the number of positive divisors of , we have . Thus, . The average order of , the number of divisors of , is . That is, .   We have . We used .  From this it follows that . In particular . The fraction on the right goes to zero as , hence as claimed.  Finally, we have seen that . After dividing by we get , matching .      Average order of sum of divisors   For the divisor sum function we have .   We have . We can use to rewrite .  For the term, we use these facts. First, . This is Euler's solution of the Basel problem. For now we will use this without giving a proof (many proofs exist and can be found in various textbooks or online). Second, we have seen that for , . Combining these, . This completes the proof.     The average order of is .   The claim is that . The left hand side is and the right hand side is . The two quantities are asymptotic since .    This is not quite the same thing as saying that the average value of should be . In our statements above we averaged . We have not evaluated the sum or the average of .    .   We have . This completes the proof.      Average order of Euler totient    .   The proof is similar to before. We use , where is the Möbius function. After some algebra very similar to the proof of the previous theorem, . We have mentioned that , so in particular for we get . This completes the proof.     "
 },
 {
   "id": "sec-average-order-2-4",
@@ -701,6 +701,51 @@ var ptx_lunr_docs = [
   "number": "5.1.1",
   "title": "",
   "body": " Let be an arithmetic function. We say is an average order of if is positive and . Typically we require to be monotone.  "
+},
+{
+  "id": "sec-average-order-3-2",
+  "level": "2",
+  "url": "sec-average-order.html#sec-average-order-3-2",
+  "type": "Theorem",
+  "number": "5.1.2",
+  "title": "",
+  "body": " For , the number of positive divisors of , we have . Thus, . The average order of , the number of divisors of , is . That is, .   We have . We used .  From this it follows that . In particular . The fraction on the right goes to zero as , hence as claimed.  Finally, we have seen that . After dividing by we get , matching .   "
+},
+{
+  "id": "sec-average-order-4-2",
+  "level": "2",
+  "url": "sec-average-order.html#sec-average-order-4-2",
+  "type": "Theorem",
+  "number": "5.1.3",
+  "title": "",
+  "body": " For the divisor sum function we have .   We have . We can use to rewrite .  For the term, we use these facts. First, . This is Euler's solution of the Basel problem. For now we will use this without giving a proof (many proofs exist and can be found in various textbooks or online). Second, we have seen that for , . Combining these, . This completes the proof.   "
+},
+{
+  "id": "sec-average-order-4-3",
+  "level": "2",
+  "url": "sec-average-order.html#sec-average-order-4-3",
+  "type": "Corollary",
+  "number": "5.1.4",
+  "title": "",
+  "body": " The average order of is .   The claim is that . The left hand side is and the right hand side is . The two quantities are asymptotic since .   "
+},
+{
+  "id": "sec-average-order-4-5",
+  "level": "2",
+  "url": "sec-average-order.html#sec-average-order-4-5",
+  "type": "Proposition",
+  "number": "5.1.5",
+  "title": "",
+  "body": "  .   We have . This completes the proof.   "
+},
+{
+  "id": "sec-average-order-5-2",
+  "level": "2",
+  "url": "sec-average-order.html#sec-average-order-5-2",
+  "type": "Theorem",
+  "number": "5.1.6",
+  "title": "",
+  "body": "  .   The proof is similar to before. We use , where is the Möbius function. After some algebra very similar to the proof of the previous theorem, . We have mentioned that , so in particular for we get . This completes the proof.   "
 },
 {
   "id": "bibliography",
