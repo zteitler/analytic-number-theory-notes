@@ -41,7 +41,7 @@
 	Let <m>f</m> be an arithmetic function.
 	We say <m>g</m> is an <term>average order</term> of <m>f</m>
 	if <m>g</m> is positive and
-	<men> \overline{f}(n) \sim \frac{1}{x} \sum_{n \leq x} g(n) </men>.
+	<men> \overline{f}(x) \sim \frac{1}{x} \sum_{n \leq x} g(n) </men>.
 	Typically we require <m>g</m> to be monotone.
 	</p>
 	</definition>
@@ -56,16 +56,205 @@
 	the difference goes to zero as <m>x \to \infty</m>.
 	</p>
 	
+	<p>
+	Nevertheless we will say <lq/>the average order<rq/>
+	instead of <lq/>an average order<rq/>, just because it sounds nicer.
+	</p>
+	
+	
 	</introduction>
 	
 	<subsection>
 	<title>Average order of number of divisors</title>
 	
-	<p>
-	We work out the average order of <m>d(n)</m>, the number of divisors.
-	</p>
-	
+	<theorem>
+	<statement>
+	For <m>d(n)</m>, the number of positive divisors of <m>n</m>,
+	we have <m>\sum_{n \leq x} d(n) = x \log x + O(x)</m>.
+	Thus, <m>\overline{d}(x) \sim \log x</m>.
+	The average order of <m>d(n)</m>, the number of divisors of <m>n</m>,
+	is <m>\log n</m>.
+	That is,
+	<m>\overline{d}(x) = \frac{1}{x}\sum_{n \leq x} d(n) \sim \frac{1}{x} \sum_{n \leq x} \log n</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  We have
+  <md>
+  <mrow> \sum_{n \leq x} d(n) \amp = \sum_{n \leq x} \sum_{d \mid n} 1 </mrow>
+  <mrow> \amp = \sum_{d \leq x} \sum_{n \leq x, d \mid n} 1 </mrow>
+  <mrow> \amp = \sum_{d \leq x} \sum_{dk \leq x} 1 </mrow>
+  <mrow> \amp = \sum_{d \leq x} \left\lfloor \frac{x}{d} \right\rfloor </mrow>
+  <mrow> \amp = \sum_{d \leq x} \left( \frac{x}{d} + O(1) \right) </mrow>
+  <mrow> \amp = x \sum_{d \leq x} \frac{1}{d} + O(x) </mrow>
+  <mrow> \amp = x (\log x + O(1)) + O(x) </mrow>
+  <mrow> \amp = x \log x + O(x) </mrow>
+  </md>.
+  We used <m>\sum_{d \leq x} \frac{1}{d} = \log x + O(1)</m>.
+  </p>
+  
+  <p>
+  From this it follows that
+  <me>
+    \overline{d}(x) = \frac{1}{x} \sum_{n \leq x} d(n) = \log x + O(1)
+  </me>.
+  In particular
+  <me>
+    \frac{\overline{d}(x)}{\log x} = 1 + \frac{O(1)}{\log x}
+  </me>.
+  The fraction on the right goes to zero as <m>x \to \infty</m>,
+  hence <m>\overline{d}(x) \sim \log x</m> as claimed.
+  </p>
+  
+  <p>
+  Finally, we have seen that
+  <me> \sum_{n \leq x} \log n = x \log x - x + O(1) </me>.
+  After dividing by <m>x</m> we get <m>\log x + O(1)</m>,
+  matching <m>\overline{d}(x)</m>.
+  </p>
+  </proof>
+  </theorem>
+  
 	</subsection>
-
+	
+	<subsection>
+	<title>Average order of sum of divisors</title>
+	
+	<theorem>
+	<statement>
+	For the divisor sum function <m>\sigma</m> we have
+	<m>\sum_{n \leq x} \sigma(n) = \frac{\pi^2}{12} x^2 + O(x \log x)</m>.
+	</statement>
+	
+	<proof>
+	<p>
+	We have
+	<md>
+	<mrow> \sum_{n \leq x} \sigma(n) \amp = \sum_{n \leq x} \sum_{d \mid n} d </mrow>
+	<mrow> \amp = \sum_{dk \leq x} d </mrow>
+	<mrow> \amp = \sum_{k \leq x} \sum_{d \leq x/k} d </mrow>
+	<mrow> \amp = \sum_{k \leq x} \frac{1}{2} \left\lfloor \frac{x}{k} \right\rfloor \left( \left\lfloor \frac{x}{k} \right\rfloor + 1 \right) </mrow>
+	<mrow> \amp = \frac{1}{2} \sum_{k \leq x} \left( \frac{x^2}{k^2} + O(x/k) \right) </mrow>
+	<mrow> \amp = \frac{1}{2} x^2 \sum_{k \leq x} \frac{1}{k^2} + O\left( x \sum_{k \leq x} \frac{1}{k} \right) </mrow>
+  </md>.
+  We can use
+  <me> \sum_{k \leq x} \frac{1}{k} = \log x + O(1) </me>
+  to rewrite
+  <me> O\left( x \sum_{k \leq x} \frac{1}{k} \right) = O(x \log x) + O(x) = O(x \log x) </me>.
+  </p>
+  
+  <p>
+  For the <m>x^2</m> term, we use these facts.
+  First,
+  <men> \sum_{k = 1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} </men>.
+  This is Euler's solution of the Basel problem.
+  For now we will use this without giving a proof
+  (many proofs exist and can be found in various textbooks or online).
+  Second, we have seen that for <m>\alpha \gt 1</m>,
+  <men> \sum_{n \gt x} \frac{1}{n^\alpha} = O(x^{-\alpha+1}) </men>.
+  Combining these,
+  <md>
+  <mrow> \frac{1}{2} x^2 \sum_{k \leq x} \frac{1}{k^2}
+    \amp = \frac{1}{2} x^2 \left( \sum_{k=1}^\infty \frac{1}{k^2} - \sum_{k \gt x} \frac{1}{k^2} \right) </mrow>
+  <mrow> \amp = \frac{1}{2} x^2 \left( \frac{\pi^2}{6} - O(x^{-1}) \right) </mrow>
+  <mrow> \amp = \frac{\pi^2}{12} x^2 - O(x) </mrow>
+  </md>.
+  This completes the proof.
+  </p>
+  </proof>
+  </theorem>
+  
+  <corollary>
+  <statement>
+  The average order of <m>\sigma(n)</m> is <m>\frac{\pi^2}{6} n</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  The claim is that
+  <me> \frac{1}{x} \sum_{n \leq x} \sigma(n) \sim \frac{1}{x} \sum_{n \leq x} \frac{\pi^2}{6} n </me>.
+  The left hand side is
+  <me> \frac{1}{x} \sum_{n \leq x} \sigma(n) = \frac{\pi^2}{12} x + O(\log x) </me>
+  and the right hand side is
+  <md>
+  <mrow> \frac{1}{x} \sum_{n \leq x} \frac{\pi^2}{6} n \amp = \frac{\pi^2}{12} \frac{1}{x} \lfloor x \rfloor ( \lfloor x \rfloor + 1 ) </mrow>
+  <mrow> \amp = \frac{\pi^2}{12} x + O(1) </mrow>
+  </md>.
+  The two quantities are asymptotic since
+  <me>
+    \lim_{x \to \infty} \frac{\frac{\pi^2}{12} x + O(\log x)}{\frac{\pi^2}{12} x + O(1) } = 1
+  </me>.
+  </p>
+  </proof>
+  </corollary>
+  
+  <p>
+  This is not quite the same thing as saying that the average value of
+  <m>\sigma(n)/n</m> should be <m>\pi^2/6</m>.
+  In our statements above we averaged <m>\sigma(n)</m>.
+  We have not evaluated the sum or the average of <m>\sigma(n)/n</m>.
+  </p>
+  
+  <proposition>
+  <statement>
+  <men> \sum_{n \leq x} \frac{\sigma(n)}{n} = \frac{\pi^2}{6} x + O(\log x) </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  We have
+  <md>
+  <mrow> \sum_{n \leq x} \frac{\sigma(n)}{n} \amp = \sum_{n \leq x} \frac{1}{n} \sum_{d \mid n} d </mrow>
+  <mrow> \amp = \sum_{dk \leq x} \frac{d}{dk} </mrow>
+  <mrow> \amp = \sum_{dk \leq x} \frac{1}{k} </mrow>
+  <mrow> \amp = \sum_{k \leq x} \sum_{d \leq x/k} \frac{1}{k} </mrow>
+  <mrow> \amp = \sum_{k \leq x} \frac{1}{k} \left\lfloor \frac{x}{k} \right\rfloor </mrow>
+  <mrow> \amp = \sum_{k \leq x} \frac{1}{k} \left( \frac{x}{k} - \left\{ \frac{x}{k} \right\} \right) </mrow>
+  <mrow> \amp = \sum_{k \leq x} \frac{x}{k^2} - O(\sum_{k \leq x} \frac{1}{k}) </mrow>
+  <mrow> \amp = \frac{\pi^2}{6} x - O(1/x) - O(\log x) </mrow>
+  </md>.
+  This completes the proof.
+  </p>
+  </proof>
+  </proposition>
+  
+  </subsection>
+  
+  <subsection>
+  <title>Average order of Euler totient</title>
+  
+  <theorem>
+  <statement>
+  <m>\sum_{n \leq x} \varphi(n) = \frac{3}{\pi^2} x^2 + O(x \log x) </m>.
+  </statement>
+  
+  <proof>
+  <p>
+  The proof is similar to before.
+  We use
+  <me> \varphi(n) = \sum_{d \mid n} \frac{\mu(d)}{d} </me>,
+  where <m>\mu</m> is the Möbius function.
+  After some algebra very similar to the proof of the previous theorem,
+  <me>
+    \sum_{n \leq x} \varphi(n) = \frac{1}{2} x^2 \left( \sum_{d=1}^\infty \frac{\mu(d)}{d^2} \right) + O(x \log x)
+  </me>.
+  We have mentioned that
+  <men>
+    \left(\sum_{n=1}^\infty \frac{1}{n^s} \right) \left(\sum_{n=1}^\infty \frac{\mu(n)}{n^s} \right) = 1
+  </men>,
+  so in particular for <m>s=2</m> we get
+  <men>
+    \sum_{n=1}^{\infty} \frac{\mu(n)}{n^2} = \frac{1}{\sum_{n=1}^{\infty} \frac{1}{n^2}}
+    = \frac{1}{\pi^2/6} = \frac{6}{\pi^2}
+  </men>.
+  This completes the proof.
+  </p>
+  </proof>
+  </theorem>
+  
+  </subsection>
+  
+  
 
 </section>
