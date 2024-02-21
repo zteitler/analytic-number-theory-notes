@@ -233,7 +233,7 @@
   <p>
   The proof is similar to before.
   We use
-  <me> \varphi(n) = \sum_{d \mid n} \frac{\mu(d)}{d} </me>,
+  <me> \varphi(n) = n \sum_{d \mid n} \frac{\mu(d)}{d} </me>,
   where <m>\mu</m> is the Möbius function.
   After some algebra very similar to the proof of the previous theorem,
   <me>
