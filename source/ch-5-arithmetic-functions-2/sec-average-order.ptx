@@ -255,6 +255,37 @@
   
   </subsection>
   
+  <subsection>
+  <title>Extensions</title>
+  
+  <p>
+  We have been concerned with averages (and sums) of arithmetic functions.
+  It would be interesting to investigate other statistical properties
+  such as the standard deviation,
+  or the second, third, and higher moments.
+  (The <m>k</m>th moment is simply the average of the <m>k</m>th power.
+  Moments are important in statistics and analysis.)
+  </p>
+  
+  <p>
+  As described in the textbook's chapter notes,
+  there has been some study of modified averages
+  taking, instead of all <m>n \leq x</m>,
+  just those <m>n \leq x</m> with <m>n \equiv a \pmod{q}</m>
+  for some <m>a, q</m>.
+  It seems there is plenty still to be figured out in that direction.
+  </p>
+  
+  <p>
+  Another way to modify the sequence would be to fix an
+  irrational number <m>\epsilon</m> and a parameter <m>0 \leq p \leq 1</m>
+  and take those <m>n \leq x</m>
+  such that the fractional part <m>\{n\epsilon\} \lt p</m>.
+  (This is a way to take a sort of <lq/>random<rq/> subset of integers.)
+  </p>
+  
+  </subsection>
+  
   
 
 </section>

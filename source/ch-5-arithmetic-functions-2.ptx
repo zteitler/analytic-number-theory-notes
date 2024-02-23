@@ -6,4 +6,6 @@
   <!-- include sections -->
   <xi:include href="ch-5-arithmetic-functions-2/sec-average-order.ptx" />
 
+  <xi:include href="ch-5-arithmetic-functions-2/sec-hyperbola-method.ptx" />
+
 </chapter>
