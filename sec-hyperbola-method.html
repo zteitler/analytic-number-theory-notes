@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Average Order of Growth</title>
+<title>Dirichlet’s Hyperbola Method</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-5-arithmetic-functions-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-5-arithmetic-functions-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-hyperbola-method.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-average-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-5-arithmetic-functions-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -182,7 +182,7 @@ window.MathJax = {
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-5-arithmetic-functions-2.html" class="internal"><span class="codenumber">5</span> <span class="title">Arithmetic Functions II</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-average-order.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Average Order of Growth</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-average-order.html#sec-average-order-3" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Average order of number of divisors</span></a></div></li>
@@ -191,7 +191,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-average-order.html#sec-average-order-6" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Extensions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-hyperbola-method.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Dirichlet’s Hyperbola Method</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-hyperbola-method.html#sec-hyperbola-method-3" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Euler-Mascheroni constant</span></a></div></li>
@@ -208,248 +208,105 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-average-order"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Average Order of Growth</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-hyperbola-method"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">5.2</span><span class="space"> </span><span class="title">Dirichlet’s Hyperbola Method</span>
 </h2>
-<section class="introduction" id="sec-average-order-2"><div class="para logical" id="sec-average-order-2-1">
-<div class="para">Recall some of the previously defined arithmetic functions:</div>
-<ol class="decimal">
-<li id="sec-average-order-2-1-1-1"><div class="para" id="p-derived-sec-average-order-2-1-1-1">
-<span class="process-math">\(d(n)\text{:}\)</span> number of positive divisors of <span class="process-math">\(n\)</span>
-</div></li>
-<li id="sec-average-order-2-1-1-2"><div class="para" id="p-derived-sec-average-order-2-1-1-2">
-<span class="process-math">\(\sigma(n)\text{:}\)</span> sum of positive divisors of <span class="process-math">\(n\)</span>
-</div></li>
-</ol>
-<div class="para">These can “oscillate” wildly: for example <span class="process-math">\(d(n)\)</span> can be arbitrarily large (<span class="process-math">\(d(2^{k-1}) = k\)</span>) and it also drops down to <span class="process-math">\(d(n)=2\)</span> infinitely often (specifically, at primes). We can “smooth out the oscillations” by averaging. That is, for any <span class="process-math">\(x \gt 1\text{,}\)</span> we consider the average value of <span class="process-math">\(d(n)\)</span> for all <span class="process-math">\(n\)</span> up to <span class="process-math">\(x\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{1}{x} \sum_{n \leq x} d(n) \text{.}
-\end{equation*}
-</div>
-<div class="para">Similarly for <span class="process-math">\(\sigma\)</span> and any other arithmetic function.</div>
-</div> <div class="para logical" id="sec-average-order-2-2">
-<div class="para">The book uses capital letters for averages. Thus if <span class="process-math">\(f\)</span> is an arithmetic function, then <span class="process-math">\(F\)</span> is the average,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-F(x) = \frac{1}{x} \sum_{n \leq x} f(n) \text{.}
-\end{equation*}
-</div>
-<div class="para">Unless confusion seems likely, it may be preferable to use an overline, as in <span class="process-math">\(\overline{f}\text{:}\)</span>
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{f}(x) = \frac{1}{x} \sum_{n \leq x} f(n) \text{.}
-\end{equation*}
-</div>
-</div> <div class="para" id="sec-average-order-2-3">Observe that the domain of the average function is the real numbers rather than the positive integers. At this point, this is a more or less arbitrary choice (“why not”).</div> <article class="definition definition-like" id="sec-average-order-2-4"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+<section class="introduction" id="sec-hyperbola-method-2">We have seen that <span class="process-math">\(\sum_{n \leq x} d(n) = x \log x + O(x)\text{.}\)</span> Here we will seek an improvement: replacing the <span class="process-math">\(O(x)\)</span> term with a concrete linear function, specifically <span class="process-math">\((2 \gamma - 1)x + O(\sqrt{x})\)</span> where <span class="process-math">\(\gamma\)</span> is the <em class="emphasis">Euler-Mascheroni</em> constant.</section><section class="subsection" id="sec-hyperbola-method-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="space"> </span><span class="title">Euler-Mascheroni constant</span>
 </h3>
-<div class="para logical" id="sec-average-order-2-4-1">
-<div class="para">Let <span class="process-math">\(f\)</span> be an arithmetic function. We say <span class="process-math">\(g\)</span> is an <dfn class="terminology">average order</dfn> of <span class="process-math">\(f\)</span> if <span class="process-math">\(g\)</span> is positive and</div>
-<div class="displaymath process-math" id="sec-average-order-2-4-1-6">
+<div class="para logical" id="sec-hyperbola-method-3-2">
+<div class="para">For integer <span class="process-math">\(b \gt 1\)</span> we have the estimate</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{b} \leq \sum_{n = 1}^b \frac{1}{n} - \int_1^b \frac{1}{t} dt \leq 1\text{.}
+\end{equation*}
+</div>
+<div class="para">The difference is increasing as a function of <span class="process-math">\(b\text{,}\)</span> because if we think of the sum as a left-hand rule Riemann sum, then each time <span class="process-math">\(b\)</span> increases, we are adding a “triangle” to the difference.</div>
+</div>
+<div class="para logical" id="sec-hyperbola-method-3-3">
+<div class="para">Since the difference is increasing and bounded, it converges to a limit. This limit is called the <em class="emphasis">Euler-Mascheroni constant</em>, denoted <span class="process-math">\(\gamma\)</span> because of connections with the gamma function. Numerically,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma = 0.577215664901532\dotsc 
+\end{equation*}
+</div>
+<div class="para">It is an open question whether <span class="process-math">\(\gamma\)</span> is rational or irrational (and if it is irrational, whether it is algebraic or transcendental).</div>
+</div>
+<div class="para logical" id="sec-hyperbola-method-3-4">
+<div class="para">In general,</div>
+<div class="displaymath process-math" id="sec-hyperbola-method-3-4-1">
 \begin{equation}
-\overline{f}(x) \sim \frac{1}{x} \sum_{n \leq x} g(n) \text{.}\tag{5.1.1}
+\sum_{d \leq x} \frac{1}{d} = \log x + \gamma + O(\frac{1}{x})\text{.}\tag{5.2.1}
 \end{equation}
 </div>
-<div class="para">Typically we require <span class="process-math">\(g\)</span> to be monotone.</div>
-</div></article> <div class="para" id="sec-average-order-2-5">The average order is not unique. For example, if <span class="process-math">\(g\)</span> is an average order for <span class="process-math">\(f\)</span> and <span class="process-math">\(g'(n) = g(n)\)</span> for all but finitely many <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(g'\)</span> is also an average order for <span class="process-math">\(f\text{.}\)</span> Indeed, the difference between summing <span class="process-math">\(g(n)\)</span> and summing <span class="process-math">\(g'(n)\)</span> is some constant (finite) value; after dividing by <span class="process-math">\(x\text{,}\)</span> the difference goes to zero as <span class="process-math">\(x \to \infty\text{.}\)</span>
-</div> <div class="para" id="sec-average-order-2-6">Nevertheless we will say “the average order” instead of “an average order”, just because it sounds nicer.</div></section><section class="subsection" id="sec-average-order-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="space"> </span><span class="title">Average order of number of divisors</span>
+<div class="para">(Why?)</div>
+</div></section><section class="subsection" id="sec-hyperbola-method-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="space"> </span><span class="title">Hyperbola method</span>
 </h3>
-<article class="theorem theorem-like" id="sec-average-order-3-2"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
-</h4>For <span class="process-math">\(d(n)\text{,}\)</span> the number of positive divisors of <span class="process-math">\(n\text{,}\)</span> we have <span class="process-math">\(\sum_{n \leq x} d(n) = x \log x + O(x)\text{.}\)</span> Thus, <span class="process-math">\(\overline{d}(x) \sim \log x\text{.}\)</span> The average order of <span class="process-math">\(d(n)\text{,}\)</span> the number of divisors of <span class="process-math">\(n\text{,}\)</span> is <span class="process-math">\(\log n\text{.}\)</span> That is, <span class="process-math">\(\overline{d}(x) = \frac{1}{x}\sum_{n \leq x} d(n) \sim \frac{1}{x} \sum_{n \leq x} \log n\text{.}\)</span></article><article class="proof" id="sec-average-order-3-2-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-average-order-3-2-2-1">
-<div class="para">We have</div>
-<div class="displaymath process-math" id="sec-average-order-3-2-2-1-1">
-\begin{align*}
-\sum_{n \leq x} d(n) \amp = \sum_{n \leq x} \sum_{d \mid n} 1 \\
-\amp = \sum_{d \leq x} \sum_{n \leq x, d \mid n} 1 \\
-\amp = \sum_{d \leq x} \sum_{dk \leq x} 1 \\
-\amp = \sum_{d \leq x} \left\lfloor \frac{x}{d} \right\rfloor \\
-\amp = \sum_{d \leq x} \left( \frac{x}{d} + O(1) \right) \\
-\amp = x \sum_{d \leq x} \frac{1}{d} + O(x) \\
-\amp = x (\log x + O(1)) + O(x) \\
-\amp = x \log x + O(x) \text{.}
-\end{align*}
-</div>
-<div class="para">We used <span class="process-math">\(\sum_{d \leq x} \frac{1}{d} = \log x + O(1)\text{.}\)</span>
-</div>
-</div> <div class="para logical" id="sec-average-order-3-2-2-2">
-<div class="para">From this it follows that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{d}(x) = \frac{1}{x} \sum_{n \leq x} d(n) = \log x + O(1)\text{.}
-\end{equation*}
-</div>
-<div class="para">In particular</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{\overline{d}(x)}{\log x} = 1 + \frac{O(1)}{\log x}\text{.}
-\end{equation*}
-</div>
-<div class="para">The fraction on the right goes to zero as <span class="process-math">\(x \to \infty\text{,}\)</span> hence <span class="process-math">\(\overline{d}(x) \sim \log x\)</span> as claimed.</div>
-</div> <div class="para logical" id="sec-average-order-3-2-2-3">
-<div class="para">Finally, we have seen that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{n \leq x} \log n = x \log x - x + O(1) \text{.}
-\end{equation*}
-</div>
-<div class="para">After dividing by <span class="process-math">\(x\)</span> we get <span class="process-math">\(\log x + O(1)\text{,}\)</span> matching <span class="process-math">\(\overline{d}(x)\text{.}\)</span>
-</div>
-</div></article></section><section class="subsection" id="sec-average-order-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="space"> </span><span class="title">Average order of sum of divisors</span>
-</h3>
-<article class="theorem theorem-like" id="sec-average-order-4-2"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span>
-</h4>For the divisor sum function <span class="process-math">\(\sigma\)</span> we have <span class="process-math">\(\sum_{n \leq x} \sigma(n) = \frac{\pi^2}{12} x^2 + O(x \log x)\text{.}\)</span></article><article class="proof" id="sec-average-order-4-2-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-average-order-4-2-2-1">
-<div class="para">We have</div>
-<div class="displaymath process-math" id="sec-average-order-4-2-2-1-1">
-\begin{align*}
-\sum_{n \leq x} \sigma(n) \amp = \sum_{n \leq x} \sum_{d \mid n} d \\
-\amp = \sum_{dk \leq x} d \\
-\amp = \sum_{k \leq x} \sum_{d \leq x/k} d \\
-\amp = \sum_{k \leq x} \frac{1}{2} \left\lfloor \frac{x}{k} \right\rfloor \left( \left\lfloor \frac{x}{k} \right\rfloor + 1 \right) \\
-\amp = \frac{1}{2} \sum_{k \leq x} \left( \frac{x^2}{k^2} + O(x/k) \right) \\
-\amp = \frac{1}{2} x^2 \sum_{k \leq x} \frac{1}{k^2} + O\left( x \sum_{k \leq x} \frac{1}{k} \right) \text{.}
-\end{align*}
-</div>
-<div class="para">We can use</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{k \leq x} \frac{1}{k} = \log x + O(1) 
-\end{equation*}
-</div>
-<div class="para">to rewrite</div>
-<div class="displaymath process-math">
-\begin{equation*}
-O\left( x \sum_{k \leq x} \frac{1}{k} \right) = O(x \log x) + O(x) = O(x \log x) \text{.}
-\end{equation*}
-</div>
-</div> <div class="para logical" id="sec-average-order-4-2-2-2">
-<div class="para">For the <span class="process-math">\(x^2\)</span> term, we use these facts. First,</div>
-<div class="displaymath process-math" id="sec-average-order-4-2-2-2-2">
+<div class="para logical" id="sec-hyperbola-method-4-2">
+<div class="para">Observe:</div>
+<div class="displaymath process-math" id="sec-hyperbola-method-4-2-1">
 \begin{equation}
-\sum_{k = 1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} \text{.}\tag{5.1.2}
+\sum_{n \leq x} d(n)  = \sum_{dk \leq x} 1 = \#\{(d,k) \colon d k \leq x \} \text{,}\tag{5.2.2}
 \end{equation}
 </div>
-<div class="para">This is Euler’s solution of the Basel problem. For now we will use this without giving a proof (many proofs exist and can be found in various textbooks or online). Second, we have seen that for <span class="process-math">\(\alpha \gt 1\text{,}\)</span>
+<div class="para">which means the sum we are interested in is the number of lattice points on or under the hyperbola <span class="process-math">\(dk = x\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="sec-average-order-4-2-2-2-4">
-\begin{equation}
-\sum_{n \gt x} \frac{1}{n^\alpha} = O(x^{-\alpha+1}) \text{.}\tag{5.1.3}
-\end{equation}
 </div>
-<div class="para">Combining these,</div>
-<div class="displaymath process-math" id="sec-average-order-4-2-2-2-5">
-\begin{align*}
-\frac{1}{2} x^2 \sum_{k \leq x} \frac{1}{k^2}
-\amp = \frac{1}{2} x^2 \left( \sum_{k=1}^\infty \frac{1}{k^2} - \sum_{k \gt x} \frac{1}{k^2} \right) \\
-\amp = \frac{1}{2} x^2 \left( \frac{\pi^2}{6} - O(x^{-1}) \right) \\
-\amp = \frac{\pi^2}{12} x^2 - O(x) \text{.}
-\end{align*}
-</div>
-<div class="para">This completes the proof.</div>
-</div></article><article class="corollary theorem-like" id="sec-average-order-4-3"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
-</h4>The average order of <span class="process-math">\(\sigma(n)\)</span> is <span class="process-math">\(\frac{\pi^2}{6} n\text{.}\)</span></article><article class="proof" id="sec-average-order-4-3-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-average-order-4-3-2-1">
-<div class="para">The claim is that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{1}{x} \sum_{n \leq x} \sigma(n) \sim \frac{1}{x} \sum_{n \leq x} \frac{\pi^2}{6} n \text{.}
-\end{equation*}
-</div>
-<div class="para">The left hand side is</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{1}{x} \sum_{n \leq x} \sigma(n) = \frac{\pi^2}{12} x + O(\log x) 
-\end{equation*}
-</div>
-<div class="para">and the right hand side is</div>
-<div class="displaymath process-math" id="sec-average-order-4-3-2-1-3">
-\begin{align*}
-\frac{1}{x} \sum_{n \leq x} \frac{\pi^2}{6} n \amp = \frac{\pi^2}{12} \frac{1}{x} \lfloor x \rfloor ( \lfloor x \rfloor + 1 ) \\
-\amp = \frac{\pi^2}{12} x + O(1) \text{.}
-\end{align*}
-</div>
-<div class="para">The two quantities are asymptotic since</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\lim_{x \to \infty} \frac{\frac{\pi^2}{12} x + O(\log x)}{\frac{\pi^2}{12} x + O(1) } = 1\text{.}
-\end{equation*}
-</div>
-</div></article><div class="para" id="sec-average-order-4-4">This is not quite the same thing as saying that the average value of <span class="process-math">\(\sigma(n)/n\)</span> should be <span class="process-math">\(\pi^2/6\text{.}\)</span> In our statements above we averaged <span class="process-math">\(\sigma(n)\text{.}\)</span> We have not evaluated the sum or the average of <span class="process-math">\(\sigma(n)/n\text{.}\)</span>
-</div>
-<article class="proposition theorem-like" id="sec-average-order-4-5"><h4 class="heading">
-<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span>
+<article class="remark remark-like" id="sec-hyperbola-method-4-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h4>
-<div class="displaymath process-math" id="sec-average-order-4-5-1-1">
+<div class="para" id="sec-hyperbola-method-4-3-1">Using more common variable names, we might consider the hyperbola <span class="process-math">\(xy = c\)</span> (say), or in other words <span class="process-math">\(y = \frac{c}{x}\text{.}\)</span> If we substitute <span class="process-math">\(x = (x' - y')/\sqrt{2}\text{,}\)</span> <span class="process-math">\(y = (x' + y')/\sqrt{2}\text{,}\)</span> then the hyperbola is transformed to <span class="process-math">\(x'^2 - y'^2 = 2c\text{,}\)</span> a more common form of a hyperbola. And this substitution is simply a rotation by <span class="process-math">\(45\)</span> degrees.</div></article><div class="para" id="sec-hyperbola-method-4-4">Our previous estimate came from counting the lattice points on each column with horizontal coordinate <span class="process-math">\(d\text{,}\)</span> for each <span class="process-math">\(d \leq x\text{:}\)</span> there are <span class="process-math">\(\left\lfloor \frac{x}{d} \right\rfloor\)</span> lattice points in that column, which is approximately equal to <span class="process-math">\(x/d\)</span> with <span class="process-math">\(O(1)\)</span> error; then summing <span class="process-math">\(x/d\)</span> is approximated by an integral.</div>
+<div class="para" id="sec-hyperbola-method-4-5">We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region <span class="process-math">\(d \leq \sqrt{x}\text{,}\)</span> the region <span class="process-math">\(k \leq \sqrt{x}\text{,}\)</span> and the region <span class="process-math">\(d,k \lt \sqrt{x}\text{.}\)</span> The first region is the “left part” of the area, consisting of the “arm” pointing upwards plus the square under that arm. The second region is the “right part”, and the third region is the square between the two arms (with the two arms attached to its right and top sides).</div>
+<div class="para logical" id="sec-hyperbola-method-4-6">
+<div class="para">The number of lattice points in the square is simply</div>
+<div class="displaymath process-math" id="sec-hyperbola-method-4-6-1">
 \begin{equation}
-\sum_{n \leq x} \frac{\sigma(n)}{n} = \frac{\pi^2}{6} x + O(\log x) \text{.}\tag{5.1.4}
+\lfloor \sqrt{x} \rfloor^2 = (\sqrt{x} + O(1))^2 = x + O(\sqrt{x})\text{.}\tag{5.2.3}
 \end{equation}
-</div></article><article class="proof" id="sec-average-order-4-5-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-average-order-4-5-2-1">
-<div class="para">We have</div>
-<div class="displaymath process-math" id="sec-average-order-4-5-2-1-1">
+</div>
+</div>
+<div class="para logical" id="sec-hyperbola-method-4-7">
+<div class="para">The number of points in the right part is</div>
+<div class="displaymath process-math" id="sec-hyperbola-method-4-7-1">
 \begin{align*}
-\sum_{n \leq x} \frac{\sigma(n)}{n} \amp = \sum_{n \leq x} \frac{1}{n} \sum_{d \mid n} d \\
-\amp = \sum_{dk \leq x} \frac{d}{dk} \\
-\amp = \sum_{dk \leq x} \frac{1}{k} \\
-\amp = \sum_{k \leq x} \sum_{d \leq x/k} \frac{1}{k} \\
-\amp = \sum_{k \leq x} \frac{1}{k} \left\lfloor \frac{x}{k} \right\rfloor \\
-\amp = \sum_{k \leq x} \frac{1}{k} \left( \frac{x}{k} - \left\{ \frac{x}{k} \right\} \right) \\
-\amp = \sum_{k \leq x} \frac{x}{k^2} - O(\sum_{k \leq x} \frac{1}{k}) \\
-\amp = \frac{\pi^2}{6} x - O(1/x) - O(\log x) \text{.}
+\sum_{d \leq \sqrt{x}} \left\lfloor \frac{x}{d} \right\rfloor
+\amp = \sum_{d \leq \sqrt{x}} (\frac{x}{d} + O(1)) \\
+\amp = x \sum_{d \leq \sqrt{x}} \frac{1}{d} + O(\sqrt{x}) \\
+\amp  = x (\log \sqrt{x} + \gamma + O(1/\sqrt{x}) ) + O(\sqrt{x}) \\
+\amp = x \log \sqrt{x} + \gamma x + O(\sqrt{x}) \text{.}
 \end{align*}
 </div>
-<div class="para">This completes the proof.</div>
-</div></article></section><section class="subsection" id="sec-average-order-5"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="space"> </span><span class="title">Average order of Euler totient</span>
-</h3>
-<article class="theorem theorem-like" id="sec-average-order-5-2"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span>
+</div>
+<div class="para" id="sec-hyperbola-method-4-8">Likewise the number of lattice points in the left part is by symmetry the same. The number of lattice points in the square is <span class="process-math">\((\lfloor \sqrt{x} \rfloor)^2
+= (\sqrt{x} + O(1))^2
+= x + O(\sqrt{x})
+\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-hyperbola-method-4-9">
+<div class="para">So, the total number of lattice points is</div>
+<div class="displaymath process-math" id="sec-hyperbola-method-4-9-1">
+\begin{equation}
+2(x \log \sqrt{x} + \gamma x + O(\sqrt{x})) - (x + O(\sqrt{x}))
+= x \log x + (2\gamma - 1) x + O(\sqrt{x})\text{.}\tag{5.2.4}
+\end{equation}
+</div>
+</div>
+<article class="remark remark-like" id="sec-hyperbola-method-4-10"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
 </h4>
-<span class="process-math">\(\sum_{n \leq x} \varphi(n) = \frac{3}{\pi^2} x^2 + O(x \log x) \text{.}\)</span></article><article class="proof" id="sec-average-order-5-2-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-average-order-5-2-2-1">
-<div class="para">The proof is similar to before. We use</div>
+<div class="para logical" id="sec-hyperbola-method-4-10-1">
+<div class="para">Write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\varphi(n) = n \sum_{d \mid n} \frac{\mu(d)}{d} \text{,}
+\sum_{n \leq x} d(n) = x \log x + (2 \gamma - 1)x + \Delta(x)\text{.}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\mu\)</span> is the Möbius function. After some algebra very similar to the proof of the previous theorem,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sum_{n \leq x} \varphi(n) = \frac{1}{2} x^2 \left( \sum_{d=1}^\infty \frac{\mu(d)}{d^2} \right) + O(x \log x)\text{.}
-\end{equation*}
+<div class="para">We have seen that <span class="process-math">\(\Delta(x) = O(x^{1/2})\text{.}\)</span> It has been shown that <span class="process-math">\(\Delta(x) = O(x^{1/3})\text{;}\)</span> on the other hand, <span class="process-math">\(\Delta(x)\)</span> is not <span class="process-math">\(O(x^{1/4})\text{.}\)</span> It is an open problem to find the infimum of <span class="process-math">\(p\)</span> such that <span class="process-math">\(\Delta(x)\)</span> is <span class="process-math">\(O(x^p)\text{.}\)</span>
 </div>
-<div class="para">We have mentioned that</div>
-<div class="displaymath process-math" id="sec-average-order-5-2-2-1-4">
-\begin{equation}
-\left(\sum_{n=1}^\infty \frac{1}{n^s} \right) \left(\sum_{n=1}^\infty \frac{\mu(n)}{n^s} \right) = 1\text{,}\tag{5.1.5}
-\end{equation}
-</div>
-<div class="para">so in particular for <span class="process-math">\(s=2\)</span> we get</div>
-<div class="displaymath process-math" id="sec-average-order-5-2-2-1-6">
-\begin{equation}
-\sum_{n=1}^{\infty} \frac{\mu(n)}{n^2} = \frac{1}{\sum_{n=1}^{\infty} \frac{1}{n^2}}
-= \frac{1}{\pi^2/6} = \frac{6}{\pi^2}\text{.}\tag{5.1.6}
-\end{equation}
-</div>
-<div class="para">This completes the proof.</div>
-</div></article></section><section class="subsection" id="sec-average-order-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="space"> </span><span class="title">Extensions</span>
-</h3>
-<div class="para" id="sec-average-order-6-2">We have been concerned with averages (and sums) of arithmetic functions. It would be interesting to investigate other statistical properties such as the standard deviation, or the second, third, and higher moments. (The <span class="process-math">\(k\)</span>th moment is simply the average of the <span class="process-math">\(k\)</span>th power. Moments are important in statistics and analysis.)</div>
-<div class="para" id="sec-average-order-6-3">As described in the textbook’s chapter notes, there has been some study of modified averages taking, instead of all <span class="process-math">\(n \leq x\text{,}\)</span> just those <span class="process-math">\(n \leq x\)</span> with <span class="process-math">\(n \equiv a \pmod{q}\)</span> for some <span class="process-math">\(a, q\text{.}\)</span> It seems there is plenty still to be figured out in that direction.</div>
-<div class="para" id="sec-average-order-6-4">Another way to modify the sequence would be to fix an irrational number <span class="process-math">\(\epsilon\)</span> and a parameter <span class="process-math">\(0 \leq p \leq 1\)</span> and take those <span class="process-math">\(n \leq x\)</span> such that the fractional part <span class="process-math">\(\{n\epsilon\} \lt p\text{.}\)</span> (This is a way to take a sort of “random” subset of integers.)</div></section></section></div>
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-5-arithmetic-functions-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-hyperbola-method.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-average-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
