@@ -22,6 +22,8 @@
     
     <xi:include href="./ch-5-arithmetic-functions-2.ptx" />
 
+    <xi:include href="./ch-6-distribution-of-primes.ptx" />
+
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

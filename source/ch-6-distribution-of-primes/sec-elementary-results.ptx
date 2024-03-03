@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-elementary-results" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Elementary results on distribution of primes</title>
+  
+  <theorem>
+  <statement>
+  For <m>x \geq 5</m>, <m>\pi(x) \leq \theta(x)</m>.
+  For <m>x \geq 1</m>, <m>\theta(x) \leq \psi(x)</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  We have <m>\pi(1) = 0</m>, <m>\pi(2) = 1</m>, <m>\pi(3) = 2</m>,
+  <m>\pi(4) = 2</m>, and <m>\pi(5) = 3</m>.
+  Meanwhile, <m>\theta(1) = 0</m>, <m>\theta(2) = \log 2</m>,
+  <m>\theta(3) = \theta(4) = \log 2 + \log 3 \approx 1.79</m>,
+  and <m>\theta(5) = \log 2 + \log 3 + \log 5 \approx 3.40</m>.
+  So indeed <m>\theta(5) \geq \pi(5)</m>.
+  For <m>p \geq 5</m> we have <m>\log p \gt 1</m>.
+  So in the sums for <m>\theta</m> and <m>\pi</m>,
+  all terms with <m>p \geq 5</m> are greater for <m>\theta</m>
+  than for <m>\pi</m>.
+  This shows that <m>\theta(x) \geq \pi(x)</m> for <m>x \geq 5</m>.
+  </p>
+  
+  <p>
+  The difference between <m>\theta</m> and <m>\psi</m> is
+  <me>
+    \psi(x) - \theta(x) = \sum_{p^k \leq x, k \geq 2} \log p
+  </me>.
+  This difference is always nonnegative because each
+  <m>\log p \gt 0</m>.
+  </p>
+  </proof>
+  </theorem>
+  
+  <theorem>
+  <statement>
+  For every <m>x \geq 1</m>, we have
+  <men>
+    0 \leq \psi(x) - \theta(x) \leq \frac{\sqrt{x}(\log x)^2}{2 \log 2}
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  We already proved the first statement.
+  For the second one,
+  <md>
+  <mrow> \psi(x) \amp = \sum_{n \leq x} \Lambda(n) </mrow>
+  <mrow> \amp = \sum_{p^k \leq x} \log p </mrow>
+  <mrow> \amp = \sum_{k=1}^{\infty} \sum_{p \leq x^{1/k}} \log p </mrow>
+  <mrow> \amp = \sum_{k=1}^{\infty} \theta(x^{1/k}) </mrow>
+  </md>.
+  Despite appearances, this is actually a finite sum:
+  We have <m>\theta(y) = 0</m> for <m>y \lt 2</m>.
+  So <m>\theta(x^{1/k}) = 0</m> if <m>x^{1/k} \lt 2</m>,
+  in other words if <m>k \gt \frac{\log x}{\log 2}</m>.
+  Therefore
+  <men>
+    \psi(x) - \theta(x) = \sum_{2 \leq k \leq \frac{\log x}{\log 2}} \theta(x^{1/k})
+  </men>.
+  The largest term is <m>\theta(\sqrt{x})</m> (for <m>k=2</m>)
+  and the number of terms is at most <m>\frac{\log x}{\log 2}</m>.
+  Therefore the sum is bounded above,
+  <me> \psi(x) - \theta(x) \leq \theta(\sqrt{x}) \frac{\log x}{\log 2} </me>.
+  </p>
+  
+  <p>
+  Furthermore,
+  <men>
+    \theta(\sqrt{x}) = \sum_{p \leq \sqrt{x}} \log p
+    \leq \sum_{p \leq \sqrt{x}} \log \sqrt{x}
+    \leq \sqrt{x} \log \sqrt{x}
+  </men>
+  since there are at at most <m>\sqrt{x}</m> terms.
+  With this we get
+  <men>
+    \psi(x) - \theta(x) \leq \sqrt{x} (\log \sqrt{x}) \frac{\log x}{\log 2}
+  </men>.
+  After simplifying with <m>\log \sqrt{x} = \frac{1}{2} \log x</m>
+  we have the claimed result.
+  </p>
+  </proof>
+  </theorem>
+  
+
+</section>

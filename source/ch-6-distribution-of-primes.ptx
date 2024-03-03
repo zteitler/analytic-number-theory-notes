@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-6-distribution-of-primes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Arithmetic Functions II</title>
+  
+  <introduction>
+  <p>
+  Recall that the von Mangoldt function <m>\Lambda</m> is defined by
+  <m>\Lambda(n) = \log p</m> if <m>n = p^k</m> is a power of a prime
+  (<m>p</m> prime, <m>k \geq 1</m>), <m>\Lambda(n) = 0</m> otherwise
+  (in particular, <m>\Lambda(1) = 1</m>).
+  We consider the following three functions:
+  <men>
+    \pi(x) = \sum_{p \leq x} 1,
+    \qquad
+    \theta(x) = \sum_{p \leq x} \log p,
+    \qquad
+    \psi(x) = \sum_{n \leq x} \Lambda(n)
+  </men>.
+  Here <m>\pi</m> is the prime-counting function,
+  <m>\theta</m> is called Chebyshev's <m>\theta</m> function,
+  and <m>\psi</m> is called Chebyshev's <m>\psi</m> function.
+  </p>
+  
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="ch-6-distribution-of-primes/sec-elementary-results.ptx" />
+
+</chapter>
