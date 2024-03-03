@@ -754,7 +754,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Dirichlet’s Hyperbola Method",
-  "body": " Dirichlet's Hyperbola Method  We have seen that . Here we will seek an improvement: replacing the term with a concrete linear function, specifically where is the Euler-Mascheroni constant.   Euler-Mascheroni constant  For integer we have the estimate . The difference is increasing as a function of , because if we think of the sum as a left-hand rule Riemann sum, then each time increases, we are adding a triangle to the difference.  Since the difference is increasing and bounded, it converges to a limit. This limit is called the Euler-Mascheroni constant , denoted because of connections with the gamma function. Numerically, It is an open question whether is rational or irrational (and if it is irrational, whether it is algebraic or transcendental).  In general, . (Why?)    Hyperbola method  Observe: , which means the sum we are interested in is the number of lattice points on or under the hyperbola .   Using more common variable names, we might consider the hyperbola (say), or in other words . If we substitute , , then the hyperbola is transformed to , a more common form of a hyperbola. And this substitution is simply a rotation by degrees.   Our previous estimate came from counting the lattice points on each column with horizontal coordinate , for each : there are lattice points in that column, which is approximately equal to with error; then summing is approximated by an integral.  We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region , the region , and the region . The first region is the left part of the area, consisting of the arm pointing upwards plus the square under that arm. The second region is the right part , and the third region is the square between the two arms (with the two arms attached to its right and top sides).  The number of lattice points in the square is simply .  The number of points in the right part is .  Likewise the number of lattice points in the left part is by symmetry the same. The number of lattice points in the square is .  So, the total number of lattice points is .   Write . We have seen that . It has been shown that ; on the other hand, is not . It is an open problem to find the infimum of such that is .    "
+  "body": " Dirichlet's Hyperbola Method  We have seen that . Here we will seek an improvement: replacing the term with a concrete linear function, specifically where is the Euler-Mascheroni constant.   Euler-Mascheroni constant  For integer we have the estimate . The difference is increasing as a function of , because if we think of the sum as a left-hand rule Riemann sum, then each time increases, we are adding a triangle to the difference.  Since the difference is increasing and bounded, it converges to a limit. This limit is called the Euler-Mascheroni constant , denoted because of connections with the gamma function. Numerically, It is an open question whether is rational or irrational (and if it is irrational, whether it is algebraic or transcendental).  In general, . (Why?)    Hyperbola method  Observe: , which means the sum we are interested in is the number of lattice points on or under the hyperbola .   Using more common variable names, we might consider the hyperbola (say), or in other words . If we substitute , , then the hyperbola is transformed to , a more common form of a hyperbola. And this substitution is simply a rotation by degrees.   Our previous estimate came from counting the lattice points on each column with horizontal coordinate , for each : there are lattice points in that column, which is approximately equal to with error; then summing is approximated by an integral.  We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region , the region , and the region . The first region is the left part of the area, consisting of the arm pointing upwards plus the square under that arm. The second region is the right part , and the third region is the square between the two arms (with the two arms attached to its right and top sides).  The number of lattice points in the square is simply .  The number of points in the right part is .  Likewise the number of lattice points in the left part is by symmetry the same.  So, the total number of lattice points is .   Write . We have seen that . It has been shown that ; on the other hand, is not . It is an open problem to find the infimum of such that is .    "
 },
 {
   "id": "sec-hyperbola-method-4-3",
@@ -773,6 +773,33 @@ var ptx_lunr_docs = [
   "number": "5.2.2",
   "title": "",
   "body": " Write . We have seen that . It has been shown that ; on the other hand, is not . It is an open problem to find the infimum of such that is .  "
+},
+{
+  "id": "sec-elementary-results",
+  "level": "1",
+  "url": "sec-elementary-results.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Elementary results on distribution of primes",
+  "body": " Elementary results on distribution of primes   For , . For , .   We have , , , , and . Meanwhile, , , , and . So indeed . For we have . So in the sums for and , all terms with are greater for than for . This shows that for .  The difference between and is . This difference is always nonnegative because each .     For every , we have .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.    "
+},
+{
+  "id": "sec-elementary-results-2",
+  "level": "2",
+  "url": "sec-elementary-results.html#sec-elementary-results-2",
+  "type": "Theorem",
+  "number": "6.1.1",
+  "title": "",
+  "body": " For , . For , .   We have , , , , and . Meanwhile, , , , and . So indeed . For we have . So in the sums for and , all terms with are greater for than for . This shows that for .  The difference between and is . This difference is always nonnegative because each .   "
+},
+{
+  "id": "sec-elementary-results-3",
+  "level": "2",
+  "url": "sec-elementary-results.html#sec-elementary-results-3",
+  "type": "Theorem",
+  "number": "6.1.2",
+  "title": "",
+  "body": " For every , we have .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.   "
 },
 {
   "id": "bibliography",
