@@ -201,8 +201,12 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-6-distribution-of-primes.html" class="internal"><span class="codenumber">6</span> <span class="title">Arithmetic Functions II</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-results.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Elementary results on distribution of primes</span></a></div></li></ul>
+<div class="toc-title-box"><a href="ch-6-distribution-of-primes.html" class="internal"><span class="codenumber">6</span> <span class="title">Elementary Results on the Distribution of Primes</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-results.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Elementary results on distribution of primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-chebyshev-estimates.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Chebyshev’s Estimates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mertens.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Mertens’ Theorems</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -261,7 +265,7 @@ window.MathJax = {
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
 </h4>
 <div class="para" id="sec-hyperbola-method-4-3-1">Using more common variable names, we might consider the hyperbola <span class="process-math">\(xy = c\)</span> (say), or in other words <span class="process-math">\(y = \frac{c}{x}\text{.}\)</span> If we substitute <span class="process-math">\(x = (x' - y')/\sqrt{2}\text{,}\)</span> <span class="process-math">\(y = (x' + y')/\sqrt{2}\text{,}\)</span> then the hyperbola is transformed to <span class="process-math">\(x'^2 - y'^2 = 2c\text{,}\)</span> a more common form of a hyperbola. And this substitution is simply a rotation by <span class="process-math">\(45\)</span> degrees.</div></article><div class="para" id="sec-hyperbola-method-4-4">Our previous estimate came from counting the lattice points on each column with horizontal coordinate <span class="process-math">\(d\text{,}\)</span> for each <span class="process-math">\(d \leq x\text{:}\)</span> there are <span class="process-math">\(\left\lfloor \frac{x}{d} \right\rfloor\)</span> lattice points in that column, which is approximately equal to <span class="process-math">\(x/d\)</span> with <span class="process-math">\(O(1)\)</span> error; then summing <span class="process-math">\(x/d\)</span> is approximated by an integral.</div>
-<div class="para" id="sec-hyperbola-method-4-5">We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region <span class="process-math">\(d \leq \sqrt{x}\text{,}\)</span> the region <span class="process-math">\(k \leq \sqrt{x}\text{,}\)</span> and the region <span class="process-math">\(d,k \lt \sqrt{x}\text{.}\)</span> The first region is the “left part” of the area, consisting of the “arm” pointing upwards plus the square under that arm. The second region is the “right part”, and the third region is the square between the two arms (with the two arms attached to its right and top sides).</div>
+<div class="para" id="sec-hyperbola-method-4-5">We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region <span class="process-math">\(d \leq \sqrt{x}\text{,}\)</span> the region <span class="process-math">\(k \leq \sqrt{x}\text{,}\)</span> and the region <span class="process-math">\(d,k \leq \sqrt{x}\text{.}\)</span> The first region is the “left part” of the area, consisting of the “arm” pointing upwards plus the square under that arm. The second region is the “right part”, and the third region is the square between the two arms (with the two arms attached to its right and top sides).</div>
 <div class="para logical" id="sec-hyperbola-method-4-6">
 <div class="para">The number of lattice points in the square is simply</div>
 <div class="displaymath process-math" id="sec-hyperbola-method-4-6-1">
@@ -271,7 +275,7 @@ window.MathJax = {
 </div>
 </div>
 <div class="para logical" id="sec-hyperbola-method-4-7">
-<div class="para">The number of points in the right part is</div>
+<div class="para">The number of points in the left part is</div>
 <div class="displaymath process-math" id="sec-hyperbola-method-4-7-1">
 \begin{align*}
 \sum_{d \leq \sqrt{x}} \left\lfloor \frac{x}{d} \right\rfloor
@@ -282,7 +286,7 @@ window.MathJax = {
 \end{align*}
 </div>
 </div>
-<div class="para" id="sec-hyperbola-method-4-8">Likewise the number of lattice points in the left part is by symmetry the same.</div>
+<div class="para" id="sec-hyperbola-method-4-8">Likewise the number of lattice points in the right part is by symmetry the same.</div>
 <div class="para logical" id="sec-hyperbola-method-4-9">
 <div class="para">So, the total number of lattice points is</div>
 <div class="displaymath process-math" id="sec-hyperbola-method-4-9-1">

@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-6-distribution-of-primes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6-distribution-of-primes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-6-distribution-of-primes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-6-distribution-of-primes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-chebyshev-estimates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -201,8 +201,12 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-6-distribution-of-primes.html" class="internal"><span class="codenumber">6</span> <span class="title">Arithmetic Functions II</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-elementary-results.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Elementary results on distribution of primes</span></a></div></li></ul>
+<div class="toc-title-box"><a href="ch-6-distribution-of-primes.html" class="internal"><span class="codenumber">6</span> <span class="title">Elementary Results on the Distribution of Primes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-elementary-results.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Elementary results on distribution of primes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-chebyshev-estimates.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Chebyshev’s Estimates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mertens.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Mertens’ Theorems</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -234,7 +238,7 @@ window.MathJax = {
 \begin{equation}
 0 \leq \psi(x) - \theta(x) \leq \frac{\sqrt{x}(\log x)^2}{2 \log 2}\text{.}\tag{6.1.1}
 \end{equation}
-</div></article><article class="proof" id="sec-elementary-results-3-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+</div>In particular, <span class="process-math">\(\psi(x) = \theta(x) + O(\sqrt{x}(\log x)^2)\text{.}\)</span></article><article class="proof" id="sec-elementary-results-3-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
 <div class="para logical" id="sec-elementary-results-3-2-1">
 <div class="para">We already proved the first statement. For the second one,</div>
 <div class="displaymath process-math" id="sec-elementary-results-3-2-1-1">
@@ -273,9 +277,146 @@ window.MathJax = {
 \end{equation}
 </div>
 <div class="para">After simplifying with <span class="process-math">\(\log \sqrt{x} = \frac{1}{2} \log x\)</span> we have the claimed result.</div>
+</div></article><article class="remark remark-like" id="sec-elementary-results-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.1.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-elementary-results-4-1">Observe that twice in the above proof we bounded sums in the same way: bounding each term (every <span class="process-math">\(\theta(x^{1/k})\)</span> is less than or equal to the largest one, which is <span class="process-math">\(\theta(x^{1/2})\text{;}\)</span> every <span class="process-math">\(\log p\)</span> is less than or equal to <span class="process-math">\(\log \sqrt{x}\text{,}\)</span> when <span class="process-math">\(p \leq \sqrt{x}\)</span>), and bounding the number of terms (in particular, a sum over primes <span class="process-math">\(p \leq y\)</span> has at most <span class="process-math">\(y\)</span> terms).</div></article><div class="para" id="sec-elementary-results-5">The previous theorem gives a comparison between <span class="process-math">\(\psi\)</span> and <span class="process-math">\(\theta\text{.}\)</span> Now we give similar comparisons between <span class="process-math">\(\theta\)</span> and the prime counting function <span class="process-math">\(\pi\text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="sec-elementary-results-6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span>
+</h3>For <span class="process-math">\(x \geq 2\)</span> we have<div class="displaymath process-math" id="sec-elementary-results-6-1-2">
+\begin{equation}
+\theta(x) = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt\tag{6.1.5}
+\end{equation}
+</div>and<div class="displaymath process-math" id="sec-elementary-results-6-1-3">
+\begin{equation}
+\pi(x) = \frac{\theta(x)}{\log x} + \int_2^x \frac{\theta(t)}{t (\log t)^2} dt\text{.}\tag{6.1.6}
+\end{equation}
+</div></article><article class="proof" id="sec-elementary-results-6-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-elementary-results-6-2-1">
+<div class="para">The proof uses the Riemann-Stieltjes integral and integration by parts. Define a sequence by <span class="process-math">\(a_n = 1\)</span> if <span class="process-math">\(n\)</span> is a prime number and <span class="process-math">\(a_n = 0\)</span> otherwise. Then <span class="process-math">\(\pi(x) = \sum_{n \leq x} a_n\text{,}\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-theta-pi-1.html ./knowl/xref/eqn-theta-pi-2.html ./knowl/xref/eqn-theta-pi-3.html ./knowl/xref/eqn-theta-pi-4.html ./knowl/xref/eqn-theta-pi-5.html" id="sec-elementary-results-6-2-1-5">
+\begin{align}
+\theta(x) \amp = \sum_{p \leq x} \log p \tag{6.1.7}\\
+\amp = \sum_{1 \lt n \leq x} a_n \log n \tag{6.1.8}\\
+\amp = \int_1^x \log t \; d\pi(t) \tag{6.1.9}\\
+\amp = \pi(x) \log x - \int_1^x \frac{\pi(t)}{t} dt \tag{6.1.10}\\
+\amp = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt \text{.}\tag{6.1.11}
+\end{align}
+</div>
+<div class="para">Here are the reasons for each step.</div>
+<ul class="disc">
+<li id="sec-elementary-results-6-2-1-6-1"><div class="para" id="p-derived-sec-elementary-results-6-2-1-6-1">
+<a href="sec-elementary-results.html#sec-elementary-results-6-2-1-5" class="xref" data-knowl="./knowl/xref/eqn-theta-pi-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.7">(6.1.7)</a>: This is by the definition of <span class="process-math">\(\theta\)</span>
+</div></li>
+<li id="sec-elementary-results-6-2-1-6-2"><div class="para" id="p-derived-sec-elementary-results-6-2-1-6-2">
+<a href="sec-elementary-results.html#sec-elementary-results-6-2-1-5" class="xref" data-knowl="./knowl/xref/eqn-theta-pi-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.8">(6.1.8)</a>: This is by the definition of <span class="process-math">\(a_n\)</span>
+</div></li>
+<li id="sec-elementary-results-6-2-1-6-3"><div class="para" id="p-derived-sec-elementary-results-6-2-1-6-3">
+<a href="sec-elementary-results.html#sec-elementary-results-6-2-1-5" class="xref" data-knowl="./knowl/xref/eqn-theta-pi-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.9">(6.1.9)</a>: This the Riemann-Stieltjes integral</div></li>
+<li id="sec-elementary-results-6-2-1-6-4"><div class="para" id="p-derived-sec-elementary-results-6-2-1-6-4">
+<a href="sec-elementary-results.html#sec-elementary-results-6-2-1-5" class="xref" data-knowl="./knowl/xref/eqn-theta-pi-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.10">(6.1.10)</a>: Here we have used integration by parts</div></li>
+<li id="sec-elementary-results-6-2-1-6-5"><div class="para" id="p-derived-sec-elementary-results-6-2-1-6-5">
+<a href="sec-elementary-results.html#sec-elementary-results-6-2-1-5" class="xref" data-knowl="./knowl/xref/eqn-theta-pi-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1.11">(6.1.11)</a>: For <span class="process-math">\(x \lt 2\text{,}\)</span> <span class="process-math">\(\pi(x) = 0\)</span>
+</div></li>
+</ul>
+</div> <div class="para logical" id="sec-elementary-results-6-2-2">
+<div class="para">The second claim follows similarly. Let <span class="process-math">\(b_n = \log n\)</span> if <span class="process-math">\(n\)</span> is prime, <span class="process-math">\(b_n = 0\)</span> otherwise. Then <span class="process-math">\(\theta(x) = \sum_{n \leq x} b_n\text{,}\)</span> and</div>
+<div class="displaymath process-math" id="sec-elementary-results-6-2-2-5">
+\begin{align}
+\pi(x) \amp = \sum_{2 \leq n \leq x} \frac{1}{\log n} b_n \tag{6.1.12}\\
+\amp = \int_{2^{-}}^x \frac{1}{\log t} d\theta(t) \tag{6.1.13}\\
+\amp = \frac{\theta(x)}{\log x} + \int_2^x \frac{\theta(t)}{t (\log t)^2)} \tag{6.1.14}
+\end{align}
+</div>
+<div class="para">where we once again used the Riemann-Stelejes integral, and integration by parts.</div>
+</div></article><div class="para" id="sec-elementary-results-7">One reason to care about the Chebyshev functions is that they give equivalent statements to the Prime Number Theorem:</div>
+<article class="theorem theorem-like" id="sec-elementary-results-8"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.1.5</span><span class="period">.</span>
+</h3>The following statements are equivalent: <ol class="decimal">
+<li id="sec-elementary-results-8-1-1-1"><div class="para" id="p-derived-sec-elementary-results-8-1-1-1"><span class="process-math">\(\displaystyle \pi(x) \sim \frac{x}{\log x}\)</span></div></li>
+<li id="sec-elementary-results-8-1-1-2"><div class="para" id="p-derived-sec-elementary-results-8-1-1-2"><span class="process-math">\(\displaystyle \theta(x) \sim x\)</span></div></li>
+<li id="sec-elementary-results-8-1-1-3"><div class="para" id="p-derived-sec-elementary-results-8-1-1-3"><span class="process-math">\(\displaystyle \psi(x) \sim x\)</span></div></li>
+</ol></article><article class="proof" id="sec-elementary-results-8-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para logical" id="sec-elementary-results-8-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\theta(x) = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt,\text{.}
+\end{equation*}
+</div>
+<div class="para">Dividing by <span class="process-math">\(x\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\theta(x)}{x} = \frac{\pi(x)}{x/\log x} - \frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt\text{.}
+\end{equation*}
+</div>
+<div class="para">Assume that <span class="process-math">\(\pi(x) \sim x/\log x\text{.}\)</span> We need to show that the integral term goes to zero. In this case we have <span class="process-math">\(\frac{\pi(t)}{t} \ll \frac{1}{\log t}\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^x \frac{\pi(t)}{t} dt \ll \int_2^x \frac{1}{\log t} dt\text{,}
+\end{equation*}
+</div>
+<div class="para">because there is a threshold <span class="process-math">\(T\)</span> and constant <span class="process-math">\(C\)</span> such that for <span class="process-math">\(t \gt T\text{,}\)</span> <span class="process-math">\(\frac{\pi(t)}{t} \leq C \frac{1}{\log t}\text{;}\)</span> then for <span class="process-math">\(x \gt T\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_T^x \frac{\pi(t)}{t} dt \ll C \int_T^x \frac{1}{\log t} dt\text{.}
+\end{equation*}
+</div>
+<div class="para">Notice that these integrals diverge to infinity as <span class="process-math">\(x \to \infty\text{.}\)</span> The error (difference) between <span class="process-math">\(\int_2^T \frac{\pi(t)}{t} dt\)</span> and <span class="process-math">\(C \int_2^T \frac{1}{\log t} dt\)</span> is some constant amount; eventually it is insignificant compared to the integrals from <span class="process-math">\(T\)</span> to <span class="process-math">\(x\text{,}\)</span> for large <span class="process-math">\(x\)</span> (and we can replace <span class="process-math">\(C\)</span> with, say, <span class="process-math">\(2C\)</span>).</div>
+</div> <div class="para logical" id="sec-elementary-results-8-2-2">
+<div class="para">So, we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt
+\end{equation*}
+</div>
+<div class="para">We can bound the last integral in a similar way to previous bounds of sums: the maximum value of the integrand on this interval is <span class="process-math">\(\frac{1}{\log 2}\)</span> (because the function <span class="process-math">\(\frac{1}{\log t}\)</span> is monotone decreasing) and the length of the interval is less than <span class="process-math">\(x\text{.}\)</span> So the value of the integral is less than or equal to <span class="process-math">\(\frac{x}{\log 2}\text{.}\)</span> This gives us:</div>
+<div class="displaymath process-math" id="sec-elementary-results-8-2-2-6">
+\begin{align*}
+\frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \amp \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt \\
+\amp \ll \frac{1}{x} \frac{x}{\log 2} \\
+\amp = \frac{1}{\log 2} \text{.}
+\end{align*}
+</div>
+<div class="para">So the “error” term (the integral) is bounded by a constant. But we want a stronger result: we want the error to go to zero.</div>
+</div> <div class="para logical" id="sec-elementary-results-8-2-3">
+<div class="para">We can get this by a trick that is slightly reminiscent of the hyperbola method: we split the interval of integration into two parts as follows.</div>
+<div class="displaymath process-math" id="sec-elementary-results-8-2-3-1">
+\begin{align*}
+\frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \amp \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt \\
+\amp = \frac{1}{x} \int_2^{\sqrt{x}} \frac{1}{\log t} dt + \frac{1}{x} \int_{\sqrt{x}}^x \frac{1}{\log t} dt \\
+\amp \ll \frac{1}{x} \frac{\sqrt{x}}{\log 2} + \frac{1}{x} \frac{x}{\log \sqrt{x}} \\
+\amp = \frac{1}{\sqrt{x} \log 2} + \frac{1}{\log \sqrt{x}} \text{.}
+\end{align*}
+</div>
+<div class="para">This does go to zero. Therefore, if <span class="process-math">\(\frac{\pi(x)}{x/\log x} \to 1\text{,}\)</span> then <span class="process-math">\(\frac{\theta(x)}{x} \to 1\)</span> as well.</div>
+</div> <article class="remark remark-like" id="sec-elementary-results-8-2-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-elementary-results-8-2-4-1">By splitting the interval of integration into two parts, we have one part where the bound for the integrand is the same (<span class="process-math">\(1/\log 2\)</span>) but the interval is shorter (<span class="process-math">\(\sqrt{x}\)</span> instead of <span class="process-math">\(x\)</span>) and another part where the interval is the same length (or rather, we use the same bound <span class="process-math">\(x\)</span> for its length) but the integrand is bounded by a smaller amount (<span class="process-math">\(1/\log \sqrt{x}\)</span> instead of <span class="process-math">\(1/\log 2\)</span>).</div></article> <div class="para" id="sec-elementary-results-8-2-5">The converse (<span class="process-math">\(\frac{\theta(x)}{x} \to 1\)</span> implies <span class="process-math">\(\frac{\pi(x)}{x/\log x} \to 1\)</span>) is similar.</div> <div class="para logical" id="sec-elementary-results-8-2-6">
+<div class="para">From our comparison of <span class="process-math">\(\psi\)</span> and <span class="process-math">\(\theta\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \leq \frac{\psi(x)}{x} - \frac{\theta(x)}{x} \leq \frac{(\log x)^2}{2 \log 2 \sqrt{x}}\text{.}
+\end{equation*}
+</div>
+<div class="para">Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{x \to \infty} \frac{\psi(x)}{x} - \frac{\theta(x)}{x} = 0\text{,}
+\end{equation*}
+</div>
+<div class="para">so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\psi(x)}{x} \to 1 \Leftrightarrow \frac{\theta(x)}{x} \to 1\text{.}
+\end{equation*}
+</div>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-6-distribution-of-primes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-6-distribution-of-primes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-chebyshev-estimates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

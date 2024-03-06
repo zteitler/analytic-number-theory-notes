@@ -754,7 +754,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.2",
   "title": "Dirichlet’s Hyperbola Method",
-  "body": " Dirichlet's Hyperbola Method  We have seen that . Here we will seek an improvement: replacing the term with a concrete linear function, specifically where is the Euler-Mascheroni constant.   Euler-Mascheroni constant  For integer we have the estimate . The difference is increasing as a function of , because if we think of the sum as a left-hand rule Riemann sum, then each time increases, we are adding a triangle to the difference.  Since the difference is increasing and bounded, it converges to a limit. This limit is called the Euler-Mascheroni constant , denoted because of connections with the gamma function. Numerically, It is an open question whether is rational or irrational (and if it is irrational, whether it is algebraic or transcendental).  In general, . (Why?)    Hyperbola method  Observe: , which means the sum we are interested in is the number of lattice points on or under the hyperbola .   Using more common variable names, we might consider the hyperbola (say), or in other words . If we substitute , , then the hyperbola is transformed to , a more common form of a hyperbola. And this substitution is simply a rotation by degrees.   Our previous estimate came from counting the lattice points on each column with horizontal coordinate , for each : there are lattice points in that column, which is approximately equal to with error; then summing is approximated by an integral.  We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region , the region , and the region . The first region is the left part of the area, consisting of the arm pointing upwards plus the square under that arm. The second region is the right part , and the third region is the square between the two arms (with the two arms attached to its right and top sides).  The number of lattice points in the square is simply .  The number of points in the right part is .  Likewise the number of lattice points in the left part is by symmetry the same.  So, the total number of lattice points is .   Write . We have seen that . It has been shown that ; on the other hand, is not . It is an open problem to find the infimum of such that is .    "
+  "body": " Dirichlet's Hyperbola Method  We have seen that . Here we will seek an improvement: replacing the term with a concrete linear function, specifically where is the Euler-Mascheroni constant.   Euler-Mascheroni constant  For integer we have the estimate . The difference is increasing as a function of , because if we think of the sum as a left-hand rule Riemann sum, then each time increases, we are adding a triangle to the difference.  Since the difference is increasing and bounded, it converges to a limit. This limit is called the Euler-Mascheroni constant , denoted because of connections with the gamma function. Numerically, It is an open question whether is rational or irrational (and if it is irrational, whether it is algebraic or transcendental).  In general, . (Why?)    Hyperbola method  Observe: , which means the sum we are interested in is the number of lattice points on or under the hyperbola .   Using more common variable names, we might consider the hyperbola (say), or in other words . If we substitute , , then the hyperbola is transformed to , a more common form of a hyperbola. And this substitution is simply a rotation by degrees.   Our previous estimate came from counting the lattice points on each column with horizontal coordinate , for each : there are lattice points in that column, which is approximately equal to with error; then summing is approximated by an integral.  We can try to improve this idea by breaking the area under the hyperbola into three (overlapping) regions: the region , the region , and the region . The first region is the left part of the area, consisting of the arm pointing upwards plus the square under that arm. The second region is the right part , and the third region is the square between the two arms (with the two arms attached to its right and top sides).  The number of lattice points in the square is simply .  The number of points in the left part is .  Likewise the number of lattice points in the right part is by symmetry the same.  So, the total number of lattice points is .   Write . We have seen that . It has been shown that ; on the other hand, is not . It is an open problem to find the infimum of such that is .    "
 },
 {
   "id": "sec-hyperbola-method-4-3",
@@ -781,7 +781,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.1",
   "title": "Elementary results on distribution of primes",
-  "body": " Elementary results on distribution of primes   For , . For , .   We have , , , , and . Meanwhile, , , , and . So indeed . For we have . So in the sums for and , all terms with are greater for than for . This shows that for .  The difference between and is . This difference is always nonnegative because each .     For every , we have .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.    "
+  "body": " Elementary results on distribution of primes   For , . For , .   We have , , , , and . Meanwhile, , , , and . So indeed . For we have . So in the sums for and , all terms with are greater for than for . This shows that for .  The difference between and is . This difference is always nonnegative because each .     For every , we have . In particular, .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.     Observe that twice in the above proof we bounded sums in the same way: bounding each term (every is less than or equal to the largest one, which is ; every is less than or equal to , when ), and bounding the number of terms (in particular, a sum over primes has at most terms).   The previous theorem gives a comparison between and . Now we give similar comparisons between and the prime counting function .   For we have and .   The proof uses the Riemann-Stieltjes integral and integration by parts. Define a sequence by if is a prime number and otherwise. Then , and . Here are the reasons for each step.  : This is by the definition of  : This is by the definition of  : This the Riemann-Stieltjes integral  : Here we have used integration by parts  : For ,    The second claim follows similarly. Let if is prime, otherwise. Then , and where we once again used the Riemann-Stelejes integral, and integration by parts.    One reason to care about the Chebyshev functions is that they give equivalent statements to the Prime Number Theorem:   The following statements are equivalent:            We have . Dividing by gives . Assume that . We need to show that the integral term goes to zero. In this case we have . Therefore , because there is a threshold and constant such that for , ; then for , . Notice that these integrals diverge to infinity as . The error (difference) between and is some constant amount; eventually it is insignificant compared to the integrals from to , for large (and we can replace with, say, ).  So, we have: We can bound the last integral in a similar way to previous bounds of sums: the maximum value of the integrand on this interval is (because the function is monotone decreasing) and the length of the interval is less than . So the value of the integral is less than or equal to . This gives us: . So the error term (the integral) is bounded by a constant. But we want a stronger result: we want the error to go to zero.  We can get this by a trick that is slightly reminiscent of the hyperbola method: we split the interval of integration into two parts as follows. . This does go to zero. Therefore, if , then as well.   By splitting the interval of integration into two parts, we have one part where the bound for the integrand is the same ( ) but the interval is shorter ( instead of ) and another part where the interval is the same length (or rather, we use the same bound for its length) but the integrand is bounded by a smaller amount ( instead of ).   The converse ( implies ) is similar.  From our comparison of and we have . Therefore , so .    "
 },
 {
   "id": "sec-elementary-results-2",
@@ -799,7 +799,97 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "6.1.2",
   "title": "",
-  "body": " For every , we have .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.   "
+  "body": " For every , we have . In particular, .   We already proved the first statement. For the second one, . Despite appearances, this is actually a finite sum: We have for . So if , in other words if . Therefore . The largest term is (for ) and the number of terms is at most . Therefore the sum is bounded above, .  Furthermore, since there are at at most terms. With this we get . After simplifying with we have the claimed result.   "
+},
+{
+  "id": "sec-elementary-results-4",
+  "level": "2",
+  "url": "sec-elementary-results.html#sec-elementary-results-4",
+  "type": "Remark",
+  "number": "6.1.3",
+  "title": "",
+  "body": " Observe that twice in the above proof we bounded sums in the same way: bounding each term (every is less than or equal to the largest one, which is ; every is less than or equal to , when ), and bounding the number of terms (in particular, a sum over primes has at most terms).  "
+},
+{
+  "id": "sec-elementary-results-6",
+  "level": "2",
+  "url": "sec-elementary-results.html#sec-elementary-results-6",
+  "type": "Theorem",
+  "number": "6.1.4",
+  "title": "",
+  "body": " For we have and .   The proof uses the Riemann-Stieltjes integral and integration by parts. Define a sequence by if is a prime number and otherwise. Then , and . Here are the reasons for each step.  : This is by the definition of  : This is by the definition of  : This the Riemann-Stieltjes integral  : Here we have used integration by parts  : For ,    The second claim follows similarly. Let if is prime, otherwise. Then , and where we once again used the Riemann-Stelejes integral, and integration by parts.   "
+},
+{
+  "id": "sec-elementary-results-8",
+  "level": "2",
+  "url": "sec-elementary-results.html#sec-elementary-results-8",
+  "type": "Theorem",
+  "number": "6.1.5",
+  "title": "",
+  "body": " The following statements are equivalent:            We have . Dividing by gives . Assume that . We need to show that the integral term goes to zero. In this case we have . Therefore , because there is a threshold and constant such that for , ; then for , . Notice that these integrals diverge to infinity as . The error (difference) between and is some constant amount; eventually it is insignificant compared to the integrals from to , for large (and we can replace with, say, ).  So, we have: We can bound the last integral in a similar way to previous bounds of sums: the maximum value of the integrand on this interval is (because the function is monotone decreasing) and the length of the interval is less than . So the value of the integral is less than or equal to . This gives us: . So the error term (the integral) is bounded by a constant. But we want a stronger result: we want the error to go to zero.  We can get this by a trick that is slightly reminiscent of the hyperbola method: we split the interval of integration into two parts as follows. . This does go to zero. Therefore, if , then as well.   By splitting the interval of integration into two parts, we have one part where the bound for the integrand is the same ( ) but the interval is shorter ( instead of ) and another part where the interval is the same length (or rather, we use the same bound for its length) but the integrand is bounded by a smaller amount ( instead of ).   The converse ( implies ) is similar.  From our comparison of and we have . Therefore , so .   "
+},
+{
+  "id": "sec-chebyshev-estimates",
+  "level": "1",
+  "url": "sec-chebyshev-estimates.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Chebyshev’s Estimates",
+  "body": " Chebyshev's Estimates  Chebyshev gave the first concrete results toward proving the Prime Number Theorem (which at that time was a conjecture of Legendre and Gauss).   Chebyshev's estimate  We have . In fact, uniformly for . More explicitly, for all and for all .   Recall that means and . That is, there are constants such that and for all sufficiently large . And uniformly for means this holds for all .    and . Explicitly, for and for all ; for all , and for all .     , .   The proofs are a bit long and we won't go over them in class. (An exception is the proof that , which seems to be short and elementary, and very similar to the proof given in class of the Bertrand Postulate).  "
+},
+{
+  "id": "sec-chebyshev-estimates-3",
+  "level": "2",
+  "url": "sec-chebyshev-estimates.html#sec-chebyshev-estimates-3",
+  "type": "Theorem",
+  "number": "6.2.1",
+  "title": "Chebyshev’s estimate.",
+  "body": " Chebyshev's estimate  We have . In fact, uniformly for . More explicitly, for all and for all .  "
+},
+{
+  "id": "sec-chebyshev-estimates-4",
+  "level": "2",
+  "url": "sec-chebyshev-estimates.html#sec-chebyshev-estimates-4",
+  "type": "Remark",
+  "number": "6.2.2",
+  "title": "",
+  "body": "Recall that means and . That is, there are constants such that and for all sufficiently large . And uniformly for means this holds for all . "
+},
+{
+  "id": "sec-chebyshev-estimates-5",
+  "level": "2",
+  "url": "sec-chebyshev-estimates.html#sec-chebyshev-estimates-5",
+  "type": "Corollary",
+  "number": "6.2.3",
+  "title": "",
+  "body": "  and . Explicitly, for and for all ; for all , and for all .  "
+},
+{
+  "id": "sec-chebyshev-estimates-6",
+  "level": "2",
+  "url": "sec-chebyshev-estimates.html#sec-chebyshev-estimates-6",
+  "type": "Remark",
+  "number": "6.2.4",
+  "title": "",
+  "body": "  , .  "
+},
+{
+  "id": "sec-mertens",
+  "level": "1",
+  "url": "sec-mertens.html",
+  "type": "Section",
+  "number": "6.3",
+  "title": "Mertens’ Theorems",
+  "body": " Mertens' Theorems   Mertens' Theorem  For we have where and are constants. In fact is the Euler-Mascheroni constant.   "
+},
+{
+  "id": "sec-mertens-2",
+  "level": "2",
+  "url": "sec-mertens.html#sec-mertens-2",
+  "type": "Theorem",
+  "number": "6.3.1",
+  "title": "Mertens’ Theorem.",
+  "body": " Mertens' Theorem  For we have where and are constants. In fact is the Euler-Mascheroni constant.  "
 },
 {
   "id": "bibliography",
