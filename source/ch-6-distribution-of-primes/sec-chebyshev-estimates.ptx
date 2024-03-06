@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-chebyshev-estimates" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Chebyshev's Estimates</title>
+ 
+ <p>
+ Chebyshev gave the first concrete results toward proving the Prime Number Theorem
+ (which at that time was a conjecture of Legendre and Gauss).
+ </p>
+ 
+ <theorem>
+ <title>Chebyshev's estimate</title>
+ <statement>
+ We have <m>\psi(x) \asymp x</m>.
+ In fact, <m>\psi(x) \asymp x</m> uniformly for <m> x \geq 2</m>.
+ More explicitly,
+ <m>\psi(x) \lt \frac{3}{2} x</m> for all <m>x \gt 0</m>
+ and <m>\psi(x) \gt \frac{2}{3} x</m> for all <m>x \geq 7</m>.
+ </statement>
+ </theorem>
+
+ <remark>
+ Recall that <m>f \asymp g</m> means <m>f = O(g)</m> and <m>g = O(f)</m>.
+ That is, there are constants <m>C,D</m> such that
+ <m>f(x) \leq C g(x)</m> and <m>g(x) \leq D f(x)</m>
+ for all sufficiently large <m>x</m>.
+ And <m>f \asymp g</m> uniformly for <m>x \geq x_0</m>
+ means this holds for all <m>x \geq x_0</m>.
+ </remark>
+ 
+ <corollary>
+ <statement>
+ <m>\theta(x) \asymp x</m> and <m>\pi(x) \asymp \frac{x}{\log x}</m>.
+ Explicitly, <m>\theta(x) \leq (\log 4)x</m> for <m>x \geq 1</m>
+ and <m>\theta(x) \gt \frac{x}{12}</m> for all <m>x \geq 2</m>;
+ <m>\pi(x) \gt \frac{3 \log 2}{8} \frac{x}{\log x}</m> for all <m>x \geq 2</m>,
+ and <m>\pi(x) \lt \frac{(6 \log 2) x}{\log x}</m> for all <m>x \geq 2</m>.
+ </statement>
+ </corollary>
+ 
+ <remark>
+ <p>
+ <m>\frac{3 \log 2}{8} = 0.2599301927\dotsc</m>,
+ <m>6 \log 2 = 4.1588830834\dotsc</m>.
+ </p>
+ </remark>
+ 
+ <p>
+ The proofs are a bit long and we won't go over them in class.
+ (An exception is the proof that <m>\theta(x) \leq (\log 4)x</m>,
+ which seems to be short and elementary, and very similar to the proof
+ given in class of the Bertrand Postulate).
+ </p>
+ 
+ 
+ 
+ 
+
+</section>

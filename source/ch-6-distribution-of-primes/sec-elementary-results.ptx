@@ -41,6 +41,7 @@
   <men>
     0 \leq \psi(x) - \theta(x) \leq \frac{\sqrt{x}(\log x)^2}{2 \log 2}
   </men>.
+  In particular, <m>\psi(x) = \theta(x) + O(\sqrt{x}(\log x)^2)</m>.
   </statement>
   
   <proof>
@@ -84,6 +85,186 @@
   </p>
   </proof>
   </theorem>
+  
+  <remark>
+  <p>
+  Observe that twice in the above proof we bounded sums in the same way:
+  bounding each term (every <m>\theta(x^{1/k})</m> is less than or equal to
+  the largest one, which is <m>\theta(x^{1/2})</m>; every <m>\log p</m>
+  is less than or equal to <m>\log \sqrt{x}</m>, when <m>p \leq \sqrt{x}</m>),
+  and bounding the number of terms
+  (in particular, a sum over primes <m>p \leq y</m> has at most <m>y</m> terms).
+  </p>
+  </remark>
+  
+  <p>
+  The previous theorem gives a comparison between <m>\psi</m> and <m>\theta</m>.
+  Now we give similar comparisons between <m>\theta</m> and the prime counting
+  function <m>\pi</m>.
+  </p>
+  
+  <theorem>
+  <statement>
+  For <m>x \geq 2</m> we have
+  <men>
+    \theta(x) = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt
+  </men>
+  and
+  <men>
+    \pi(x) = \frac{\theta(x)}{\log x} + \int_2^x \frac{\theta(t)}{t (\log t)^2} dt
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  The proof uses the Riemann-Stieltjes integral and integration by parts.
+  Define a sequence by <m>a_n = 1</m> if <m>n</m> is a prime number
+  and <m>a_n = 0</m> otherwise.
+  Then <m>\pi(x) = \sum_{n \leq x} a_n</m>, and
+  <mdn>
+  <mrow xml:id="eqn-theta-pi-1"> \theta(x) \amp = \sum_{p \leq x} \log p </mrow>
+  <mrow xml:id="eqn-theta-pi-2"> \amp = \sum_{1 \lt n \leq x} a_n \log n </mrow>
+  <mrow xml:id="eqn-theta-pi-3"> \amp = \int_1^x \log t \; d\pi(t) </mrow>
+  <mrow xml:id="eqn-theta-pi-4"> \amp = \pi(x) \log x - \int_1^x \frac{\pi(t)}{t} dt </mrow>
+  <mrow xml:id="eqn-theta-pi-5"> \amp = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt </mrow>
+  </mdn>.
+  Here are the reasons for each step.
+  <ul>
+  <li><xref ref="eqn-theta-pi-1"/>: This is by the definition of <m>\theta</m></li>
+  <li><xref ref="eqn-theta-pi-2"/>: This is by the definition of <m>a_n</m></li>
+  <li><xref ref="eqn-theta-pi-3"/>: This the Riemann-Stieltjes integral</li>
+  <li><xref ref="eqn-theta-pi-4"/>: Here we have used integration by parts</li>
+  <li><xref ref="eqn-theta-pi-5"/>: For <m>x \lt 2</m>, <m>\pi(x) = 0</m></li>
+  </ul>
+  </p>
+  
+  <p>
+  The second claim follows similarly.
+  Let <m>b_n = \log n</m> if <m>n</m> is prime, <m>b_n = 0</m> otherwise.
+  Then <m>\theta(x) = \sum_{n \leq x} b_n</m>, and
+  <mdn>
+  <mrow> \pi(x) \amp = \sum_{2 \leq n \leq x} \frac{1}{\log n} b_n </mrow>
+  <mrow> \amp = \int_{2^{-}}^x \frac{1}{\log t} d\theta(t) </mrow>
+  <mrow> \amp = \frac{\theta(x)}{\log x} + \int_2^x \frac{\theta(t)}{t (\log t)^2)} </mrow>
+  </mdn>
+  where we once again used the Riemann-Stelejes integral, and integration by parts.
+  </p>
+  </proof>
+  </theorem>
+  
+  <p>
+  One reason to care about the Chebyshev functions is that they give
+  equivalent statements to the Prime Number Theorem:
+  </p>
+  <theorem>
+  <statement>
+  The following statements are equivalent:
+  <ol>
+  <li> <m>\pi(x) \sim \frac{x}{\log x}</m> </li>
+  <li> <m>\theta(x) \sim x</m></li>
+  <li> <m>\psi(x) \sim x</m></li>
+  </ol>
+  </statement>
+  
+  <proof>
+  <p>
+  We have
+  <me>
+    \theta(x) = \pi(x) \log x - \int_2^x \frac{\pi(t)}{t} dt,
+  </me>.
+  Dividing by <m>x</m> gives
+  <me>
+    \frac{\theta(x)}{x} = \frac{\pi(x)}{x/\log x} - \frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt
+  </me>.
+  Assume that <m>\pi(x) \sim x/\log x</m>.
+  We need to show that the integral term goes to zero.
+  In this case we have <m>\frac{\pi(t)}{t} \ll \frac{1}{\log t}</m>.
+  Therefore
+  <me>
+    \int_2^x \frac{\pi(t)}{t} dt \ll \int_2^x \frac{1}{\log t} dt
+  </me>,
+  because there is a threshold <m>T</m> and constant <m>C</m>
+  such that for <m>t \gt T</m>, <m>\frac{\pi(t)}{t} \leq C \frac{1}{\log t}</m>;
+  then for <m>x \gt T</m>,
+  <me>
+    \int_T^x \frac{\pi(t)}{t} dt \ll C \int_T^x \frac{1}{\log t} dt
+  </me>.
+  Notice that these integrals diverge to infinity as <m>x \to \infty</m>.
+  The error (difference) between <m>\int_2^T \frac{\pi(t)}{t} dt</m>
+  and <m>C \int_2^T \frac{1}{\log t} dt</m> is some constant amount;
+  eventually it is insignificant compared to the integrals from <m>T</m> to <m>x</m>,
+  for large <m>x</m> (and we can replace <m>C</m> with, say, <m>2C</m>).
+  </p>
+  
+  <p>
+  So, we have:
+  <me>
+    \frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt
+  </me>
+  We can bound the last integral in a similar way to previous bounds 
+  of sums:
+  the maximum value of the integrand on this interval is <m>\frac{1}{\log 2}</m>
+  (because the function <m>\frac{1}{\log t}</m> is monotone decreasing)
+  and the length of the interval is less than <m>x</m>.
+  So the value of the integral is less than or equal to <m>\frac{x}{\log 2}</m>.
+  This gives us:
+  <md>
+  <mrow> \frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \amp \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt </mrow>
+  <mrow> \amp \ll \frac{1}{x} \frac{x}{\log 2} </mrow>
+  <mrow> \amp = \frac{1}{\log 2} </mrow>
+  </md>.
+  So the <lq/>error<rq/> term (the integral) is bounded by a constant.
+  But we want a stronger result: we want the error to go to zero.
+  </p>
+  
+  <p>
+  We can get this by a trick that is slightly reminiscent of the
+  hyperbola method: we split the interval of integration
+  into two parts as follows.
+  <md>
+  <mrow> \frac{1}{x} \int_2^x \frac{\pi(t)}{t} dt \amp \ll \frac{1}{x} \int_2^x \frac{1}{\log t} dt </mrow>
+  <mrow> \amp = \frac{1}{x} \int_2^{\sqrt{x}} \frac{1}{\log t} dt + \frac{1}{x} \int_{\sqrt{x}}^x \frac{1}{\log t} dt </mrow>
+  <mrow> \amp \ll \frac{1}{x} \frac{\sqrt{x}}{\log 2} + \frac{1}{x} \frac{x}{\log \sqrt{x}} </mrow>
+  <mrow> \amp = \frac{1}{\sqrt{x} \log 2} + \frac{1}{\log \sqrt{x}} </mrow>
+  </md>.
+  This does go to zero.
+  Therefore, if <m>\frac{\pi(x)}{x/\log x} \to 1</m>, then <m>\frac{\theta(x)}{x} \to 1</m> as well.
+  </p>
+  
+  <remark>
+  <p>
+  By splitting the interval of integration into two parts,
+  we have one part where the bound for the integrand is the same (<m>1/\log 2</m>)
+  but the interval is shorter (<m>\sqrt{x}</m> instead of <m>x</m>)
+  and another part where the interval is the same length
+  (or rather, we use the same bound <m>x</m> for its length)
+  but the integrand is bounded by a smaller amount
+  (<m>1/\log \sqrt{x}</m> instead of <m>1/\log 2</m>).
+  </p>
+  </remark>
+  
+  <p>
+  The converse (<m>\frac{\theta(x)}{x} \to 1</m> implies <m>\frac{\pi(x)}{x/\log x} \to 1</m>)
+  is similar.
+  </p>
+  
+  <p>
+  From our comparison of <m>\psi</m> and <m>\theta</m> we have
+  <me>
+    0 \leq \frac{\psi(x)}{x} - \frac{\theta(x)}{x} \leq \frac{(\log x)^2}{2 \log 2 \sqrt{x}}
+  </me>.
+  Therefore
+  <me>
+    \lim_{x \to \infty} \frac{\psi(x)}{x} - \frac{\theta(x)}{x} = 0
+  </me>,
+  so
+  <me>
+    \frac{\psi(x)}{x} \to 1 \Leftrightarrow \frac{\theta(x)}{x} \to 1
+  </me>.
+  </p>
+  </proof>
+  </theorem>
+
   
 
 </section>

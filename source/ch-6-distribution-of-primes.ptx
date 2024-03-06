@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-6-distribution-of-primes" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Arithmetic Functions II</title>
+  <title>Elementary Results on the Distribution of Primes</title>
   
   <introduction>
   <p>
@@ -26,5 +26,9 @@
 
   <!-- include sections -->
   <xi:include href="ch-6-distribution-of-primes/sec-elementary-results.ptx" />
+
+  <xi:include href="ch-6-distribution-of-primes/sec-chebyshev-estimates.ptx" />
+
+  <xi:include href="ch-6-distribution-of-primes/sec-mertens.ptx" />
 
 </chapter>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-mertens" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Mertens' Theorems</title>
+  
+  <theorem>
+  <title>Mertens' Theorem</title>
+  <statement>
+  For <m>x \geq 2</m> we have
+  <mdn>
+  <mrow> \sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \log x + O(1) </mrow>,
+  <mrow> \sum_{p \leq x} \frac{\log p}{p} \amp = \log x + O(1) </mrow>,
+  <mrow> \sum_{p \leq x} \frac{1}{p} \amp = \log \log x + b + O\left(\frac{1}{\log x}\right) </mrow>,
+  <mrow> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} \amp = e^c \log x + O(1) </mrow>,
+  <mrow> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right) \amp = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) </mrow>,
+  </mdn>
+  where <m>b</m> and <m>c</m> are constants.
+  In fact <m>c = \gamma</m> is the Euler-Mascheroni constant.
+  </statement>
+  
+  </theorem>
+ 
+ 
+ 
+
+</section>

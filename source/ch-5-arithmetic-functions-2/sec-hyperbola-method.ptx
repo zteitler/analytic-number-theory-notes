@@ -79,7 +79,7 @@
   We can try to improve this idea by breaking the area
   under the hyperbola into three (overlapping) regions:
   the region <m>d \leq \sqrt{x}</m>, the region <m>k \leq \sqrt{x}</m>,
-  and the region <m>d,k \lt \sqrt{x}</m>.
+  and the region <m>d,k \leq \sqrt{x}</m>.
   The first region is the <lq/>left part<rq/>
   of the area, consisting of the <lq/>arm<rq/> pointing upwards
   plus the square under that arm.
@@ -96,7 +96,7 @@
   </p>
   
   <p>
-  The number of points in the right part is
+  The number of points in the left part is
   <md>
   <mrow> \sum_{d \leq \sqrt{x}} \left\lfloor \frac{x}{d} \right\rfloor
     \amp = \sum_{d \leq \sqrt{x}} (\frac{x}{d} + O(1)) </mrow>
@@ -107,7 +107,7 @@
   </p>
   
   <p>
-  Likewise the number of lattice points in the left part is
+  Likewise the number of lattice points in the right part is
   by symmetry the same.
   </p>
   
