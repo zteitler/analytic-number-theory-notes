@@ -229,7 +229,207 @@ window.MathJax = {
 \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} \amp = e^c \log x + O(1) \tag{6.3.4}\\
 \prod_{p \leq x} \left( 1 - \frac{1}{p} \right) \amp = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) \tag{6.3.5}
 \end{align}
-</div>where <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> are constants. In fact <span class="process-math">\(c = \gamma\)</span> is the Euler-Mascheroni constant.</article></section></div>
+</div>where <span class="process-math">\(b\)</span> and <span class="process-math">\(c\)</span> are constants. In fact <span class="process-math">\(c = \gamma\)</span> is the Euler-Mascheroni constant.</article><div class="para logical" id="sec-mertens-3">
+<div class="para">First, this preparation. We have an earlier result, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-sum-log-n.html">
+\begin{equation*}
+\sum_{n \leq x} \log n = x \log x - x + O(\log x)\text{,}
+\end{equation*}
+</div>
+<div class="para">see <a href="sec-sums-monotone.html#eqn-sum-log-n" class="xref" data-knowl="./knowl/xref/eqn-sum-log-n.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.2.10">(4.2.10)</a>. (The details of the proof were left as an exercise, but basically this followed from comparing the sum with the integral <span class="process-math">\(\int_1^x \log t dt \text{.}\)</span>) We will combine this with the following lemma.</div>
+</div>
+<article class="lemma theorem-like" id="sec-mertens-4"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">6.3.2</span><span class="period">.</span>
+</h3>For <span class="process-math">\(x \geq 1\)</span> we have<div class="displaymath process-math" id="sec-mertens-4-1-2">
+\begin{equation}
+\sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor = \sum_{n \leq x} \log n\text{.}\tag{6.3.6}
+\end{equation}
+</div></article><article class="proof" id="sec-mertens-4-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>We have<div class="displaymath process-math" id="sec-mertens-4-2-1">
+\begin{align*}
+\sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor
+\amp = \sum_{d \leq x} \Lambda(d) \sum_{1 \leq k \leq \frac{x}{d}} 1 \\
+\amp = \sum_{dk \leq x} \Lambda(d) \\
+\amp = \sum_{n \leq x} \sum_{d \mid n} \Lambda(d) \\
+\amp = \sum_{n \leq x} \sum_{p^a \mid n} \log p \\
+\amp = \sum_{n \leq x} \sum_{p^e \Mid n} e \log p \\
+\amp = \sum_{n \leq x} \log(p_1^{e_1} \dotsm p_r^{e_r}) \\
+\amp = \sum_{n \leq x} \log n \text{.}
+\end{align*}
+</div></article><article class="proof" id="sec-mertens-5"><h3 class="heading"><span class="title">Proof of (6.3.1).</span></h3> <div class="para logical" id="sec-mertens-5-2">
+<div class="para">Start from</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor = \sum_{n \leq x} \log n = x \log x - x + O(\log x)\text{.}
+\end{equation*}
+</div>
+<div class="para">Dropping the floor operator gives</div>
+<div class="displaymath process-math" id="sec-mertens-5-2-2">
+\begin{align*}
+x \log x - x + O(\log x) \amp = \sum_{d \leq x} \Lambda(d) \left( \frac{x}{d} + O(1) \right) \\
+\amp = x \sum_{d \leq x} \frac{\Lambda(d)}{d} + \sum_{d \leq x} \Lambda(d) O(1) \\
+\amp = x \sum_{d \leq x} \frac{\Lambda(d)}{d} + O(\psi(x)) \text{.}
+\end{align*}
+</div>
+<div class="para">By Chebyshev’s estimate, <span class="process-math">\(\psi(x) = O(x)\text{.}\)</span> Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x \sum_{d \leq x} \frac{\Lambda(d)}{d} = x \log x - x + O(\log x) + O(x) = x \log x + O(x) \text{.}
+\end{equation*}
+</div>
+<div class="para">Dividing by <span class="process-math">\(x\)</span> gives the result.</div>
+</div></article><article class="proof" id="sec-mertens-6"><h3 class="heading"><span class="title">Proof of (6.3.2).</span></h3> <div class="para logical" id="sec-mertens-6-2">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="sec-mertens-6-2-1">
+\begin{align*}
+\sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \sum_{p^k \leq x, k \geq 1} \frac{\log p}{p^k} \\
+\amp = \sum_{p \leq x} \frac{\log p}{p} + \sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k} \text{.}
+\end{align*}
+</div>
+<div class="para">Our goal is to show that the last sum is bounded. We have</div>
+<div class="displaymath process-math" id="sec-mertens-6-2-2">
+\begin{align*}
+\sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k}
+\amp \leq \sum_{p \leq \sqrt{x}} \sum_{k=2}^{\infty} \frac{\log p}{p^k} \\
+\amp = \sum_{p \leq \sqrt{x}} (\log p) \frac{1/p^2}{1-1/p} \\
+\amp = \sum_{p \leq \sqrt{x}} \frac{\log p}{p(p-1)} \\
+\amp \leq \sum_{n \leq \sqrt{x}} \frac{\log n}{n(n-1)} \text{.}
+\end{align*}
+</div>
+<div class="para">This last sum is convergent: for large enough <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\log n \leq \sqrt{n}\text{,}\)</span> and we can compare the resulting series <span class="process-math">\(\sum \frac{\sqrt{n}}{n(n-1)}\)</span> to a <span class="process-math">\(p\)</span>-series.</div>
+</div> <div class="para logical" id="sec-mertens-6-3">
+<div class="para">So, there is a constant <span class="process-math">\(c\)</span> with <span class="process-math">\(\sum_{n \leq x} \frac{\log n}{n(n-1)} \leq c\text{,}\)</span> for all <span class="process-math">\(x\text{.}\)</span> In other words, this last sum is <span class="process-math">\(O(1)\)</span> (as a function of <span class="process-math">\(x\)</span>). Therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} \frac{\log p}{p} = \sum_{n \leq x} \frac{\Lambda(n)}{n} + O(1) = \log x + O(1)
+\end{equation*}
+</div>
+</div></article><article class="proof" id="sec-mertens-7"><h3 class="heading"><span class="title">Proof of (6.3.3).</span></h3> <div class="para logical" id="sec-mertens-7-2">
+<div class="para">Set <span class="process-math">\(A(x) = \sum_{p \leq x} \frac{\log p}{p} \text{.}\)</span> We have just seen that <span class="process-math">\(A(x) = \log x + O(1)\text{.}\)</span> We will write this as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(x) = \log x + R(x)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(R = O(1)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-mertens-7-3">
+<div class="para">We can write the sum we are interested in as follows:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} \frac{1}{p} = \sum_{p \leq x} \frac{\log p}{p} \frac{1}{\log p}\text{.}
+\end{equation*}
+</div>
+<div class="para">We can rewrite this as an integral, specifically as a <em class="emphasis">Riemann-Stieltjes integral</em>. First, we find the differential <span class="process-math">\(dA(t)\text{.}\)</span> For <span class="process-math">\(\Delta \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(t+\Delta) - A(t) = \sum_{p \leq t + \Delta} \frac{\log p}{p} - \sum_{p \leq t} \frac{\log p}{p}
+= \sum_{t \lt p \leq t + \Delta} \frac{\log p}{p} \text{.}
+\end{equation*}
+</div>
+<div class="para">But, for any value of <span class="process-math">\(t\text{,}\)</span> and small enough <span class="process-math">\(\Delta\text{,}\)</span> there are no primes (in fact, not even any integers) in the interval <span class="process-math">\((t,t+\Delta]\text{.}\)</span> On the other hand, for <span class="process-math">\(\Delta \gt 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} \text{.}
+\end{equation*}
+</div>
+<div class="para">In the limit as <span class="process-math">\(\Delta \to 0^+\text{,}\)</span> this is equal to <span class="process-math">\(\frac{\log p}{p}\)</span> if <span class="process-math">\(t = p\)</span> is prime, or equal to <span class="process-math">\(0\)</span> if <span class="process-math">\(t\)</span> is not equal to a prime.</div>
+</div> <div class="para logical" id="sec-mertens-7-4">
+<div class="para">So, our sum is equal to</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} dA(p) \frac{1}{\log p} = \int_{2^-}^x \frac{1}{\log t} dA(t)\text{.}
+\end{equation*}
+</div>
+<div class="para">Here the lower bound of integration <span class="process-math">\(2^-\)</span> means <span class="process-math">\(2-\epsilon\)</span> for sufficiently small <span class="process-math">\(\epsilon\text{,}\)</span> in fact the limit as <span class="process-math">\(\epsilon \to 0\text{.}\)</span> (We want the interval of integration to start to the left of <span class="process-math">\(2\)</span> because we are using left-hand differentials for <span class="process-math">\(dA\text{.}\)</span>)</div>
+</div> <div class="para logical" id="sec-mertens-7-5">
+<div class="para">Next, we evaluate the integral, starting with integration by parts:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{2^-}^x \frac{1}{\log t} dA(t) = \left. \frac{1}{\log t} A(t) \right|_{2^-}^x - \int_{2^-}^x \frac{-1}{t(\log t)^2} A(t) dt\text{.}
+\end{equation*}
+</div>
+<div class="para">We have <span class="process-math">\(A(2-\epsilon) = 0\)</span> so the first term is simply <span class="process-math">\(\frac{A(x)}{\log x}\text{.}\)</span> From this point, we can take the integral to be simply <span class="process-math">\(\int_2^x\text{.}\)</span> We use <span class="process-math">\(A(x) = \log x + R(x) = \log x + O(1)\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{A(x)}{\log x} = \frac{\log x + O(1)}{\log x} = 1 + O\left(\frac{1}{\log x}\right)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^x \frac{A(t)}{t(\log t)^2} dt = \int_2^x \frac{1}{t(\log t)} + \frac{R(t)}{t(\log t)^2} dt\text{.}
+\end{equation*}
+</div>
+<div class="para">The integral of the first term can be evaluated (by substitution with <span class="process-math">\(u = \log t\)</span>):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^x \frac{1}{t(\log t)} dt = \left. \log \log t \right|_2^x = \log \log x - \log \log 2\text{.}
+\end{equation*}
+</div>
+<div class="para">Before we address the integral of the second term, let us put together what we have seen so far:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} \frac{1}{p} = 1 + O\left(\frac{1}{\log x}\right) + \log \log x - \log \log 2 + \int_2^x \frac{R(t)}{t(\log t)^2} dt\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical" id="sec-mertens-7-6">
+<div class="para">Now we consider the integral appearing as the last term on the right. By the same substitution again we see</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \frac{1}{t(\log t)^2} dt = - \frac{1}{\log t} + C\text{.}
+\end{equation*}
+</div>
+<div class="para">Hence the following improper integral converges:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^{\infty} \frac{1}{t(\log t)^2} dt = \lim_{t \to \infty} \frac{1}{\log 2} - \frac{1}{\log t} = \frac{1}{\log 2}\text{.}
+\end{equation*}
+</div>
+<div class="para">This implies <span class="process-math">\(\int_x^{\infty} \frac{1}{t(\log t)^2} dt\)</span> converges as well. Since <span class="process-math">\(R(t) = O(1)\text{,}\)</span> it implies that the following improper integrals also converge:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^{\infty} \frac{R(t)}{t(\log t)^2} dt, \int_x^{\infty} \frac{R(t)}{t(\log t)^2} dt
+\end{equation*}
+</div>
+<div class="para">(but of course, the value might not be <span class="process-math">\(\frac{1}{\log 2}\)</span> any more). Since the integrals converge, it is valid to write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_2^x \frac{R(t)}{t(\log t)^2} dt = \int_2^{\infty} \frac{R(t)}{t (\log t)^2} dt - \int_x^{\infty} \frac{R(t)}{t (\log t)^2} dt\text{.}
+\end{equation*}
+</div>
+<div class="para">The integral from <span class="process-math">\(2\)</span> to <span class="process-math">\(\infty\)</span> is constant with respect to <span class="process-math">\(x\text{.}\)</span> For the other interval, since <span class="process-math">\(R(t) \ll 1\)</span> (recall that this notation means <span class="process-math">\(R(t) = O(1)\)</span>), we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_x^{\infty} \frac{R(t)}{t (\log t)^2} dt \ll \int_x^{\infty} \frac{1}{t(\log t)^2} dt = \frac{1}{\log x}
+\end{equation*}
+</div>
+<div class="para">or in other words the integral on the left hand side is <span class="process-math">\(O(1/\log x)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-mertens-7-7">
+<div class="para">Putting together our results so far we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} \frac{1}{p} = 1 + O\left(\frac{1}{\log x}\right) + \log \log x - \log \log 2
++ \int_2^{\infty} \frac{R(t)}{t(\log t)^2} dt + O\left(\frac{1}{\log x}\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">To finish, we combine big-O terms, and set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+b = 1 - \log \log 2 + \int_2^{\infty} \frac{R(t)}{t (\log t)^2} dt
+\end{equation*}
+</div>
+<div class="para">to get</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{p \leq x} \frac{1}{p} = \log \log x + b + O\left(\frac{1}{\log x}\right)
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div></article><article class="proof" id="sec-mertens-8"><h3 class="heading"><span class="title">Proof of (6.3.4).</span></h3> To do.</article><article class="proof" id="sec-mertens-9"><h3 class="heading"><span class="title">Proof of (6.3.5).</span></h3> To do.</article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-chebyshev-estimates.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
