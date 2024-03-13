@@ -321,7 +321,7 @@ Exercise.
 
 <p>
 We have
-<men>
+<men xml:id="eqn-sum-log-n">
 	\sum_{n \leq x} \log n = x \log x - x + O(\log x)
 </men>.
 Exercise.

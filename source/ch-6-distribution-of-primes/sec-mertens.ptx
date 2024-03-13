@@ -8,19 +8,236 @@
   <statement>
   For <m>x \geq 2</m> we have
   <mdn>
-  <mrow> \sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \log x + O(1) </mrow>,
-  <mrow> \sum_{p \leq x} \frac{\log p}{p} \amp = \log x + O(1) </mrow>,
-  <mrow> \sum_{p \leq x} \frac{1}{p} \amp = \log \log x + b + O\left(\frac{1}{\log x}\right) </mrow>,
-  <mrow> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} \amp = e^c \log x + O(1) </mrow>,
-  <mrow> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right) \amp = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) </mrow>,
+  <mrow xml:id="eqn-mertens-1"> \sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \log x + O(1) </mrow>,
+  <mrow xml:id="eqn-mertens-2"> \sum_{p \leq x} \frac{\log p}{p} \amp = \log x + O(1) </mrow>,
+  <mrow xml:id="eqn-mertens-3"> \sum_{p \leq x} \frac{1}{p} \amp = \log \log x + b + O\left(\frac{1}{\log x}\right) </mrow>,
+  <mrow xml:id="eqn-mertens-4"> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} \amp = e^c \log x + O(1) </mrow>,
+  <mrow xml:id="eqn-mertens-5"> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right) \amp = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) </mrow>,
   </mdn>
   where <m>b</m> and <m>c</m> are constants.
   In fact <m>c = \gamma</m> is the Euler-Mascheroni constant.
   </statement>
   
   </theorem>
- 
- 
- 
+  
+  <p>
+  First, this preparation.
+  We have an earlier result, that
+  <me>
+    \sum_{n \leq x} \log n = x \log x - x + O(\log x)
+  </me>,
+  see <xref ref="eqn-sum-log-n"/>.
+  (The details of the proof were left as an exercise, but basically
+  this followed from comparing the sum with the integral
+  <m>\int_1^x \log t dt </m>.)
+  We will combine this with the following lemma.
+  </p>
+  
+  <lemma>
+  <statement>
+  For <m>x \geq 1</m> we have
+  <men>
+    \sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor = \sum_{n \leq x} \log n
+  </men>.
+  </statement>
+  
+  <proof>
+  We have
+  <md>
+  <mrow> \sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor
+    \amp = \sum_{d \leq x} \Lambda(d) \sum_{1 \leq k \leq \frac{x}{d}} 1 </mrow>
+  <mrow> \amp = \sum_{dk \leq x} \Lambda(d) </mrow>
+  <mrow> \amp = \sum_{n \leq x} \sum_{d \mid n} \Lambda(d) </mrow>
+  <mrow> \amp = \sum_{n \leq x} \sum_{p^a \mid n} \log p </mrow>
+  <mrow> \amp = \sum_{n \leq x} \sum_{p^e \Mid n} e \log p </mrow>
+  <mrow> \amp = \sum_{n \leq x} \log(p_1^{e_1} \dotsm p_r^{e_r}) </mrow>
+  <mrow> \amp = \sum_{n \leq x} \log n </mrow>
+  </md>.
+  </proof>
+  </lemma>
+  
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-1"/></title>
+  <p>
+  Start from
+  <me>
+    \sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor = \sum_{n \leq x} \log n = x \log x - x + O(\log x)
+  </me>.
+  Dropping the floor operator gives
+  <md>
+  <mrow> x \log x - x + O(\log x) \amp = \sum_{d \leq x} \Lambda(d) \left( \frac{x}{d} + O(1) \right) </mrow>
+  <mrow> \amp = x \sum_{d \leq x} \frac{\Lambda(d)}{d} + \sum_{d \leq x} \Lambda(d) O(1) </mrow>
+  <mrow> \amp = x \sum_{d \leq x} \frac{\Lambda(d)}{d} + O(\psi(x)) </mrow>
+  </md>.
+  By Chebyshev's estimate, <m>\psi(x) = O(x)</m>.
+  Therefore
+  <me> x \sum_{d \leq x} \frac{\Lambda(d)}{d} = x \log x - x + O(\log x) + O(x) = x \log x + O(x) </me>.
+  Dividing by <m>x</m> gives the result.
+  </p>
+  </proof>
+  
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-2"/></title>
+  <p>
+  We have
+  <md>
+  <mrow> \sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \sum_{p^k \leq x, k \geq 1} \frac{\log p}{p^k} </mrow>
+  <mrow> \amp = \sum_{p \leq x} \frac{\log p}{p} + \sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k} </mrow>
+  </md>.
+  Our goal is to show that the last sum is bounded.
+  We have
+  <md>
+  <mrow> \sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k}
+    \amp \leq \sum_{p \leq \sqrt{x}} \sum_{k=2}^{\infty} \frac{\log p}{p^k} </mrow>
+  <mrow> \amp = \sum_{p \leq \sqrt{x}} (\log p) \frac{1/p^2}{1-1/p} </mrow>
+  <mrow> \amp = \sum_{p \leq \sqrt{x}} \frac{\log p}{p(p-1)} </mrow>
+  <mrow> \amp \leq \sum_{n \leq \sqrt{x}} \frac{\log n}{n(n-1)} </mrow>
+  </md>.
+  This last sum is convergent: for large enough <m>n</m>, <m>\log n \leq \sqrt{n}</m>,
+  and we can compare the resulting series <m>\sum \frac{\sqrt{n}}{n(n-1)}</m>
+  to a <m>p</m>-series.
+  </p>
+  
+  <p>
+  So, there is a constant <m>c</m> with <m>\sum_{n \leq x} \frac{\log n}{n(n-1)} \leq c</m>,
+  for all <m>x</m>.
+  In other words, this last sum is <m>O(1)</m> (as a function of <m>x</m>).
+  Therefore
+  <me>
+    \sum_{p \leq x} \frac{\log p}{p} = \sum_{n \leq x} \frac{\Lambda(n)}{n} + O(1) = \log x + O(1)
+  </me>
+  </p>
+  </proof>
+  
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-3"/></title>
+  <p>
+  Set <m>A(x) = \sum_{p \leq x} \frac{\log p}{p} </m>.
+  We have just seen that
+  <m>A(x) = \log x + O(1)</m>.
+  We will write this as
+  <me> A(x) = \log x + R(x)</me>,
+  where <m>R = O(1)</m>.
+  </p>
+  
+  <p>
+  We can write the sum we are interested in as follows:
+  <me>
+    \sum_{p \leq x} \frac{1}{p} = \sum_{p \leq x} \frac{\log p}{p} \frac{1}{\log p}
+  </me>.
+  We can rewrite this as an integral, specifically as a <em>Riemann-Stieltjes integral</em>.
+  First, we find the differential <m>dA(t)</m>.
+  For <m>\Delta \gt 0</m>,
+  <me> A(t+\Delta) - A(t) = \sum_{p \leq t + \Delta} \frac{\log p}{p} - \sum_{p \leq t} \frac{\log p}{p}
+    = \sum_{t \lt p \leq t + \Delta} \frac{\log p}{p} </me>.
+  But, for any value of <m>t</m>, and small enough <m>\Delta</m>,
+  there are no primes (in fact, not even any integers)
+  in the interval <m>(t,t+\Delta]</m>.
+  On the other hand, for <m>\Delta \gt 0</m>,
+  <me> A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} </me>.
+  In the limit as <m>\Delta \to 0^+</m>,
+  this is equal to <m>\frac{\log p}{p}</m> if <m>t = p</m> is prime,
+  or equal to <m>0</m> if <m>t</m> is not equal to a prime.
+  </p>
+  
+  <p>
+  So, our sum is equal to
+  <me>
+    \sum_{p \leq x} dA(p) \frac{1}{\log p} = \int_{2^-}^x \frac{1}{\log t} dA(t)
+  </me>.
+  Here the lower bound of integration <m>2^-</m> means <m>2-\epsilon</m>
+  for sufficiently small <m>\epsilon</m>,
+  in fact the limit as <m>\epsilon \to 0</m>.
+  (We want the interval of integration to start to the left of <m>2</m>
+  because we are using left-hand differentials for <m>dA</m>.)
+  </p>
+  
+  <p>
+  Next, we evaluate the integral, starting with integration by parts:
+  <me>
+    \int_{2^-}^x \frac{1}{\log t} dA(t) = \left. \frac{1}{\log t} A(t) \right|_{2^-}^x - \int_{2^-}^x \frac{-1}{t(\log t)^2} A(t) dt
+  </me>.
+  We have <m>A(2-\epsilon) = 0</m> so the first term is simply
+  <m>\frac{A(x)}{\log x}</m>.
+  From this point, we can take the integral to be simply <m>\int_2^x</m>.
+  We use <m>A(x) = \log x + R(x) = \log x + O(1)</m>:
+  <me>
+    \frac{A(x)}{\log x} = \frac{\log x + O(1)}{\log x} = 1 + O\left(\frac{1}{\log x}\right)
+  </me>
+  and
+  <me>
+    \int_2^x \frac{A(t)}{t(\log t)^2} dt = \int_2^x \frac{1}{t(\log t)} + \frac{R(t)}{t(\log t)^2} dt
+  </me>.
+  The integral of the first term can be evaluated
+  (by substitution with <m>u = \log t</m>):
+  <me>
+    \int_2^x \frac{1}{t(\log t)} dt = \left. \log \log t \right|_2^x = \log \log x - \log \log 2
+  </me>.
+  Before we address the integral of the second term, let us put together
+  what we have seen so far:
+  <me>
+    \sum_{p \leq x} \frac{1}{p} = 1 + O\left(\frac{1}{\log x}\right) + \log \log x - \log \log 2 + \int_2^x \frac{R(t)}{t(\log t)^2} dt
+  </me>.
+  </p>
+  
+  <p>
+  Now we consider the integral appearing as the last term on the right.
+  By the same substitution again we see
+  <me>
+    \int \frac{1}{t(\log t)^2} dt = - \frac{1}{\log t} + C
+  </me>.
+  Hence the following improper integral converges:
+  <me>
+    \int_2^{\infty} \frac{1}{t(\log t)^2} dt = \lim_{t \to \infty} \frac{1}{\log 2} - \frac{1}{\log t} = \frac{1}{\log 2}
+  </me>.
+  This implies <m>\int_x^{\infty} \frac{1}{t(\log t)^2} dt</m>
+  converges as well.
+  Since <m>R(t) = O(1)</m>, it implies that the following
+  improper integrals also converge:
+  <me>
+    \int_2^{\infty} \frac{R(t)}{t(\log t)^2} dt, \int_x^{\infty} \frac{R(t)}{t(\log t)^2} dt
+  </me>
+  (but of course, the value might not be <m>\frac{1}{\log 2}</m> any more).
+  Since the integrals converge, it is valid to write
+  <me>
+    \int_2^x \frac{R(t)}{t(\log t)^2} dt = \int_2^{\infty} \frac{R(t)}{t (\log t)^2} dt - \int_x^{\infty} \frac{R(t)}{t (\log t)^2} dt
+  </me>.
+  The integral from <m>2</m> to <m>\infty</m> is constant with respect to <m>x</m>.
+  For the other interval, since <m>R(t) \ll 1</m>
+  (recall that this notation means <m>R(t) = O(1)</m>), we have
+  <me>
+    \int_x^{\infty} \frac{R(t)}{t (\log t)^2} dt \ll \int_x^{\infty} \frac{1}{t(\log t)^2} dt = \frac{1}{\log x}
+  </me>
+  or in other words the integral on the left hand side is
+  <m>O(1/\log x)</m>.
+  </p>
+  
+  <p>
+  Putting together our results so far we have
+  <me>
+    \sum_{p \leq x} \frac{1}{p} = 1 + O\left(\frac{1}{\log x}\right) + \log \log x - \log \log 2
+      + \int_2^{\infty} \frac{R(t)}{t(\log t)^2} dt + O\left(\frac{1}{\log x}\right)
+  </me>.
+  To finish, we combine big-O terms, and set
+  <me>
+    b = 1 - \log \log 2 + \int_2^{\infty} \frac{R(t)}{t (\log t)^2} dt
+  </me>
+  to get
+  <me>
+    \sum_{p \leq x} \frac{1}{p} = \log \log x + b + O\left(\frac{1}{\log x}\right)
+  </me>
+  as claimed.
+  </p>
+  </proof>
+  
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-4" /></title>
+  To do.
+  </proof>
+
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-5" /></title>
+  To do.
+  </proof>
 
 </section>
