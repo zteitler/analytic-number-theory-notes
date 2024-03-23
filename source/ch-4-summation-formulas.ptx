@@ -8,4 +8,12 @@
 
   <xi:include href="ch-4-summation-formulas/sec-sums-monotone.ptx" />
 
+  <xi:include href="ch-4-summation-formulas/sec-summation-by-parts.ptx" />
+
+  <xi:include href="ch-4-summation-formulas/sec-riemann-stieltjes.ptx" />
+
+  <xi:include href="ch-4-summation-formulas/sec-abel-summation.ptx" />
+
+  <xi:include href="ch-4-summation-formulas/sec-euler-summation.ptx" />
+
 </chapter>
