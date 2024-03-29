@@ -685,6 +685,105 @@ var ptx_lunr_docs = [
   "body": " Let . Then: . Exercise.  We have Exercise.  We have . Exercise.  Let . Then: . Exercise.  "
 },
 {
+  "id": "sec-summation-by-parts",
+  "level": "1",
+  "url": "sec-summation-by-parts.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Summation by Parts",
+  "body": " Summation by Parts   Integration by parts Recall integration by parts: .   Summation by parts   Let and be sequences of complex numbers and let be positive integers. For each , let . Then .   In this theorem, plays the role of and corresponds to the antiderivative ; conversely, corresponds to and the difference corresponds to the differential . Observe that this is a forward difference. (A backwards difference would be . Exercise: find a version of summation by parts using backwards differences.)  Observe that would be , slightly different from the appearing in the theorem. Likewise, the sum on the right hand side has bounds instead of . So, in contrast to integration by parts, the bounds of summation are slightly different. But then, in the case of integration, if we think of summing rectangles (as in Riemann summation), the difference here is just two rectangles (one at each endpoint), and since the rectangles are infinitesimally thin , it doesn't make a difference to include it or not.  Use summation by parts with Riemann sums to prove integration by parts.   Proof of summation by parts  Expand the right hand side and cancel terms.    "
+},
+{
+  "id": "sec-summation-by-parts-3-2",
+  "level": "2",
+  "url": "sec-summation-by-parts.html#sec-summation-by-parts-3-2",
+  "type": "Theorem",
+  "number": "4.3.1",
+  "title": "",
+  "body": " Let and be sequences of complex numbers and let be positive integers. For each , let . Then .  "
+},
+{
+  "id": "sec-summation-by-parts-3-5",
+  "level": "2",
+  "url": "sec-summation-by-parts.html#sec-summation-by-parts-3-5",
+  "type": "Exercise",
+  "number": "4.3.2",
+  "title": "",
+  "body": "Use summation by parts with Riemann sums to prove integration by parts. "
+},
+{
+  "id": "sec-summation-by-parts-3-6",
+  "level": "2",
+  "url": "sec-summation-by-parts.html#sec-summation-by-parts-3-6",
+  "type": "Proof",
+  "number": "4.3.2.1",
+  "title": "Proof of summation by parts.",
+  "body": " Proof of summation by parts  Expand the right hand side and cancel terms.  "
+},
+{
+  "id": "sec-riemann-stieltjes",
+  "level": "1",
+  "url": "sec-riemann-stieltjes.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Riemann-Stieltjes Integration",
+  "body": " Riemann-Stieltjes Integration   Riemann integral  Recall that the Riemann integral can be defined as a limit of Riemann sums, as follows. Let be a function on an interval and let be a partition of , so that . The norm of is . Let be a tag of the partition , meaning that for each , . The pair is called a tagged partition. The Riemann sum for this data is . The Riemann integral , and is Riemann integrable on the interval , if the limit of Riemann sums converges to , in the sense that for every there exists such that for every tagged partition of norm less than , the Riemann sum is within of .  The Riemann integral enjoys various properties, for example:  The Riemann integral is linear: .  Every continuous function is Riemann integrable.  If and are continuously differentiable on , then integration by parts is valid: .  Riemann integration also has some limitations. For example, if is unbounded on then is not Riemann integrable (the Riemann sums do not converge). (It is possible to assign values to improper integrals via a limiting process.)    Riemann-Stieltjes integration  Let and be functions on an interval . We do not assume they are monotone, positive, differentiable, or even continuous. Let be a tagged partition of the interval as before. To this data we assign the Riemann-Stieltjes sum . If these approach a value as before (for partitions of sufficiently small norm, the sum should be arbitrarily close to a value ) then this limit is the Riemann-Stieltjes integral . If this exists we say is Riemann(-Stieltjes) integrable with respect to on . We write , the set of functions integrable with respect to .  Riemann-Stieltjes integration enjoys some similar properties to those of Riemann integration.    Assume all functions are defined and bounded on .  Riemann-Stieltjes integration is linear as a function of : If on and are constants, then on , and . Likewise, Riemann-Stieltjes integration is linear as a function of : if and on and where are constants, then and .  If is continuous on and is of bounded variation on , then the Riemann-Stieltjes integral exists. In particular, the class of functions of bounded variation includes all monotone functions, and all difference of monotone functions. Thus if is monotone (increasing or decreasing), or where each of is monotone, and is continuous, then the integral exists.  The Riemann-Stieltjes integral satisfies integration by parts: If exists, then exists, and .  If is Riemann integrable on and is continuous on , then (here the right hand side is a Riemann, not Riemann-Stieltjes, integral).      A function has bounded variation on an interval if it satisfies the following condition. First, for a partition of , the variation of with respect to is the sum (note the absolute value signs). The variation of on is the supremum of the variation over all partitions of the interval. We say has bounded variation if this supremum is finite. (It is an easy exercise to show that monotone functions have bounded variation; and not too hard to show that sums and differences of functions of bounded variation have again bounded variation. However, not every continuous function has bounded variation!)    Step functions  A function on is called a step function if there is a partition such that is constant on each interval . (In the terminology of Lebesgue integration, these are simple functions, with the restriction that the level sets are intervals, as opposed to more general measurable sets.) The jump of at each point is defined as the difference between the one-sided limits at , except if is one of the endpoints , in which case the jump is the difference between the one-sided limit and the value at that point.  Every step function has bounded variation. (The variation is equal to the sum of the absolute values of the jumps.)  Every step function is a difference of monotone increasing functions. Here is a simple construction which almost achieves this: Let be the sum of all the positive jumps of between and , and let be the negative of the sum of all the negative jumps of between and . Then and are monotone increasing, and for all which are not jump points of ; that is, for all other than the points in the partition. This simple construction does not give fine control over the values at the jump points. It should be possible to get precisely the step function at all by using one-sided limits more carefully.  The reason we are interested in step functions is that Riemann-Stieltjes integration with respect to a step function is equivalent to a sum. Of course our main interest is in evaluating sums by considering them as integrals (with respect to step functions).   Let be a step function on with respect to a partition . For each let be the jump of at . Let be defined on . Assume that for each , it is not the case that both and are discontinuous from the left at , or both discontinuous from the right at . (It is allowed for to be discontinuous from one side, and from the other side; or for to be discontinuous from both sides, if is continuous; or vice versa.) Then exists and .    "
+},
+{
+  "id": "sec-riemann-stieltjes-3-4",
+  "level": "2",
+  "url": "sec-riemann-stieltjes.html#sec-riemann-stieltjes-3-4",
+  "type": "Theorem",
+  "number": "4.4.1",
+  "title": "",
+  "body": "  Assume all functions are defined and bounded on .  Riemann-Stieltjes integration is linear as a function of : If on and are constants, then on , and . Likewise, Riemann-Stieltjes integration is linear as a function of : if and on and where are constants, then and .  If is continuous on and is of bounded variation on , then the Riemann-Stieltjes integral exists. In particular, the class of functions of bounded variation includes all monotone functions, and all difference of monotone functions. Thus if is monotone (increasing or decreasing), or where each of is monotone, and is continuous, then the integral exists.  The Riemann-Stieltjes integral satisfies integration by parts: If exists, then exists, and .  If is Riemann integrable on and is continuous on , then (here the right hand side is a Riemann, not Riemann-Stieltjes, integral).     "
+},
+{
+  "id": "sec-riemann-stieltjes-4-6",
+  "level": "2",
+  "url": "sec-riemann-stieltjes.html#sec-riemann-stieltjes-4-6",
+  "type": "Theorem",
+  "number": "4.4.2",
+  "title": "",
+  "body": " Let be a step function on with respect to a partition . For each let be the jump of at . Let be defined on . Assume that for each , it is not the case that both and are discontinuous from the left at , or both discontinuous from the right at . (It is allowed for to be discontinuous from one side, and from the other side; or for to be discontinuous from both sides, if is continuous; or vice versa.) Then exists and .  "
+},
+{
+  "id": "sec-abel-summation",
+  "level": "1",
+  "url": "sec-abel-summation.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Abel Summation",
+  "body": " Abel Summation   Abel's summation formula  Suppose is a sequence of complex numbers and has a continuous derivative on the interval , where . For each , let . Then .  The function is a step function, with jumps at each integer given by the sequence . Therefore the Riemann-Stieltjes integral gives . By integration by parts, . Since has a continuous derivative on the interval, the last integral is equal to .   "
+},
+{
+  "id": "sec-abel-summation-2",
+  "level": "2",
+  "url": "sec-abel-summation.html#sec-abel-summation-2",
+  "type": "Theorem",
+  "number": "4.5.1",
+  "title": "Abel’s summation formula.",
+  "body": " Abel's summation formula  Suppose is a sequence of complex numbers and has a continuous derivative on the interval , where . For each , let . Then .  The function is a step function, with jumps at each integer given by the sequence . Therefore the Riemann-Stieltjes integral gives . By integration by parts, . Since has a continuous derivative on the interval, the last integral is equal to .  "
+},
+{
+  "id": "sec-euler-summation",
+  "level": "1",
+  "url": "sec-euler-summation.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Euler Summation",
+  "body": " Euler Summation   Euler's summation formula  Let be real numbers and assume that has a continuous derivative on . Then (where denotes the fractional part of , and similarly for ).  Observe that is a step function with jump at each integer, so . We apply linearity of the Riemann-Stieltjes integral with respect to , so that . This gives . By integration by parts, and the result follows.   "
+},
+{
+  "id": "sec-euler-summation-2",
+  "level": "2",
+  "url": "sec-euler-summation.html#sec-euler-summation-2",
+  "type": "Theorem",
+  "number": "4.6.1",
+  "title": "Euler’s summation formula.",
+  "body": " Euler's summation formula  Let be real numbers and assume that has a continuous derivative on . Then (where denotes the fractional part of , and similarly for ).  Observe that is a step function with jump at each integer, so . We apply linearity of the Riemann-Stieltjes integral with respect to , so that . This gives . By integration by parts, and the result follows.  "
+},
+{
   "id": "sec-average-order",
   "level": "1",
   "url": "sec-average-order.html",

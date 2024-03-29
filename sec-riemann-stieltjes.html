@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Floor Function</title>
+<title>Riemann-Stieltjes Integration</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-af1-mobius-inversion.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="analytic-number-theory-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-elementary-properties.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-summation-by-parts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-4-summation-formulas.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-abel-summation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -158,7 +158,7 @@ window.MathJax = {
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-3-floor-function.html" class="internal"><span class="codenumber">3</span> <span class="title">Floor Function</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-elementary-properties.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Elementary properties of the floor function</span></a></div></li>
@@ -166,9 +166,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-4-summation-formulas.html" class="internal"><span class="codenumber">4</span> <span class="title">Summation Formulas</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-big-o.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Big O Notation And Friends</span></a></div>
 <ul class="structural toc-item-list">
@@ -184,7 +184,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summation-by-parts.html#sec-summation-by-parts-3" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Summation by parts</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-riemann-stieltjes.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Riemann-Stieltjes Integration</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-riemann-stieltjes.html#sec-riemann-stieltjes-2" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Riemann integral</span></a></div></li>
@@ -233,25 +233,111 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-3-floor-function"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">3</span><span class="space"> </span><span class="title">Floor Function</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-riemann-stieltjes"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.4</span><span class="space"> </span><span class="title">Riemann-Stieltjes Integration</span>
 </h2>
-<section class="introduction" id="ch-3-floor-function-2"><article class="definition definition-like" id="ch-3-floor-function-2-1"><h2 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.0.1</span><span class="period">.</span>
-</h2>The <dfn class="terminology">floor</dfn> of a real number <span class="process-math">\(x\text{,}\)</span> denoted <span class="process-math">\(\lfloor x \rfloor\text{,}\)</span> is the greatest integer less than or equal to <span class="process-math">\(x\text{.}\)</span> The floor is also denoted <span class="process-math">\([x]\text{,}\)</span> mostly in older texts. Related functions include: <ol class="decimal">
-<li id="ch-3-floor-function-2-1-6-1"><div class="para" id="p-derived-ch-3-floor-function-2-1-6-1">
-<span class="process-math">\(\lceil x \rceil = \min \{ n \in \bbZ : n \geq x \}\text{,}\)</span> the <dfn class="terminology">ceiling</dfn> of <span class="process-math">\(x\)</span>
+<section class="subsection" id="sec-riemann-stieltjes-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="space"> </span><span class="title">Riemann integral</span>
+</h3>
+<div class="para logical" id="sec-riemann-stieltjes-2-2">
+<div class="para">Recall that the Riemann integral can be defined as a limit of Riemann sums, as follows. Let <span class="process-math">\(f\)</span> be a function on an interval <span class="process-math">\([a,b]\)</span> and let <span class="process-math">\(P = \{x_0,x_1,\dotsc,x_n\}\)</span> be a partition of <span class="process-math">\([a,b]\text{,}\)</span> so that</div>
+<div class="displaymath process-math" id="sec-riemann-stieltjes-2-2-5">
+\begin{equation}
+a = x_0 \lt x_1 \lt \dotsb \lt x_n = b\text{.}\tag{4.4.1}
+\end{equation}
+</div>
+<div class="para">The norm of <span class="process-math">\(P\)</span> is <span class="process-math">\(\lvert P \rvert = \max\{x_i-x_{i-1}\}\text{.}\)</span> Let <span class="process-math">\(T = \{t_1,\dotsc,t_n\}\)</span> be a tag of the partition <span class="process-math">\(P\text{,}\)</span> meaning that for each <span class="process-math">\(i\text{,}\)</span> <span class="process-math">\(x_{i-1} \leq t_i \leq x_i\text{.}\)</span> The pair <span class="process-math">\((P,T)\)</span> is called a tagged partition. The Riemann sum for this data is</div>
+<div class="displaymath process-math" id="sec-riemann-stieltjes-2-2-13">
+\begin{equation}
+S(P,T,f) = \sum_{i=1}^n f(t_i)(x_i - x_{i-1})\text{.}\tag{4.4.2}
+\end{equation}
+</div>
+<div class="para">The Riemann integral <span class="process-math">\(\int_a^b f dt = L\text{,}\)</span> and <span class="process-math">\(f\)</span> is Riemann integrable on the interval <span class="process-math">\([a,b]\text{,}\)</span> if the limit of Riemann sums converges to <span class="process-math">\(L\text{,}\)</span> in the sense that for every <span class="process-math">\(\epsilon \gt 0\)</span> there exists <span class="process-math">\(\delta \gt 0\)</span> such that for every tagged partition <span class="process-math">\((P,T)\)</span> of norm less than <span class="process-math">\(\delta\text{,}\)</span> the Riemann sum <span class="process-math">\(S(P,T,f)\)</span> is within <span class="process-math">\(\delta\)</span> of <span class="process-math">\(L\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="sec-riemann-stieltjes-2-3">
+<div class="para">The Riemann integral enjoys various properties, for example:</div>
+<ol class="decimal">
+<li id="sec-riemann-stieltjes-2-3-1-1"><div class="para" id="p-derived-sec-riemann-stieltjes-2-3-1-1">The Riemann integral is linear: <span class="process-math">\(\int_a^b (pf+qg) dt = p \int_a^b f dt + q \int_a^b g dt \text{.}\)</span>
 </div></li>
-<li id="ch-3-floor-function-2-1-6-2"><div class="para" id="p-derived-ch-3-floor-function-2-1-6-2">
-<span class="process-math">\(\{x\} = x - \lfloor x \rfloor\text{,}\)</span> the <dfn class="terminology">fractional part</dfn> of <span class="process-math">\(x\)</span>
+<li id="sec-riemann-stieltjes-2-3-1-2"><div class="para" id="p-derived-sec-riemann-stieltjes-2-3-1-2">Every continuous function is Riemann integrable.</div></li>
+<li id="sec-riemann-stieltjes-2-3-1-3"><div class="para" id="p-derived-sec-riemann-stieltjes-2-3-1-3">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are continuously differentiable on <span class="process-math">\([a,b]\text{,}\)</span> then integration by parts is valid:<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f(t)g'(t) dt = \left. f(t)g(t)\right|_a^b - \int_a^b f'(t)g(t) dt\text{.}
+\end{equation*}
+</div>
 </div></li>
-</ol></article></section><nav class="summary-links"><ul>
-<li><a href="sec-elementary-properties.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Elementary properties of the floor function</span></a></li>
-<li><a href="sec-hermite-identity.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Hermite’s Identity</span></a></li>
-<li><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></li>
-</ul></nav></section></div>
+</ol>
+<div class="para">Riemann integration also has some limitations. For example, if <span class="process-math">\(f\)</span> is unbounded on <span class="process-math">\([a,b]\)</span> then <span class="process-math">\(f\)</span> is not Riemann integrable (the Riemann sums do not converge). (It is possible to assign values to improper integrals via a limiting process.)</div>
+</div></section><section class="subsection" id="sec-riemann-stieltjes-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="space"> </span><span class="title">Riemann-Stieltjes integration</span>
+</h3>
+<div class="para logical" id="sec-riemann-stieltjes-3-2">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be functions on an interval <span class="process-math">\([a,b]\text{.}\)</span> We do not assume they are monotone, positive, differentiable, or even continuous. Let <span class="process-math">\((P,T)\)</span> be a tagged partition of the interval as before. To this data we assign the Riemann-Stieltjes sum</div>
+<div class="displaymath process-math" id="sec-riemann-stieltjes-3-2-5">
+\begin{equation}
+S(P,T,f,g) = \sum_{i=1}^n f(t_i)(g(x_i)-g(x_{i-1}))\text{.}\tag{4.4.3}
+\end{equation}
+</div>
+<div class="para">If these approach a value as before (for partitions of sufficiently small norm, the sum should be arbitrarily close to a value <span class="process-math">\(L\)</span>) then this limit is the Riemann-Stieltjes integral <span class="process-math">\(\int_a^b f dg\text{.}\)</span> If this exists we say <span class="process-math">\(f\)</span> is Riemann(-Stieltjes) integrable with respect to <span class="process-math">\(g\)</span> on <span class="process-math">\([a,b]\text{.}\)</span> We write <span class="process-math">\(f \in R(g)\text{,}\)</span> the set of functions integrable with respect to <span class="process-math">\(g\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-riemann-stieltjes-3-3">Riemann-Stieltjes integration enjoys some similar properties to those of Riemann integration.</div>
+<article class="theorem theorem-like" id="sec-riemann-stieltjes-3-4"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-riemann-stieltjes-3-4-1-1">
+<div class="para">Assume all functions are defined and bounded on <span class="process-math">\([a,b]\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="sec-riemann-stieltjes-3-4-1-1-2-1"><div class="para" id="p-derived-sec-riemann-stieltjes-3-4-1-1-2-1">Riemann-Stieltjes integration is linear as a function of <span class="process-math">\(f\text{:}\)</span> If <span class="process-math">\(f_1,f_2 \in R(g)\)</span> on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(c_1,c_2\)</span> are constants, then <span class="process-math">\(c_1 f_1 + c_2 f_2 \in R(g)\)</span> on <span class="process-math">\([a,b]\text{,}\)</span> and<div class="displaymath process-math" id="sec-riemann-stieltjes-3-4-1-1-2-1-7">
+\begin{equation}
+\int_a^b (c_1 f_1 + c_2 f_2) dg = c_1 \int_a^b f_1 dg + c_2 \int_a^b f_2 dg\text{.}\tag{4.4.4}
+\end{equation}
+</div>Likewise, Riemann-Stieltjes integration is linear as a function of <span class="process-math">\(g\text{:}\)</span> if <span class="process-math">\(f \in R(g_1)\)</span> and <span class="process-math">\(f \in R(g_2)\)</span> on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(g = c_1 g_1 + c_2 g_2\)</span> where <span class="process-math">\(c_1,c_2\)</span> are constants, then <span class="process-math">\(f \in R(g)\)</span> and<div class="displaymath process-math" id="sec-riemann-stieltjes-3-4-1-1-2-1-15">
+\begin{equation}
+\int_a^b f dg = \int_a^b f d(c_1 g_1 + c_2 g_2)
+= c_1 \int_a^b f dg_1 + c_2 \int_a^b f dg_2\text{.}\tag{4.4.5}
+\end{equation}
+</div>
+</div></li>
+<li id="sec-riemann-stieltjes-3-4-1-1-2-2"><div class="para" id="p-derived-sec-riemann-stieltjes-3-4-1-1-2-2">If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(g\)</span> is of bounded variation on <span class="process-math">\([a,b]\text{,}\)</span> then the Riemann-Stieltjes integral <span class="process-math">\(\int_a^b f dg\)</span> exists. In particular, the class of functions of bounded variation includes all monotone functions, and all difference of monotone functions. Thus if <span class="process-math">\(g\)</span> is monotone (increasing or decreasing), or <span class="process-math">\(g = g_1 - g_2\)</span> where each of <span class="process-math">\(g_1,g_2\)</span> is monotone, and <span class="process-math">\(f\)</span> is continuous, then the integral exists.</div></li>
+<li id="sec-riemann-stieltjes-3-4-1-1-2-3"><div class="para" id="p-derived-sec-riemann-stieltjes-3-4-1-1-2-3">The Riemann-Stieltjes integral satisfies integration by parts: If <span class="process-math">\(\int_a^b f dg\)</span> exists, then <span class="process-math">\(\int_a^b g df\)</span> exists, and<div class="displaymath process-math" id="sec-riemann-stieltjes-3-4-1-1-2-3-3">
+\begin{equation}
+\int_a^b g df = \left. fg \right|_a^b - \int_a^b f dg\text{.}\tag{4.4.6}
+\end{equation}
+</div>
+</div></li>
+<li id="sec-riemann-stieltjes-3-4-1-1-2-4"><div class="para" id="p-derived-sec-riemann-stieltjes-3-4-1-1-2-4">If <span class="process-math">\(f\)</span> is Riemann integrable on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(g'\)</span> is continuous on <span class="process-math">\([a,b]\text{,}\)</span> then<div class="displaymath process-math" id="sec-riemann-stieltjes-3-4-1-1-2-4-5">
+\begin{equation}
+\int_a^b f dg = \int_a^b fg' dx\tag{4.4.7}
+\end{equation}
+</div>(here the right hand side is a Riemann, not Riemann-Stieltjes, integral).</div></li>
+</ol>
+</div></article><div class="para logical" id="sec-riemann-stieltjes-3-5">
+<div class="para">A function <span class="process-math">\(g\)</span> has bounded variation on an interval <span class="process-math">\([a,b]\)</span> if it satisfies the following condition. First, for a partition <span class="process-math">\(P = \{x_0,\dotsc,x_n\}\)</span> of <span class="process-math">\([a,b]\text{,}\)</span> the variation of <span class="process-math">\(g\)</span> with respect to <span class="process-math">\(P\)</span> is the sum</div>
+<div class="displaymath process-math" id="sec-riemann-stieltjes-3-5-7">
+\begin{equation}
+V(P,g) = \sum_{i=1}^n |g(x_i)-g(x_{i-1})|\tag{4.4.8}
+\end{equation}
+</div>
+<div class="para">(note the absolute value signs). The variation of <span class="process-math">\(g\)</span> on <span class="process-math">\([a,b]\)</span> is the supremum of the variation over all partitions of the interval. We say <span class="process-math">\(g\)</span> has bounded variation if this supremum is finite. (It is an easy exercise to show that monotone functions have bounded variation; and not too hard to show that sums and differences of functions of bounded variation have again bounded variation. However, not every continuous function has bounded variation!)</div>
+</div></section><section class="subsection" id="sec-riemann-stieltjes-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="space"> </span><span class="title">Step functions</span>
+</h3>
+<div class="para" id="sec-riemann-stieltjes-4-2">A function <span class="process-math">\(g\)</span> on <span class="process-math">\([a,b]\)</span> is called a step function if there is a partition <span class="process-math">\(a = x_0 \lt x_1 \lt \dotsb \lt x_n = b\)</span> such that <span class="process-math">\(g\)</span> is constant on each interval <span class="process-math">\((x_{i-1},x_i)\text{.}\)</span> (In the terminology of Lebesgue integration, these are simple functions, with the restriction that the level sets are intervals, as opposed to more general measurable sets.) The jump of <span class="process-math">\(g\)</span> at each point <span class="process-math">\(x\)</span> is defined as the difference between the one-sided limits at <span class="process-math">\(x\text{,}\)</span> except if <span class="process-math">\(x\)</span> is one of the endpoints <span class="process-math">\(a,b\text{,}\)</span> in which case the jump is the difference between the one-sided limit and the value at that point.</div>
+<div class="para" id="sec-riemann-stieltjes-4-3">Every step function has bounded variation. (The variation is equal to the sum of the absolute values of the jumps.)</div>
+<div class="para" id="sec-riemann-stieltjes-4-4">Every step function is a difference of monotone increasing functions. Here is a simple construction which almost achieves this: Let <span class="process-math">\(g_1(x)\)</span> be the sum of all the positive jumps of <span class="process-math">\(g\)</span> between <span class="process-math">\(a\)</span> and <span class="process-math">\(x\text{,}\)</span> and let <span class="process-math">\(g_2\)</span> be the negative of the sum of all the negative jumps of <span class="process-math">\(g\)</span> between <span class="process-math">\(a\)</span> and <span class="process-math">\(x\text{.}\)</span> Then <span class="process-math">\(g_1\)</span> and <span class="process-math">\(g_2\)</span> are monotone increasing, and <span class="process-math">\(g(x) = g(a) + g_1(x) - g_2(x)\)</span> for all <span class="process-math">\(x\)</span> which are not jump points of <span class="process-math">\(g\text{;}\)</span> that is, for all <span class="process-math">\(x\)</span> other than the points <span class="process-math">\(x_i\)</span> in the partition. This simple construction does not give fine control over the values at the jump points. It should be possible to get precisely the step function <span class="process-math">\(g\)</span> at all <span class="process-math">\(x\)</span> by using one-sided limits more carefully.</div>
+<div class="para" id="sec-riemann-stieltjes-4-5">The reason we are interested in step functions is that Riemann-Stieltjes integration with respect to a step function is equivalent to a sum. Of course our main interest is in evaluating sums by considering them as integrals (with respect to step functions).</div>
+<article class="theorem theorem-like" id="sec-riemann-stieltjes-4-6"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(g\)</span> be a step function on <span class="process-math">\([a,b]\)</span> with respect to a partition <span class="process-math">\(a = x_1 \lt x_1 \lt \dotsb \lt x_n = b\text{.}\)</span> For each <span class="process-math">\(k\)</span> let <span class="process-math">\(g_k\)</span> be the jump of <span class="process-math">\(g\)</span> at <span class="process-math">\(x_k\text{.}\)</span> Let <span class="process-math">\(f\)</span> be defined on <span class="process-math">\([a,b]\text{.}\)</span> Assume that for each <span class="process-math">\(k\text{,}\)</span> it is not the case that both <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are discontinuous from the left at <span class="process-math">\(x_k\text{,}\)</span> or both discontinuous from the right at <span class="process-math">\(x_k\text{.}\)</span> (It is allowed for <span class="process-math">\(f\)</span> to be discontinuous from one side, and <span class="process-math">\(g\)</span> from the other side; or for <span class="process-math">\(g\)</span> to be discontinuous from both sides, if <span class="process-math">\(f\)</span> is continuous; or vice versa.) Then <span class="process-math">\(\int_a^b f dg\)</span> exists and<div class="displaymath process-math" id="sec-riemann-stieltjes-4-6-1-20">
+\begin{equation}
+\int_a^b f dg = \sum_{k=1}^n f(x_k) g_k\text{.}\tag{4.4.9}
+\end{equation}
+</div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-af1-mobius-inversion.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-elementary-properties.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-summation-by-parts.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-abel-summation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
