@@ -59,6 +59,11 @@
   <proof>
   <title>Proof of <xref ref="eqn-mertens-1"/></title>
   <p>
+  We claim that
+  <m>\sum_{n \leq x} \frac{\Lambda(n)}{n} = \log x + O(1)</m>.  
+  </p>
+  
+  <p>
   Start from
   <me>
     \sum_{d \leq x} \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor = \sum_{n \leq x} \log n = x \log x - x + O(\log x)
@@ -78,6 +83,11 @@
   
   <proof>
   <title>Proof of <xref ref="eqn-mertens-2"/></title>
+  <p>
+  We claim that
+  <m> \sum_{p \leq x} \frac{\log p}{p} = \log x + O(1) </m>.
+  </p>
+  
   <p>
   We have
   <md>
@@ -111,6 +121,11 @@
   
   <proof>
   <title>Proof of <xref ref="eqn-mertens-3"/></title>
+  <p>
+  We claim that
+  <m> \sum_{p \leq x} \frac{1}{p} = \log \log x + b + O\left(\frac{1}{\log x}\right) </m>.
+  </p>
+  
   <p>
   Set <m>A(x) = \sum_{p \leq x} \frac{\log p}{p} </m>.
   We have just seen that
@@ -230,14 +245,131 @@
   </p>
   </proof>
   
-  <proof>
-  <title>Proof of <xref ref="eqn-mertens-4" /></title>
-  To do.
-  </proof>
-
+  <remark>
+  <p>
+  Last semester we saw Erdős's proof that the sum <m>\sum \frac{1}{p}</m>
+  diverges.
+  Now, we have another proof, which not only shows divergence,
+  but also shows how slowly it diverges.
+  </p>
+  
+  <p>
+  The estimate <m>\sum_{p \leq x} \frac{1}{p} \approx \log \log x</m>
+  may have been known to Euler, but without a proof.
+  </p>
+  </remark>
+  
   <proof>
   <title>Proof of <xref ref="eqn-mertens-5" /></title>
-  To do.
+  <p>
+  We claim that
+  <m> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right) = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) </m>.
+  </p>
+  
+  <p>
+  The product on the left side of <xref ref="eqn-mertens-5"/>
+  is the reciprocal of the product on the left side of
+  <xref ref="eqn-mertens-4"/>.
+  Thus, assuming for the moment <xref ref="eqn-mertens-4"/>,
+  we have
+  <men>
+  \begin{split}
+    \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)
+    \amp = \frac{1}{e^c \log x + O(1)} \\
+    \amp = \frac{1}{e^c \log x ( 1 + f(x) ) }, \qquad f(x) = O(1/\log x) \\
+    \amp = \frac{e^{-c}}{\log x} \frac{1}{1+f(x)} \\
+    \amp = \frac{e^{-c}}{\log x} \left( 1 + \sum_{n=1}^{\infty} (-1)^n (f(x))^n \right) \\
+    \amp = \frac{e^{-c}}{\log x} \left( 1 + O\left( \frac{1}{\log x} \right) \right)
+  \end{split}
+  </men>
+  which proves the claim.
+  </p>
   </proof>
+
+
+  <proof>
+  <title>Proof of <xref ref="eqn-mertens-4" /></title>
+  <p>
+  We claim that
+  <m> \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} = e^c \log x + O(1) </m>.
+  </p>
+  
+  <p>
+  First recall the following Taylor series for logarithm:
+  <men>
+    -\log(1-x) = x + \frac{x^2}{2} + \frac{x^3}{3} + \dotsb
+      = \sum_{n=1}^{\infty} \frac{x^n}{n}
+  </men>.
+  </p>
+  
+  <p>
+  Consider the logarithm of the product on the left:
+  <men>
+  \begin{split}
+    \log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+      \amp = \sum_{p \leq x} - \log \left( 1 - \frac{1}{p} \right) \\
+      \amp = \sum_{p \leq x} \sum_{n=1}^{\infty} \frac{1}{n p^n} \\
+      \amp = \sum_{p \leq x} \frac{1}{p}
+          + \sum_{p \leq x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
+  \end{split}
+  </men>.
+  Use <xref ref="eqn-mertens-3"/> for the first term.
+  For the second term, observe that
+  <m>\sum_p \sum_{n = 2}^{\infty} \frac{1}{n p^n}</m> converges.
+  To see this, start with
+  <men>
+    \sum_{n=2}^{\infty} \frac{1}{n p^n} \leq \sum_{n=2}^{\infty} \frac{1}{p^n}
+      = \frac{1}{p(p-1)} = \frac{1}{p-1} - \frac{1}{p}
+  </men>
+  and then observe that the sum over all positive integers <m>p</m>
+  converges by telescoping; this implies that the sum over just the
+  primes also converges.
+  So we can replace the sum over <m>p \leq x</m> with the difference
+  between the sum over all <m>p</m>, and the sum over <m>p \gt x</m>.
+  This gives:
+  <men xml:id="eqn-sum-reciprocals-primes-estimate">
+    \log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+    = \log \log x + b + \sum_p \sum_{n=2}^{\infty} \frac{1}{n p^n}
+      - \sum_{p \gt x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
+      + O\left( \frac{1}{\log x} \right)
+  </men>.
+  In fact,
+  <men>
+    \sum_{p \gt x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
+    \leq \sum_{p \gt x} \frac{1}{p(p-1)}
+    \leq \sum_{n \gt x} \frac{1}{n(n-1)}
+    \ll \frac{1}{x} \ll \frac{1}{\log x}
+  </men>.
+  Therefore <xref ref="eqn-sum-reciprocals-primes-estimate"/>
+  becomes
+  <men>
+    \log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+    = \log \log x + c + O\left( \frac{1}{\log x} \right)
+  </men>
+  where <m>c = b + \sum_p \sum_{n=2}^{\infty} \frac{1}{n p^n}</m>.
+  </p>
+  
+  <p>
+  Taking the exponential of each side gives
+  <men>
+    \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+    = \exp(\log \log x + c + f(x))
+    = e^c \log x \cdot \exp(f(x))
+  </men>
+  where <m>f(x) = O(1/\log x)</m>.
+  We have
+  <men>
+    \exp(f(x)) = 1 + f(x) + \frac{1}{2} f(x)^2 + \dotsb = 1 + O\left(\frac{1}{\log x}\right)
+  </men>.
+  Thus
+  <men>
+    \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+    = e^c \log x \left(1 + O\left(\frac{1}{\log x}\right)\right)
+    = e^c \log x + O(1)
+  </men>,
+  as claimed.
+  </p>
+  </proof>
+
 
 </section>
