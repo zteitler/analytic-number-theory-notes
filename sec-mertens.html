@@ -272,7 +272,8 @@ window.MathJax = {
 \amp = \sum_{n \leq x} \log(p_1^{e_1} \dotsm p_r^{e_r}) \\
 \amp = \sum_{n \leq x} \log n \text{.}
 \end{align*}
-</div></article><article class="proof" id="sec-mertens-5"><h3 class="heading"><span class="title">Proof of (6.3.1).</span></h3> <div class="para logical" id="sec-mertens-5-2">
+</div></article><article class="proof" id="sec-mertens-5"><h3 class="heading"><span class="title">Proof of (6.3.1).</span></h3> <div class="para" id="sec-mertens-5-2">We claim that <span class="process-math">\(\sum_{n \leq x} \frac{\Lambda(n)}{n} = \log x + O(1)\text{.}\)</span>
+</div> <div class="para logical" id="sec-mertens-5-3">
 <div class="para">Start from</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -280,7 +281,7 @@ window.MathJax = {
 \end{equation*}
 </div>
 <div class="para">Dropping the floor operator gives</div>
-<div class="displaymath process-math" id="sec-mertens-5-2-2">
+<div class="displaymath process-math" id="sec-mertens-5-3-2">
 \begin{align*}
 x \log x - x + O(\log x) \amp = \sum_{d \leq x} \Lambda(d) \left( \frac{x}{d} + O(1) \right) \\
 \amp = x \sum_{d \leq x} \frac{\Lambda(d)}{d} + \sum_{d \leq x} \Lambda(d) O(1) \\
@@ -294,16 +295,17 @@ x \sum_{d \leq x} \frac{\Lambda(d)}{d} = x \log x - x + O(\log x) + O(x) = x \lo
 \end{equation*}
 </div>
 <div class="para">Dividing by <span class="process-math">\(x\)</span> gives the result.</div>
-</div></article><article class="proof" id="sec-mertens-6"><h3 class="heading"><span class="title">Proof of (6.3.2).</span></h3> <div class="para logical" id="sec-mertens-6-2">
+</div></article><article class="proof" id="sec-mertens-6"><h3 class="heading"><span class="title">Proof of (6.3.2).</span></h3> <div class="para" id="sec-mertens-6-2">We claim that <span class="process-math">\(\sum_{p \leq x} \frac{\log p}{p} = \log x + O(1) \text{.}\)</span>
+</div> <div class="para logical" id="sec-mertens-6-3">
 <div class="para">We have</div>
-<div class="displaymath process-math" id="sec-mertens-6-2-1">
+<div class="displaymath process-math" id="sec-mertens-6-3-1">
 \begin{align*}
 \sum_{n \leq x} \frac{\Lambda(n)}{n} \amp = \sum_{p^k \leq x, k \geq 1} \frac{\log p}{p^k} \\
 \amp = \sum_{p \leq x} \frac{\log p}{p} + \sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k} \text{.}
 \end{align*}
 </div>
 <div class="para">Our goal is to show that the last sum is bounded. We have</div>
-<div class="displaymath process-math" id="sec-mertens-6-2-2">
+<div class="displaymath process-math" id="sec-mertens-6-3-2">
 \begin{align*}
 \sum_{p^k \leq x, k \geq 2} \frac{\log p}{p^k}
 \amp \leq \sum_{p \leq \sqrt{x}} \sum_{k=2}^{\infty} \frac{\log p}{p^k} \\
@@ -313,14 +315,15 @@ x \sum_{d \leq x} \frac{\Lambda(d)}{d} = x \log x - x + O(\log x) + O(x) = x \lo
 \end{align*}
 </div>
 <div class="para">This last sum is convergent: for large enough <span class="process-math">\(n\text{,}\)</span> <span class="process-math">\(\log n \leq \sqrt{n}\text{,}\)</span> and we can compare the resulting series <span class="process-math">\(\sum \frac{\sqrt{n}}{n(n-1)}\)</span> to a <span class="process-math">\(p\)</span>-series.</div>
-</div> <div class="para logical" id="sec-mertens-6-3">
+</div> <div class="para logical" id="sec-mertens-6-4">
 <div class="para">So, there is a constant <span class="process-math">\(c\)</span> with <span class="process-math">\(\sum_{n \leq x} \frac{\log n}{n(n-1)} \leq c\text{,}\)</span> for all <span class="process-math">\(x\text{.}\)</span> In other words, this last sum is <span class="process-math">\(O(1)\)</span> (as a function of <span class="process-math">\(x\)</span>). Therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_{p \leq x} \frac{\log p}{p} = \sum_{n \leq x} \frac{\Lambda(n)}{n} + O(1) = \log x + O(1)
 \end{equation*}
 </div>
-</div></article><article class="proof" id="sec-mertens-7"><h3 class="heading"><span class="title">Proof of (6.3.3).</span></h3> <div class="para logical" id="sec-mertens-7-2">
+</div></article><article class="proof" id="sec-mertens-7"><h3 class="heading"><span class="title">Proof of (6.3.3).</span></h3> <div class="para" id="sec-mertens-7-2">We claim that <span class="process-math">\(\sum_{p \leq x} \frac{1}{p} = \log \log x + b + O\left(\frac{1}{\log x}\right) \text{.}\)</span>
+</div> <div class="para logical" id="sec-mertens-7-3">
 <div class="para">Set <span class="process-math">\(A(x) = \sum_{p \leq x} \frac{\log p}{p} \text{.}\)</span> We have just seen that <span class="process-math">\(A(x) = \log x + O(1)\text{.}\)</span> We will write this as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -329,7 +332,7 @@ A(x) = \log x + R(x)\text{,}
 </div>
 <div class="para">where <span class="process-math">\(R = O(1)\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="sec-mertens-7-3">
+</div> <div class="para logical" id="sec-mertens-7-4">
 <div class="para">We can write the sum we are interested in as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -352,7 +355,7 @@ A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} \text{.}
 \end{equation*}
 </div>
 <div class="para">In the limit as <span class="process-math">\(\Delta \to 0^+\text{,}\)</span> this is equal to <span class="process-math">\(\frac{\log p}{p}\)</span> if <span class="process-math">\(t = p\)</span> is prime, or equal to <span class="process-math">\(0\)</span> if <span class="process-math">\(t\)</span> is not equal to a prime.</div>
-</div> <div class="para logical" id="sec-mertens-7-4">
+</div> <div class="para logical" id="sec-mertens-7-5">
 <div class="para">So, our sum is equal to</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -360,7 +363,7 @@ A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} \text{.}
 \end{equation*}
 </div>
 <div class="para">Here the lower bound of integration <span class="process-math">\(2^-\)</span> means <span class="process-math">\(2-\epsilon\)</span> for sufficiently small <span class="process-math">\(\epsilon\text{,}\)</span> in fact the limit as <span class="process-math">\(\epsilon \to 0\text{.}\)</span> (We want the interval of integration to start to the left of <span class="process-math">\(2\)</span> because we are using left-hand differentials for <span class="process-math">\(dA\text{.}\)</span>)</div>
-</div> <div class="para logical" id="sec-mertens-7-5">
+</div> <div class="para logical" id="sec-mertens-7-6">
 <div class="para">Next, we evaluate the integral, starting with integration by parts:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -392,7 +395,7 @@ A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} \text{.}
 \sum_{p \leq x} \frac{1}{p} = 1 + O\left(\frac{1}{\log x}\right) + \log \log x - \log \log 2 + \int_2^x \frac{R(t)}{t(\log t)^2} dt\text{.}
 \end{equation*}
 </div>
-</div> <div class="para logical" id="sec-mertens-7-6">
+</div> <div class="para logical" id="sec-mertens-7-7">
 <div class="para">Now we consider the integral appearing as the last term on the right. By the same substitution again we see</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -425,7 +428,7 @@ A(t) - A(t-\Delta) = \sum_{t-\Delta \lt p \leq t} \frac{\log p}{p} \text{.}
 </div>
 <div class="para">or in other words the integral on the left hand side is <span class="process-math">\(O(1/\log x)\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="sec-mertens-7-7">
+</div> <div class="para logical" id="sec-mertens-7-8">
 <div class="para">Putting together our results so far we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -446,7 +449,106 @@ b = 1 - \log \log 2 + \int_2^{\infty} \frac{R(t)}{t (\log t)^2} dt
 \end{equation*}
 </div>
 <div class="para">as claimed.</div>
-</div></article><article class="proof" id="sec-mertens-8"><h3 class="heading"><span class="title">Proof of (6.3.4).</span></h3> To do.</article><article class="proof" id="sec-mertens-9"><h3 class="heading"><span class="title">Proof of (6.3.5).</span></h3> To do.</article></section></div>
+</div></article><article class="remark remark-like" id="sec-mertens-8"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.3.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-mertens-8-1">Last semester we saw Erdős’s proof that the sum <span class="process-math">\(\sum \frac{1}{p}\)</span> diverges. Now, we have another proof, which not only shows divergence, but also shows how slowly it diverges.</div> <div class="para" id="sec-mertens-8-2">The estimate <span class="process-math">\(\sum_{p \leq x} \frac{1}{p} \approx \log \log x\)</span> may have been known to Euler, but without a proof.</div></article><article class="proof" id="sec-mertens-9"><h3 class="heading"><span class="title">Proof of (6.3.5).</span></h3> <div class="para" id="sec-mertens-9-2">We claim that <span class="process-math">\(\prod_{p \leq x} \left( 1 - \frac{1}{p} \right) = \frac{e^{-c}}{\log x} + O\left( \frac{1}{(\log x)^2} \right) \text{.}\)</span>
+</div> <div class="para logical" id="sec-mertens-9-3">
+<div class="para">The product on the left side of <a href="sec-mertens.html#sec-mertens-2-2-2" class="xref" data-knowl="./knowl/xref/eqn-mertens-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.5">(6.3.5)</a> is the reciprocal of the product on the left side of <a href="sec-mertens.html#sec-mertens-2-2-2" class="xref" data-knowl="./knowl/xref/eqn-mertens-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.4">(6.3.4)</a>. Thus, assuming for the moment <a href="sec-mertens.html#sec-mertens-2-2-2" class="xref" data-knowl="./knowl/xref/eqn-mertens-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.4">(6.3.4)</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-5.html ./knowl/xref/eqn-mertens-4.html ./knowl/xref/eqn-mertens-4.html" id="sec-mertens-9-3-4">
+\begin{equation}
+\begin{split}
+\prod_{p \leq x} \left( 1 - \frac{1}{p} \right)
+\amp = \frac{1}{e^c \log x + O(1)} \\
+\amp = \frac{1}{e^c \log x ( 1 + f(x) ) }, \qquad f(x) = O(1/\log x) \\
+\amp = \frac{e^{-c}}{\log x} \frac{1}{1+f(x)} \\
+\amp = \frac{e^{-c}}{\log x} \left( 1 + \sum_{n=1}^{\infty} (-1)^n (f(x))^n \right) \\
+\amp = \frac{e^{-c}}{\log x} \left( 1 + O\left( \frac{1}{\log x} \right) \right)
+\end{split}\tag{6.3.7}
+\end{equation}
+</div>
+<div class="para">which proves the claim.</div>
+</div></article><article class="proof" id="sec-mertens-10"><h3 class="heading"><span class="title">Proof of (6.3.4).</span></h3> <div class="para" id="sec-mertens-10-2">We claim that <span class="process-math">\(\prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1} = e^c \log x + O(1) \text{.}\)</span>
+</div> <div class="para logical" id="sec-mertens-10-3">
+<div class="para">First recall the following Taylor series for logarithm:</div>
+<div class="displaymath process-math" id="sec-mertens-10-3-1">
+\begin{equation}
+-\log(1-x) = x + \frac{x^2}{2} + \frac{x^3}{3} + \dotsb
+= \sum_{n=1}^{\infty} \frac{x^n}{n}\text{.}\tag{6.3.8}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec-mertens-10-4">
+<div class="para">Consider the logarithm of the product on the left:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-3.html ./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" id="sec-mertens-10-4-1">
+\begin{equation}
+\begin{split}
+\log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+\amp = \sum_{p \leq x} - \log \left( 1 - \frac{1}{p} \right) \\
+\amp = \sum_{p \leq x} \sum_{n=1}^{\infty} \frac{1}{n p^n} \\
+\amp = \sum_{p \leq x} \frac{1}{p}
++ \sum_{p \leq x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
+\end{split}\text{.}\tag{6.3.9}
+\end{equation}
+</div>
+<div class="para">Use <a href="sec-mertens.html#sec-mertens-2-2-2" class="xref" data-knowl="./knowl/xref/eqn-mertens-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.3">(6.3.3)</a> for the first term. For the second term, observe that <span class="process-math">\(\sum_p \sum_{n = 2}^{\infty} \frac{1}{n p^n}\)</span> converges. To see this, start with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-3.html ./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" id="sec-mertens-10-4-4">
+\begin{equation}
+\sum_{n=2}^{\infty} \frac{1}{n p^n} \leq \sum_{n=2}^{\infty} \frac{1}{p^n}
+= \frac{1}{p(p-1)} = \frac{1}{p-1} - \frac{1}{p}\tag{6.3.10}
+\end{equation}
+</div>
+<div class="para">and then observe that the sum over all positive integers <span class="process-math">\(p\)</span> converges by telescoping; this implies that the sum over just the primes also converges. So we can replace the sum over <span class="process-math">\(p \leq x\)</span> with the difference between the sum over all <span class="process-math">\(p\text{,}\)</span> and the sum over <span class="process-math">\(p \gt x\text{.}\)</span> This gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-3.html ./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" id="eqn-sum-reciprocals-primes-estimate">
+\begin{equation}
+\log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+= \log \log x + b + \sum_p \sum_{n=2}^{\infty} \frac{1}{n p^n}
+- \sum_{p \gt x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
++ O\left( \frac{1}{\log x} \right)\text{.}\tag{6.3.11}
+\end{equation}
+</div>
+<div class="para">In fact,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-3.html ./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" id="sec-mertens-10-4-10">
+\begin{equation}
+\sum_{p \gt x} \sum_{n=2}^{\infty} \frac{1}{n p^n}
+\leq \sum_{p \gt x} \frac{1}{p(p-1)}
+\leq \sum_{n \gt x} \frac{1}{n(n-1)}
+\ll \frac{1}{x} \ll \frac{1}{\log x}\text{.}\tag{6.3.12}
+\end{equation}
+</div>
+<div class="para">Therefore <a href="sec-mertens.html#eqn-sum-reciprocals-primes-estimate" class="xref" data-knowl="./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3.11">(6.3.11)</a> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn-mertens-3.html ./knowl/xref/eqn-sum-reciprocals-primes-estimate.html" id="sec-mertens-10-4-12">
+\begin{equation}
+\log \prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+= \log \log x + c + O\left( \frac{1}{\log x} \right)\tag{6.3.13}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(c = b + \sum_p \sum_{n=2}^{\infty} \frac{1}{n p^n}\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-mertens-10-5">
+<div class="para">Taking the exponential of each side gives</div>
+<div class="displaymath process-math" id="sec-mertens-10-5-1">
+\begin{equation}
+\prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+= \exp(\log \log x + c + f(x))
+= e^c \log x \cdot \exp(f(x))\tag{6.3.14}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(f(x) = O(1/\log x)\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="sec-mertens-10-5-3">
+\begin{equation}
+\exp(f(x)) = 1 + f(x) + \frac{1}{2} f(x)^2 + \dotsb = 1 + O\left(\frac{1}{\log x}\right)\text{.}\tag{6.3.15}
+\end{equation}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="sec-mertens-10-5-4">
+\begin{equation}
+\prod_{p \leq x} \left( 1 - \frac{1}{p} \right)^{-1}
+= e^c \log x \left(1 + O\left(\frac{1}{\log x}\right)\right)
+= e^c \log x + O(1)\text{,}\tag{6.3.16}
+\end{equation}
+</div>
+<div class="para">as claimed.</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-chebyshev-estimates.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -979,7 +979,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.3",
   "title": "Mertens’ Theorems",
-  "body": " Mertens' Theorems   Mertens' Theorem  For we have where and are constants. In fact is the Euler-Mascheroni constant.   First, this preparation. We have an earlier result, that , see . (The details of the proof were left as an exercise, but basically this followed from comparing the sum with the integral .) We will combine this with the following lemma.   For we have .  We have .    Proof of  Start from . Dropping the floor operator gives . By Chebyshev's estimate, . Therefore . Dividing by gives the result.    Proof of  We have . Our goal is to show that the last sum is bounded. We have . This last sum is convergent: for large enough , , and we can compare the resulting series to a -series.  So, there is a constant with , for all . In other words, this last sum is (as a function of ). Therefore     Proof of  Set . We have just seen that . We will write this as , where .  We can write the sum we are interested in as follows: . We can rewrite this as an integral, specifically as a Riemann-Stieltjes integral . First, we find the differential . For , . But, for any value of , and small enough , there are no primes (in fact, not even any integers) in the interval . On the other hand, for , . In the limit as , this is equal to if is prime, or equal to if is not equal to a prime.  So, our sum is equal to . Here the lower bound of integration means for sufficiently small , in fact the limit as . (We want the interval of integration to start to the left of because we are using left-hand differentials for .)  Next, we evaluate the integral, starting with integration by parts: . We have so the first term is simply . From this point, we can take the integral to be simply . We use : and . The integral of the first term can be evaluated (by substitution with ): . Before we address the integral of the second term, let us put together what we have seen so far: .  Now we consider the integral appearing as the last term on the right. By the same substitution again we see . Hence the following improper integral converges: . This implies converges as well. Since , it implies that the following improper integrals also converge: (but of course, the value might not be any more). Since the integrals converge, it is valid to write . The integral from to is constant with respect to . For the other interval, since (recall that this notation means ), we have or in other words the integral on the left hand side is .  Putting together our results so far we have . To finish, we combine big-O terms, and set to get as claimed.    Proof of To do.   Proof of To do.  "
+  "body": " Mertens' Theorems   Mertens' Theorem  For we have where and are constants. In fact is the Euler-Mascheroni constant.   First, this preparation. We have an earlier result, that , see . (The details of the proof were left as an exercise, but basically this followed from comparing the sum with the integral .) We will combine this with the following lemma.   For we have .  We have .    Proof of  We claim that .  Start from . Dropping the floor operator gives . By Chebyshev's estimate, . Therefore . Dividing by gives the result.    Proof of  We claim that .  We have . Our goal is to show that the last sum is bounded. We have . This last sum is convergent: for large enough , , and we can compare the resulting series to a -series.  So, there is a constant with , for all . In other words, this last sum is (as a function of ). Therefore     Proof of  We claim that .  Set . We have just seen that . We will write this as , where .  We can write the sum we are interested in as follows: . We can rewrite this as an integral, specifically as a Riemann-Stieltjes integral . First, we find the differential . For , . But, for any value of , and small enough , there are no primes (in fact, not even any integers) in the interval . On the other hand, for , . In the limit as , this is equal to if is prime, or equal to if is not equal to a prime.  So, our sum is equal to . Here the lower bound of integration means for sufficiently small , in fact the limit as . (We want the interval of integration to start to the left of because we are using left-hand differentials for .)  Next, we evaluate the integral, starting with integration by parts: . We have so the first term is simply . From this point, we can take the integral to be simply . We use : and . The integral of the first term can be evaluated (by substitution with ): . Before we address the integral of the second term, let us put together what we have seen so far: .  Now we consider the integral appearing as the last term on the right. By the same substitution again we see . Hence the following improper integral converges: . This implies converges as well. Since , it implies that the following improper integrals also converge: (but of course, the value might not be any more). Since the integrals converge, it is valid to write . The integral from to is constant with respect to . For the other interval, since (recall that this notation means ), we have or in other words the integral on the left hand side is .  Putting together our results so far we have . To finish, we combine big-O terms, and set to get as claimed.    Last semester we saw Erdős's proof that the sum diverges. Now, we have another proof, which not only shows divergence, but also shows how slowly it diverges.  The estimate may have been known to Euler, but without a proof.    Proof of  We claim that .  The product on the left side of is the reciprocal of the product on the left side of . Thus, assuming for the moment , we have which proves the claim.    Proof of  We claim that .  First recall the following Taylor series for logarithm: .  Consider the logarithm of the product on the left: . Use for the first term. For the second term, observe that converges. To see this, start with and then observe that the sum over all positive integers converges by telescoping; this implies that the sum over just the primes also converges. So we can replace the sum over with the difference between the sum over all , and the sum over . This gives: . In fact, . Therefore becomes where .  Taking the exponential of each side gives where . We have . Thus , as claimed.   "
 },
 {
   "id": "sec-mertens-2",
@@ -1006,7 +1006,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "6.3.1",
   "title": "Proof of (6.3.1).",
-  "body": " Proof of  Start from . Dropping the floor operator gives . By Chebyshev's estimate, . Therefore . Dividing by gives the result.  "
+  "body": " Proof of  We claim that .  Start from . Dropping the floor operator gives . By Chebyshev's estimate, . Therefore . Dividing by gives the result.  "
 },
 {
   "id": "sec-mertens-6",
@@ -1015,7 +1015,7 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "6.3.2",
   "title": "Proof of (6.3.2).",
-  "body": " Proof of  We have . Our goal is to show that the last sum is bounded. We have . This last sum is convergent: for large enough , , and we can compare the resulting series to a -series.  So, there is a constant with , for all . In other words, this last sum is (as a function of ). Therefore   "
+  "body": " Proof of  We claim that .  We have . Our goal is to show that the last sum is bounded. We have . This last sum is convergent: for large enough , , and we can compare the resulting series to a -series.  So, there is a constant with , for all . In other words, this last sum is (as a function of ). Therefore   "
 },
 {
   "id": "sec-mertens-7",
@@ -1024,25 +1024,34 @@ var ptx_lunr_docs = [
   "type": "Proof",
   "number": "6.3.3",
   "title": "Proof of (6.3.3).",
-  "body": " Proof of  Set . We have just seen that . We will write this as , where .  We can write the sum we are interested in as follows: . We can rewrite this as an integral, specifically as a Riemann-Stieltjes integral . First, we find the differential . For , . But, for any value of , and small enough , there are no primes (in fact, not even any integers) in the interval . On the other hand, for , . In the limit as , this is equal to if is prime, or equal to if is not equal to a prime.  So, our sum is equal to . Here the lower bound of integration means for sufficiently small , in fact the limit as . (We want the interval of integration to start to the left of because we are using left-hand differentials for .)  Next, we evaluate the integral, starting with integration by parts: . We have so the first term is simply . From this point, we can take the integral to be simply . We use : and . The integral of the first term can be evaluated (by substitution with ): . Before we address the integral of the second term, let us put together what we have seen so far: .  Now we consider the integral appearing as the last term on the right. By the same substitution again we see . Hence the following improper integral converges: . This implies converges as well. Since , it implies that the following improper integrals also converge: (but of course, the value might not be any more). Since the integrals converge, it is valid to write . The integral from to is constant with respect to . For the other interval, since (recall that this notation means ), we have or in other words the integral on the left hand side is .  Putting together our results so far we have . To finish, we combine big-O terms, and set to get as claimed.  "
+  "body": " Proof of  We claim that .  Set . We have just seen that . We will write this as , where .  We can write the sum we are interested in as follows: . We can rewrite this as an integral, specifically as a Riemann-Stieltjes integral . First, we find the differential . For , . But, for any value of , and small enough , there are no primes (in fact, not even any integers) in the interval . On the other hand, for , . In the limit as , this is equal to if is prime, or equal to if is not equal to a prime.  So, our sum is equal to . Here the lower bound of integration means for sufficiently small , in fact the limit as . (We want the interval of integration to start to the left of because we are using left-hand differentials for .)  Next, we evaluate the integral, starting with integration by parts: . We have so the first term is simply . From this point, we can take the integral to be simply . We use : and . The integral of the first term can be evaluated (by substitution with ): . Before we address the integral of the second term, let us put together what we have seen so far: .  Now we consider the integral appearing as the last term on the right. By the same substitution again we see . Hence the following improper integral converges: . This implies converges as well. Since , it implies that the following improper integrals also converge: (but of course, the value might not be any more). Since the integrals converge, it is valid to write . The integral from to is constant with respect to . For the other interval, since (recall that this notation means ), we have or in other words the integral on the left hand side is .  Putting together our results so far we have . To finish, we combine big-O terms, and set to get as claimed.  "
 },
 {
   "id": "sec-mertens-8",
   "level": "2",
   "url": "sec-mertens.html#sec-mertens-8",
-  "type": "Proof",
-  "number": "6.3.4",
-  "title": "Proof of (6.3.4).",
-  "body": " Proof of To do. "
+  "type": "Remark",
+  "number": "6.3.3",
+  "title": "",
+  "body": " Last semester we saw Erdős's proof that the sum diverges. Now, we have another proof, which not only shows divergence, but also shows how slowly it diverges.  The estimate may have been known to Euler, but without a proof.  "
 },
 {
   "id": "sec-mertens-9",
   "level": "2",
   "url": "sec-mertens.html#sec-mertens-9",
   "type": "Proof",
-  "number": "6.3.5",
+  "number": "6.3.4",
   "title": "Proof of (6.3.5).",
-  "body": " Proof of To do. "
+  "body": " Proof of  We claim that .  The product on the left side of is the reciprocal of the product on the left side of . Thus, assuming for the moment , we have which proves the claim.  "
+},
+{
+  "id": "sec-mertens-10",
+  "level": "2",
+  "url": "sec-mertens.html#sec-mertens-10",
+  "type": "Proof",
+  "number": "6.3.5",
+  "title": "Proof of (6.3.4).",
+  "body": " Proof of  We claim that .  First recall the following Taylor series for logarithm: .  Consider the logarithm of the product on the left: . Use for the first term. For the second term, observe that converges. To see this, start with and then observe that the sum over all positive integers converges by telescoping; this implies that the sum over just the primes also converges. So we can replace the sum over with the difference between the sum over all , and the sum over . This gives: . In fact, . Therefore becomes where .  Taking the exponential of each side gives where . We have . Thus , as claimed.  "
 },
 {
   "id": "bibliography",
