@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-riemann-stieltjes" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Riemann-Stieltjes Integration</title>
+  
+  <subsection>
+  <title>Riemann integral</title>
+  
+  <p>
+  Recall that the Riemann integral can be defined as a limit of
+  Riemann sums, as follows.
+  Let <m>f</m> be a function on an interval <m>[a,b]</m>
+  and let <m>P = \{x_0,x_1,\dotsc,x_n\}</m> be a partition of <m>[a,b]</m>,
+  so that
+  <men>
+    a = x_0 \lt x_1 \lt \dotsb \lt x_n = b
+  </men>.
+  The norm of <m>P</m> is <m>\lvert P \rvert = \max\{x_i-x_{i-1}\}</m>.
+  Let <m>T = \{t_1,\dotsc,t_n\}</m> be a tag of the partition <m>P</m>,
+  meaning that for each <m>i</m>, <m>x_{i-1} \leq t_i \leq x_i</m>.
+  The pair <m>(P,T)</m> is called a tagged partition.
+  The Riemann sum for this data is
+  <men>
+    S(P,T,f) = \sum_{i=1}^n f(t_i)(x_i - x_{i-1})
+  </men>.
+  The Riemann integral <m>\int_a^b f dt = L</m>,
+  and <m>f</m> is Riemann integrable on the interval <m>[a,b]</m>,
+  if the limit of Riemann sums converges to <m>L</m>,
+  in the sense that for every <m>\epsilon \gt 0</m> there exists
+  <m>\delta \gt 0</m> such that for every tagged partition <m>(P,T)</m>
+  of norm less than <m>\delta</m>, the Riemann sum <m>S(P,T,f)</m>
+  is within <m>\delta</m> of <m>L</m>.
+  </p>
+  
+  <p>
+  The Riemann integral enjoys various properties, for example:
+  <ol>
+  <li> The Riemann integral is linear:
+  <m> \int_a^b (pf+qg) dt = p \int_a^b f dt + q \int_a^b g dt </m>. </li>
+  <li> Every continuous function is Riemann integrable. </li>
+  <li> If <m>f</m> and <m>g</m> are continuously differentiable
+  on <m>[a,b]</m>, then integration by parts is valid:
+  <me>
+    \int_a^b f(t)g'(t) dt = \left. f(t)g(t)\right|_a^b - \int_a^b f'(t)g(t) dt
+  </me>. </li>
+  </ol>
+  Riemann integration also has some limitations.
+  For example, if <m>f</m> is unbounded on <m>[a,b]</m> then <m>f</m>
+  is not Riemann integrable (the Riemann sums do not converge).
+  (It is possible to assign values to improper integrals via a
+  limiting process.)
+  </p>
+  
+  </subsection>
+  
+  <subsection>
+  <title>Riemann-Stieltjes integration</title>
+  
+  <p>
+  Let <m>f</m> and <m>g</m> be functions on an interval <m>[a,b]</m>.
+  We do not assume they are monotone, positive, differentiable,
+  or even continuous.
+  Let <m>(P,T)</m> be a tagged partition of the interval as before.
+  To this data we assign the Riemann-Stieltjes sum
+  <men>
+    S(P,T,f,g) = \sum_{i=1}^n f(t_i)(g(x_i)-g(x_{i-1}))
+  </men>.
+  If these approach a value as before (for partitions of sufficiently
+  small norm, the sum should be arbitrarily close to a value <m>L</m>)
+  then this limit is the Riemann-Stieltjes integral
+  <m>\int_a^b f dg</m>.
+  If this exists we say <m>f</m> is Riemann(-Stieltjes) integrable
+  with respect to <m>g</m> on <m>[a,b]</m>.
+  We write <m>f \in R(g)</m>,
+  the set of functions integrable with respect to <m>g</m>.
+  </p>
+  
+  <p>
+  Riemann-Stieltjes integration enjoys some similar properties to
+  those of Riemann integration.
+  </p>
+  
+  <theorem>
+  <statement>
+  <p>
+  Assume all functions are defined and bounded on <m>[a,b]</m>.
+  <ol>
+  <li> Riemann-Stieltjes integration is linear as a function of <m>f</m>:
+  If <m>f_1,f_2 \in R(g)</m> on <m>[a,b]</m> and <m>c_1,c_2</m>
+  are constants, then <m>c_1 f_1 + c_2 f_2 \in R(g)</m> on <m>[a,b]</m>,
+  and
+  <men>
+    \int_a^b (c_1 f_1 + c_2 f_2) dg = c_1 \int_a^b f_1 dg + c_2 \int_a^b f_2 dg
+  </men>.
+  Likewise, Riemann-Stieltjes integration is linear as a function of <m>g</m>:
+  if <m>f \in R(g_1)</m> and <m>f \in R(g_2)</m> on <m>[a,b]</m>
+  and <m>g = c_1 g_1 + c_2 g_2</m> where <m>c_1,c_2</m> are constants,
+  then <m>f \in R(g)</m> and
+  <men>
+    \int_a^b f dg = \int_a^b f d(c_1 g_1 + c_2 g_2)
+    = c_1 \int_a^b f dg_1 + c_2 \int_a^b f dg_2
+  </men>. </li>
+  <li> If <m>f</m> is continuous on <m>[a,b]</m> and <m>g</m> is of
+  bounded variation on <m>[a,b]</m>, then the Riemann-Stieltjes
+  integral <m>\int_a^b f dg</m> exists.
+  In particular, the class of functions of bounded variation
+  includes all monotone functions, and all difference of monotone functions.
+  Thus if <m>g</m> is monotone (increasing or decreasing),
+  or <m>g = g_1 - g_2</m> where each of <m>g_1,g_2</m> is monotone,
+  and <m>f</m> is continuous, then the integral exists.
+  </li>
+  <li> The Riemann-Stieltjes integral satisfies integration by parts:
+  If <m>\int_a^b f dg</m> exists, then <m>\int_a^b g df</m> exists,
+  and
+  <men>
+    \int_a^b g df = \left. fg \right|_a^b - \int_a^b f dg
+  </men>.
+  </li>
+  <li>
+  If <m>f</m> is Riemann integrable on <m>[a,b]</m> and <m>g'</m>
+  is continuous on <m>[a,b]</m>, then
+  <men>
+    \int_a^b f dg = \int_a^b fg' dx
+  </men>
+  (here the right hand side is a Riemann, not Riemann-Stieltjes, integral).
+  </li>
+  </ol>
+  </p>
+  </statement>
+  </theorem>
+    
+  
+  
+  <p>
+  A function <m>g</m> has bounded variation on an interval <m>[a,b]</m>
+  if it satisfies the following condition.
+  First, for a partition <m>P = \{x_0,\dotsc,x_n\}</m> of <m>[a,b]</m>,
+  the variation of <m>g</m> with respect to <m>P</m> is the sum
+  <men>
+    V(P,g) = \sum_{i=1}^n |g(x_i)-g(x_{i-1})|
+  </men>
+  (note the absolute value signs).
+  The variation of <m>g</m> on <m>[a,b]</m> is the supremum
+  of the variation over all partitions of the interval.
+  We say <m>g</m> has bounded variation if this supremum is finite.
+  (It is an easy exercise to show that monotone functions have
+  bounded variation; and not too hard to show that sums and differences
+  of functions of bounded variation have again bounded variation.
+  However, not every continuous function has bounded variation!)
+  </p>
+  
+  </subsection>
+  
+  <subsection>
+  <title>Step functions</title>
+  
+  <p>
+  A function <m>g</m> on <m>[a,b]</m> is called a step function
+  if there is a partition <m>a = x_0 \lt x_1 \lt \dotsb \lt x_n = b</m>
+  such that <m>g</m> is constant on each interval <m>(x_{i-1},x_i)</m>.
+  (In the terminology of Lebesgue integration, these are simple functions,
+  with the restriction that the level sets are intervals, as opposed
+  to more general measurable sets.)
+  The jump of <m>g</m> at each point <m>x</m> is defined as the difference
+  between the one-sided limits at <m>x</m>,
+  except if <m>x</m> is one of the endpoints <m>a,b</m>, in which case
+  the jump is the difference between the one-sided limit and the value
+  at that point.
+  </p>
+  
+  <p>
+  Every step function has bounded variation.
+  (The variation is equal to the sum of the absolute values of the jumps.)
+  </p>
+  
+  <p>
+  Every step function is a difference of monotone increasing functions.
+  Here is a simple construction which almost achieves this:
+  Let <m>g_1(x)</m> be the sum of all the positive jumps of <m>g</m>
+  between <m>a</m> and <m>x</m>, and let <m>g_2</m> be the negative
+  of the sum of all the negative jumps of <m>g</m> between
+  <m>a</m> and <m>x</m>.
+  Then <m>g_1</m> and <m>g_2</m> are monotone increasing,
+  and <m>g(x) = g(a) + g_1(x) - g_2(x)</m> for all <m>x</m>
+  which are not jump points of <m>g</m>; that is, for all <m>x</m>
+  other than the points <m>x_i</m> in the partition.
+  This simple construction does not give fine control over the
+  values at the jump points.
+  It should be possible to get precisely the step function <m>g</m>
+  at all <m>x</m> by using one-sided limits more carefully.
+  </p>
+  
+  <p>
+  The reason we are interested in step functions is that
+  Riemann-Stieltjes integration with respect to a step function
+  is equivalent to a sum.
+  Of course our main interest is in evaluating sums by considering
+  them as integrals (with respect to step functions).
+  </p>
+  
+  <theorem>
+  <statement>
+  Let <m>g</m> be a step function on <m>[a,b]</m> with respect
+  to a partition <m>a = x_1 \lt x_1 \lt \dotsb \lt x_n = b</m>.
+  For each <m>k</m> let <m>g_k</m> be the jump of <m>g</m> at <m>x_k</m>.
+  Let <m>f</m> be defined on <m>[a,b]</m>.
+  Assume that for each <m>k</m>, it is not the case that
+  both <m>f</m> and <m>g</m> are discontinuous from the left at <m>x_k</m>,
+  or both discontinuous from the right at <m>x_k</m>.
+  (It is allowed for <m>f</m> to be discontinuous from one side,
+  and <m>g</m> from the other side; or for <m>g</m> to be discontinuous
+  from both sides, if <m>f</m> is continuous; or vice versa.)
+  Then <m>\int_a^b f dg</m> exists and
+  <men>
+    \int_a^b f dg = \sum_{k=1}^n f(x_k) g_k
+  </men>.
+  </statement>
+  </theorem>
+  
+  </subsection>
+  
+  
+</section>

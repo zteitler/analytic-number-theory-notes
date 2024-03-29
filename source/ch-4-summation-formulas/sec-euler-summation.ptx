@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-euler-summation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Euler Summation</title>
+  
+  <theorem>
+  <title>Euler's summation formula</title>
+  <statement>
+  Let <m>0 \lt y \lt x</m> be real numbers and assume that
+  <m>f : [y,x] \to \bbR</m> has a continuous derivative on <m>[y,x]</m>.
+  Then
+  <men>
+    \sum_{y \lt n \leq x} f(n)
+    = \int_y^x f(t) dt + \int_y^x \{t\} f'(t) dt
+    + \{y\}f(y) - \{x\}f(x)
+  </men>
+  (where <m>\{t\}</m> denotes the fractional part of <m>t</m>,
+  and similarly for <m>\{x\},\{y\}</m>).
+  </statement>
+  
+  <proof>
+  Observe that <m>\lfloor t \rfloor</m> is a step function with jump <m>1</m>
+  at each integer, so
+  <men>
+    \sum_{y \lt n \leq x} f(n) = \int_y^x f d\lfloor t \rfloor
+  </men>.
+  We apply linearity of the Riemann-Stieltjes integral
+  with respect to <m>t = \lfloor t \rfloor + \{t\}</m>,
+  so that <m>dt = d\lfloor t \rfloor + d\{t\}</m>.
+  This gives
+  <men>
+    \sum_{y \lt n \leq x} f(n) = \int_y^x f dt - \int_y^x f d\{t\}
+  </men>.
+  By integration by parts,
+  <men>
+    \int_y^x f d\{t\} = \left. f(t)\{t\} \right|_y^x - \int_y^x \{t\} f'(t) dt
+  </men>
+  and the result follows.
+  </proof>
+  </theorem>
+
+</section>

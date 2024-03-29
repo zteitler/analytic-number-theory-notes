@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-summation-by-parts" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Summation by Parts</title>
+  
+  <subsection>
+  <title>Integration by parts</title>
+  
+  Recall integration by parts:
+  <men>
+    \int u dv = uv - \int v du,
+    \qquad
+    \int_y^x u dv = \left. uv \right|_y^x - \int_y^x v du
+  </men>.
+  
+  </subsection>
+  
+  
+  <subsection>
+  <title>Summation by parts</title>
+  
+  <theorem>
+  <statement>
+  Let <m>(a_n)_{n \geq 1}</m> and <m>(f(n))_{n \geq 1}</m>
+  be sequences of complex numbers and let <m>1 \leq c \lt b</m>
+  be positive integers.
+  For each <m>N \in \bbN</m>, let <m>A(N) = \sum_{n=1}^N a_n</m>.
+  Then
+  <men>
+    \sum_{n=c}^b a_n f(n) = A(b)f(b) - A(c-1)f(c)
+      - \sum_{n=c}^{b-1} A(n)(f(n+1) - f(n))
+  </men>.
+  </statement>
+  </theorem>
+  
+  <p>
+  In this theorem, <m>a_n</m> plays the role of <m>dv</m>
+  and <m>A(N)</m> corresponds to the antiderivative <m>v</m>;
+  conversely, <m>f(n)</m> corresponds to <m>u</m>
+  and the difference <m>f(n+1)-f(n)</m> corresponds to
+  the differential <m>du</m>.
+  Observe that this is a forward difference.
+  (A backwards difference would be <m>f(n)-f(n-1)</m>.
+  Exercise: find a version of summation by parts
+  using backwards differences.)
+  </p>
+  
+  <p>
+  Observe that
+  <me>
+    \left. A(n)f(n) \right|_c^b
+  </me>
+  would be
+  <me>
+    A(b)f(b) - A(c)f(c)
+  </me>,
+  slightly different from the <m>A(b)f(b)-A(c-1)f(c)</m>
+  appearing in the theorem.
+  Likewise, the sum on the right hand side has bounds
+  <m>c \leq n \leq b-1</m> instead of <m>c \leq n \leq b</m>.
+  So, in contrast to integration by parts, the bounds of summation
+  are slightly different.
+  But then, in the case of integration,
+  if we think of summing rectangles (as in Riemann summation),
+  the difference here is just two rectangles (one at each endpoint),
+  and since the rectangles are <lq/>infinitesimally thin<rq/>,
+  it doesn't make a difference to include it or not.
+  </p>
+  
+  <exercise>
+  <p>
+  Use summation by parts with Riemann sums to prove integration by parts.
+  </p>
+  </exercise>
+  
+  <proof>
+  <title>Proof of summation by parts</title>
+  <p>
+  Expand the right hand side and cancel terms.
+  </p>
+  </proof>
+  
+  </subsection>
+  
+</section>

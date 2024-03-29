@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-abel-summation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Abel Summation</title>
+  
+  <theorem>
+  <title>Abel's summation formula</title>
+  <statement>
+  Suppose <m>(a_n)_{n \geq 1}</m> is a sequence of complex numbers
+  and <m>f: [y,x] \to \bbR</m> has a continuous derivative
+  on the interval <m>[y,x]</m>, where <m>0 \lt y \lt x</m>.
+  For each <m>x \gt 0</m>, let <m>A(x) = \sum_{n \leq x} a_n</m>.
+  Then
+  <men>
+    \sum_{y \lt n \leq x} a_n f(n)
+    = \left. Af \right|_y^x - \int_y^x A(t)f'(t) dt
+  </men>.
+  </statement>
+  
+  <proof>
+  The function <m>A</m> is a step function, with jumps at each integer
+  given by the sequence <m>a_n</m>.
+  Therefore the Riemann-Stieltjes integral gives
+  <men>
+    \sum_{y \lt n \leq x} a_n f(n) = \int_y^x f dA
+  </men>.
+  By integration by parts,
+  <men>
+    \int_y^x f dA = \left. Af \right|_y^x - \int_y^x A df
+  </men>.
+  Since <m>f</m> has a continuous derivative on the interval,
+  the last integral is equal to <m>\int_y^x Af' dt</m>.
+  </proof>
+  </theorem>
+  
+
+</section>
