@@ -1054,6 +1054,15 @@ var ptx_lunr_docs = [
   "body": " Proof of  We claim that .  First recall the following Taylor series for logarithm: .  Consider the logarithm of the product on the left: . Use for the first term. For the second term, observe that converges. To see this, start with and then observe that the sum over all positive integers converges by telescoping; this implies that the sum over just the primes also converges. So we can replace the sum over with the difference between the sum over all , and the sum over . This gives: . In fact, . Therefore becomes where .  Taking the exponential of each side gives where . We have . Thus , as claimed.  "
 },
 {
+  "id": "sec-overview",
+  "level": "1",
+  "url": "sec-overview.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Overview of Proof of Dirichlet’s Theorem",
+  "body": " Overview of Proof of Dirichlet's Theorem  "
+},
+{
   "id": "bibliography",
   "level": "1",
   "url": "bibliography.html",
