@@ -24,6 +24,8 @@
 
     <xi:include href="./ch-6-distribution-of-primes.ptx" />
 
+    <xi:include href="./ch-7-dirichlets-theorem.ptx" />
+
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

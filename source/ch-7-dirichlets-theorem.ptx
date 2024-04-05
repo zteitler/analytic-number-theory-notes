@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-7-dirichlets-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dirichlet's Theorem</title>
+  
+  <introduction>
+  <p>
+  An arithmetic progression is a sequence of numbers <m>a+kq</m>,
+  <m>k \geq 0</m>, where <m>a</m> and <m>q</m> are fixed integers,
+  which for simplicity we assume are strictly positive.
+  It is equivalent to the part of the
+  congruence class of <m>a</m> modulo <m>q</m>
+  which is greater than or equal to <m>a</m>.
+  If <m>a</m> and <m>q</m> share a common factor,
+  then there is at most one prime in the arithmetic progression,
+  namely <m>a</m> itself if it happens to be prime.
+  </p>
+  
+  <p>
+  So, fix some <m>q \gt 0</m> and consider the congruence classes
+  <m>[0], [1], \dotsc, [q-1]</m> modulo <m>q</m>.
+  There are only finitely many primes in congruence classes that
+  share a common factor with <m>q</m>.
+  The remaining infinitely many primes are in congruence classes
+  that are coprime to <m>q</m>.
+  There are <m>\phi(q)</m> of these classes, where <m>\phi</m>
+  is the Euler totient function.
+  Recalling that these classes coprime to <m>q</m> are precisely
+  the ones that have multiplicative inverses modulo <m>q</m>,
+  thus corresponding to units in the ring <m>\bbZ/q\bbZ</m>,
+  we may denote the set of congruence classes coprime to <m>q</m>
+  as <m>(\bbZ/q\bbZ)^\times</m>.
+  </p>
+  
+  <p>
+  By the pigeonhole principle, some class coprime to <m>q</m>
+  includes infinitely many primes.
+  Dirichlet's theorem gives the result that in fact every class
+  coprime to <m>q</m> contains infinitely many primes.
+  More precisely, if <m>\gcd(a,q)=1</m> then the sum
+  <m>\sum_{p \equiv a \pmod{q}} \frac{\log p}{p}</m> diverges.
+  </p>
+  
+  <p>
+  We will be even more precise than that.
+  Recall that by Mertens's theorem,
+  <m>\sum_{p \leq x} \frac{\log p}{p} = \log x + O(1)</m>.
+  Therefore
+  <men>
+    \sum_{a \in \bbZ/q\bbZ} \left( \sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} \right)
+    = \sum_{p \leq x} \frac{\log p}{p} = \log x + O(1)
+  </men>.
+  There are only finitely many primes in classes that share a common
+  factor with <m>q</m>; dropping those classes changes the sum
+  by a bounded amount.
+  Therefore,
+  <men>
+    \sum_{a \in (\bbZ/q\bbZ)^\times} \left( \sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} \right)
+    = \log x + O(1)
+  </men>.
+  What we will show is that each of the inner sums,
+  for each <m>a \in (\bbZ/q\bbZ)^\times</m>,
+  contributes an equal amount to the total:
+  </p>
+  
+  <theorem>
+  <title>Dirichlet's Theorem</title>
+  <statement>
+  For each <m>a \in (\bbZ/q\bbZ)^\times</m>,
+  <men>
+    \sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} = \frac{1}{\phi(q)} \log x + O(1)
+  </men>.
+  </statement>
+  </theorem>
+  
+  <remark>
+  <p>
+  What about arithmetic progressions that start at a higher value,
+  for example <m>53 + 5k</m> instead of <m>3 + 5k</m>?
+  The difference between the primes in these two arithmetic progressions
+  is some finite set of primes,
+  so the difference in the summations is some bounded amount,
+  which simply gets absorbed in the <m>O(1)</m> term.
+  </p>
+  </remark>
+  
+  <remark>
+  <p>
+  One might ask other questions, for example:
+  <ol>
+  <li>
+  What about the sum <m>\sum_{p \equiv a \pmod{q}, p \leq x} \frac{1}{p}</m>?
+  Is it <m>\frac{1}{\phi(q)} \log \log x + \frac{1}{\phi(q)} b + O\left(\frac{1}{\log x}\right)</m>?
+  </li>
+  
+  <li>
+  Extending the prime counting function <m>\pi(x)</m> (the number of primes
+  less than or equal to <m>x</m>),
+  let <m>\pi(x,q,a)</m> be the number of primes <m>p \leq x</m>
+  such that <m>p \equiv a \pmod{q}</m>.
+  The Prime Number Theorem says that <m>\pi(x) \sim \frac{x}{\log x}</m>.
+  Is <m>\pi(x,q,a) \sim \frac{1}{\phi(q)} \frac{x}{\log x}</m>?
+  </li>
+  </ol>
+  While these are natural questions to consider,
+  for our course we will focus on the version of the theorem
+  stated above.
+  </p>
+  </remark>
+  
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="ch-7-dirichlets-theorem/sec-overview.ptx" />
+
+
+</chapter>
