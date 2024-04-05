@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-characters" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Characters of finite abelian groups</title>
+
+<subsection>
+<title> Definition </title>
+
+  <definition>
+  <p>
+  Let <m>G</m> be a finite abelian group.
+  A <term>character</term> of <m>G</m>
+  is a homomorphism <m>\chi : G \to \bbC^*</m>,
+  the multiplicative group of nonzero complex numbers.
+  </p>
+  </definition>
+  
+  <remark>
+  <p>
+  The definition makes sense for infinite abelian groups,
+  but we will not get into that in this course.
+  </p>
+  </remark>
+  
+  <remark>
+  <p>
+  The idea also makes sense for nonabelian groups,
+  but the definition is slightly different,
+  or, more precisely, the general definition of character
+  happens to simplify in the abelian case.
+  In representation theory, a representation of a group <m>G</m>
+  is a homomorphism from <m>G</m> to a (multiplicative) group of matrices.
+  The character of the representation is the map <m>G \to \bbC</m>
+  taking each group element to the trace of the corresponding matrix
+  in the representation.
+  This is generally not a homomorphism; for matrices <m>A,B</m>,
+  <m>\operatorname{tr}(A)\operatorname{tr}(B)</m>
+  is generally not equal to <m>\operatorname{tr}(AB)</m>.
+  Also, an invertible matrix can have trace zero,
+  so characters can take the value zero.
+  </p>
+  
+  <p>
+  However, if it happens that the matrices are <m>1 \times 1</m>,
+  then the trace of the matrix is simply its entry.
+  In this case the character is essentially the same thing as the
+  representation, and it is a homomorphism.
+  </p>
+  
+  <p>
+  It turns out that for abelian groups we can essentially
+  reduce to the <m>1 \times 1</m> case.
+  So we can more or less conflate characters with representations,
+  and define characters as homomorphisms, with nonzero values.
+  </p>
+  </remark>
+  
+  <proposition>
+  <statement>
+  Let <m>G</m> be a finite abelian group of order <m>n</m>
+  and let <m>\chi</m> be a character on <m>G</m>.
+  For every <m>g \in G</m>, <m>\chi(g)</m> is an <m>n</m>th
+  root of unity.
+  </statement>
+  
+  <proof>
+  <p>
+  By Lagrange's theorem, <m>g^n = 1</m>, the identity in <m>G</m>.
+  Then <m>\chi(g)^n = \chi(g^n) = \chi(1) = 1</m>.
+  </p>
+  </proof>
+  </proposition>
+  
+  <definition>
+  <p>
+  The trivial character which takes every element of <m>G</m> to <m>1</m>
+  is denoted <m>\chi_0</m> and called the <term>principal character</term>
+  of <m>G</m>.
+  </p>
+  
+  <p>
+  The set of all characters of <m>G</m> is denoted <m>\hat{G}</m>
+  (or <m>\widehat{G}</m>) and called the <term>dual group</term> of <m>G</m>.
+  We define a multiplication on <m>\hat{G}</m>, pointwise:
+  for <m>\chi_1, \chi_2 \in \hat{G}</m>, the product <m>\chi_1 \chi_2</m>
+  is defined by
+  <men>
+    (\chi_1 \chi_2)(g) = (\chi_1(g))(\chi_2(g))
+  </men>.
+  </p>
+  </definition>
+  
+  <proposition>
+  <statement>
+  <p>
+  For every finite abelian group <m>G</m>,
+  the set <m>\hat{G}</m> is a group with the multiplication defined above.
+  The identity element is the principal character.
+  For <m>\chi \in \hat{G}</m>, the inverse is the character
+  denoted <m>\chi^{-1}</m> or <m>\overline{\chi}</m>, defined by
+  <m>\chi^{-1}(g) = (\chi(g))^{-1}</m> or <m>\overline{\chi}(g) = \overline{\chi(g)}</m>
+  (these are equal).
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  It is left as an exercise to check that the pointwise multiplication
+  is associative and that the principal character is an identity element.
+  The fact that <m>(\chi(g))^{-1} = \overline{\chi(g)}</m>
+  follows from observing that since <m>\chi(g)</m> is a root of unity,
+  then it has norm <m>1</m>; <m>z^{-1} = \overline{z}</m> holds
+  for any complex number of norm <m>1</m> (exercise).
+  </p>
+  </proof>
+  </proposition>
+  
+  <p>
+  Our next goal is to prove that in fact <m>\hat{G} \cong G</m>.
+  We start with cyclic groups.
+  </p>
+  
+  <definition>
+  <p>
+  For a real number <m>t</m> we define
+  <m>e(t) = \exp(2 \pi i t) = \cos(2 \pi t) + i \sin(2 \pi t)</m>.
+  </p>
+  </definition>
+  
+  <proposition>
+  <statement>
+  <p>
+  Let <m>G = \langle g_0</m> be a cyclic group of order <m>n</m>.
+  There are exactly <m>n</m> characters of <m>G</m>, given as follows.
+  For each <m>m</m> let <m>\chi_m</m> be defined by
+  <m>\chi_m(g_0^k) = e(mk/n)</m>.
+  Then <m>\hat{G} = \{ \chi_0 = 1, \chi_1, \dotsc, \chi_{n-1} \}</m>.
+  In particular, <m>\hat{G} = \langle \chi_1 \rangle</m>
+  is cyclic of order <m>n</m>.
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  First we verify that each <m>\chi_m</m> is a character.
+  We have to check that <m>\chi_m(ab) = \chi_m(a)\chi_m(b)</m>.
+  This holds because
+  <men>
+    \chi_m(g_0^k g_0^\ell) = \chi_m(g_0^{k+\ell}) = e(m(k+\ell)/n)
+      = e(mk/n) e(m\ell/n) = \chi_m(g_0^k) \chi_m(g_0^\ell)
+  </men>.
+  </p>
+  
+  <p>
+  Next we check that they are pairwise distinct.
+  Observe that <m>\chi_m(g_0^1) = e(m/n)</m>.
+  These are different for different values of <m>m</m>
+  in the range <m>0 \leq m \lt n</m>.
+  (It is true that <m>e(m/n) = e((m+n)/n)</m>,
+  and indeed, <m>\chi_m = \chi_{m+n}</m>.
+  This is why we stop our list at <m>\chi_{n-1}</m>;
+  continuing would simply repeat the characters already on our list.)
+  Since the functions have different values at the point <m>g_0</m>,
+  they are different functions.
+  </p>
+  
+  <p>
+  Now we check that every character is one of the <m>\chi_m</m>.
+  Let <m>\chi</m> be any character of <m>G</m>.
+  The value <m>\chi(g_0)</m> must be an <m>n</m>th root of unity.
+  So, it is equal to <m>e(m/n)</m> for some <m>m</m>,
+  with <m>0 \leq m \lt n</m>.
+  Then
+  <men>
+    \chi(g_0^k) = \chi(g_0)^k = e(m/n)^k = e(mk/n) = \chi_m(g_0^k)
+  </men>
+  for every <m>k</m>. Therefore <m>\chi = \chi_m</m>.
+  </p>
+  
+  <p>
+  Finally, we check that <m>\hat{G} = \langle \chi_1 \rangle</m>
+  is cyclic.
+  Indeed, for every <m>m</m> and <m>k</m>,
+  <men>
+    (\chi_1^m)(g_0^k) = (\chi_1(g_0^k))^m = (e(k/n))^m = e(mk/n) = \chi_m(g_0^k)
+  </men>.
+  The fact that this holds for all <m>k</m> means <m>\chi_1^m = \chi_m</m>.
+  So, the powers of <m>\chi_1</m> give all the elements of <m>\hat{G}</m>.
+  </p>
+  </proof>
+  </proposition>
+  
+  <proposition>
+  <statement>
+  <p>
+  For finite abelian groups <m>G</m> and <m>H</m>,
+  <m>\widehat{G \times H} \cong \hat{G} \times \hat{H}</m>.
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  We define a mapping <m>\hat{G} \times \hat{H} \to \widehat{G \times H}</m>
+  as follows.
+  Let <m>\chi_1 \in \hat{G}</m> and <m>\chi_2 \in \hat{H}</m>.
+  Define a character <m>(\chi_1,\chi_2)</m> on <m>G \times H</m>
+  by
+  <men>
+    (\chi_1,\chi_2)(g,h) = \chi_1(g) \chi_2(h)
+  </men>.
+  This is a homomorphism from <m>\hat{G} \times \hat{H}</m>
+  to <m>\widehat{G \times H}</m> (exercise).
+  It is injective.
+  (If <m>\chi_1</m> is nonprincipal on <m>G</m> or <m>\chi_2</m> is nonprincipal on <m>H</m>,
+  then <m>\chi_1(g_1) \neq 1</m> for some <m>g_1 \in G</m>
+  or likewise <m>\chi_2(h_1) \neq 1</m> for some <m>h_1 \in H</m>;
+  hence <m>(\chi_1,\chi_2)(g_1,1_H) = \chi_1(g_1) \neq 1</m>
+  or similarly <m>(\chi_1,\chi_2)(1_G,h_1) = \chi_2(h_1) \neq 1</m>,
+  and either way, <m>(\chi_1,\chi_2)</m> is nonprincipal on <m>G \times H</m>.)
+  </p>
+  
+  <p>
+  The map is surjective.
+  For any character <m>\chi</m> on <m>G \times H</m>,
+  define <m>\chi_1 : G \to \bbC^*</m> by <m>\chi_1(g) = \chi(g,1_H)</m>
+  and define <m>\chi_2 : H \to \bbC^*</m> by <m>\chi_2(h) = \chi(1_G,h)</m>.
+  Then <m>\chi_1</m> is a character on <m>G</m>, <m>\chi_2</m> is a
+  character on <m>H</m>, and <m>\chi = (\chi_1,\chi_2)</m>
+  (exercise).
+  </p>
+  </proof>
+  </proposition>
+  
+  <p>
+  In particular, if <m> \hat{G} \cong G </m> and <m> \hat{H} \cong H </m>,
+  then <m> \widehat{G \times H} \cong G \times H </m>.
+  </p>
+  
+  <theorem>
+  <title> Fundamental Theorem of Finite Abelian Groups </title>
+  <statement>
+  <p>
+  Every finite abelian group is a direct product of cyclic groups.
+  That is, any finite abelian group <m>G</m> is
+  <men>
+    G \cong \bbZ/m_1 \bbZ \times \dotsb \times \bbZ/m_k \bbZ
+  </men>.
+  </p>
+  </statement>
+  </theorem>
+  
+  <p>
+  By the Chinese Remainder Theorem, if <m>m = p_1^{a_1} \dotsm p_k^{a_k}</m>,
+  then
+  <men>
+    \bbZ / m \bbZ \cong \bbZ / p_1^{a_1} \bbZ \times \dotsb \times \bbZ / p_k^{a_k} \bbZ
+  </men>.
+  So if we choose to, we can assume that the decomposition of an
+  arbitrary finite abelian group is into cyclic groups of prime power order.
+  </p>
+  
+  
+  <corollary>
+  <statement>
+  <p>
+  Let <m>G</m> be any finite abelian group.
+  Then <m> \hat{G} \cong G </m>.
+  In particular, <m>|\hat{G}| = |G|</m>.
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  By induction on the number of cyclic factors in a decomposition of <m>G</m>
+  as a direct product of cyclic groups.
+  </p>
+  </proof>
+  </corollary>
+  
+  <p>
+  We are also interested in taking sums of character values
+  (just as earlier we considered sums of roots of unity).
+  </p>
+  
+  <theorem>
+  <statement>
+  <p>
+  Let <m>G = \langle g_0 \rangle</m> be a cyclic group of order <m>n</m>.
+  Then the following hold.
+  <ol>
+  <li>
+  <p>
+    If a character <m>\chi</m> of <m>G</m> is given and we sum
+    over elements of <m>G</m>, then
+    <men>
+      \sum_{g \in G} \chi(g) =
+      \begin{cases}
+        n, \amp \text{if } \chi = \chi_0 \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>.
+  </p>
+  </li>
+  
+  <li>
+  <p>
+    If an element <m>g \in G</m> is given and we sum over characters,
+    then
+    <men>
+      \sum_{\chi \in \hat{G}} \chi(g) =
+      \begin{cases}
+        n, \amp \text{if } g = 1 \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>
+  </p>
+  </li>
+  </ol>
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  First suppose <m>\chi = \chi_m</m> is given.
+  Then the sum is
+  <men>
+    \sum_{g \in G} \chi(g) = \sum_{k=0}^{n-1} \chi_m(g_0^k)
+      = \sum_{k=0}^{n-1} e(mk/n)
+  </men>.
+  Since <m>e(m/n)</m> is an <m>n</m>th root of unity,
+  the first claim follows.
+  </p>
+  
+  <p>
+  Next, suppose <m>g = g_0^k</m> is given.
+  Then the sum is
+  <men>
+    \sum_{\chi \in \hat{G}} \chi(g) = \sum_{m=0}^{n-1} \chi_m(g)
+      = \sum_{m=0}^{n-1} e(mk/n)
+  </men>.
+  Here, <m>e(k/n)</m> is an <m>n</m>th root of unity,
+  so once again the result follows.
+  </p>
+  </proof>
+  </theorem>
+  
+  <p>
+  (The textbook includes here the result that <m>\hat{G}</m>
+  is cyclic of order <m>n</m> when <m>G</m> is.
+  I omit that here because we already showed it earlier.
+  </p>)
+  
+</subsection>
+  
+    
+    
+
+</section>

@@ -2,7 +2,241 @@
 
 <section xml:id="sec-overview" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Overview of Proof of Dirichlet's Theorem</title>
-  
 
+<introduction>  
+  <p>
+  I will add to this overview as I continue to work through the proof.
+  </p>
+</introduction>
+
+<subsection>
+<title> Repeating the proof of Mertens's theorems </title>
+  
+  <p>
+  To some extent the proof is a reprise of the proof of Mertens's
+  theorems:
+  <ol>
+  <li>
+    We start with estimating <m>\sum \log n</m> by using a comparison
+    between the sum and integral of a monotone function.
+  </li>
+  <li>
+    Next, we rewrite this as a sum involving the Von Mangoldt function,
+    <m>\sum \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor</m>,
+    by rewriting the previous sum as a double sum
+    indexed over lattice points under a hyperbola.
+  </li>
+  <li>
+    This in turn lets us estimate <m>\sum \frac{\Lambda(n)}{n}</m>,
+    where we can control the error term thanks to Chebyshev's estimate
+    for the Chebyshev <m>\psi</m> function.
+  </li>
+  <li>
+    We check that the terms <m>\frac{\log p}{p^k}</m> with powers
+    <m>k \geq 2</m> have a convergent sum, so they contribute
+    a bounded amount to the total, in other words an <m>O(1)</m> amount.
+    Dropping these terms leaves the sum <m>\sum \frac{\log p}{p}</m>
+    and only makes an <m>O(1)</m> difference.
+  </li>
+  </ol>
+  (For Mertens's theorems our next step was to use
+  Riemann-Stieltjes integration and integration by parts
+  to change the sum to <m>\sum \frac{1}{p}</m>.
+  However we will not take this step in our study of
+  Dirichlet's theorem.)
+  </p>
+  
+  <p>
+  Our plan is basically to repeat all the same ideas,
+  with the added restriction of summing over a congruence class
+  modulo <m>q</m>.
+  How will we do this?
+  The basic idea is to use complex roots of unity.
+  </p>
+</subsection>
+
+<subsection>
+<title> Complex roots of unity </title>
+
+  <p>
+  A complex <m>n</m>th root of unity is a complex number
+  <m>\xi</m> (the Greek letter xi) such that <m>\xi^n = 1</m>.
+  There are <m>n</m> such numbers, forming the vertices
+  of a regular <m>n</m>-gon inscribed in the unit circle.
+  The <m>n</m>th roots of unity are <m>\exp(2\pi k \sqrt{-1}/n)</m>
+  for <m>0 \leq k \lt n</m>.
+  They form a group under multiplication.
+  This group is cyclic.
+  </p>
+  
+  <p>
+  A fundamental fact about roots of unity
+  concerns the sum of roots of unity, or of powers of a root of unity.
+  </p>
+  
+  <proposition>
+  <statement>
+  <p>
+  Let <m>n \geq 2</m> and let <m>\xi_0,\dotsc,\xi_{n-1}</m>
+  be the <m>n</m>th roots of unity.
+  Then <m>\sum_{k=0}^{n-1} \xi_k = 0</m>.
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  Geometrically, the points are equally spaced around the origin,
+  so their average or center of gravity is at the origin.
+  </p>
+  
+  <p>
+  Algebraically, the polynomial <m>x^n-1</m> factors,
+  <men>
+    x^n-1 = \prod_{k=0}^{n-1} (x - \xi_k)
+  </men>.
+  The coefficient of <m>x^{n-1}</m> is zero on the left hand side,
+  and is <m>-(\xi_0+\dotsb+\xi_{n-1})</m> on the right hand side.
+  </p>
+  </proof>
+  </proposition>
+  
+  <remark>
+  <p>
+  Likewise, <m>\sum_{1 \leq i \lt j \lt n-1} \xi_i \xi_j = 0</m>,
+  and similar statements hold for the sum of products of
+  <m>3, 4, \dotsc, n-1</m> of the <m>\xi_k</m>'s.
+  </p>
+  </remark>
+  
+  <proposition>
+  <statement>
+  Let <m>\xi</m> be an <m>n</m>th root of unity. Then
+  <men>
+    \sum_{k=0}^{n-1} \xi^k =
+    \begin{cases}
+      n, \amp \xi = 1 \\
+      0, \amp \xi \neq 1
+    \end{cases}
+  </men>
+  </statement>
+  
+  <proof>
+  <p>
+  If <m>\xi=1</m> then every <m>\xi^k=1</m> and the sum, having <m>n</m> terms,
+  is equal to <m>n</m>.
+  </p>
+  
+  <p>
+  Otherwise, suppose that <m>\xi \neq 1</m>.
+  Let <m>d</m> be the order of <m>\xi</m>, the smallest positive integer
+  such that <m>\xi^d = 1</m>.
+  The assumption <m>\xi \neq 1</m> means <m>d \gt 1</m>.
+  </p>
+  
+  <p>
+  Note that <m>d</m> must be a divisor of <m>n</m>.
+  (This follows from Lagrange's theorem in group theory.
+  Alternatively, if <m>n = dq+r</m> with <m>0 \leq r \lt d</m>,
+  then <m>\xi^r = \xi^n (\xi^d)^{-q}</m>.
+  Since <m>\xi^n=\xi^d=1</m>, then <m>\xi^r=1</m>as well.
+  The fact that <m>r \lt d</m>
+  contradicts that <m>d</m> is the smallest positive integer
+  such that <m>\xi^d=1</m>, unless, of course, <m>r</m> is not
+  positive.
+  And this must be the case: <m>r=0</m>, so <m>d</m> divides <m>n</m>.)
+  </p>
+  
+  <p>
+  Then the values <m>\xi^0,\xi^1,\dotsc,\xi^{d-1}</m>
+  are <m>d</m>th roots of unity, and they are pairwise distinct
+  (why? exercise).
+  So they are in fact all of the <m>d</m>th roots of unity.
+  By the previous proposition,
+  <m>\sum_{k=0}^{d-1} \xi^k = 0</m>.
+  </p>
+  
+  <p>
+  Finally, the full sum <m>\sum_{k=0}^{n-1} \xi^k</m>
+  is simply equal to the sum of the first <m>d</m> terms,
+  repeated <m>n/d</m> times.
+  This is because <m>\xi^{k+d} = \xi^k</m>,
+  so that each term in the sum is simply a repetition of the term
+  <m>d</m> steps earlier.
+  Therefore the full sum is <m>n/d</m> times zero,
+  which is simply zero.
+  </p>
+  </proof>
+  </proposition>
+  
+  <p>
+  So, our strategy for Dirichlet's theorem is to consider sums
+  <men>
+    \sum_{p \leq x} \frac{\log p}{p} \xi_p
+  </men>
+  where, for each <m>p</m>, <m>\xi_p</m> is a root of unity
+  chosen in some way.
+  Specifically, we will choose them so that if
+  <m>p \equiv a \pmod{q}</m>, then <m>\xi_p = 1</m>,
+  but otherwise, the <m>\xi_p</m> will cycle among
+  all the roots of unity.
+  Then we will add together all of these sums,
+  with the result that the terms with <m>p \equiv a \pmod{q}</m>
+  will add up,
+  but the other terms will cancel out (add up to zero).
+  </p>
+  
+  <example>
+  <p>
+  Let <m>q = 3</m>.
+  For every prime <m>p</m>, define
+  <men>
+    \epsilon(p) =
+    \begin{cases}
+      1, \amp p \equiv 1 \pmod{3} \\
+      -1, \amp p \equiv 2 \pmod{3} \\
+      0, \amp p \equiv 0 \pmod{3} (p=3)
+    \end{cases}
+  </men>.
+  Other than <m>p=3</m>, these are <m>2</m>nd roots of unity.
+  </p>
+  
+  <p>
+  Consider the sums
+  <men>
+    A(x) = \sum_{p \leq x} \frac{\log p}{p}
+  </men>
+  (here the root of unity is <m>\xi_p = 1</m> for all <m>p</m>)
+  and
+  <men>
+    B(x) = \sum_{p \leq x} \frac{\log p}{p} \epsilon(p)
+      = - \frac{\log 2}{2} (-1) - \frac{\log 5}{5}
+        + \frac{\log 7}{7} - \frac{\log 11}{11} + \frac{\log 13}{13} + \dotsb
+  </men>.
+  Then
+  <men>
+    A(x) + B(x) = 2\left( \frac{\log 7}{7} + \frac{\log 13}{13} + \dotsb \right)
+      = 2 \sum_{p \equiv 1 \pmod{3}, p \leq x} \frac{\log p}{p}
+  </men>
+  and
+  <men>
+    A(x) - B(x) = 2\left( \frac{\log 2}{2} + \frac{\log 5}{5} + \dotsb \right)
+      = 2 \sum_{p \equiv 2 \pmod{3}, p \leq x} \frac{\log p}{p}
+  </men>.
+  </p>
+  </example>
+  
+  <p>
+  We will have to figure out how to choose the roots of unity
+  <m>\xi_p</m> in general in order to get the cancellation we seek.
+  And we will have to estimate the order of growth of these sums
+  involving the roots of unity.
+  This is our plan!
+  </p>
+  
+</subsection>
+  
+  
+    
+    
 
 </section>
