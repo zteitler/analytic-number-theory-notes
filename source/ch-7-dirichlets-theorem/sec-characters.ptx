@@ -276,7 +276,12 @@
   </p>
   </proof>
   </corollary>
-  
+
+</subsection>
+
+<subsection>
+<title> Sums of character values </title>
+
   <p>
   We are also interested in taking sums of character values
   (just as earlier we considered sums of roots of unity).
@@ -347,8 +352,12 @@
   <p>
   (The textbook includes here the result that <m>\hat{G}</m>
   is cyclic of order <m>n</m> when <m>G</m> is.
-  I omit that here because we already showed it earlier.
-  </p>)
+  I omit that here because we already showed it earlier.)
+  </p>
+  
+  <p>
+  We will generalize this to non-cyclic groups in the next section.
+  </p>
   
 </subsection>
   

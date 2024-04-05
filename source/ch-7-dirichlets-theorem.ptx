@@ -115,5 +115,7 @@
 
   <xi:include href="ch-7-dirichlets-theorem/sec-characters.ptx" />
 
+  <xi:include href="ch-7-dirichlets-theorem/sec-orthogonality.ptx" />
+
 
 </chapter>
