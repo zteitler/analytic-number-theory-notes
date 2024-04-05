@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dirichlet’s Theorem</title>
+<title>Characters of finite abelian groups</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-mertens.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="analytic-number-theory-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-overview.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -225,9 +225,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mertens.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Mertens’ Theorems</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-7-dirichlets-theorem.html" class="internal"><span class="codenumber">7</span> <span class="title">Dirichlet’s Theorem</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></div>
 <ul class="structural toc-item-list">
@@ -235,7 +235,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-overview.html#sec-overview-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Complex roots of unity</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-characters.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Characters of finite abelian groups</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-characters.html#sec-characters-2" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Definition</span></a></div></li></ul>
 </li>
@@ -249,53 +249,170 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-7-dirichlets-theorem"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">7</span><span class="space"> </span><span class="title">Dirichlet’s Theorem</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-characters"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.2</span><span class="space"> </span><span class="title">Characters of finite abelian groups</span>
 </h2>
-<section class="introduction" id="ch-7-dirichlets-theorem-2"><div class="para" id="ch-7-dirichlets-theorem-2-1">An arithmetic progression is a sequence of numbers <span class="process-math">\(a+kq\text{,}\)</span> <span class="process-math">\(k \geq 0\text{,}\)</span> where <span class="process-math">\(a\)</span> and <span class="process-math">\(q\)</span> are fixed integers, which for simplicity we assume are strictly positive. It is equivalent to the part of the congruence class of <span class="process-math">\(a\)</span> modulo <span class="process-math">\(q\)</span> which is greater than or equal to <span class="process-math">\(a\text{.}\)</span> If <span class="process-math">\(a\)</span> and <span class="process-math">\(q\)</span> share a common factor, then there is at most one prime in the arithmetic progression, namely <span class="process-math">\(a\)</span> itself if it happens to be prime.</div> <div class="para" id="ch-7-dirichlets-theorem-2-2">So, fix some <span class="process-math">\(q \gt 0\)</span> and consider the congruence classes <span class="process-math">\([0], [1], \dotsc, [q-1]\)</span> modulo <span class="process-math">\(q\text{.}\)</span> There are only finitely many primes in congruence classes that share a common factor with <span class="process-math">\(q\text{.}\)</span> The remaining infinitely many primes are in congruence classes that are coprime to <span class="process-math">\(q\text{.}\)</span> There are <span class="process-math">\(\phi(q)\)</span> of these classes, where <span class="process-math">\(\phi\)</span> is the Euler totient function. Recalling that these classes coprime to <span class="process-math">\(q\)</span> are precisely the ones that have multiplicative inverses modulo <span class="process-math">\(q\text{,}\)</span> thus corresponding to units in the ring <span class="process-math">\(\bbZ/q\bbZ\text{,}\)</span> we may denote the set of congruence classes coprime to <span class="process-math">\(q\)</span> as <span class="process-math">\((\bbZ/q\bbZ)^\times\text{.}\)</span>
-</div> <div class="para" id="ch-7-dirichlets-theorem-2-3">By the pigeonhole principle, some class coprime to <span class="process-math">\(q\)</span> includes infinitely many primes. Dirichlet’s theorem gives the result that in fact every class coprime to <span class="process-math">\(q\)</span> contains infinitely many primes. More precisely, if <span class="process-math">\(\gcd(a,q)=1\)</span> then the sum <span class="process-math">\(\sum_{p \equiv a \pmod{q}} \frac{\log p}{p}\)</span> diverges.</div> <div class="para logical" id="ch-7-dirichlets-theorem-2-4">
-<div class="para">We will be even more precise than that. Recall that by Mertens’s theorem, <span class="process-math">\(\sum_{p \leq x} \frac{\log p}{p} = \log x + O(1)\text{.}\)</span> Therefore</div>
-<div class="displaymath process-math" id="ch-7-dirichlets-theorem-2-4-2">
+<section class="subsection" id="sec-characters-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="space"> </span><span class="title">Definition</span>
+</h3>
+<article class="definition definition-like" id="sec-characters-2-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-2-1">Let <span class="process-math">\(G\)</span> be a finite abelian group. A <dfn class="terminology">character</dfn> of <span class="process-math">\(G\)</span> is a homomorphism <span class="process-math">\(\chi : G \to \bbC^*\text{,}\)</span> the multiplicative group of nonzero complex numbers.</div></article><article class="remark remark-like" id="sec-characters-2-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-3-1">The definition makes sense for infinite abelian groups, but we will not get into that in this course.</div></article><article class="remark remark-like" id="sec-characters-2-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-4-1">The idea also makes sense for nonabelian groups, but the definition is slightly different, or, more precisely, the general definition of character happens to simplify in the abelian case. In representation theory, a representation of a group <span class="process-math">\(G\)</span> is a homomorphism from <span class="process-math">\(G\)</span> to a (multiplicative) group of matrices. The character of the representation is the map <span class="process-math">\(G \to \bbC\)</span> taking each group element to the trace of the corresponding matrix in the representation. This is generally not a homomorphism; for matrices <span class="process-math">\(A,B\text{,}\)</span> <span class="process-math">\(\operatorname{tr}(A)\operatorname{tr}(B)\)</span> is generally not equal to <span class="process-math">\(\operatorname{tr}(AB)\text{.}\)</span> Also, an invertible matrix can have trace zero, so characters can take the value zero.</div> <div class="para" id="sec-characters-2-4-2">However, if it happens that the matrices are <span class="process-math">\(1 \times 1\text{,}\)</span> then the trace of the matrix is simply its entry. In this case the character is essentially the same thing as the representation, and it is a homomorphism.</div> <div class="para" id="sec-characters-2-4-3">It turns out that for abelian groups we can essentially reduce to the <span class="process-math">\(1 \times 1\)</span> case. So we can more or less conflate characters with representations, and define characters as homomorphisms, with nonzero values.</div></article><article class="proposition theorem-like" id="sec-characters-2-5"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(G\)</span> be a finite abelian group of order <span class="process-math">\(n\)</span> and let <span class="process-math">\(\chi\)</span> be a character on <span class="process-math">\(G\text{.}\)</span> For every <span class="process-math">\(g \in G\text{,}\)</span> <span class="process-math">\(\chi(g)\)</span> is an <span class="process-math">\(n\)</span>th root of unity.</article><article class="proof" id="sec-characters-2-5-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-characters-2-5-2-1">By Lagrange’s theorem, <span class="process-math">\(g^n = 1\text{,}\)</span> the identity in <span class="process-math">\(G\text{.}\)</span> Then <span class="process-math">\(\chi(g)^n = \chi(g^n) = \chi(1) = 1\text{.}\)</span>
+</div></article><article class="definition definition-like" id="sec-characters-2-6"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-6-1">The trivial character which takes every element of <span class="process-math">\(G\)</span> to <span class="process-math">\(1\)</span> is denoted <span class="process-math">\(\chi_0\)</span> and called the <dfn class="terminology">principal character</dfn> of <span class="process-math">\(G\text{.}\)</span>
+</div> <div class="para logical" id="sec-characters-2-6-2">
+<div class="para">The set of all characters of <span class="process-math">\(G\)</span> is denoted <span class="process-math">\(\hat{G}\)</span> (or <span class="process-math">\(\widehat{G}\)</span>) and called the <dfn class="terminology">dual group</dfn> of <span class="process-math">\(G\text{.}\)</span> We define a multiplication on <span class="process-math">\(\hat{G}\text{,}\)</span> pointwise: for <span class="process-math">\(\chi_1, \chi_2 \in \hat{G}\text{,}\)</span> the product <span class="process-math">\(\chi_1 \chi_2\)</span> is defined by</div>
+<div class="displaymath process-math" id="sec-characters-2-6-2-9">
 \begin{equation}
-\sum_{a \in \bbZ/q\bbZ} \left( \sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} \right)
-= \sum_{p \leq x} \frac{\log p}{p} = \log x + O(1)\text{.}\tag{7.0.1}
+(\chi_1 \chi_2)(g) = (\chi_1(g))(\chi_2(g))\text{.}\tag{7.2.1}
 \end{equation}
 </div>
-<div class="para">There are only finitely many primes in classes that share a common factor with <span class="process-math">\(q\text{;}\)</span> dropping those classes changes the sum by a bounded amount. Therefore,</div>
-<div class="displaymath process-math" id="ch-7-dirichlets-theorem-2-4-4">
+</div></article><article class="proposition theorem-like" id="sec-characters-2-7"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-7-1-1">For every finite abelian group <span class="process-math">\(G\text{,}\)</span> the set <span class="process-math">\(\hat{G}\)</span> is a group with the multiplication defined above. The identity element is the principal character. For <span class="process-math">\(\chi \in \hat{G}\text{,}\)</span> the inverse is the character denoted <span class="process-math">\(\chi^{-1}\)</span> or <span class="process-math">\(\overline{\chi}\text{,}\)</span> defined by <span class="process-math">\(\chi^{-1}(g) = (\chi(g))^{-1}\)</span> or <span class="process-math">\(\overline{\chi}(g) = \overline{\chi(g)}\)</span> (these are equal).</div></article><article class="proof" id="sec-characters-2-7-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-characters-2-7-2-1">It is left as an exercise to check that the pointwise multiplication is associative and that the principal character is an identity element. The fact that <span class="process-math">\((\chi(g))^{-1} = \overline{\chi(g)}\)</span> follows from observing that since <span class="process-math">\(\chi(g)\)</span> is a root of unity, then it has norm <span class="process-math">\(1\text{;}\)</span> <span class="process-math">\(z^{-1} = \overline{z}\)</span> holds for any complex number of norm <span class="process-math">\(1\)</span> (exercise).</div></article><div class="para" id="sec-characters-2-8">Our next goal is to prove that in fact <span class="process-math">\(\hat{G} \cong G\text{.}\)</span> We start with cyclic groups.</div>
+<article class="definition definition-like" id="sec-characters-2-9"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-9-1">For a real number <span class="process-math">\(t\)</span> we define <span class="process-math">\(e(t) = \exp(2 \pi i t) = \cos(2 \pi t) + i \sin(2 \pi t)\text{.}\)</span>
+</div></article><article class="proposition theorem-like" id="sec-characters-2-10"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-10-1-1">Let <span class="process-math">\(G = \langle g_0\)</span> be a cyclic group of order <span class="process-math">\(n\text{.}\)</span> There are exactly <span class="process-math">\(n\)</span> characters of <span class="process-math">\(G\text{,}\)</span> given as follows. For each <span class="process-math">\(m\)</span> let <span class="process-math">\(\chi_m\)</span> be defined by <span class="process-math">\(\chi_m(g_0^k) = e(mk/n)\text{.}\)</span> Then <span class="process-math">\(\hat{G} = \{ \chi_0 = 1, \chi_1, \dotsc, \chi_{n-1} \}\text{.}\)</span> In particular, <span class="process-math">\(\hat{G} = \langle \chi_1 \rangle\)</span> is cyclic of order <span class="process-math">\(n\text{.}\)</span>
+</div></article><article class="proof" id="sec-characters-2-10-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-characters-2-10-2-1">
+<div class="para">First we verify that each <span class="process-math">\(\chi_m\)</span> is a character. We have to check that <span class="process-math">\(\chi_m(ab) = \chi_m(a)\chi_m(b)\text{.}\)</span> This holds because</div>
+<div class="displaymath process-math" id="sec-characters-2-10-2-1-3">
 \begin{equation}
-\sum_{a \in (\bbZ/q\bbZ)^\times} \left( \sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} \right)
-= \log x + O(1)\text{.}\tag{7.0.2}
+\chi_m(g_0^k g_0^\ell) = \chi_m(g_0^{k+\ell}) = e(m(k+\ell)/n)
+= e(mk/n) e(m\ell/n) = \chi_m(g_0^k) \chi_m(g_0^\ell)\text{.}\tag{7.2.2}
 \end{equation}
 </div>
-<div class="para">What we will show is that each of the inner sums, for each <span class="process-math">\(a \in (\bbZ/q\bbZ)^\times\text{,}\)</span> contributes an equal amount to the total:</div>
-</div> <article class="theorem theorem-like" id="ch-7-dirichlets-theorem-2-5"><h2 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.0.1</span><span class="period">.</span><span class="space"> </span><span class="title">Dirichlet’s Theorem.</span>
-</h2>For each <span class="process-math">\(a \in (\bbZ/q\bbZ)^\times\text{,}\)</span><div class="displaymath process-math" id="ch-7-dirichlets-theorem-2-5-2-2">
+</div> <div class="para" id="sec-characters-2-10-2-2">Next we check that they are pairwise distinct. Observe that <span class="process-math">\(\chi_m(g_0^1) = e(m/n)\text{.}\)</span> These are different for different values of <span class="process-math">\(m\)</span> in the range <span class="process-math">\(0 \leq m \lt n\text{.}\)</span> (It is true that <span class="process-math">\(e(m/n) = e((m+n)/n)\text{,}\)</span> and indeed, <span class="process-math">\(\chi_m = \chi_{m+n}\text{.}\)</span> This is why we stop our list at <span class="process-math">\(\chi_{n-1}\text{;}\)</span> continuing would simply repeat the characters already on our list.) Since the functions have different values at the point <span class="process-math">\(g_0\text{,}\)</span> they are different functions.</div> <div class="para logical" id="sec-characters-2-10-2-3">
+<div class="para">Now we check that every character is one of the <span class="process-math">\(\chi_m\text{.}\)</span> Let <span class="process-math">\(\chi\)</span> be any character of <span class="process-math">\(G\text{.}\)</span> The value <span class="process-math">\(\chi(g_0)\)</span> must be an <span class="process-math">\(n\)</span>th root of unity. So, it is equal to <span class="process-math">\(e(m/n)\)</span> for some <span class="process-math">\(m\text{,}\)</span> with <span class="process-math">\(0 \leq m \lt n\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="sec-characters-2-10-2-3-9">
 \begin{equation}
-\sum_{p \equiv a \pmod{q}, p \leq x} \frac{\log p}{p} = \frac{1}{\phi(q)} \log x + O(1)\text{.}\tag{7.0.3}
+\chi(g_0^k) = \chi(g_0)^k = e(m/n)^k = e(mk/n) = \chi_m(g_0^k)\tag{7.2.3}
 \end{equation}
-</div></article> <article class="remark remark-like" id="ch-7-dirichlets-theorem-2-6"><h2 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.0.2</span><span class="period">.</span>
-</h2>
-<div class="para" id="ch-7-dirichlets-theorem-2-6-1">What about arithmetic progressions that start at a higher value, for example <span class="process-math">\(53 + 5k\)</span> instead of <span class="process-math">\(3 + 5k\text{?}\)</span> The difference between the primes in these two arithmetic progressions is some finite set of primes, so the difference in the summations is some bounded amount, which simply gets absorbed in the <span class="process-math">\(O(1)\)</span> term.</div></article> <article class="remark remark-like" id="ch-7-dirichlets-theorem-2-7"><h2 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.0.3</span><span class="period">.</span>
-</h2>
-<div class="para logical" id="ch-7-dirichlets-theorem-2-7-1">
-<div class="para">One might ask other questions, for example:</div>
+</div>
+<div class="para">for every <span class="process-math">\(k\text{.}\)</span> Therefore <span class="process-math">\(\chi = \chi_m\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-characters-2-10-2-4">
+<div class="para">Finally, we check that <span class="process-math">\(\hat{G} = \langle \chi_1 \rangle\)</span> is cyclic. Indeed, for every <span class="process-math">\(m\)</span> and <span class="process-math">\(k\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-characters-2-10-2-4-4">
+\begin{equation}
+(\chi_1^m)(g_0^k) = (\chi_1(g_0^k))^m = (e(k/n))^m = e(mk/n) = \chi_m(g_0^k)\text{.}\tag{7.2.4}
+\end{equation}
+</div>
+<div class="para">The fact that this holds for all <span class="process-math">\(k\)</span> means <span class="process-math">\(\chi_1^m = \chi_m\text{.}\)</span> So, the powers of <span class="process-math">\(\chi_1\)</span> give all the elements of <span class="process-math">\(\hat{G}\text{.}\)</span>
+</div>
+</div></article><article class="proposition theorem-like" id="sec-characters-2-11"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-11-1-1">For finite abelian groups <span class="process-math">\(G\)</span> and <span class="process-math">\(H\text{,}\)</span> <span class="process-math">\(\widehat{G \times H} \cong \hat{G} \times \hat{H}\text{.}\)</span>
+</div></article><article class="proof" id="sec-characters-2-11-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-characters-2-11-2-1">
+<div class="para">We define a mapping <span class="process-math">\(\hat{G} \times \hat{H} \to \widehat{G \times H}\)</span> as follows. Let <span class="process-math">\(\chi_1 \in \hat{G}\)</span> and <span class="process-math">\(\chi_2 \in \hat{H}\text{.}\)</span> Define a character <span class="process-math">\((\chi_1,\chi_2)\)</span> on <span class="process-math">\(G \times H\)</span> by</div>
+<div class="displaymath process-math" id="sec-characters-2-11-2-1-6">
+\begin{equation}
+(\chi_1,\chi_2)(g,h) = \chi_1(g) \chi_2(h)\text{.}\tag{7.2.5}
+\end{equation}
+</div>
+<div class="para">This is a homomorphism from <span class="process-math">\(\hat{G} \times \hat{H}\)</span> to <span class="process-math">\(\widehat{G \times H}\)</span> (exercise). It is injective. (If <span class="process-math">\(\chi_1\)</span> is nonprincipal on <span class="process-math">\(G\)</span> or <span class="process-math">\(\chi_2\)</span> is nonprincipal on <span class="process-math">\(H\text{,}\)</span> then <span class="process-math">\(\chi_1(g_1) \neq 1\)</span> for some <span class="process-math">\(g_1 \in G\)</span> or likewise <span class="process-math">\(\chi_2(h_1) \neq 1\)</span> for some <span class="process-math">\(h_1 \in H\text{;}\)</span> hence <span class="process-math">\((\chi_1,\chi_2)(g_1,1_H) = \chi_1(g_1) \neq 1\)</span> or similarly <span class="process-math">\((\chi_1,\chi_2)(1_G,h_1) = \chi_2(h_1) \neq 1\text{,}\)</span> and either way, <span class="process-math">\((\chi_1,\chi_2)\)</span> is nonprincipal on <span class="process-math">\(G \times H\text{.}\)</span>)</div>
+</div> <div class="para" id="sec-characters-2-11-2-2">The map is surjective. For any character <span class="process-math">\(\chi\)</span> on <span class="process-math">\(G \times H\text{,}\)</span> define <span class="process-math">\(\chi_1 : G \to \bbC^*\)</span> by <span class="process-math">\(\chi_1(g) = \chi(g,1_H)\)</span> and define <span class="process-math">\(\chi_2 : H \to \bbC^*\)</span> by <span class="process-math">\(\chi_2(h) = \chi(1_G,h)\text{.}\)</span> Then <span class="process-math">\(\chi_1\)</span> is a character on <span class="process-math">\(G\text{,}\)</span> <span class="process-math">\(\chi_2\)</span> is a character on <span class="process-math">\(H\text{,}\)</span> and <span class="process-math">\(\chi = (\chi_1,\chi_2)\)</span> (exercise).</div></article><div class="para" id="sec-characters-2-12">In particular, if <span class="process-math">\(\hat{G} \cong G \)</span> and <span class="process-math">\(\hat{H} \cong H \text{,}\)</span> then <span class="process-math">\(\widehat{G \times H} \cong G \times H \text{.}\)</span>
+</div>
+<article class="theorem theorem-like" id="sec-characters-2-13"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental Theorem of Finite Abelian Groups.</span>
+</h4>
+<div class="para logical" id="sec-characters-2-13-2-1">
+<div class="para">Every finite abelian group is a direct product of cyclic groups. That is, any finite abelian group <span class="process-math">\(G\)</span> is</div>
+<div class="displaymath process-math" id="sec-characters-2-13-2-1-2">
+\begin{equation}
+G \cong \bbZ/m_1 \bbZ \times \dotsb \times \bbZ/m_k \bbZ\text{.}\tag{7.2.6}
+\end{equation}
+</div>
+</div></article><div class="para logical" id="sec-characters-2-14">
+<div class="para">By the Chinese Remainder Theorem, if <span class="process-math">\(m = p_1^{a_1} \dotsm p_k^{a_k}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-characters-2-14-2">
+\begin{equation}
+\bbZ / m \bbZ \cong \bbZ / p_1^{a_1} \bbZ \times \dotsb \times \bbZ / p_k^{a_k} \bbZ\text{.}\tag{7.2.7}
+\end{equation}
+</div>
+<div class="para">So if we choose to, we can assume that the decomposition of an arbitrary finite abelian group is into cyclic groups of prime power order.</div>
+</div>
+<article class="corollary theorem-like" id="sec-characters-2-15"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-characters-2-15-1-1">Let <span class="process-math">\(G\)</span> be any finite abelian group. Then <span class="process-math">\(\hat{G} \cong G \text{.}\)</span> In particular, <span class="process-math">\(|\hat{G}| = |G|\text{.}\)</span>
+</div></article><article class="proof" id="sec-characters-2-15-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-characters-2-15-2-1">By induction on the number of cyclic factors in a decomposition of <span class="process-math">\(G\)</span> as a direct product of cyclic groups.</div></article><div class="para" id="sec-characters-2-16">We are also interested in taking sums of character values (just as earlier we considered sums of roots of unity).</div>
+<article class="theorem theorem-like" id="sec-characters-2-17"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-characters-2-17-1-1">
+<div class="para">Let <span class="process-math">\(G = \langle g_0 \rangle\)</span> be a cyclic group of order <span class="process-math">\(n\text{.}\)</span> Then the following hold.</div>
 <ol class="decimal">
-<li id="ch-7-dirichlets-theorem-2-7-1-1-1"><div class="para" id="p-derived-ch-7-dirichlets-theorem-2-7-1-1-1">What about the sum <span class="process-math">\(\sum_{p \equiv a \pmod{q}, p \leq x} \frac{1}{p}\text{?}\)</span> Is it <span class="process-math">\(\frac{1}{\phi(q)} \log \log x + \frac{1}{\phi(q)} b + O\left(\frac{1}{\log x}\right)\text{?}\)</span>
+<li id="sec-characters-2-17-1-1-3-1"><div class="para logical" id="sec-characters-2-17-1-1-3-1-1">
+<div class="para">If a character <span class="process-math">\(\chi\)</span> of <span class="process-math">\(G\)</span> is given and we sum over elements of <span class="process-math">\(G\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-characters-2-17-1-1-3-1-1-4">
+\begin{equation}
+\sum_{g \in G} \chi(g) =
+\begin{cases}
+n, \amp \text{if } \chi = \chi_0 \\
+0, \amp \text{otherwise}
+\end{cases}\text{.}\tag{7.2.8}
+\end{equation}
+</div>
 </div></li>
-<li id="ch-7-dirichlets-theorem-2-7-1-1-2"><div class="para" id="p-derived-ch-7-dirichlets-theorem-2-7-1-1-2">Extending the prime counting function <span class="process-math">\(\pi(x)\)</span> (the number of primes less than or equal to <span class="process-math">\(x\)</span>), let <span class="process-math">\(\pi(x,q,a)\)</span> be the number of primes <span class="process-math">\(p \leq x\)</span> such that <span class="process-math">\(p \equiv a \pmod{q}\text{.}\)</span> The Prime Number Theorem says that <span class="process-math">\(\pi(x) \sim \frac{x}{\log x}\text{.}\)</span> Is <span class="process-math">\(\pi(x,q,a) \sim \frac{1}{\phi(q)} \frac{x}{\log x}\text{?}\)</span>
+<li id="sec-characters-2-17-1-1-3-2"><div class="para logical" id="sec-characters-2-17-1-1-3-2-1">
+<div class="para">If an element <span class="process-math">\(g \in G\)</span> is given and we sum over characters, then</div>
+<div class="displaymath process-math" id="sec-characters-2-17-1-1-3-2-1-2">
+\begin{equation}
+\sum_{\chi \in \hat{G}} \chi(g) =
+\begin{cases}
+n, \amp \text{if } g = 1 \\
+0, \amp \text{otherwise}
+\end{cases}\tag{7.2.9}
+\end{equation}
+</div>
 </div></li>
 </ol>
-<div class="para">While these are natural questions to consider, for our course we will focus on the version of the theorem stated above.</div>
-</div></article></section><nav class="summary-links"><ul>
-<li><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></li>
-<li><a href="sec-characters.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Characters of finite abelian groups</span></a></li>
-</ul></nav></section></div>
+</div></article><article class="proof" id="sec-characters-2-17-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-characters-2-17-2-1">
+<div class="para">First suppose <span class="process-math">\(\chi = \chi_m\)</span> is given. Then the sum is</div>
+<div class="displaymath process-math" id="sec-characters-2-17-2-1-2">
+\begin{equation}
+\sum_{g \in G} \chi(g) = \sum_{k=0}^{n-1} \chi_m(g_0^k)
+= \sum_{k=0}^{n-1} e(mk/n)\text{.}\tag{7.2.10}
+\end{equation}
+</div>
+<div class="para">Since <span class="process-math">\(e(m/n)\)</span> is an <span class="process-math">\(n\)</span>th root of unity, the first claim follows.</div>
+</div> <div class="para logical" id="sec-characters-2-17-2-2">
+<div class="para">Next, suppose <span class="process-math">\(g = g_0^k\)</span> is given. Then the sum is</div>
+<div class="displaymath process-math" id="sec-characters-2-17-2-2-2">
+\begin{equation}
+\sum_{\chi \in \hat{G}} \chi(g) = \sum_{m=0}^{n-1} \chi_m(g)
+= \sum_{m=0}^{n-1} e(mk/n)\text{.}\tag{7.2.11}
+\end{equation}
+</div>
+<div class="para">Here, <span class="process-math">\(e(k/n)\)</span> is an <span class="process-math">\(n\)</span>th root of unity, so once again the result follows.</div>
+</div></article><div class="para" id="sec-characters-2-18">(The textbook includes here the result that <span class="process-math">\(\hat{G}\)</span> is cyclic of order <span class="process-math">\(n\)</span> when <span class="process-math">\(G\)</span> is. I omit that here because we already showed it earlier.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-mertens.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-overview.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

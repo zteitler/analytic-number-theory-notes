@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-7-dirichlets-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-7-dirichlets-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-characters.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -227,7 +227,19 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-7-dirichlets-theorem.html" class="internal"><span class="codenumber">7</span> <span class="title">Dirichlet’s Theorem</span></a></div>
-<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></div></li></ul>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-overview.html#sec-overview-3" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Repeating the proof of Mertens’s theorems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-overview.html#sec-overview-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Complex roots of unity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-characters.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Characters of finite abelian groups</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-characters.html#sec-characters-2" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Definition</span></a></div></li></ul>
+</li>
+</ul>
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
@@ -239,9 +251,112 @@ window.MathJax = {
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-overview"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">7.1</span><span class="space"> </span><span class="title">Overview of Proof of Dirichlet’s Theorem</span>
-</h2></section></div>
+</h2>
+<section class="introduction" id="sec-overview-2"><div class="para" id="sec-overview-2-1">I will add to this overview as I continue to work through the proof.</div></section><section class="subsection" id="sec-overview-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="space"> </span><span class="title">Repeating the proof of Mertens’s theorems</span>
+</h3>
+<div class="para logical" id="sec-overview-3-2">
+<div class="para">To some extent the proof is a reprise of the proof of Mertens’s theorems:</div>
+<ol class="decimal">
+<li id="sec-overview-3-2-1-1"><div class="para" id="p-derived-sec-overview-3-2-1-1">We start with estimating <span class="process-math">\(\sum \log n\)</span> by using a comparison between the sum and integral of a monotone function.</div></li>
+<li id="sec-overview-3-2-1-2"><div class="para" id="p-derived-sec-overview-3-2-1-2">Next, we rewrite this as a sum involving the Von Mangoldt function, <span class="process-math">\(\sum \Lambda(d) \left\lfloor \frac{x}{d} \right\rfloor\text{,}\)</span> by rewriting the previous sum as a double sum indexed over lattice points under a hyperbola.</div></li>
+<li id="sec-overview-3-2-1-3"><div class="para" id="p-derived-sec-overview-3-2-1-3">This in turn lets us estimate <span class="process-math">\(\sum \frac{\Lambda(n)}{n}\text{,}\)</span> where we can control the error term thanks to Chebyshev’s estimate for the Chebyshev <span class="process-math">\(\psi\)</span> function.</div></li>
+<li id="sec-overview-3-2-1-4"><div class="para" id="p-derived-sec-overview-3-2-1-4">We check that the terms <span class="process-math">\(\frac{\log p}{p^k}\)</span> with powers <span class="process-math">\(k \geq 2\)</span> have a convergent sum, so they contribute a bounded amount to the total, in other words an <span class="process-math">\(O(1)\)</span> amount. Dropping these terms leaves the sum <span class="process-math">\(\sum \frac{\log p}{p}\)</span> and only makes an <span class="process-math">\(O(1)\)</span> difference.</div></li>
+</ol>
+<div class="para">(For Mertens’s theorems our next step was to use Riemann-Stieltjes integration and integration by parts to change the sum to <span class="process-math">\(\sum \frac{1}{p}\text{.}\)</span> However we will not take this step in our study of Dirichlet’s theorem.)</div>
+</div>
+<div class="para" id="sec-overview-3-3">Our plan is basically to repeat all the same ideas, with the added restriction of summing over a congruence class modulo <span class="process-math">\(q\text{.}\)</span> How will we do this? The basic idea is to use complex roots of unity.</div></section><section class="subsection" id="sec-overview-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="space"> </span><span class="title">Complex roots of unity</span>
+</h3>
+<div class="para" id="sec-overview-4-2">A complex <span class="process-math">\(n\)</span>th root of unity is a complex number <span class="process-math">\(\xi\)</span> (the Greek letter xi) such that <span class="process-math">\(\xi^n = 1\text{.}\)</span> There are <span class="process-math">\(n\)</span> such numbers, forming the vertices of a regular <span class="process-math">\(n\)</span>-gon inscribed in the unit circle. The <span class="process-math">\(n\)</span>th roots of unity are <span class="process-math">\(\exp(2\pi k \sqrt{-1}/n)\)</span> for <span class="process-math">\(0 \leq k \lt n\text{.}\)</span> They form a group under multiplication. This group is cyclic.</div>
+<div class="para" id="sec-overview-4-3">A fundamental fact about roots of unity concerns the sum of roots of unity, or of powers of a root of unity.</div>
+<article class="proposition theorem-like" id="sec-overview-4-4"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-overview-4-4-1-1">Let <span class="process-math">\(n \geq 2\)</span> and let <span class="process-math">\(\xi_0,\dotsc,\xi_{n-1}\)</span> be the <span class="process-math">\(n\)</span>th roots of unity. Then <span class="process-math">\(\sum_{k=0}^{n-1} \xi_k = 0\text{.}\)</span>
+</div></article><article class="proof" id="sec-overview-4-4-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-overview-4-4-2-1">Geometrically, the points are equally spaced around the origin, so their average or center of gravity is at the origin.</div> <div class="para logical" id="sec-overview-4-4-2-2">
+<div class="para">Algebraically, the polynomial <span class="process-math">\(x^n-1\)</span> factors,</div>
+<div class="displaymath process-math" id="sec-overview-4-4-2-2-2">
+\begin{equation}
+x^n-1 = \prod_{k=0}^{n-1} (x - \xi_k)\text{.}\tag{7.1.1}
+\end{equation}
+</div>
+<div class="para">The coefficient of <span class="process-math">\(x^{n-1}\)</span> is zero on the left hand side, and is <span class="process-math">\(-(\xi_0+\dotsb+\xi_{n-1})\)</span> on the right hand side.</div>
+</div></article><article class="remark remark-like" id="sec-overview-4-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-overview-4-5-1">Likewise, <span class="process-math">\(\sum_{1 \leq i \lt j \lt n-1} \xi_i \xi_j = 0\text{,}\)</span> and similar statements hold for the sum of products of <span class="process-math">\(3, 4, \dotsc, n-1\)</span> of the <span class="process-math">\(\xi_k\)</span>’s.</div></article><article class="proposition theorem-like" id="sec-overview-4-6"><h4 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.1.3</span><span class="period">.</span>
+</h4>Let <span class="process-math">\(\xi\)</span> be an <span class="process-math">\(n\)</span>th root of unity. Then<div class="displaymath process-math" id="sec-overview-4-6-1-3">
+\begin{equation}
+\sum_{k=0}^{n-1} \xi^k =
+\begin{cases}
+n, \amp \xi = 1 \\
+0, \amp \xi \neq 1
+\end{cases}\tag{7.1.2}
+\end{equation}
+</div></article><article class="proof" id="sec-overview-4-6-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para" id="sec-overview-4-6-2-1">If <span class="process-math">\(\xi=1\)</span> then every <span class="process-math">\(\xi^k=1\)</span> and the sum, having <span class="process-math">\(n\)</span> terms, is equal to <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para" id="sec-overview-4-6-2-2">Otherwise, suppose that <span class="process-math">\(\xi \neq 1\text{.}\)</span> Let <span class="process-math">\(d\)</span> be the order of <span class="process-math">\(\xi\text{,}\)</span> the smallest positive integer such that <span class="process-math">\(\xi^d = 1\text{.}\)</span> The assumption <span class="process-math">\(\xi \neq 1\)</span> means <span class="process-math">\(d \gt 1\text{.}\)</span>
+</div> <div class="para" id="sec-overview-4-6-2-3">Note that <span class="process-math">\(d\)</span> must be a divisor of <span class="process-math">\(n\text{.}\)</span> (This follows from Lagrange’s theorem in group theory. Alternatively, if <span class="process-math">\(n = dq+r\)</span> with <span class="process-math">\(0 \leq r \lt d\text{,}\)</span> then <span class="process-math">\(\xi^r = \xi^n (\xi^d)^{-q}\text{.}\)</span> Since <span class="process-math">\(\xi^n=\xi^d=1\text{,}\)</span> then <span class="process-math">\(\xi^r=1\)</span>as well. The fact that <span class="process-math">\(r \lt d\)</span> contradicts that <span class="process-math">\(d\)</span> is the smallest positive integer such that <span class="process-math">\(\xi^d=1\text{,}\)</span> unless, of course, <span class="process-math">\(r\)</span> is not positive. And this must be the case: <span class="process-math">\(r=0\text{,}\)</span> so <span class="process-math">\(d\)</span> divides <span class="process-math">\(n\text{.}\)</span>)</div> <div class="para" id="sec-overview-4-6-2-4">Then the values <span class="process-math">\(\xi^0,\xi^1,\dotsc,\xi^{d-1}\)</span> are <span class="process-math">\(d\)</span>th roots of unity, and they are pairwise distinct (why? exercise). So they are in fact all of the <span class="process-math">\(d\)</span>th roots of unity. By the previous proposition, <span class="process-math">\(\sum_{k=0}^{d-1} \xi^k = 0\text{.}\)</span>
+</div> <div class="para" id="sec-overview-4-6-2-5">Finally, the full sum <span class="process-math">\(\sum_{k=0}^{n-1} \xi^k\)</span> is simply equal to the sum of the first <span class="process-math">\(d\)</span> terms, repeated <span class="process-math">\(n/d\)</span> times. This is because <span class="process-math">\(\xi^{k+d} = \xi^k\text{,}\)</span> so that each term in the sum is simply a repetition of the term <span class="process-math">\(d\)</span> steps earlier. Therefore the full sum is <span class="process-math">\(n/d\)</span> times zero, which is simply zero.</div></article><div class="para logical" id="sec-overview-4-7">
+<div class="para">So, our strategy for Dirichlet’s theorem is to consider sums</div>
+<div class="displaymath process-math" id="sec-overview-4-7-1">
+\begin{equation}
+\sum_{p \leq x} \frac{\log p}{p} \xi_p\tag{7.1.3}
+\end{equation}
+</div>
+<div class="para">where, for each <span class="process-math">\(p\text{,}\)</span> <span class="process-math">\(\xi_p\)</span> is a root of unity chosen in some way. Specifically, we will choose them so that if <span class="process-math">\(p \equiv a \pmod{q}\text{,}\)</span> then <span class="process-math">\(\xi_p = 1\text{,}\)</span> but otherwise, the <span class="process-math">\(\xi_p\)</span> will cycle among all the roots of unity. Then we will add together all of these sums, with the result that the terms with <span class="process-math">\(p \equiv a \pmod{q}\)</span> will add up, but the other terms will cancel out (add up to zero).</div>
+</div>
+<article class="example example-like" id="sec-overview-4-8"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.1.4</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-overview-4-8-1">
+<div class="para">Let <span class="process-math">\(q = 3\text{.}\)</span> For every prime <span class="process-math">\(p\text{,}\)</span> define</div>
+<div class="displaymath process-math" id="sec-overview-4-8-1-3">
+\begin{equation}
+\epsilon(p) =
+\begin{cases}
+1, \amp p \equiv 1 \pmod{3} \\
+-1, \amp p \equiv 2 \pmod{3} \\
+0, \amp p \equiv 0 \pmod{3} (p=3)
+\end{cases}\text{.}\tag{7.1.4}
+\end{equation}
+</div>
+<div class="para">Other than <span class="process-math">\(p=3\text{,}\)</span> these are <span class="process-math">\(2\)</span>nd roots of unity.</div>
+</div> <div class="para logical" id="sec-overview-4-8-2">
+<div class="para">Consider the sums</div>
+<div class="displaymath process-math" id="sec-overview-4-8-2-1">
+\begin{equation}
+A(x) = \sum_{p \leq x} \frac{\log p}{p}\tag{7.1.5}
+\end{equation}
+</div>
+<div class="para">(here the root of unity is <span class="process-math">\(\xi_p = 1\)</span> for all <span class="process-math">\(p\)</span>) and</div>
+<div class="displaymath process-math" id="sec-overview-4-8-2-4">
+\begin{equation}
+B(x) = \sum_{p \leq x} \frac{\log p}{p} \epsilon(p)
+= - \frac{\log 2}{2} (-1) - \frac{\log 5}{5}
++ \frac{\log 7}{7} - \frac{\log 11}{11} + \frac{\log 13}{13} + \dotsb\text{.}\tag{7.1.6}
+\end{equation}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="sec-overview-4-8-2-5">
+\begin{equation}
+A(x) + B(x) = 2\left( \frac{\log 7}{7} + \frac{\log 13}{13} + \dotsb \right)
+= 2 \sum_{p \equiv 1 \pmod{3}, p \leq x} \frac{\log p}{p}\tag{7.1.7}
+\end{equation}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="sec-overview-4-8-2-6">
+\begin{equation}
+A(x) - B(x) = 2\left( \frac{\log 2}{2} + \frac{\log 5}{5} + \dotsb \right)
+= 2 \sum_{p \equiv 2 \pmod{3}, p \leq x} \frac{\log p}{p}\text{.}\tag{7.1.8}
+\end{equation}
+</div>
+</div></article><div class="para" id="sec-overview-4-9">We will have to figure out how to choose the roots of unity <span class="process-math">\(\xi_p\)</span> in general in order to get the cancellation we seek. And we will have to estimate the order of growth of these sums involving the roots of unity. This is our plan!</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="ch-7-dirichlets-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-7-dirichlets-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-characters.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
