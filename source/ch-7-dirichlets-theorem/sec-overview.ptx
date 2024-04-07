@@ -102,7 +102,7 @@
   
   <remark>
   <p>
-  Likewise, <m>\sum_{1 \leq i \lt j \lt n-1} \xi_i \xi_j = 0</m>,
+  Likewise, <m>\sum_{1 \leq i \lt j \lt n} \xi_i \xi_j = 0</m>,
   and similar statements hold for the sum of products of
   <m>3, 4, \dotsc, n-1</m> of the <m>\xi_k</m>'s.
   </p>
@@ -168,6 +168,20 @@
   </proof>
   </proposition>
   
+  <remark>
+  <p>
+  After presenting the above proof, I realized there's a much quicker idea:
+  the sum <m>S = 1 + \xi + \xi^2 + \dotsb + \xi^{n-1}</m> is a
+  (finite) geometric series.
+  If <m>\xi \neq 1</m>, the value of the sum is
+  <men>
+    S = \frac{1-\xi^n}{1-\xi} = \frac{0}{1-\xi} = 0,
+  </men>
+  where the numerator <m>1-\xi^n=0</m> because <m>\xi</m> is an <m>n</m>th
+  root of unity, and the denominator <m>1-\xi \neq 0</m> since <m>\xi \neq 1</m>.
+  </p>
+  </remark>
+  
   <p>
   So, our strategy for Dirichlet's theorem is to consider sums
   <men>
@@ -190,7 +204,16 @@
   Let <m>q = 3</m>.
   For every prime <m>p</m>, define
   <men>
-    \epsilon(p) =
+    \alpha(p) =
+    \begin{cases}
+      1, \amp p \equiv 1 \pmod{3} \\
+      1, \amp p \equiv 2 \pmod{3} \\
+      0, \amp p \equiv 0 \pmod{3} (p=3)
+    \end{cases}
+  </men>
+  and
+  <men>
+    \beta(p) =
     \begin{cases}
       1, \amp p \equiv 1 \pmod{3} \\
       -1, \amp p \equiv 2 \pmod{3} \\
@@ -203,13 +226,15 @@
   <p>
   Consider the sums
   <men>
-    A(x) = \sum_{p \leq x} \frac{\log p}{p}
+    A(x) = \sum_{p \leq x} \frac{\log p}{p} \alpha(p)
+      = \frac{\log 2}{2} + \frac{\log 5}{5} + \frac{\log 7}{7}
+        + \frac{\log 11}{11} + \frac{\log 13}{13} + \dotsb
   </men>
-  (here the root of unity is <m>\xi_p = 1</m> for all <m>p</m>)
+  (here the root of unity is <m>\xi_p = 1</m> for all <m>p</m> other than <m>3</m>)
   and
   <men>
-    B(x) = \sum_{p \leq x} \frac{\log p}{p} \epsilon(p)
-      = - \frac{\log 2}{2} (-1) - \frac{\log 5}{5}
+    B(x) = \sum_{p \leq x} \frac{\log p}{p} \beta(p)
+      = - \frac{\log 2}{2} - \frac{\log 5}{5}
         + \frac{\log 7}{7} - \frac{\log 11}{11} + \frac{\log 13}{13} + \dotsb
   </men>.
   Then
