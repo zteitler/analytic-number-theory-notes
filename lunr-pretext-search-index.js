@@ -1333,6 +1333,24 @@ var ptx_lunr_docs = [
   "body": " Let , and be positive integers such that . Then where runs over all Dirichlet characters modulo .  If or then for all . Otherwise, we reduce to group characters and the result follows from the orthogonality of group characters.  "
 },
 {
+  "id": "sec-dirichlet-l-functions",
+  "level": "1",
+  "url": "sec-dirichlet-l-functions.html",
+  "type": "Section",
+  "number": "7.5",
+  "title": "Dirichlet L-functions",
+  "body": " Dirichlet L-functions  Let be a positive integer and a Dirichlet character modulo . We define , called the Dirichlet -function associated to . Here is a complex variable; is a function defined on the subset of where this series converges, with values in .  When we think of as a complex number, we can write , where is the real part of and is the imaginary part. However for the proof of Dirichlet's theorem we will only deal with real values of , so we will mostly just use the letter .  The series converges absolutely if has real part strictly greater than , i.e., if . To see this, recall that every value is either a root of unity, or else zero. Then, . We know that this series converges if , and diverges if , by the theory of -series.  However we will also be interested in Dirichlet -functions when . Now the series fails to converge absolutely, but it might still converge conditionally.  Having said that, if the character is the principal character, then it's easy to see that diverges to if . It is not exactly a -series because when . However, for each arithmetic sequence corresponding to a residue class modulo , we can show that the sum diverges, via a comparison with a -series. For example, , where the last sum is a normal -series, so it diverges if .  So, the Dirichlet -series for the principal character diverges if , and for nonprincipal characters, it does not converge absolutely if . The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.  "
+},
+{
+  "id": "sec-dirichlet-l-functions-2",
+  "level": "2",
+  "url": "sec-dirichlet-l-functions.html#sec-dirichlet-l-functions-2",
+  "type": "Definition",
+  "number": "7.5.1",
+  "title": "",
+  "body": "Let be a positive integer and a Dirichlet character modulo . We define , called the Dirichlet -function associated to . Here is a complex variable; is a function defined on the subset of where this series converges, with values in . "
+},
+{
   "id": "bibliography",
   "level": "1",
   "url": "bibliography.html",

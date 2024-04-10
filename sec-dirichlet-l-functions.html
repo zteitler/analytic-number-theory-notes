@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Summation Formulas</title>
+<title>Dirichlet L-functions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-hermite-applications.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="analytic-number-theory-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-big-o.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -166,7 +166,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-4-summation-formulas.html" class="internal"><span class="codenumber">4</span> <span class="title">Summation Formulas</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
@@ -225,9 +225,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mertens.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Mertens’ Theorems</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-7-dirichlets-theorem.html" class="internal"><span class="codenumber">7</span> <span class="title">Dirichlet’s Theorem</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></div>
 <ul class="structural toc-item-list">
@@ -244,7 +244,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonality relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-l-functions.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Dirichlet L-functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-dirichlet-l-functions.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Dirichlet L-functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -255,19 +255,44 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-4-summation-formulas"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">4</span><span class="space"> </span><span class="title">Summation Formulas</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-dirichlet-l-functions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.5</span><span class="space"> </span><span class="title">Dirichlet L-functions</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="sec-big-o.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Big O Notation And Friends</span></a></li>
-<li><a href="sec-sums-monotone.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Sums of Monotone Functions</span></a></li>
-<li><a href="sec-summation-by-parts.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Summation by Parts</span></a></li>
-<li><a href="sec-riemann-stieltjes.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Riemann-Stieltjes Integration</span></a></li>
-<li><a href="sec-abel-summation.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Abel Summation</span></a></li>
-<li><a href="sec-euler-summation.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Euler Summation</span></a></li>
-</ul></nav></section></div>
+<article class="definition definition-like" id="sec-dirichlet-l-functions-2"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.5.1</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(q\)</span> be a positive integer and <span class="process-math">\(\chi\)</span> a Dirichlet character modulo <span class="process-math">\(q\text{.}\)</span> We define<div class="displaymath process-math" id="sec-dirichlet-l-functions-2-4">
+\begin{equation}
+L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}\text{,}\tag{7.5.1}
+\end{equation}
+</div>called the <dfn class="terminology">Dirichlet <span class="process-math">\(L\)</span>-function</dfn> associated to <span class="process-math">\(\chi\text{.}\)</span> Here <span class="process-math">\(s\)</span> is a complex variable; <span class="process-math">\(L(\chi,s)\)</span> is a function defined on the subset of <span class="process-math">\(\bbC\)</span> where this series converges, with values in <span class="process-math">\(\bbC\text{.}\)</span></article><div class="para" id="sec-dirichlet-l-functions-3">When we think of <span class="process-math">\(s\)</span> as a complex number, we can write <span class="process-math">\(s = \sigma + it\text{,}\)</span> where <span class="process-math">\(\sigma\)</span> is the real part of <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> is the imaginary part. However for the proof of Dirichlet’s theorem we will only deal with real values of <span class="process-math">\(s\text{,}\)</span> so we will mostly just use the letter <span class="process-math">\(s\text{.}\)</span>
+</div>
+<div class="para logical" id="sec-dirichlet-l-functions-4">
+<div class="para">The series converges absolutely if <span class="process-math">\(s\)</span> has real part strictly greater than <span class="process-math">\(1\text{,}\)</span> i.e., if <span class="process-math">\(\sigma \gt 1\text{.}\)</span> To see this, recall that every value <span class="process-math">\(\chi(n)\)</span> is either a root of unity, or else zero. Then,</div>
+<div class="displaymath process-math" id="sec-dirichlet-l-functions-4-5">
+\begin{equation}
+\sum_{n=1}^{\infty} \left| \frac{\chi(n)}{n^s} \right|
+\leq \sum_{n=1}^{\infty} \frac{1}{n^\sigma}\text{.}\tag{7.5.2}
+\end{equation}
+</div>
+<div class="para">We know that this series converges if <span class="process-math">\(\sigma \gt 1\text{,}\)</span> and diverges if <span class="process-math">\(\sigma \leq 1\text{,}\)</span> by the theory of <span class="process-math">\(p\)</span>-series.</div>
+</div>
+<div class="para" id="sec-dirichlet-l-functions-5">However we will also be interested in Dirichlet <span class="process-math">\(L\)</span>-functions when <span class="process-math">\(0 \lt \sigma \leq 1\text{.}\)</span> Now the series fails to converge absolutely, but it might still converge conditionally.</div>
+<div class="para logical" id="sec-dirichlet-l-functions-6">
+<div class="para">Having said that, if the character <span class="process-math">\(\chi=\chi_0\)</span> is the principal character, then it’s easy to see that <span class="process-math">\(\sum \chi_0(n)/n^s\)</span> diverges to <span class="process-math">\(\infty\)</span> if <span class="process-math">\(\sigma \leq 1\text{.}\)</span> It is not exactly a <span class="process-math">\(p\)</span>-series because <span class="process-math">\(\chi_0(n) = 0\)</span> when <span class="process-math">\((n,q) \gt 1\text{.}\)</span> However, for each arithmetic sequence corresponding to a residue class modulo <span class="process-math">\(q\text{,}\)</span> we can show that the sum diverges, via a comparison with a <span class="process-math">\(p\)</span>-series. For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n \equiv 2 \pmod{5}} \left|\frac{1}{n^s}\right|
+= \frac{1}{2^\sigma} + \frac{1}{7^\sigma} + \frac{1}{12^\sigma} + \dotsb
+\gt \frac{1}{5^\sigma} + \frac{1}{10^\sigma} + \frac{1}{15^\sigma} + \dotsb
+= \frac{1}{5^\sigma} \left( \frac{1}{1^\sigma} + \frac{1}{2^\sigma} + \frac{1}{3^\sigma} + \dotsb \right)\text{,}
+\end{equation*}
+</div>
+<div class="para">where the last sum is a normal <span class="process-math">\(p\)</span>-series, so it diverges if <span class="process-math">\(\sigma \leq 1\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="sec-dirichlet-l-functions-7">So, the Dirichlet <span class="process-math">\(L\)</span>-series for the principal character diverges if <span class="process-math">\(\sigma \leq 1\text{,}\)</span> and for nonprincipal characters, it does not converge absolutely if <span class="process-math">\(\sigma \leq 1\text{.}\)</span> The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-hermite-applications.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-big-o.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
