@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-dirichlet-characters" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dirichlet characters</title>
+  
+  <p>
+  From this point on, we will not deal with characters on arbitrary
+  finite abelian groups any more, only the groups
+  <m>(\bbZ/q\bbZ)^\times</m>.
+  In order to lighten the notation <m>\chi \in \widehat{(\bbZ/q\bbZ)^\times}</m>
+  (especially occurring as a subscript of a summation!),
+  we will just write <m>\chi \mod q</m>.
+  Thus, for example, for any <m>g \in (\bbZ/q\bbZ)^\times</m>,
+  <me>
+    \sum_{\chi \mod q} \chi(g) = \begin{cases}
+      |G|, \amp \text{if } g = 1, \\
+      0, \amp \text{otherwise}
+    \end{cases}
+  </me>.
+  We can say <m>\chi</m> is a character modulo <m>q</m> (or mod <m>q</m>)
+  if <m>\chi</m> is a character on <m>(\bbZ/q\bbZ)^\times</m>.
+  </p>
+  
+  
+  <definition>
+  Given a character <m>f</m> modulo <m>q</m>,
+  we define a function <m>\chi : \bbZ_{\gt 0} \to \bbC</m> by
+  <men>
+    \chi(a) = \begin{cases}
+      f(a \bmod q), \amp \text{if } (a,q) = 1, \\
+      0 \amp \text{otherwise}
+    \end{cases}
+  </men>.
+  This is called a Dirichlet character.
+  </definition>
+  
+  <theorem>
+  <statement>
+  There are exactly <m>\phi(q)</m> Dirichlet characters
+  modulo <m>q</m>.
+  A Dirichlet character <m>\chi</m> modulo <m>q</m>
+  has these properties:
+  <ol>
+  <li>
+    <m>\chi</m> is periodic with period <m>q</m>, that is,
+    <m>\chi(n+q) = f(n)</m> for all <m>n</m>.
+  </li>
+  <li>
+    <m>\chi(n)=0</m> if and only if <m>(n,q) \gt 1</m>.
+  </li>
+  <li>
+    <m>\chi</m> is completely multiplicative, that is,
+    <m>\chi(mn) = \chi(m)\chi(n)</m> for all <m>m,n</m>
+    (including if <m>(m,n) \gt 1</m>).
+  </li>
+  </ol>
+  Conversely, any function <m>\chi : \bbN \to \bbC</m>
+  satisfying the above properties must be a Dirichlet character
+  modulo <m>q</m>.
+  </statement>
+  
+  <proof>
+  Exercise.
+  </proof>
+  </theorem>
+  
+  <p>
+  Dirichlet characters inherit some of the properties of group characters,
+  including the following versions of the orthogonality relations.
+  </p>
+  
+  <theorem>
+  <statement>
+  Let <m>q</m> be a positive integer and let
+  <m>\chi,\psi</m> be Dirichlet characters modulo <m>q</m>.
+  Then
+  <men>
+    \sum_{a \bmod q} \psi(a)\overline{\chi}(a) =
+    \begin{cases}
+      \phi(q), \amp \text{if } \psi = \chi, \\
+      0, \amp \text{otherwise}
+    \end{cases}
+  </men>
+  where <m>a</m> runs over a complete residue system modulo <m>q</m>.
+  </statement>
+  <proof>
+  Exercise.
+  </proof>
+  </theorem>
+  
+  <remark>
+  <p>
+  Recall that a complete residue system modulo <m>q</m> is a set
+  of integers with exactly one element in each residue class
+  modulo <m>q</m>.
+  Examples of complete residue systems include
+  <m>\{0,1,\dotsc,q-1\}</m>,
+  <m>\{1,2,\dotsc,q\}</m>,
+  or more generally any set of <m>q</m> consecutive integers;
+  but also non-consecutive sets, for example
+  <m>\{0,1,2,4,8\}</m> is a complete residue system modulo <m>5</m>.
+  </p>
+  </remark>
+  
+  <theorem>
+  <statement>
+  Let <m>a</m>, <m>b</m> and <m>q</m> be positive integers
+  such that <m>(a,q)=1</m>.
+  Then
+  <men>
+    \sum_{\chi \bmod q} \chi(a)\overline{\chi}(b) =
+    \begin{cases}
+      \phi(q), \amp \text{if } a \equiv b \pmod{q}, \\
+      0, \amp \text{otherwise}
+    \end{cases}
+  </men>
+  where <m>\chi</m> runs over all Dirichlet characters
+  modulo <m>q</m>.
+  </statement>
+  <proof>
+  If <m>(a,q) \gt 1</m> or <m>(b,q) \gt 1</m>
+  then <m>\chi(a)\overline{\chi}(b) = 0</m> for all <m>\chi</m>.
+  Otherwise, we reduce to group characters and the result
+  follows from the orthogonality of group characters.
+  </proof>
+  </theorem>
+  
+
+
+
+</section>

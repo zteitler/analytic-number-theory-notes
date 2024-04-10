@@ -102,9 +102,17 @@
   Is <m>\pi(x,q,a) \sim \frac{1}{\phi(q)} \frac{x}{\log x}</m>?
   </li>
   </ol>
-  While these are natural questions to consider,
-  for our course we will focus on the version of the theorem
-  stated above.
+  </p>
+  
+  <p>
+  Both questions are answered affirmatively (<lq/>yes<rq/>) later in the textbook.
+  See Corollary 7.25 (in section 7.5, after the proof of Dirichlet's theorem)
+  and see Theorem 9.19 (in section 9.7, Notes on Primes in Arithmetic Progressions).
+  </p>
+  
+  <p>
+  We might get to these if time permits, otherwise we will focus on the
+  <lq/>main<rq/> form of Dirichlet's theorem as stated above.
   </p>
   </remark>
   
@@ -116,6 +124,8 @@
   <xi:include href="ch-7-dirichlets-theorem/sec-characters.ptx" />
 
   <xi:include href="ch-7-dirichlets-theorem/sec-orthogonality.ptx" />
+
+  <xi:include href="ch-7-dirichlets-theorem/sec-dirichlet-characters.ptx" />
 
 
 </chapter>

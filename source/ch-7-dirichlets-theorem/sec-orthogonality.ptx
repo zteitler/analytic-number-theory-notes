@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-orthogonality" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Orthogonality relations</title>
+
+  <lemma>
+  <statement>
+  Let <m>G</m> be a finite abelian group and let <m>g \neq 1</m>
+  be a nonidentity element of <m>G</m>.
+  Then there exists <m>\psi \in \hat{G}</m> such that
+  <m>\psi(g) \neq 1</m>.
+  </statement>
+  
+  <proof>
+  <p>
+  Fix an isomorphism <m>G \cong \bbZ/m_1\bbZ \times \dotsb \times \bbZ/m_k\bbZ</m>.
+  Let <m>g</m> correspond to the tuple <m>(a_1,\dotsc,a_k)</m>.
+  There is some <m>k</m> such that <m>a_k \not\cong 0 \pmod{m_k}</m>.
+  Define the character <m>\psi</m> as
+  <me>
+    \psi = (\chi_0,\chi_0,\dotsc,\chi_0,\chi_1,\chi_0,\dotsc,\chi_0)
+  </me>,
+  where, for all <m>i \neq r</m>, <m>\chi_0</m> is the principal
+  character on the <m>i</m>th factor <m>\bbZ/m_i \bbZ</m>,
+  and for <m>i=r</m>, <m>\chi_1</m> the character defined previously
+  on the factor <m>\bbZ/m_r \bbZ</m>.
+  </p>
+  
+  <p>
+  Then we have
+  <me>
+  \begin{split}
+    \psi(b_1,\dotsc,b_k) \amp = \chi_0(b_1)\chi_0(b_2) \dotsm \chi_0(b_{r-1}) \chi_1(b_r) \chi_0(b_{r+1}) \dotsm \chi_0(b_k) \\
+      \amp = \chi_1(b_r) \\
+      \amp = e(b_r / m_r)
+  \end{split}
+  </me>.
+  Specifically, <m>\psi(g) = e(a_r / m_r) \neq 1</m>
+  because <m>a_r \not\cong 0 \pmod{m_r}</m>.
+  </p>
+  </proof>
+  </lemma>
+  
+  <remark>
+  This lemma, for more general (infinite) groups,
+  is known as the Peter-Weyl theorem
+  (more precisely, it is part of the Peter-Weyl theorem).
+  </remark>
+  
+  <p>
+  Now we can consider sums of character values over an arbitrary
+  (not cyclic) finite abelian group.
+  </p>
+  
+  <theorem>
+  <statement>
+  Let <m>G</m> be a finite abelian group.
+  Then:
+  <ol>
+  <li>
+    If a character <m>\chi</m> of <m>G</m> is given, then
+    <men>
+      \sum_{g \in G} \chi(g) =
+      \begin{cases}
+        |G|, \amp \text{if } \chi=\chi_0, \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>.
+  </li>
+  
+  <li>
+    If an element <m>g</m> of <m>G</m> is given, then
+    <men>
+      \sum_{\chi \in \hat{G}} \chi(g) =
+      \begin{cases}
+        |G|, \amp \text{if } g = 1, \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>.
+  </li>
+  </ol>
+  </statement>
+  
+  <proof>
+  <p>
+  If <m>\chi = \chi_0</m> then <m>\chi(g) = 1</m> for all <m>g \in G</m>.
+  Likewise if <m>g = 1</m> then <m>\chi(g) = 1</m> for all <m>\chi \in \hat{G}</m>.
+  In those cases the sum is <m>|G|</m>
+  (we use <m>|\hat{G}| = |G|</m>).
+  </p>
+  
+  <p>
+  Now, given <m>\chi</m>, let <m>S_\chi = \sum_{g \in G} \chi(g)</m>.
+  We have, for any <m>h \in G</m>,
+  <men>
+    \chi(h) S = \sum_{g \in G} \chi(h)\chi(g) = \sum_{g \in G} \chi(hg)
+      = \sum_{x \in G} \chi(x) = S_\chi
+  </men>,
+  that is, <m>(1-\chi(h))S_\chi = 0</m>.
+  If <m>\chi</m> is non-principal then (by definition)
+  there is some <m>h \in G</m> such that <m>\chi(h) \neq 1</m>.
+  With this choice of <m>h</m> it follows that <m>S_\chi = 0</m>.
+  </p>
+  
+  <p>
+  Similarly, given <m>g \in G</m>, let <m>S_g = \sum_{\chi \in \hat{G}} \chi(g)</m>.
+  For any <m>\psi \in \hat{G}</m>, consider
+  <men>
+    \psi(g) S_g = \psi(g) \sum_{\chi \in \hat{G}} \chi(g)
+      = \sum_{\chi \in \hat{G}} (\psi\chi)(g)
+      = \sum_{\eta \in \hat{G}} \eta(g) = S_g
+  </men>.
+  Here we are using that <m>\hat{G}</m> is a group,
+  so <m>\{\psi\chi \colon \chi \in \hat{G}\} = \hat{G}</m>.
+  We get that <m>(1-\psi(g))S_g = 0</m>.
+  By the previous lemma, if <m>g \neq 1</m>,
+  there is some <m>\psi \in \hat{G}</m> so that <m>\psi(g) \neq 1</m>.
+  Then <m>S_g = 0</m>, as claimed.
+  </p>
+  </proof>
+  </theorem>
+  
+  <theorem>
+  <statement>
+  Let <m>G</m> be a finite abelian group. Then:
+  <ol>
+  <li>
+    For any <m>\chi,\psi \in \hat{G}</m> we have:
+    <men>
+      \sum_{g \in G} \chi(g) \overline{\psi(g)} =
+      \begin{cases}
+        |G|, \amp \text{if } \chi=\psi, \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>.
+  </li>
+  
+  <li>
+    For any <m>g, h \in G</m> we have:
+    <men>
+      \sum_{\chi \in \hat{G}} \chi(g) \overline{\chi(h)} =
+      \begin{cases}
+        |G|, \amp \text{if } g=h, \\
+        0, \amp \text{otherwise}
+      \end{cases}
+    </men>.
+  </li>
+  </ol>
+  </statement>
+  
+  <proof>
+  <p>
+  Recall that
+  <men>
+    \overline{\psi(g)} = (\overline{\psi})(g) = \psi^{-1}(g) = (\psi(g))^{-1}
+  </men>.
+  So <m>\chi(g)\overline{\psi(g)} = (\chi\psi^{-1})(g)</m>.
+  By the previous result, the sum <m>\sum_{g \in G} (\chi\psi^{-1})(g)</m>
+  is either equal to <m>|G|</m> if <m>\chi\psi^{-1} = \chi_0</m>,
+  the principal character, or else is equal to <m>0</m>.
+  Since <m>\chi_0</m> is the identity element in <m>\hat{G}</m>,
+  then <m>\chi\psi^{-1} = \chi_0</m> if and only if <m>\chi=\psi</m>.
+  </p>
+  
+  <p>
+  Similarly, <m>\chi(g)\overline{\chi(h)} = \chi(gh^{-1})</m>.
+  Therefore the sum <m>\sum_{\chi \in \hat{G}} \chi(gh^{-1})</m> is
+  either equal to <m>|G|</m> if <m>gh^{-1} = 1</m>, or else is equal to <m>1</m>.
+  </p>
+  </proof>
+  </theorem>
+  
+  <remark>
+  <p>
+  We won't pursue this idea much further, but it is worth mentioning:
+  We can define <lq/>inner products<rq/> on <m>G</m> and on <m>\hat{G}</m> by
+  <men>
+    \langle g \mid h \rangle = \frac{1}{|G|} \sum_{\chi \in \hat{G}} \chi(g)\overline{\chi(h)},
+    \qquad
+    \langle \chi \mid \psi \rangle = \frac{1}{|G|} \sum_{g \in G} \chi(g) \overline{\psi(g)}
+  </men>.
+  These are not exactly inner products because <m>G</m> and <m>\hat{G}</m>
+  are not vector spaces.
+  So we can consider the vector spaces with <m>G</m> and <m>\hat{G}</m>
+  as bases; or, even better, the <lq/>group algebras<rq/> of <m>G</m>
+  and <m>\hat{G}</m>.
+  Without getting into the definitions of those, 
+  we'll just remark that the previous theorem means that
+  the elements of <m>G</m> form an orthonormal basis for their
+  group algebra, and likewise, the elements of <m>\hat{G}</m> form
+  an orthonormal basis for their group algebra.
+  </p>
+  </remark>
+
+</section>
