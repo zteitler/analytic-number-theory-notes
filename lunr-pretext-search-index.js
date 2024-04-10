@@ -1060,7 +1060,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.1",
   "title": "Overview of Proof of Dirichlet’s Theorem",
-  "body": " Overview of Proof of Dirichlet's Theorem   I will add to this overview as I continue to work through the proof.    Repeating the proof of Mertens's theorems  To some extent the proof is a reprise of the proof of Mertens's theorems:  We start with estimating by using a comparison between the sum and integral of a monotone function.  Next, we rewrite this as a sum involving the Von Mangoldt function, , by rewriting the previous sum as a double sum indexed over lattice points under a hyperbola.  This in turn lets us estimate , where we can control the error term thanks to Chebyshev's estimate for the Chebyshev function.  We check that the terms with powers have a convergent sum, so they contribute a bounded amount to the total, in other words an amount. Dropping these terms leaves the sum and only makes an difference.  (For Mertens's theorems our next step was to use Riemann-Stieltjes integration and integration by parts to change the sum to . However we will not take this step in our study of Dirichlet's theorem.)  Our plan is basically to repeat all the same ideas, with the added restriction of summing over a congruence class modulo . How will we do this? The basic idea is to use complex roots of unity.    Complex roots of unity  A complex th root of unity is a complex number (the Greek letter xi) such that . There are such numbers, forming the vertices of a regular -gon inscribed in the unit circle. The th roots of unity are for . They form a group under multiplication. This group is cyclic.  A fundamental fact about roots of unity concerns the sum of roots of unity, or of powers of a root of unity.    Let and let be the th roots of unity. Then .    Geometrically, the points are equally spaced around the origin, so their average or center of gravity is at the origin.  Algebraically, the polynomial factors, . The coefficient of is zero on the left hand side, and is on the right hand side.     Likewise, , and similar statements hold for the sum of products of of the 's.    Let be an th root of unity. Then    If then every and the sum, having terms, is equal to .  Otherwise, suppose that . Let be the order of , the smallest positive integer such that . The assumption means .  Note that must be a divisor of . (This follows from Lagrange's theorem in group theory. Alternatively, if with , then . Since , then as well. The fact that contradicts that is the smallest positive integer such that , unless, of course, is not positive. And this must be the case: , so divides .)  Then the values are th roots of unity, and they are pairwise distinct (why? exercise). So they are in fact all of the th roots of unity. By the previous proposition, .  Finally, the full sum is simply equal to the sum of the first terms, repeated times. This is because , so that each term in the sum is simply a repetition of the term steps earlier. Therefore the full sum is times zero, which is simply zero.    So, our strategy for Dirichlet's theorem is to consider sums where, for each , is a root of unity chosen in some way. Specifically, we will choose them so that if , then , but otherwise, the will cycle among all the roots of unity. Then we will add together all of these sums, with the result that the terms with will add up, but the other terms will cancel out (add up to zero).   Let . For every prime , define . Other than , these are nd roots of unity.  Consider the sums (here the root of unity is for all ) and . Then and .   We will have to figure out how to choose the roots of unity in general in order to get the cancellation we seek. And we will have to estimate the order of growth of these sums involving the roots of unity. This is our plan!   "
+  "body": " Overview of Proof of Dirichlet's Theorem   I will add to this overview as I continue to work through the proof.    Repeating the proof of Mertens's theorems  To some extent the proof is a reprise of the proof of Mertens's theorems:  We start with estimating by using a comparison between the sum and integral of a monotone function.  Next, we rewrite this as a sum involving the Von Mangoldt function, , by rewriting the previous sum as a double sum indexed over lattice points under a hyperbola.  This in turn lets us estimate , where we can control the error term thanks to Chebyshev's estimate for the Chebyshev function.  We check that the terms with powers have a convergent sum, so they contribute a bounded amount to the total, in other words an amount. Dropping these terms leaves the sum and only makes an difference.  (For Mertens's theorems our next step was to use Riemann-Stieltjes integration and integration by parts to change the sum to . However we will not take this step in our study of Dirichlet's theorem.)  Our plan is basically to repeat all the same ideas, with the added restriction of summing over a congruence class modulo . How will we do this? The basic idea is to use complex roots of unity.    Complex roots of unity  A complex th root of unity is a complex number (the Greek letter xi) such that . There are such numbers, forming the vertices of a regular -gon inscribed in the unit circle. The th roots of unity are for . They form a group under multiplication. This group is cyclic.  A fundamental fact about roots of unity concerns the sum of roots of unity, or of powers of a root of unity.    Let and let be the th roots of unity. Then .    Geometrically, the points are equally spaced around the origin, so their average or center of gravity is at the origin.  Algebraically, the polynomial factors, . The coefficient of is zero on the left hand side, and is on the right hand side.     Likewise, , and similar statements hold for the sum of products of of the 's.    Let be an th root of unity. Then    If then every and the sum, having terms, is equal to .  Otherwise, suppose that . Let be the order of , the smallest positive integer such that . The assumption means .  Note that must be a divisor of . (This follows from Lagrange's theorem in group theory. Alternatively, if with , then . Since , then as well. The fact that contradicts that is the smallest positive integer such that , unless, of course, is not positive. And this must be the case: , so divides .)  Then the values are th roots of unity, and they are pairwise distinct (why? exercise). So they are in fact all of the th roots of unity. By the previous proposition, .  Finally, the full sum is simply equal to the sum of the first terms, repeated times. This is because , so that each term in the sum is simply a repetition of the term steps earlier. Therefore the full sum is times zero, which is simply zero.     After presenting the above proof, I realized there's a much quicker idea: the sum is a (finite) geometric series. If , the value of the sum is where the numerator because is an th root of unity, and the denominator since .   So, our strategy for Dirichlet's theorem is to consider sums where, for each , is a root of unity chosen in some way. Specifically, we will choose them so that if , then , but otherwise, the will cycle among all the roots of unity. Then we will add together all of these sums, with the result that the terms with will add up, but the other terms will cancel out (add up to zero).   Let . For every prime , define and . Other than , these are nd roots of unity.  Consider the sums (here the root of unity is for all other than ) and . Then and .   We will have to figure out how to choose the roots of unity in general in order to get the cancellation we seek. And we will have to estimate the order of growth of these sums involving the roots of unity. This is our plan!   "
 },
 {
   "id": "sec-overview-4-4",
@@ -1090,13 +1090,22 @@ var ptx_lunr_docs = [
   "body": " Let be an th root of unity. Then    If then every and the sum, having terms, is equal to .  Otherwise, suppose that . Let be the order of , the smallest positive integer such that . The assumption means .  Note that must be a divisor of . (This follows from Lagrange's theorem in group theory. Alternatively, if with , then . Since , then as well. The fact that contradicts that is the smallest positive integer such that , unless, of course, is not positive. And this must be the case: , so divides .)  Then the values are th roots of unity, and they are pairwise distinct (why? exercise). So they are in fact all of the th roots of unity. By the previous proposition, .  Finally, the full sum is simply equal to the sum of the first terms, repeated times. This is because , so that each term in the sum is simply a repetition of the term steps earlier. Therefore the full sum is times zero, which is simply zero.   "
 },
 {
-  "id": "sec-overview-4-8",
+  "id": "sec-overview-4-7",
   "level": "2",
-  "url": "sec-overview.html#sec-overview-4-8",
-  "type": "Example",
+  "url": "sec-overview.html#sec-overview-4-7",
+  "type": "Remark",
   "number": "7.1.4",
   "title": "",
-  "body": " Let . For every prime , define . Other than , these are nd roots of unity.  Consider the sums (here the root of unity is for all ) and . Then and .  "
+  "body": " After presenting the above proof, I realized there's a much quicker idea: the sum is a (finite) geometric series. If , the value of the sum is where the numerator because is an th root of unity, and the denominator since .  "
+},
+{
+  "id": "sec-overview-4-9",
+  "level": "2",
+  "url": "sec-overview.html#sec-overview-4-9",
+  "type": "Example",
+  "number": "7.1.5",
+  "title": "",
+  "body": " Let . For every prime , define and . Other than , these are nd roots of unity.  Consider the sums (here the root of unity is for all other than ) and . Then and .  "
 },
 {
   "id": "sec-characters",
@@ -1105,7 +1114,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.2",
   "title": "Characters of finite abelian groups",
-  "body": " Characters of finite abelian groups   Definition   Let be a finite abelian group. A character of is a homomorphism , the multiplicative group of nonzero complex numbers.    The definition makes sense for infinite abelian groups, but we will not get into that in this course.    The idea also makes sense for nonabelian groups, but the definition is slightly different, or, more precisely, the general definition of character happens to simplify in the abelian case. In representation theory, a representation of a group is a homomorphism from to a (multiplicative) group of matrices. The character of the representation is the map taking each group element to the trace of the corresponding matrix in the representation. This is generally not a homomorphism; for matrices , is generally not equal to . Also, an invertible matrix can have trace zero, so characters can take the value zero.  However, if it happens that the matrices are , then the trace of the matrix is simply its entry. In this case the character is essentially the same thing as the representation, and it is a homomorphism.  It turns out that for abelian groups we can essentially reduce to the case. So we can more or less conflate characters with representations, and define characters as homomorphisms, with nonzero values.    Let be a finite abelian group of order and let be a character on . For every , is an th root of unity.   By Lagrange's theorem, , the identity in . Then .     The trivial character which takes every element of to is denoted and called the principal character of .  The set of all characters of is denoted (or ) and called the dual group of . We define a multiplication on , pointwise: for , the product is defined by .     For every finite abelian group , the set is a group with the multiplication defined above. The identity element is the principal character. For , the inverse is the character denoted or , defined by or (these are equal).    It is left as an exercise to check that the pointwise multiplication is associative and that the principal character is an identity element. The fact that follows from observing that since is a root of unity, then it has norm ; holds for any complex number of norm (exercise).    Our next goal is to prove that in fact . We start with cyclic groups.   For a real number we define .     Let be a cyclic group of order . There are exactly characters of , given as follows. For each let be defined by . Then . In particular, is cyclic of order .    First we verify that each is a character. We have to check that . This holds because .  Next we check that they are pairwise distinct. Observe that . These are different for different values of in the range . (It is true that , and indeed, . This is why we stop our list at ; continuing would simply repeat the characters already on our list.) Since the functions have different values at the point , they are different functions.  Now we check that every character is one of the . Let be any character of . The value must be an th root of unity. So, it is equal to for some , with . Then for every . Therefore .  Finally, we check that is cyclic. Indeed, for every and , . The fact that this holds for all means . So, the powers of give all the elements of .      For finite abelian groups and , .    We define a mapping as follows. Let and . Define a character on by . This is a homomorphism from to (exercise). It is injective. (If is nonprincipal on or is nonprincipal on , then for some or likewise for some ; hence or similarly , and either way, is nonprincipal on .)  The map is surjective. For any character on , define by and define by . Then is a character on , is a character on , and (exercise).    In particular, if and , then .   Fundamental Theorem of Finite Abelian Groups   Every finite abelian group is a direct product of cyclic groups. That is, any finite abelian group is .    By the Chinese Remainder Theorem, if , then . So if we choose to, we can assume that the decomposition of an arbitrary finite abelian group is into cyclic groups of prime power order.    Let be any finite abelian group. Then . In particular, .    By induction on the number of cyclic factors in a decomposition of as a direct product of cyclic groups.    We are also interested in taking sums of character values (just as earlier we considered sums of roots of unity).    Let be a cyclic group of order . Then the following hold.   If a character of is given and we sum over elements of , then .    If an element is given and we sum over characters, then        First suppose is given. Then the sum is . Since is an th root of unity, the first claim follows.  Next, suppose is given. Then the sum is . Here, is an th root of unity, so once again the result follows.    (The textbook includes here the result that is cyclic of order when is. I omit that here because we already showed it earlier. )  "
+  "body": " Characters of finite abelian groups   Definition   Let be a finite abelian group. A character of is a homomorphism , the multiplicative group of nonzero complex numbers.    The definition makes sense for infinite abelian groups, but we will not get into that in this course.    The idea also makes sense for nonabelian groups, but the definition is slightly different, or, more precisely, the general definition of character happens to simplify in the abelian case. In representation theory, a representation of a group is a homomorphism from to a (multiplicative) group of matrices. The character of the representation is the map taking each group element to the trace of the corresponding matrix in the representation. This is generally not a homomorphism; for matrices , is generally not equal to . Also, an invertible matrix can have trace zero, so characters can take the value zero.  However, if it happens that the matrices are , then the trace of the matrix is simply its entry. In this case the character is essentially the same thing as the representation, and it is a homomorphism.  It turns out that for abelian groups we can essentially reduce to the case. So we can more or less conflate characters with representations, and define characters as homomorphisms, with nonzero values.    Let be a finite abelian group of order and let be a character on . For every , is an th root of unity.   By Lagrange's theorem, , the identity in . Then .     The trivial character which takes every element of to is denoted and called the principal character of .  The set of all characters of is denoted (or ) and called the dual group of . We define a multiplication on , pointwise: for , the product is defined by .     For every finite abelian group , the set is a group with the multiplication defined above. The identity element is the principal character. For , the inverse is the character denoted or , defined by or (these are equal).    It is left as an exercise to check that the pointwise multiplication is associative and that the principal character is an identity element. The fact that follows from observing that since is a root of unity, then it has norm ; holds for any complex number of norm (exercise).    Our next goal is to prove that in fact . We start with cyclic groups.   For a real number we define .     Let be a cyclic group of order . There are exactly characters of , given as follows. For each let be defined by . Then . In particular, is cyclic of order .    First we verify that each is a character. We have to check that . This holds because .  Next we check that they are pairwise distinct. Observe that . These are different for different values of in the range . (It is true that , and indeed, . This is why we stop our list at ; continuing would simply repeat the characters already on our list.) Since the functions have different values at the point , they are different functions.  Now we check that every character is one of the . Let be any character of . The value must be an th root of unity. So, it is equal to for some , with . Then for every . Therefore .  Finally, we check that is cyclic. Indeed, for every and , . The fact that this holds for all means . So, the powers of give all the elements of .      For finite abelian groups and , .    We define a mapping as follows. Let and . Define a character on by . This is a homomorphism from to (exercise). It is injective. (If is nonprincipal on or is nonprincipal on , then for some or likewise for some ; hence or similarly , and either way, is nonprincipal on .)  The map is surjective. For any character on , define by and define by . Then is a character on , is a character on , and (exercise).    In particular, if and , then .   Fundamental Theorem of Finite Abelian Groups   Every finite abelian group is a direct product of cyclic groups. That is, any finite abelian group is .    By the Chinese Remainder Theorem, if , then . So if we choose to, we can assume that the decomposition of an arbitrary finite abelian group is into cyclic groups of prime power order.    Let be any finite abelian group. Then . In particular, .    By induction on the number of cyclic factors in a decomposition of as a direct product of cyclic groups.      Sums of character values  We are also interested in taking sums of character values (just as earlier we considered sums of roots of unity).    Let be a cyclic group of order . Then the following hold.   If a character of is given and we sum over elements of , then .    If an element is given and we sum over characters, then        First suppose is given. Then the sum is . Since is an th root of unity, the first claim follows.  Next, suppose is given. Then the sum is . Here, is an th root of unity, so once again the result follows.    (The textbook includes here the result that is cyclic of order when is. I omit that here because we already showed it earlier.)  We will generalize this to non-cyclic groups in the next section.   "
 },
 {
   "id": "sec-characters-2-2",
@@ -1207,13 +1216,121 @@ var ptx_lunr_docs = [
   "body": "  Let be any finite abelian group. Then . In particular, .    By induction on the number of cyclic factors in a decomposition of as a direct product of cyclic groups.   "
 },
 {
-  "id": "sec-characters-2-17",
+  "id": "sec-characters-3-3",
   "level": "2",
-  "url": "sec-characters.html#sec-characters-2-17",
+  "url": "sec-characters.html#sec-characters-3-3",
   "type": "Theorem",
   "number": "7.2.12",
   "title": "",
   "body": "  Let be a cyclic group of order . Then the following hold.   If a character of is given and we sum over elements of , then .    If an element is given and we sum over characters, then        First suppose is given. Then the sum is . Since is an th root of unity, the first claim follows.  Next, suppose is given. Then the sum is . Here, is an th root of unity, so once again the result follows.   "
+},
+{
+  "id": "sec-orthogonality",
+  "level": "1",
+  "url": "sec-orthogonality.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "Orthogonality relations",
+  "body": " Orthogonality relations   Let be a finite abelian group and let be a nonidentity element of . Then there exists such that .   Fix an isomorphism . Let correspond to the tuple . There is some such that . Define the character as , where, for all , is the principal character on the th factor , and for , the character defined previously on the factor .  Then we have . Specifically, because .    This lemma, for more general (infinite) groups, is known as the Peter-Weyl theorem (more precisely, it is part of the Peter-Weyl theorem).  Now we can consider sums of character values over an arbitrary (not cyclic) finite abelian group.   Let be a finite abelian group. Then:  If a character of is given, then .  If an element of is given, then .     If then for all . Likewise if then for all . In those cases the sum is (we use ).  Now, given , let . We have, for any , , that is, . If is non-principal then (by definition) there is some such that . With this choice of it follows that .  Similarly, given , let . For any , consider . Here we are using that is a group, so . We get that . By the previous lemma, if , there is some so that . Then , as claimed.     Let be a finite abelian group. Then:  For any we have: .  For any we have: .     Recall that . So . By the previous result, the sum is either equal to if , the principal character, or else is equal to . Since is the identity element in , then if and only if .  Similarly, . Therefore the sum is either equal to if , or else is equal to .     We won't pursue this idea much further, but it is worth mentioning: We can define inner products on and on by . These are not exactly inner products because and are not vector spaces. So we can consider the vector spaces with and as bases; or, even better, the group algebras of and . Without getting into the definitions of those, we'll just remark that the previous theorem means that the elements of form an orthonormal basis for their group algebra, and likewise, the elements of form an orthonormal basis for their group algebra.   "
+},
+{
+  "id": "sec-orthogonality-2",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-2",
+  "type": "Lemma",
+  "number": "7.3.1",
+  "title": "",
+  "body": " Let be a finite abelian group and let be a nonidentity element of . Then there exists such that .   Fix an isomorphism . Let correspond to the tuple . There is some such that . Define the character as , where, for all , is the principal character on the th factor , and for , the character defined previously on the factor .  Then we have . Specifically, because .   "
+},
+{
+  "id": "sec-orthogonality-3",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-3",
+  "type": "Remark",
+  "number": "7.3.2",
+  "title": "",
+  "body": "This lemma, for more general (infinite) groups, is known as the Peter-Weyl theorem (more precisely, it is part of the Peter-Weyl theorem). "
+},
+{
+  "id": "sec-orthogonality-5",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-5",
+  "type": "Theorem",
+  "number": "7.3.3",
+  "title": "",
+  "body": " Let be a finite abelian group. Then:  If a character of is given, then .  If an element of is given, then .     If then for all . Likewise if then for all . In those cases the sum is (we use ).  Now, given , let . We have, for any , , that is, . If is non-principal then (by definition) there is some such that . With this choice of it follows that .  Similarly, given , let . For any , consider . Here we are using that is a group, so . We get that . By the previous lemma, if , there is some so that . Then , as claimed.   "
+},
+{
+  "id": "sec-orthogonality-6",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-6",
+  "type": "Theorem",
+  "number": "7.3.4",
+  "title": "",
+  "body": " Let be a finite abelian group. Then:  For any we have: .  For any we have: .     Recall that . So . By the previous result, the sum is either equal to if , the principal character, or else is equal to . Since is the identity element in , then if and only if .  Similarly, . Therefore the sum is either equal to if , or else is equal to .   "
+},
+{
+  "id": "sec-orthogonality-7",
+  "level": "2",
+  "url": "sec-orthogonality.html#sec-orthogonality-7",
+  "type": "Remark",
+  "number": "7.3.5",
+  "title": "",
+  "body": " We won't pursue this idea much further, but it is worth mentioning: We can define inner products on and on by . These are not exactly inner products because and are not vector spaces. So we can consider the vector spaces with and as bases; or, even better, the group algebras of and . Without getting into the definitions of those, we'll just remark that the previous theorem means that the elements of form an orthonormal basis for their group algebra, and likewise, the elements of form an orthonormal basis for their group algebra.  "
+},
+{
+  "id": "sec-dirichlet-characters",
+  "level": "1",
+  "url": "sec-dirichlet-characters.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "Dirichlet characters",
+  "body": " Dirichlet characters  From this point on, we will not deal with characters on arbitrary finite abelian groups any more, only the groups . In order to lighten the notation (especially occurring as a subscript of a summation!), we will just write . Thus, for example, for any , . We can say is a character modulo (or mod ) if is a character on .  Given a character modulo , we define a function by . This is called a Dirichlet character.   There are exactly Dirichlet characters modulo . A Dirichlet character modulo has these properties:   is periodic with period , that is, for all .   if and only if .   is completely multiplicative, that is, for all (including if ).  Conversely, any function satisfying the above properties must be a Dirichlet character modulo .  Exercise.   Dirichlet characters inherit some of the properties of group characters, including the following versions of the orthogonality relations.   Let be a positive integer and let be Dirichlet characters modulo . Then where runs over a complete residue system modulo .  Exercise.    Recall that a complete residue system modulo is a set of integers with exactly one element in each residue class modulo . Examples of complete residue systems include , , or more generally any set of consecutive integers; but also non-consecutive sets, for example is a complete residue system modulo .    Let , and be positive integers such that . Then where runs over all Dirichlet characters modulo .  If or then for all . Otherwise, we reduce to group characters and the result follows from the orthogonality of group characters.   "
+},
+{
+  "id": "sec-dirichlet-characters-3",
+  "level": "2",
+  "url": "sec-dirichlet-characters.html#sec-dirichlet-characters-3",
+  "type": "Definition",
+  "number": "7.4.1",
+  "title": "",
+  "body": "Given a character modulo , we define a function by . This is called a Dirichlet character. "
+},
+{
+  "id": "sec-dirichlet-characters-4",
+  "level": "2",
+  "url": "sec-dirichlet-characters.html#sec-dirichlet-characters-4",
+  "type": "Theorem",
+  "number": "7.4.2",
+  "title": "",
+  "body": " There are exactly Dirichlet characters modulo . A Dirichlet character modulo has these properties:   is periodic with period , that is, for all .   if and only if .   is completely multiplicative, that is, for all (including if ).  Conversely, any function satisfying the above properties must be a Dirichlet character modulo .  Exercise.  "
+},
+{
+  "id": "sec-dirichlet-characters-6",
+  "level": "2",
+  "url": "sec-dirichlet-characters.html#sec-dirichlet-characters-6",
+  "type": "Theorem",
+  "number": "7.4.3",
+  "title": "",
+  "body": " Let be a positive integer and let be Dirichlet characters modulo . Then where runs over a complete residue system modulo .  Exercise.  "
+},
+{
+  "id": "sec-dirichlet-characters-7",
+  "level": "2",
+  "url": "sec-dirichlet-characters.html#sec-dirichlet-characters-7",
+  "type": "Remark",
+  "number": "7.4.4",
+  "title": "",
+  "body": " Recall that a complete residue system modulo is a set of integers with exactly one element in each residue class modulo . Examples of complete residue systems include , , or more generally any set of consecutive integers; but also non-consecutive sets, for example is a complete residue system modulo .  "
+},
+{
+  "id": "sec-dirichlet-characters-8",
+  "level": "2",
+  "url": "sec-dirichlet-characters.html#sec-dirichlet-characters-8",
+  "type": "Theorem",
+  "number": "7.4.5",
+  "title": "",
+  "body": " Let , and be positive integers such that . Then where runs over all Dirichlet characters modulo .  If or then for all . Otherwise, we reduce to group characters and the result follows from the orthogonality of group characters.  "
 },
 {
   "id": "bibliography",

@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-orthogonality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -237,8 +237,13 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section active">
 <div class="toc-title-box"><a href="sec-characters.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Characters of finite abelian groups</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-characters.html#sec-characters-2" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Definition</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-characters.html#sec-characters-2" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Definition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-characters.html#sec-characters-3" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Sums of character values</span></a></div></li>
+</ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonality relations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -359,16 +364,19 @@ G \cong \bbZ/m_1 \bbZ \times \dotsb \times \bbZ/m_k \bbZ\text{.}\tag{7.2.6}
 </h4>
 <div class="para" id="sec-characters-2-15-1-1">Let <span class="process-math">\(G\)</span> be any finite abelian group. Then <span class="process-math">\(\hat{G} \cong G \text{.}\)</span> In particular, <span class="process-math">\(|\hat{G}| = |G|\text{.}\)</span>
 </div></article><article class="proof" id="sec-characters-2-15-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para" id="sec-characters-2-15-2-1">By induction on the number of cyclic factors in a decomposition of <span class="process-math">\(G\)</span> as a direct product of cyclic groups.</div></article><div class="para" id="sec-characters-2-16">We are also interested in taking sums of character values (just as earlier we considered sums of roots of unity).</div>
-<article class="theorem theorem-like" id="sec-characters-2-17"><h4 class="heading">
+<div class="para" id="sec-characters-2-15-2-1">By induction on the number of cyclic factors in a decomposition of <span class="process-math">\(G\)</span> as a direct product of cyclic groups.</div></article></section><section class="subsection" id="sec-characters-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="space"> </span><span class="title">Sums of character values</span>
+</h3>
+<div class="para" id="sec-characters-3-2">We are also interested in taking sums of character values (just as earlier we considered sums of roots of unity).</div>
+<article class="theorem theorem-like" id="sec-characters-3-3"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="sec-characters-2-17-1-1">
+<div class="para logical" id="sec-characters-3-3-1-1">
 <div class="para">Let <span class="process-math">\(G = \langle g_0 \rangle\)</span> be a cyclic group of order <span class="process-math">\(n\text{.}\)</span> Then the following hold.</div>
 <ol class="decimal">
-<li id="sec-characters-2-17-1-1-3-1"><div class="para logical" id="sec-characters-2-17-1-1-3-1-1">
+<li id="sec-characters-3-3-1-1-3-1"><div class="para logical" id="sec-characters-3-3-1-1-3-1-1">
 <div class="para">If a character <span class="process-math">\(\chi\)</span> of <span class="process-math">\(G\)</span> is given and we sum over elements of <span class="process-math">\(G\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="sec-characters-2-17-1-1-3-1-1-4">
+<div class="displaymath process-math" id="sec-characters-3-3-1-1-3-1-1-4">
 \begin{equation}
 \sum_{g \in G} \chi(g) =
 \begin{cases}
@@ -378,9 +386,9 @@ n, \amp \text{if } \chi = \chi_0 \\
 \end{equation}
 </div>
 </div></li>
-<li id="sec-characters-2-17-1-1-3-2"><div class="para logical" id="sec-characters-2-17-1-1-3-2-1">
+<li id="sec-characters-3-3-1-1-3-2"><div class="para logical" id="sec-characters-3-3-1-1-3-2-1">
 <div class="para">If an element <span class="process-math">\(g \in G\)</span> is given and we sum over characters, then</div>
-<div class="displaymath process-math" id="sec-characters-2-17-1-1-3-2-1-2">
+<div class="displaymath process-math" id="sec-characters-3-3-1-1-3-2-1-2">
 \begin{equation}
 \sum_{\chi \in \hat{G}} \chi(g) =
 \begin{cases}
@@ -391,28 +399,29 @@ n, \amp \text{if } g = 1 \\
 </div>
 </div></li>
 </ol>
-</div></article><article class="proof" id="sec-characters-2-17-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
-<div class="para logical" id="sec-characters-2-17-2-1">
+</div></article><article class="proof" id="sec-characters-3-3-2"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
+<div class="para logical" id="sec-characters-3-3-2-1">
 <div class="para">First suppose <span class="process-math">\(\chi = \chi_m\)</span> is given. Then the sum is</div>
-<div class="displaymath process-math" id="sec-characters-2-17-2-1-2">
+<div class="displaymath process-math" id="sec-characters-3-3-2-1-2">
 \begin{equation}
 \sum_{g \in G} \chi(g) = \sum_{k=0}^{n-1} \chi_m(g_0^k)
 = \sum_{k=0}^{n-1} e(mk/n)\text{.}\tag{7.2.10}
 \end{equation}
 </div>
 <div class="para">Since <span class="process-math">\(e(m/n)\)</span> is an <span class="process-math">\(n\)</span>th root of unity, the first claim follows.</div>
-</div> <div class="para logical" id="sec-characters-2-17-2-2">
+</div> <div class="para logical" id="sec-characters-3-3-2-2">
 <div class="para">Next, suppose <span class="process-math">\(g = g_0^k\)</span> is given. Then the sum is</div>
-<div class="displaymath process-math" id="sec-characters-2-17-2-2-2">
+<div class="displaymath process-math" id="sec-characters-3-3-2-2-2">
 \begin{equation}
 \sum_{\chi \in \hat{G}} \chi(g) = \sum_{m=0}^{n-1} \chi_m(g)
 = \sum_{m=0}^{n-1} e(mk/n)\text{.}\tag{7.2.11}
 \end{equation}
 </div>
 <div class="para">Here, <span class="process-math">\(e(k/n)\)</span> is an <span class="process-math">\(n\)</span>th root of unity, so once again the result follows.</div>
-</div></article><div class="para" id="sec-characters-2-18">(The textbook includes here the result that <span class="process-math">\(\hat{G}\)</span> is cyclic of order <span class="process-math">\(n\)</span> when <span class="process-math">\(G\)</span> is. I omit that here because we already showed it earlier.</div></section></section></div>
+</div></article><div class="para" id="sec-characters-3-4">(The textbook includes here the result that <span class="process-math">\(\hat{G}\)</span> is cyclic of order <span class="process-math">\(n\)</span> when <span class="process-math">\(G\)</span> is. I omit that here because we already showed it earlier.)</div>
+<div class="para" id="sec-characters-3-5">We will generalize this to non-cyclic groups in the next section.</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-overview.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-orthogonality.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

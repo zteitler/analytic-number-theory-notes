@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Summation by Parts</title>
+<title>Dirichlet characters</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-sums-monotone.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-4-summation-formulas.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-riemann-stieltjes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-orthogonality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -166,9 +166,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-applications.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Applications of Hermite’s Identity</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-4-summation-formulas.html" class="internal"><span class="codenumber">4</span> <span class="title">Summation Formulas</span></a></div>
-<ul class="structural toc-item-list contains-active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-big-o.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Big O Notation And Friends</span></a></div>
 <ul class="structural toc-item-list">
@@ -177,7 +177,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-sums-monotone.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Sums of Monotone Functions</span></a></div></li>
-<li class="toc-item toc-section active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-summation-by-parts.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Summation by Parts</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-summation-by-parts.html#sec-summation-by-parts-2" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Integration by parts</span></a></div></li>
@@ -225,9 +225,9 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-mertens.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Mertens’ Theorems</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-7-dirichlets-theorem.html" class="internal"><span class="codenumber">7</span> <span class="title">Dirichlet’s Theorem</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-overview.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Overview of Proof of Dirichlet’s Theorem</span></a></div>
 <ul class="structural toc-item-list">
@@ -243,7 +243,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonality relations</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -254,50 +254,71 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-summation-by-parts"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.3</span><span class="space"> </span><span class="title">Summation by Parts</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-dirichlet-characters"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">7.4</span><span class="space"> </span><span class="title">Dirichlet characters</span>
 </h2>
-<section class="subsection" id="sec-summation-by-parts-2"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="space"> </span><span class="title">Integration by parts</span>
-</h3>
-<div class="displaymath process-math" id="sec-summation-by-parts-2-2">
-\begin{equation}
-\int u dv = uv - \int v du,
-\qquad
-\int_y^x u dv = \left. uv \right|_y^x - \int_y^x v du\text{.}\tag{4.3.1}
-\end{equation}
-</div></section><section class="subsection" id="sec-summation-by-parts-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="space"> </span><span class="title">Summation by parts</span>
-</h3>
-<article class="theorem theorem-like" id="sec-summation-by-parts-3-2"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
-</h4>Let <span class="process-math">\((a_n)_{n \geq 1}\)</span> and <span class="process-math">\((f(n))_{n \geq 1}\)</span> be sequences of complex numbers and let <span class="process-math">\(1 \leq c \lt b\)</span> be positive integers. For each <span class="process-math">\(N \in \bbN\text{,}\)</span> let <span class="process-math">\(A(N) = \sum_{n=1}^N a_n\text{.}\)</span> Then<div class="displaymath process-math" id="sec-summation-by-parts-3-2-1-6">
-\begin{equation}
-\sum_{n=c}^b a_n f(n) = A(b)f(b) - A(c-1)f(c)
-- \sum_{n=c}^{b-1} A(n)(f(n+1) - f(n))\text{.}\tag{4.3.2}
-\end{equation}
-</div></article><div class="para" id="sec-summation-by-parts-3-3">In this theorem, <span class="process-math">\(a_n\)</span> plays the role of <span class="process-math">\(dv\)</span> and <span class="process-math">\(A(N)\)</span> corresponds to the antiderivative <span class="process-math">\(v\text{;}\)</span> conversely, <span class="process-math">\(f(n)\)</span> corresponds to <span class="process-math">\(u\)</span> and the difference <span class="process-math">\(f(n+1)-f(n)\)</span> corresponds to the differential <span class="process-math">\(du\text{.}\)</span> Observe that this is a forward difference. (A backwards difference would be <span class="process-math">\(f(n)-f(n-1)\text{.}\)</span> Exercise: find a version of summation by parts using backwards differences.)</div>
-<div class="para logical" id="sec-summation-by-parts-3-4">
-<div class="para">Observe that</div>
+<div class="para logical" id="sec-dirichlet-characters-2">
+<div class="para">From this point on, we will not deal with characters on arbitrary finite abelian groups any more, only the groups <span class="process-math">\((\bbZ/q\bbZ)^\times\text{.}\)</span> In order to lighten the notation <span class="process-math">\(\chi \in \widehat{(\bbZ/q\bbZ)^\times}\)</span> (especially occurring as a subscript of a summation!), we will just write <span class="process-math">\(\chi \mod q\text{.}\)</span> Thus, for example, for any <span class="process-math">\(g \in (\bbZ/q\bbZ)^\times\text{,}\)</span>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left. A(n)f(n) \right|_c^b
+\sum_{\chi \mod q} \chi(g) = \begin{cases}
+|G|, \amp \text{if } g = 1, \\
+0, \amp \text{otherwise}
+\end{cases}\text{.}
 \end{equation*}
 </div>
-<div class="para">would be</div>
-<div class="displaymath process-math">
-\begin{equation*}
-A(b)f(b) - A(c)f(c)\text{,}
-\end{equation*}
+<div class="para">We can say <span class="process-math">\(\chi\)</span> is a character modulo <span class="process-math">\(q\)</span> (or mod <span class="process-math">\(q\)</span>) if <span class="process-math">\(\chi\)</span> is a character on <span class="process-math">\((\bbZ/q\bbZ)^\times\text{.}\)</span>
 </div>
-<div class="para">slightly different from the <span class="process-math">\(A(b)f(b)-A(c-1)f(c)\)</span> appearing in the theorem. Likewise, the sum on the right hand side has bounds <span class="process-math">\(c \leq n \leq b-1\)</span> instead of <span class="process-math">\(c \leq n \leq b\text{.}\)</span> So, in contrast to integration by parts, the bounds of summation are slightly different. But then, in the case of integration, if we think of summing rectangles (as in Riemann summation), the difference here is just two rectangles (one at each endpoint), and since the rectangles are “infinitesimally thin”, it doesn’t make a difference to include it or not.</div>
 </div>
-<article class="exercise exercise-like" id="sec-summation-by-parts-3-5"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
-</h4>
-<div class="para" id="sec-summation-by-parts-3-5-1">Use summation by parts with Riemann sums to prove integration by parts.</div></article><article class="proof" id="sec-summation-by-parts-3-6"><h4 class="heading"><span class="title">Proof of summation by parts.</span></h4> <div class="para" id="sec-summation-by-parts-3-6-2">Expand the right hand side and cancel terms.</div></article></section></section></div>
+<article class="definition definition-like" id="sec-dirichlet-characters-3"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.4.1</span><span class="period">.</span>
+</h3>Given a character <span class="process-math">\(f\)</span> modulo <span class="process-math">\(q\text{,}\)</span> we define a function <span class="process-math">\(\chi : \bbZ_{\gt 0} \to \bbC\)</span> by<div class="displaymath process-math" id="sec-dirichlet-characters-3-4">
+\begin{equation}
+\chi(a) = \begin{cases}
+f(a \bmod q), \amp \text{if } (a,q) = 1, \\
+0 \amp \text{otherwise}
+\end{cases}\text{.}\tag{7.4.1}
+\end{equation}
+</div>This is called a Dirichlet character.</article><article class="theorem theorem-like" id="sec-dirichlet-characters-4"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.4.2</span><span class="period">.</span>
+</h3>There are exactly <span class="process-math">\(\phi(q)\)</span> Dirichlet characters modulo <span class="process-math">\(q\text{.}\)</span> A Dirichlet character <span class="process-math">\(\chi\)</span> modulo <span class="process-math">\(q\)</span> has these properties: <ol class="decimal">
+<li id="sec-dirichlet-characters-4-1-5-1"><div class="para" id="p-derived-sec-dirichlet-characters-4-1-5-1">
+<span class="process-math">\(\chi\)</span> is periodic with period <span class="process-math">\(q\text{,}\)</span> that is, <span class="process-math">\(\chi(n+q) = f(n)\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+<li id="sec-dirichlet-characters-4-1-5-2"><div class="para" id="p-derived-sec-dirichlet-characters-4-1-5-2">
+<span class="process-math">\(\chi(n)=0\)</span> if and only if <span class="process-math">\((n,q) \gt 1\text{.}\)</span>
+</div></li>
+<li id="sec-dirichlet-characters-4-1-5-3"><div class="para" id="p-derived-sec-dirichlet-characters-4-1-5-3">
+<span class="process-math">\(\chi\)</span> is completely multiplicative, that is, <span class="process-math">\(\chi(mn) = \chi(m)\chi(n)\)</span> for all <span class="process-math">\(m,n\)</span> (including if <span class="process-math">\((m,n) \gt 1\)</span>).</div></li>
+</ol> Conversely, any function <span class="process-math">\(\chi : \bbN \to \bbC\)</span> satisfying the above properties must be a Dirichlet character modulo <span class="process-math">\(q\text{.}\)</span></article><article class="proof" id="sec-dirichlet-characters-4-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>Exercise.</article><div class="para" id="sec-dirichlet-characters-5">Dirichlet characters inherit some of the properties of group characters, including the following versions of the orthogonality relations.</div>
+<article class="theorem theorem-like" id="sec-dirichlet-characters-6"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.4.3</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(q\)</span> be a positive integer and let <span class="process-math">\(\chi,\psi\)</span> be Dirichlet characters modulo <span class="process-math">\(q\text{.}\)</span> Then<div class="displaymath process-math" id="sec-dirichlet-characters-6-1-4">
+\begin{equation}
+\sum_{a \bmod q} \psi(a)\overline{\chi}(a) =
+\begin{cases}
+\phi(q), \amp \text{if } \psi = \chi, \\
+0, \amp \text{otherwise}
+\end{cases}\tag{7.4.2}
+\end{equation}
+</div>where <span class="process-math">\(a\)</span> runs over a complete residue system modulo <span class="process-math">\(q\text{.}\)</span></article><article class="proof" id="sec-dirichlet-characters-6-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>Exercise.</article><article class="remark remark-like" id="sec-dirichlet-characters-7"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.4.4</span><span class="period">.</span>
+</h3>
+<div class="para" id="sec-dirichlet-characters-7-1">Recall that a complete residue system modulo <span class="process-math">\(q\)</span> is a set of integers with exactly one element in each residue class modulo <span class="process-math">\(q\text{.}\)</span> Examples of complete residue systems include <span class="process-math">\(\{0,1,\dotsc,q-1\}\text{,}\)</span> <span class="process-math">\(\{1,2,\dotsc,q\}\text{,}\)</span> or more generally any set of <span class="process-math">\(q\)</span> consecutive integers; but also non-consecutive sets, for example <span class="process-math">\(\{0,1,2,4,8\}\)</span> is a complete residue system modulo <span class="process-math">\(5\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="sec-dirichlet-characters-8"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.4.5</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\)</span> and <span class="process-math">\(q\)</span> be positive integers such that <span class="process-math">\((a,q)=1\text{.}\)</span> Then<div class="displaymath process-math" id="sec-dirichlet-characters-8-1-5">
+\begin{equation}
+\sum_{\chi \bmod q} \chi(a)\overline{\chi}(b) =
+\begin{cases}
+\phi(q), \amp \text{if } a \equiv b \pmod{q}, \\
+0, \amp \text{otherwise}
+\end{cases}\tag{7.4.3}
+\end{equation}
+</div>where <span class="process-math">\(\chi\)</span> runs over all Dirichlet characters modulo <span class="process-math">\(q\text{.}\)</span></article><article class="proof" id="sec-dirichlet-characters-8-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>If <span class="process-math">\((a,q) \gt 1\)</span> or <span class="process-math">\((b,q) \gt 1\)</span> then <span class="process-math">\(\chi(a)\overline{\chi}(b) = 0\)</span> for all <span class="process-math">\(\chi\text{.}\)</span> Otherwise, we reduce to group characters and the result follows from the orthogonality of group characters.</article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-sums-monotone.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-riemann-stieltjes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-orthogonality.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
