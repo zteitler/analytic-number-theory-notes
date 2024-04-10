@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-dirichlet-l-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dirichlet L-functions</title>
+
+  <definition>
+  Let <m>q</m> be a positive integer and <m>\chi</m>
+  a Dirichlet character modulo <m>q</m>.
+  We define
+  <men>
+    L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}
+  </men>,
+  called the <term>Dirichlet <m>L</m>-function</term>
+  associated to <m>\chi</m>.
+  Here <m>s</m> is a complex variable; <m>L(\chi,s)</m>
+  is a function defined on the subset of <m>\bbC</m>
+  where this series converges, with values in <m>\bbC</m>.
+  </definition>
+  
+  <p>
+  When we think of <m>s</m> as a complex number, we can write
+  <m>s = \sigma + it</m>, where <m>\sigma</m> is the real part of <m>s</m>
+  and <m>t</m> is the imaginary part.
+  However for the proof of Dirichlet's theorem we will only
+  deal with real values of <m>s</m>, so we will mostly just use
+  the letter <m>s</m>.
+  </p>
+  
+  <p>
+  The series converges absolutely if <m>s</m> has real part
+  strictly greater than <m>1</m>, i.e., if <m>\sigma \gt 1</m>.
+  To see this, recall that every value <m>\chi(n)</m> is either
+  a root of unity, or else zero.
+  Then,
+  <men>
+    \sum_{n=1}^{\infty} \left| \frac{\chi(n)}{n^s} \right|
+    \leq \sum_{n=1}^{\infty} \frac{1}{n^\sigma}
+  </men>.
+  We know that this series converges if <m>\sigma \gt 1</m>,
+  and diverges if <m>\sigma \leq 1</m>, by the theory of <m>p</m>-series.
+  </p>
+  
+  <p>
+  However we will also be interested in Dirichlet <m>L</m>-functions
+  when <m>0 \lt \sigma \leq 1</m>.
+  Now the series fails to converge absolutely, but it might still
+  converge conditionally.
+  </p>
+  
+  <p>
+  Having said that, if the character <m>\chi=\chi_0</m> is the principal character,
+  then it's easy to see that <m>\sum \chi_0(n)/n^s</m> diverges to <m>\infty</m>
+  if <m>\sigma \leq 1</m>.
+  It is not exactly a <m>p</m>-series because <m>\chi_0(n) = 0</m>
+  when <m>(n,q) \gt 1</m>.
+  However, for each arithmetic sequence corresponding to a residue class
+  modulo <m>q</m>, we can show that the sum diverges,
+  via a comparison with a <m>p</m>-series.
+  For example,
+  <me>
+    \sum_{n \equiv 2 \pmod{5}} \left|\frac{1}{n^s}\right|
+    = \frac{1}{2^\sigma} + \frac{1}{7^\sigma} + \frac{1}{12^\sigma} + \dotsb
+    \gt \frac{1}{5^\sigma} + \frac{1}{10^\sigma} + \frac{1}{15^\sigma} + \dotsb
+    = \frac{1}{5^\sigma} \left( \frac{1}{1^\sigma} + \frac{1}{2^\sigma} + \frac{1}{3^\sigma} + \dotsb \right)
+  </me>,
+  where the last sum is a normal <m>p</m>-series,
+  so it diverges if <m>\sigma \leq 1</m>.
+  </p>
+  
+  <p>
+  So, the Dirichlet <m>L</m>-series for the principal character
+  diverges if <m>\sigma \leq 1</m>,
+  and for nonprincipal characters, it does not converge absolutely
+  if <m>\sigma \leq 1</m>.
+  The only thing left to settle is whether the series for a nonprincipal
+  character converges conditionally.
+  And it turns out that it does.
+  </p>
+    
+  
+
+  
+
+</section>

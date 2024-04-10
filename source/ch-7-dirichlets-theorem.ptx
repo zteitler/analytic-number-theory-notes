@@ -127,5 +127,7 @@
 
   <xi:include href="ch-7-dirichlets-theorem/sec-dirichlet-characters.ptx" />
 
+  <xi:include href="ch-7-dirichlets-theorem/sec-dirichlet-l-functions.ptx" />
+
 
 </chapter>
