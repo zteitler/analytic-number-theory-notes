@@ -245,6 +245,14 @@ window.MathJax = {
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonality relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-l-functions.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Dirichlet L-functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proof-1.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Proof of Dirichlet’s theorem, part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-3" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Going from summing over primes to summing over an arithmetic progression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-4" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Summing over all positive integers by using the orthogonality relations of Dirichlet characters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-5" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Each nonprincipal character contributes a bounded amount</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -262,7 +270,7 @@ window.MathJax = {
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.3.1</span><span class="period">.</span>
 </h3>Let <span class="process-math">\(G\)</span> be a finite abelian group and let <span class="process-math">\(g \neq 1\)</span> be a nonidentity element of <span class="process-math">\(G\text{.}\)</span> Then there exists <span class="process-math">\(\psi \in \hat{G}\)</span> such that <span class="process-math">\(\psi(g) \neq 1\text{.}\)</span></article><article class="proof" id="sec-orthogonality-2-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
 <div class="para logical" id="sec-orthogonality-2-2-1">
-<div class="para">Fix an isomorphism <span class="process-math">\(G \cong \bbZ/m_1\bbZ \times \dotsb \times \bbZ/m_k\bbZ\text{.}\)</span> Let <span class="process-math">\(g\)</span> correspond to the tuple <span class="process-math">\((a_1,\dotsc,a_k)\text{.}\)</span> There is some <span class="process-math">\(k\)</span> such that <span class="process-math">\(a_k \not\cong 0 \pmod{m_k}\text{.}\)</span> Define the character <span class="process-math">\(\psi\)</span> as</div>
+<div class="para">Fix an isomorphism <span class="process-math">\(G \cong \bbZ/m_1\bbZ \times \dotsb \times \bbZ/m_k\bbZ\text{.}\)</span> Let <span class="process-math">\(g\)</span> correspond to the tuple <span class="process-math">\((a_1,\dotsc,a_k)\text{.}\)</span> There is some <span class="process-math">\(r\)</span> such that <span class="process-math">\(a_r \not\cong 0 \pmod{m_r}\text{.}\)</span> Define the character <span class="process-math">\(\psi\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \psi = (\chi_0,\chi_0,\dotsc,\chi_0,\chi_1,\chi_0,\dotsc,\chi_0)\text{,}

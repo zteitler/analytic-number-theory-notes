@@ -1339,7 +1339,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.5",
   "title": "Dirichlet L-functions",
-  "body": " Dirichlet L-functions  Let be a positive integer and a Dirichlet character modulo . We define , called the Dirichlet -function associated to . Here is a complex variable; is a function defined on the subset of where this series converges, with values in .  When we think of as a complex number, we can write , where is the real part of and is the imaginary part. However for the proof of Dirichlet's theorem we will only deal with real values of , so we will mostly just use the letter .  The series converges absolutely if has real part strictly greater than , i.e., if . To see this, recall that every value is either a root of unity, or else zero. Then, . We know that this series converges if , and diverges if , by the theory of -series.  However we will also be interested in Dirichlet -functions when . Now the series fails to converge absolutely, but it might still converge conditionally.  Having said that, if the character is the principal character, then it's easy to see that diverges to if . It is not exactly a -series because when . However, for each arithmetic sequence corresponding to a residue class modulo , we can show that the sum diverges, via a comparison with a -series. For example, , where the last sum is a normal -series, so it diverges if .  So, the Dirichlet -series for the principal character diverges if , and for nonprincipal characters, it does not converge absolutely if . The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.  "
+  "body": " Dirichlet L-functions  Let be a positive integer and a Dirichlet character modulo . We define , called the Dirichlet -function associated to . Here is a complex variable; is a function defined on the subset of where this series converges, with values in .  When we think of as a complex number, we can write , where is the real part of and is the imaginary part. However for the proof of Dirichlet's theorem we will only deal with real values of , so we will mostly just use the letter .  The series converges absolutely if has real part strictly greater than , i.e., if . To see this, recall that every value is either a root of unity, or else zero. Then, . We know that this series converges if , and diverges if , by the theory of -series.  However we will also be interested in Dirichlet -functions when . Now the series fails to converge absolutely, but it might still converge conditionally.  Having said that, if the character is the principal character, then it's easy to see that diverges to if . It is not exactly a -series because when . However, for each arithmetic sequence corresponding to a residue class modulo , we can show that the sum diverges, via a comparison with a -series. For example, , where the last sum is a normal -series, so it diverges if .  So, the Dirichlet -series for the principal character diverges if , and for nonprincipal characters, it does not converge absolutely if . The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.   Let be a nonprincipal Dirichlet character and let be a positive function that has a continuous negative derivative. Then . In addition, if as , then the series converges and we have .   We will use Riemann-Stieltjes integration and integration by parts, as we have done before (but it would be equivalent to use Abel summation).  Let . Since is a nonprincipal character, we get that and in general for every positive integer . Therefore, and then by Riemann-Stieltjes integration and integration by parts (or by Abel summation), This is the first claim.  (A remark: Above, we wrote even though is a complex-valued function. However, our previous discussion of Riemann-Stieltjes integration was only for real-valued functions. To deal with a complex-valued function, we could handle the real and imaginary parts of separately, and just recombine them at the end.)  Next, assume that as . Since , or , then these partial sums for or go to zero as . Therefore the infinite series converges by the Cauchy criterion.  Finally, the partial sum for is equal to to the sum of the whole series minus the sum of the tail . And the sum of that tail is equal to the limit of the sum for as . By the first claim, the tail is regardless of the value of .     Let be a nonprincipal Dirichlet character modulo . Then for all we have   The previous theorem with functions , , and respectively.   A crucial step in the proof of Dirichlet's theorem is to prove that . Very simply, the idea is to define a certain function , and to show that   as ( is unbounded), but   is equal to times some unbounded function, plus .  The point is that if then , a contradiction. Specifically, this argument works for real-valued nonprincipal characters; we will give a separate argument for non-real nonprincipal characters. We postpone the details.  Very, very simply put, the reason we care that is nonzero is that we will show that times a certain sum is bounded, and then, as long as , we can deduce that the sum itself is bounded.  "
 },
 {
   "id": "sec-dirichlet-l-functions-2",
@@ -1349,6 +1349,60 @@ var ptx_lunr_docs = [
   "number": "7.5.1",
   "title": "",
   "body": "Let be a positive integer and a Dirichlet character modulo . We define , called the Dirichlet -function associated to . Here is a complex variable; is a function defined on the subset of where this series converges, with values in . "
+},
+{
+  "id": "sec-dirichlet-l-functions-8",
+  "level": "2",
+  "url": "sec-dirichlet-l-functions.html#sec-dirichlet-l-functions-8",
+  "type": "Theorem",
+  "number": "7.5.2",
+  "title": "",
+  "body": " Let be a nonprincipal Dirichlet character and let be a positive function that has a continuous negative derivative. Then . In addition, if as , then the series converges and we have .   We will use Riemann-Stieltjes integration and integration by parts, as we have done before (but it would be equivalent to use Abel summation).  Let . Since is a nonprincipal character, we get that and in general for every positive integer . Therefore, and then by Riemann-Stieltjes integration and integration by parts (or by Abel summation), This is the first claim.  (A remark: Above, we wrote even though is a complex-valued function. However, our previous discussion of Riemann-Stieltjes integration was only for real-valued functions. To deal with a complex-valued function, we could handle the real and imaginary parts of separately, and just recombine them at the end.)  Next, assume that as . Since , or , then these partial sums for or go to zero as . Therefore the infinite series converges by the Cauchy criterion.  Finally, the partial sum for is equal to to the sum of the whole series minus the sum of the tail . And the sum of that tail is equal to the limit of the sum for as . By the first claim, the tail is regardless of the value of .   "
+},
+{
+  "id": "sec-dirichlet-l-functions-9",
+  "level": "2",
+  "url": "sec-dirichlet-l-functions.html#sec-dirichlet-l-functions-9",
+  "type": "Corollary",
+  "number": "7.5.3",
+  "title": "",
+  "body": " Let be a nonprincipal Dirichlet character modulo . Then for all we have   The previous theorem with functions , , and respectively.  "
+},
+{
+  "id": "sec-proof-1",
+  "level": "1",
+  "url": "sec-proof-1.html",
+  "type": "Section",
+  "number": "7.6",
+  "title": "Proof of Dirichlet’s theorem, part 1",
+  "body": " Proof of Dirichlet's theorem, part 1   In this section we'll start to prove Dirichlet's theorem. We'll give essentially the whole proof except for the hardest part of the proof, showing that for every character . Showing that will be the second part of the proof, in the next section of notes.  As in the statement of Dirichlet's theorem, we fix positive integers such that .    Going from summing over primes to summing over an arithmetic progression   Step 1   .   We have The last sum converges: we have which converges by comparison with a p-series.      Summing over all positive integers by using the orthogonality relations of Dirichlet characters  Our next step is to take the sum of from a sum over into a sum over all positive . We will use the orthogonality relations of Dirichlet characters so that the terms remain in the sum, while all other values of cancel out, up to some bounded quantity.   Step 2  We have . In addition, for the principal character, . Hence .   Recall that for any integers , if , we have the orthogonality relation Using this, This shows the first claim.  For the principal character, the summation of agrees with the summation of except for terms where . Mertens's theorem includes the result that . Now consider the terms with . There is an additional restriction: only when is a power of a prime. So the difference between the sum we are considering, and the sum that appeared in Mertens's theorem, is just for terms where is a power of a prime, for a prime that divides the modulus .  There are only finitely many such primes. Each such prime contributes a difference of . We have seen already the convergence of the full series . So the sum for is a bounded amount. Adding up these bounded amounts for the finitely many primes that divide gives a bounded amount, in other words an . This proves the second claim.  The third claim follows from the first one, separating out the terms for the principal and nonprincipal characters, and substituting the estimate for the principal character.    Combining this with step 1, we get . Our goal is to show that it is equal to . So, what is left is to show that the middle term is bounded ( ). In fact we will show that for each , the sum is bounded. Since there are finitely many characters ( is a finite group), then adding them all together gives a bounded quantity.    Each nonprincipal character contributes a bounded amount   Step 3  Let be a nonprincipal character modulo . We have    Bounded case  Assume that .    Unbounded case  Assume that .     "
+},
+{
+  "id": "sec-proof-1-3-2",
+  "level": "2",
+  "url": "sec-proof-1.html#sec-proof-1-3-2",
+  "type": "Proposition",
+  "number": "7.6.1",
+  "title": "Step 1.",
+  "body": " Step 1   .   We have The last sum converges: we have which converges by comparison with a p-series.   "
+},
+{
+  "id": "sec-proof-1-4-3",
+  "level": "2",
+  "url": "sec-proof-1.html#sec-proof-1-4-3",
+  "type": "Proposition",
+  "number": "7.6.2",
+  "title": "Step 2.",
+  "body": " Step 2  We have . In addition, for the principal character, . Hence .   Recall that for any integers , if , we have the orthogonality relation Using this, This shows the first claim.  For the principal character, the summation of agrees with the summation of except for terms where . Mertens's theorem includes the result that . Now consider the terms with . There is an additional restriction: only when is a power of a prime. So the difference between the sum we are considering, and the sum that appeared in Mertens's theorem, is just for terms where is a power of a prime, for a prime that divides the modulus .  There are only finitely many such primes. Each such prime contributes a difference of . We have seen already the convergence of the full series . So the sum for is a bounded amount. Adding up these bounded amounts for the finitely many primes that divide gives a bounded amount, in other words an . This proves the second claim.  The third claim follows from the first one, separating out the terms for the principal and nonprincipal characters, and substituting the estimate for the principal character.   "
+},
+{
+  "id": "sec-proof-1-5-2",
+  "level": "2",
+  "url": "sec-proof-1.html#sec-proof-1-5-2",
+  "type": "Proposition",
+  "number": "7.6.3",
+  "title": "Step 3.",
+  "body": " Step 3  Let be a nonprincipal character modulo . We have    Bounded case  Assume that .    Unbounded case  Assume that .   "
 },
 {
   "id": "bibliography",

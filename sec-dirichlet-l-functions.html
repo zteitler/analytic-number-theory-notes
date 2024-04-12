@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-7-dirichlets-theorem.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-proof-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\bbN}{\mathbb N}
 \newcommand{\bbZ}{\mathbb Z}
 \newcommand{\bbQ}{\mathbb Q}
 \newcommand{\bbR}{\mathbb R}
@@ -245,6 +245,14 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-orthogonality.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonality relations</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-dirichlet-characters.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Dirichlet characters</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-dirichlet-l-functions.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Dirichlet L-functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proof-1.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Proof of Dirichlet’s theorem, part 1</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-3" class="internal"><span class="codenumber">7.6.1</span> <span class="title">Going from summing over primes to summing over an arithmetic progression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-4" class="internal"><span class="codenumber">7.6.2</span> <span class="title">Summing over all positive integers by using the orthogonality relations of Dirichlet characters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-5" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Each nonprincipal character contributes a bounded amount</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -290,9 +298,76 @@ L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}\text{,}\tag{7.5.1}
 <div class="para">where the last sum is a normal <span class="process-math">\(p\)</span>-series, so it diverges if <span class="process-math">\(\sigma \leq 1\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="sec-dirichlet-l-functions-7">So, the Dirichlet <span class="process-math">\(L\)</span>-series for the principal character diverges if <span class="process-math">\(\sigma \leq 1\text{,}\)</span> and for nonprincipal characters, it does not converge absolutely if <span class="process-math">\(\sigma \leq 1\text{.}\)</span> The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.</div></section></div>
+<div class="para" id="sec-dirichlet-l-functions-7">So, the Dirichlet <span class="process-math">\(L\)</span>-series for the principal character diverges if <span class="process-math">\(\sigma \leq 1\text{,}\)</span> and for nonprincipal characters, it does not converge absolutely if <span class="process-math">\(\sigma \leq 1\text{.}\)</span> The only thing left to settle is whether the series for a nonprincipal character converges conditionally. And it turns out that it does.</div>
+<article class="theorem theorem-like" id="sec-dirichlet-l-functions-8"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.5.2</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(\chi\)</span> be a nonprincipal Dirichlet character <span class="process-math">\(\mod q\)</span> and let <span class="process-math">\(f\)</span> be a positive function that has a continuous negative derivative. Then<div class="displaymath process-math" id="sec-dirichlet-l-functions-8-1-4">
+\begin{equation}
+\sum_{x \lt n \leq y} \chi(n) f(n) = O(f(x))\text{.}\tag{7.5.3}
+\end{equation}
+</div>In addition, if <span class="process-math">\(f(x) \to 0\)</span> as <span class="process-math">\(x \to \infty\text{,}\)</span> then the series <span class="process-math">\(\sum_{n=1}^{\infty} \chi(n) f(n)\)</span> converges and we have<div class="displaymath process-math" id="sec-dirichlet-l-functions-8-1-8">
+\begin{equation}
+\sum_{n \leq x} \chi(n) f(n) = \sum_{n=1}^{\infty} \chi(n) f(n) + O(f(x))\text{.}\tag{7.5.4}
+\end{equation}
+</div></article><article class="proof" id="sec-dirichlet-l-functions-8-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>
+<div class="para" id="sec-dirichlet-l-functions-8-2-1">We will use Riemann-Stieltjes integration and integration by parts, as we have done before (but it would be equivalent to use Abel summation).</div> <div class="para logical" id="sec-dirichlet-l-functions-8-2-2">
+<div class="para">Let <span class="process-math">\(A(x) = \sum_{n \leq x} \chi(n)\text{.}\)</span> Since <span class="process-math">\(\chi\)</span> is a nonprincipal character, we get that <span class="process-math">\(\sum_{n=1}^q \chi(n) = 0\)</span> and in general <span class="process-math">\(\sum_{n=1}^{kq} \chi(n) = 0\)</span> for every positive integer <span class="process-math">\(k\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math" id="sec-dirichlet-l-functions-8-2-2-6">
+\begin{align}
+|A(x)| \amp \leq \left| \sum_{n=1}^{kq} \chi(n) \right| + \sum_{kq+1 \leq n \lt x} |\chi(n)| \tag{7.5.5}\\
+\amp = \sum_{kq+1 \leq n \lt x, (n,q)=1} 1 \tag{7.5.6}\\
+\amp \leq \phi(q) \tag{7.5.7}\\
+\amp = O(1), \tag{7.5.8}
+\end{align}
+</div>
+<div class="para">and then by Riemann-Stieltjes integration and integration by parts (or by Abel summation),</div>
+<div class="displaymath process-math" id="sec-dirichlet-l-functions-8-2-2-7">
+\begin{align}
+\sum_{x \lt n \leq y} \chi(n) f(n)
+\amp = \int_x^y f(t) dA(t) \tag{7.5.9}\\
+\amp = A(y)f(y) - A(x)f(x) - \int_x^y A(t) f'(t) dt \tag{7.5.10}\\
+\amp \ll f(y) + f(x) + \int_x^y |f'(t)| dt \tag{7.5.11}\\
+\amp \ll f(x) \tag{7.5.12}
+\end{align}
+</div>
+<div class="para">This is the first claim.</div>
+</div> <div class="para" id="sec-dirichlet-l-functions-8-2-3">(A remark: Above, we wrote <span class="process-math">\(dA(t)\)</span> even though <span class="process-math">\(A\)</span> is a complex-valued function. However, our previous discussion of Riemann-Stieltjes integration was only for real-valued functions. To deal with a complex-valued function, we could handle the real and imaginary parts of <span class="process-math">\(A\)</span> separately, and just recombine them at the end.)</div> <div class="para logical" id="sec-dirichlet-l-functions-8-2-4">
+<div class="para">Next, assume that <span class="process-math">\(f(x) \to 0\)</span> as <span class="process-math">\(x \to \infty\text{.}\)</span> Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{x \lt n \leq y} \chi(n) f(n) \ll f(x)\text{,}
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{N \lt n \leq M} \chi(n) f(n) \ll f(N)\text{,}
+\end{equation*}
+</div>
+<div class="para">then these partial sums for <span class="process-math">\(x \lt n \leq y\)</span> or <span class="process-math">\(N \lt n \leq M\)</span> go to zero as <span class="process-math">\(x,N \to \infty\text{.}\)</span> Therefore the infinite series <span class="process-math">\(\sum_{n=1}^{\infty} \chi(n)f(n)\)</span> converges by the Cauchy criterion.</div>
+</div> <div class="para" id="sec-dirichlet-l-functions-8-2-5">Finally, the partial sum for <span class="process-math">\(n \leq x\)</span> is equal to to the sum of the whole series minus the sum of the tail <span class="process-math">\(n \gt x\text{.}\)</span> And the sum of that tail is equal to the limit of the sum for <span class="process-math">\(x \lt n \leq y\)</span> as <span class="process-math">\(y \to \infty\text{.}\)</span> By the first claim, the tail is <span class="process-math">\(O(f(x))\)</span> regardless of the value of <span class="process-math">\(y\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="sec-dirichlet-l-functions-9"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.5.3</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(\chi\)</span> be a nonprincipal Dirichlet character modulo <span class="process-math">\(q\text{.}\)</span> Then for all <span class="process-math">\(x \geq 2\)</span> we have<div class="displaymath process-math" id="sec-dirichlet-l-functions-9-1-4">
+\begin{align}
+\sum_{n \leq x} \frac{\chi(n)}{n} \amp = L(1,\chi) + O\left(\frac{1}{x}\right) \tag{7.5.13}\\
+\sum_{n \leq x} \frac{\chi(n)\log n}{n} \amp = \sum_{n=1}^{\infty} \frac{\chi(n) \log n}{n} + O\left(\frac{\log x}{x}\right) \tag{7.5.14}\\
+\sum_{n \leq x} \frac{\chi(n)}{\sqrt{n}} \amp = L\left(\frac{1}{2},\chi\right) + O\left(\frac{1}{\sqrt{x}}\right) \tag{7.5.15}
+\end{align}
+</div></article><article class="proof" id="sec-dirichlet-l-functions-9-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>The previous theorem with functions <span class="process-math">\(\frac{1}{x}\text{,}\)</span> <span class="process-math">\(\frac{\log x}{x}\text{,}\)</span> and <span class="process-math">\(\frac{1}{\sqrt{x}}\)</span> respectively.</article><div class="para logical" id="sec-dirichlet-l-functions-10">
+<div class="para">A crucial step in the proof of Dirichlet’s theorem is to prove that <span class="process-math">\(L(1,\chi) \neq 0\text{.}\)</span> Very simply, the idea is to define a certain function <span class="process-math">\(A(x)\text{,}\)</span> and to show that</div>
+<ol class="decimal">
+<li id="sec-dirichlet-l-functions-10-3-1"><div class="para" id="p-derived-sec-dirichlet-l-functions-10-3-1">
+<span class="process-math">\(A(x) \to \infty\)</span> as <span class="process-math">\(x \to \infty\)</span> (<span class="process-math">\(A(x)\)</span> is unbounded), but</div></li>
+<li id="sec-dirichlet-l-functions-10-3-2"><div class="para" id="p-derived-sec-dirichlet-l-functions-10-3-2">
+<span class="process-math">\(A(x)\)</span> is equal to <span class="process-math">\(L(1,\chi)\)</span> times some unbounded function, plus <span class="process-math">\(O(1)\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">The point is that if <span class="process-math">\(L(1,\chi)=0\)</span> then <span class="process-math">\(A(x)=O(1)\text{,}\)</span> a contradiction. Specifically, this argument works for real-valued nonprincipal characters; we will give a separate argument for non-real nonprincipal characters. We postpone the details.</div>
+</div>
+<div class="para" id="sec-dirichlet-l-functions-11">Very, very simply put, the reason we care that <span class="process-math">\(L(1,\chi)\)</span> is nonzero is that we will show that <span class="process-math">\(L(1,\chi)\)</span> times a certain sum is bounded, and then, as long as <span class="process-math">\(L(1,\chi) \neq 0\text{,}\)</span> we can deduce that the sum itself is bounded.</div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-dirichlet-characters.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-proof-1.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
