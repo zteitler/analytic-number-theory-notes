@@ -76,9 +76,132 @@
   character converges conditionally.
   And it turns out that it does.
   </p>
-    
   
-
+  <theorem>
+  <statement>
+  Let <m>\chi</m> be a nonprincipal Dirichlet character <m>\mod q</m>
+  and let <m>f</m> be a positive function that has a continuous
+  negative derivative.
+  Then
+  <men>
+    \sum_{x \lt n \leq y} \chi(n) f(n) = O(f(x))
+  </men>.
+  In addition, if <m>f(x) \to 0</m> as <m>x \to \infty</m>,
+  then the series <m>\sum_{n=1}^{\infty} \chi(n) f(n)</m>
+  converges and we have
+  <men>
+    \sum_{n \leq x} \chi(n) f(n) = \sum_{n=1}^{\infty} \chi(n) f(n) + O(f(x))
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  We will use Riemann-Stieltjes integration and integration by parts,
+  as we have done before
+  (but it would be equivalent to use Abel summation).
+  </p>
+  
+  <p>
+  Let <m>A(x) = \sum_{n \leq x} \chi(n)</m>.
+  Since <m>\chi</m> is a nonprincipal character, we get that
+  <m>\sum_{n=1}^q \chi(n) = 0</m> and in general <m>\sum_{n=1}^{kq} \chi(n) = 0</m>
+  for every positive integer <m>k</m>.
+  Therefore,
+  <mdn>
+  <mrow> |A(x)| \amp \leq \left| \sum_{n=1}^{kq} \chi(n) \right| + \sum_{kq+1 \leq n \lt x} |\chi(n)| </mrow>
+  <mrow> \amp = \sum_{kq+1 \leq n \lt x, (n,q)=1} 1 </mrow>
+  <mrow> \amp \leq \phi(q) </mrow>
+  <mrow> \amp = O(1), </mrow>
+  </mdn>
+  and then by Riemann-Stieltjes integration and integration by parts
+  (or by Abel summation),
+  <mdn>
+  <mrow> \sum_{x \lt n \leq y} \chi(n) f(n)
+    \amp = \int_x^y f(t) dA(t) </mrow>
+  <mrow> \amp = A(y)f(y) - A(x)f(x) - \int_x^y A(t) f'(t) dt </mrow>
+  <mrow> \amp \ll f(y) + f(x) + \int_x^y |f'(t)| dt </mrow>
+  <mrow> \amp \ll f(x) </mrow>
+  </mdn>
+  This is the first claim.
+  </p>
+  
+  <p>
+  (A remark: Above, we wrote <m>dA(t)</m> even though <m>A</m> is a
+  complex-valued function.
+  However, our previous discussion of Riemann-Stieltjes integration
+  was only for real-valued functions.
+  To deal with a complex-valued function,
+  we could handle the real and imaginary parts of <m>A</m>
+  separately, and just recombine them at the end.)
+  </p>
+  
+  <p>
+  Next, assume that <m>f(x) \to 0</m> as <m>x \to \infty</m>.
+  Since
+  <me>
+    \sum_{x \lt n \leq y} \chi(n) f(n) \ll f(x)
+  </me>,
+  or
+  <me>
+    \sum_{N \lt n \leq M} \chi(n) f(n) \ll f(N)
+  </me>,
+  then these partial sums for <m>x \lt n \leq y</m> or <m>N \lt n \leq M</m>
+  go to zero as <m>x,N \to \infty</m>.
+  Therefore the infinite series <m>\sum_{n=1}^{\infty} \chi(n)f(n)</m>
+  converges by the Cauchy criterion.
+  </p>
+  
+  <p>
+  Finally, the partial sum for <m>n \leq x</m> is equal to to the sum
+  of the whole series minus the sum of the tail <m>n \gt x</m>.
+  And the sum of that tail is equal to the limit of the sum
+  for <m>x \lt n \leq y</m> as <m>y \to \infty</m>.
+  By the first claim, the tail is <m>O(f(x))</m> regardless of the
+  value of <m>y</m>.
+  </p>
+  
+  </proof>
+  </theorem>
+  
+  <corollary>
+  <statement>
+  Let <m>\chi</m> be a nonprincipal Dirichlet character modulo <m>q</m>.
+  Then for all <m>x \geq 2</m> we have
+  <mdn>
+  <mrow> \sum_{n \leq x} \frac{\chi(n)}{n} \amp = L(1,\chi) + O\left(\frac{1}{x}\right) </mrow>
+  <mrow> \sum_{n \leq x} \frac{\chi(n)\log n}{n} \amp = \sum_{n=1}^{\infty} \frac{\chi(n) \log n}{n} + O\left(\frac{\log x}{x}\right) </mrow>
+  <mrow> \sum_{n \leq x} \frac{\chi(n)}{\sqrt{n}} \amp = L\left(\frac{1}{2},\chi\right) + O\left(\frac{1}{\sqrt{x}}\right) </mrow>
+  </mdn>
+  </statement>
+  <proof>
+  The previous theorem with functions <m>\frac{1}{x}</m>,
+  <m>\frac{\log x}{x}</m>, and <m>\frac{1}{\sqrt{x}}</m> respectively.
+  </proof>
+  </corollary>
+  
+  <p>
+  A crucial step in the proof of Dirichlet's theorem
+  is to prove that <m>L(1,\chi) \neq 0</m>.
+  Very simply, the idea is to define a certain function <m>A(x)</m>,
+  and to show that
+  <ol>
+  <li> <m>A(x) \to \infty</m> as <m>x \to \infty</m> (<m>A(x)</m> is unbounded), but </li>
+  <li> <m>A(x)</m> is equal to <m>L(1,\chi)</m> times some unbounded function, plus <m>O(1)</m>. </li>
+  </ol>
+  The point is that if <m>L(1,\chi)=0</m> then <m>A(x)=O(1)</m>,
+  a contradiction.
+  Specifically, this argument works for real-valued nonprincipal characters;
+  we will give a separate argument for non-real nonprincipal characters.
+  We postpone the details.
+  </p>
+  
+  <p>
+  Very, very simply put, the reason we care that <m>L(1,\chi)</m>
+  is nonzero is that we will show that
+  <m>L(1,\chi)</m> times a certain sum is bounded,
+  and then, as long as <m>L(1,\chi) \neq 0</m>, we can
+  deduce that the sum itself is bounded.
+  </p>
   
 
 </section>

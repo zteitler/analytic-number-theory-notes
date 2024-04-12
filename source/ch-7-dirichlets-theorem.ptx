@@ -129,5 +129,7 @@
 
   <xi:include href="ch-7-dirichlets-theorem/sec-dirichlet-l-functions.ptx" />
 
+  <xi:include href="ch-7-dirichlets-theorem/sec-proof-1.ptx" />
+
 
 </chapter>

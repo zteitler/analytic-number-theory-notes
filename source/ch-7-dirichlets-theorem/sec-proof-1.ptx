@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-proof-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Proof of Dirichlet's theorem, part 1</title>
+
+  <introduction>
+  <p>
+  In this section we'll start to prove Dirichlet's theorem.
+  We'll give essentially the whole proof except for
+  the hardest part of the proof,
+  showing that <m>L(1,\chi) \neq 0</m> for every character <m>\chi</m>.
+  Showing that will be the second part of the proof,
+  in the next section of notes.
+  </p>
+  
+  <p>
+  As in the statement of Dirichlet's theorem,
+  we fix positive integers <m>a,q</m>
+  such that <m>(a,q) = 1</m>.
+  </p>
+  
+  </introduction>
+  
+  <subsection>
+  <title> Going from summing over primes to summing over an arithmetic progression </title>
+  
+  <proposition>
+  <title> Step 1 </title>
+  
+  <statement>
+  <men>
+    \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
+    = \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n} + O(1)
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  We have
+  <mdn>
+  <mrow> \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
+    \amp = \sum_{p^k \leq x, p^k \equiv a \pmod{q}} \frac{\log p}{p^k} </mrow>
+  <mrow> \amp = \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
+    + \sum_{p^k \leq x, k \geq 2, p^k \equiv a \pmod{q}} \frac{\log p}{p^k} . </mrow>
+  </mdn>
+  The last sum converges: we have
+  <mdn>
+  <mrow> \sum_{p^k \leq x, k \geq 2, p^k \equiv a \pmod{q}} \frac{\log p}{p^k}
+    \amp \leq \sum_n \log n \sum_{k \geq 2} \frac{1}{n^k} </mrow>
+  <mrow> \amp = \sum_n \frac{\log n}{n(n-1)} </mrow>
+  </mdn>
+  which converges by comparison with a p-series.
+  </p>
+  </proof>
+  </proposition>
+  
+  </subsection>
+  
+  <subsection>
+  <title> Summing over all positive integers by using the orthogonality relations of Dirichlet characters </title>
+  
+  <p>
+  Our next step is to take the sum of <m>\frac{\Lambda(n)}{n}</m>
+  from a sum over <m>n \equiv a \pmod{q}</m>
+  into a sum over all positive <m>n</m>.
+  We will use the orthogonality relations of Dirichlet characters
+  so that the terms <m>n \equiv a \pmod{q}</m> remain in the sum,
+  while all other values of <m>n</m> cancel out, up to some bounded quantity.
+  </p>
+  
+  <proposition>
+  <title> Step 2 </title>
+  
+  <statement>
+  We have
+  <men>
+    \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
+    = \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+  </men>.
+  In addition, for the principal character,
+  <men>
+    \sum_{n \leq x} \frac{\chi_0(n) \Lambda(n)}{n} = \log x + O(1)
+  </men>.
+  Hence
+  <men>
+    \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
+    = \frac{1}{\phi(q)} \log x
+    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+    + O(1)
+  </men>.
+  </statement>
+  
+  <proof>
+  <p>
+  Recall that for any integers <m>k,m</m>, if <m>(m,q)=1</m>,
+  we have the orthogonality relation
+  <me>
+    \sum_{\chi \mod q} \chi(k) \overline{\chi}(m) =
+    \begin{cases}
+      \phi(q), \amp \text{if } k \equiv m \pmod{q}, \\
+      0, \amp \text{otherwise}.
+    \end{cases}
+  </me>
+  Using this,
+  <mdn>
+  <mrow> \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
+    \amp = \sum_{n \leq x} \frac{\Lambda(n)}{n}
+      \left( \frac{1}{\phi(q)} \sum_{\chi \mod q} \chi(n) \overline{\chi}(a) \right) </mrow>
+  <mrow> \amp = \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} . </mrow>
+  </mdn>
+  This shows the first claim.
+  </p>
+  
+  <p>
+  For the principal character, the summation of
+  <m> \frac{\chi_0(n)\Lambda(n)}{n} </m>
+  agrees with the summation of <m> \frac{\Lambda(n)}{n} </m>
+  except for terms where <m>(n,q) \gt 1</m>.
+  Mertens's theorem includes the result that
+  <me>
+    \sum_{n \leq x} \frac{\Lambda(n)}{n} = \log x + O(1)
+  </me>.
+  Now consider the terms with <m>(n,q) \gt 1</m>.
+  There is an additional restriction: <m>\Lambda(n) \neq 0</m>
+  only when <m>n = p^k</m> is a power of a prime.
+  So the difference between the sum we are considering,
+  and the sum that appeared in Mertens's theorem,
+  is just for terms where <m>n = p^k</m> is a power of a prime,
+  for a prime <m>p</m> that divides the modulus <m>q</m>.
+  </p>
+  
+  <p>
+  There are only finitely many such primes.
+  Each such prime <m>p</m> contributes a difference of
+  <m>\sum_{p^k \leq x} \frac{\log p}{p^k}</m>.
+  We have seen already the convergence of the full series
+  <me>
+    \sum_{k=1}^{\infty} \frac{\log p}{p^k}
+  </me>.
+  So the sum for <m>p^k \leq x</m> is a bounded amount.
+  Adding up these bounded amounts for the finitely many primes
+  that divide <m>q</m> gives a bounded amount,
+  in other words an <m>O(1)</m>.
+  This proves the second claim.
+  </p>
+  
+  <p>
+  The third claim follows from the first one,
+  separating out the terms for the principal and nonprincipal characters,
+  and substituting the estimate for the principal character.
+  </p>
+  
+  </proof>
+  </proposition>
+  
+  <p>
+  Combining this with step 1, we get
+  <me>
+    \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
+    = \frac{1}{\phi(q)} \log x
+    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+    + O(1)
+  </me>.
+  Our goal is to show that it is equal to
+  <m>\frac{1}{\phi(q)} \log x + O(1)</m>.
+  So, what is left is to show that the middle term is bounded (<m>O(1)</m>).
+  In fact we will show that for each <m>\chi \neq \chi_0</m>,
+  the sum
+  <m> \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} </m>
+  is bounded.
+  Since there are finitely many characters (<m>\hat{G}</m> is a finite group),
+  then adding them all together gives a bounded quantity.
+  </p>
+  
+  </subsection>
+  
+  <subsection>
+  <title> Each nonprincipal character contributes a bounded amount </title>
+  
+  <proposition>
+  <title> Step 3 </title>
+  
+  <statement>
+  Let <m>\chi \neq \chi_0</m> be a nonprincipal character modulo <m>q</m>.
+  We have
+  <men>
+    \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n} =
+    \begin{cases}
+      O(1), \amp \text{if } L(1,\chi) \neq 0, \\
+      -\log x + O(1), \amp \text{otherwise}.
+    \end{cases}
+  </men>
+  </statement>
+  
+  <proof>
+  <title> Bounded case </title>
+  
+  <p>
+  Assume that <m>L(1,\chi) \neq 0</m>.
+  </p>
+  
+  </proof>
+  
+  <proof>
+  <title> Unbounded case </title>
+  
+  <p>
+  Assume that <m>L(1,\chi) = 0</m>.
+  </p>
+  
+  </proof>
+  
+  </proposition>
+
+  </subsection>
+  
+</section>
