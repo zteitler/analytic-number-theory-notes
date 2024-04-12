@@ -15,7 +15,7 @@
   <p>
   Fix an isomorphism <m>G \cong \bbZ/m_1\bbZ \times \dotsb \times \bbZ/m_k\bbZ</m>.
   Let <m>g</m> correspond to the tuple <m>(a_1,\dotsc,a_k)</m>.
-  There is some <m>k</m> such that <m>a_k \not\cong 0 \pmod{m_k}</m>.
+  There is some <m>r</m> such that <m>a_r \not\cong 0 \pmod{m_r}</m>.
   Define the character <m>\psi</m> as
   <me>
     \psi = (\chi_0,\chi_0,\dotsc,\chi_0,\chi_1,\chi_0,\dotsc,\chi_0)
