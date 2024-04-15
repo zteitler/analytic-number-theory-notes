@@ -307,7 +307,7 @@ window.MathJax = {
 </h4>We have<div class="displaymath process-math" id="sec-proof-1-4-3-2-1">
 \begin{equation}
 \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
-= \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}\text{.}\tag{7.6.6}
+= \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}\text{.}\tag{7.6.6}
 \end{equation}
 </div>In addition, for the principal character,<div class="displaymath process-math" id="sec-proof-1-4-3-2-2">
 \begin{equation}
@@ -317,7 +317,7 @@ window.MathJax = {
 \begin{equation}
 \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
 = \frac{1}{\phi(q)} \log x
-+ \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
++ \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
 + O(1)\text{.}\tag{7.6.8}
 \end{equation}
 </div></article><article class="proof" id="sec-proof-1-4-3-3"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4>
@@ -365,7 +365,7 @@ window.MathJax = {
 \begin{equation*}
 \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
 = \frac{1}{\phi(q)} \log x
-+ \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
++ \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
 + O(1)\text{.}
 \end{equation*}
 </div>
@@ -383,8 +383,152 @@ O(1), \amp \text{if } L(1,\chi) \neq 0, \\
 -\log x + O(1), \amp \text{otherwise}.
 \end{cases}\tag{7.6.11}
 \end{equation}
-</div></article><article class="proof" id="sec-proof-1-5-2-3"><h4 class="heading"><span class="title">Bounded case.</span></h4> <div class="para" id="sec-proof-1-5-2-3-2">Assume that <span class="process-math">\(L(1,\chi) \neq 0\text{.}\)</span>
-</div></article><article class="proof" id="sec-proof-1-5-2-4"><h4 class="heading"><span class="title">Unbounded case.</span></h4> <div class="para" id="sec-proof-1-5-2-4-2">Assume that <span class="process-math">\(L(1,\chi) = 0\text{.}\)</span>
+</div></article><article class="proof" id="sec-proof-1-5-2-3"><h4 class="heading"><span class="title">Proof: Nonzero case.</span></h4> <div class="para logical" id="sec-proof-1-5-2-3-2">
+<div class="para">Assume that <span class="process-math">\(L(1,\chi) \neq 0\text{.}\)</span> Consider the sum</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dirichlet-l-function-convergence-examples.html">
+\begin{equation*}
+\sum_{n \leq x} \frac{\chi(n)\log n}{n}\text{.}
+\end{equation*}
+</div>
+<div class="para">By <a href="sec-dirichlet-l-functions.html#dirichlet-l-function-convergence-examples" class="xref" data-knowl="./knowl/xref/dirichlet-l-function-convergence-examples.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.5.3">Corollary 7.5.3</a> this sum converges as <span class="process-math">\(x \to \infty\text{,}\)</span> so it is bounded, i.e., <span class="process-math">\(O(1)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-3-3">
+<div class="para">On the other hand, we have</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-3-1">
+\begin{equation}
+\sum_{n \leq x} \frac{\chi(n)\log n}{n}
+= \sum_{n \leq x} \frac{\chi(n)}{n} \sum_{d \mid n} \Lambda(n)
+= \sum_{dk \leq x} \frac{\chi(dk)}{dk} \Lambda(d)\text{.}\tag{7.6.12}
+\end{equation}
+</div>
+<div class="para">The first equality follows from the identity <span class="process-math">\(\log n = \sum_{d \mid n} \Lambda(d)\)</span> which we have seen before. The second equality is by substitution <span class="process-math">\(n=dk\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-3-4">
+<div class="para">Since every Dirichlet character is completely multiplicative, we have <span class="process-math">\(\Lambda(dk) = \Lambda(d)\Lambda(k)\)</span> (for all <span class="process-math">\(d,k\text{,}\)</span> including if <span class="process-math">\((d,k) \gt 1\)</span>). So the summand in the last sum can be rewritten as</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-4-4">
+\begin{equation}
+\frac{\chi(dk)}{dk} \Lambda(d) = \frac{\chi(d)\Lambda(d)}{d} \cdot \frac{\chi(k)}{k}\text{.}\tag{7.6.13}
+\end{equation}
+</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-3-5">
+<div class="para">First we will fix <span class="process-math">\(d\)</span> and evaluate the sum over <span class="process-math">\(k \leq \frac{x}{d}\text{.}\)</span> We know that for <span class="process-math">\(d \leq x\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dirichlet-l-function-convergence-examples.html" id="sec-proof-1-5-2-3-5-4">
+\begin{equation}
+\sum_{k \leq \frac{x}{d}} \frac{\chi(k)}{k} = L(1,\chi) + O\left(\frac{d}{x}\right)\tag{7.6.14}
+\end{equation}
+</div>
+<div class="para">by <a href="sec-dirichlet-l-functions.html#dirichlet-l-function-convergence-examples" class="xref" data-knowl="./knowl/xref/dirichlet-l-function-convergence-examples.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.5.3">Corollary 7.5.3</a>. Therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dirichlet-l-function-convergence-examples.html" id="sec-proof-1-5-2-3-5-6">
+\begin{align*}
+\sum_{dk \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot \frac{\chi(k)}{k}
+\amp = \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot \left( L(1,\chi) + O\left(\frac{d}{x}\right) \right) \\
+\amp = L(1,\chi) \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d}
++ \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot O\left(\frac{d}{x}\right) \\
+\amp = L(1,\chi) \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d}
++ \sum_{d \leq x} \chi(d)\Lambda(d) \cdot O\left(\frac{1}{x}\right) 
+\end{align*}
+</div>
+<div class="para">We want to simplify that last sum. First, observe that we can bound the sum:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/dirichlet-l-function-convergence-examples.html">
+\begin{equation*}
+\left| \sum_{d \leq x} \chi(d)\Lambda(d) \right| \leq \sum_{d \leq x} |\Lambda(d)| = \sum_{d \leq x} \Lambda(d)\text{.}
+\end{equation*}
+</div>
+<div class="para">Here we are using that <span class="process-math">\(|\chi(d)| \leq 1\)</span> because each <span class="process-math">\(\chi(d)\)</span> is a root of unity, or zero. Every value of <span class="process-math">\(\Lambda(d)\)</span> is either <span class="process-math">\(\log p\)</span> or zero; and <span class="process-math">\(\log p \gt 0\)</span> (we have <span class="process-math">\(\log 2 \lt 1\text{,}\)</span> but still <span class="process-math">\(\gt 0\)</span>). Recall that <span class="process-math">\(\sum_{d \leq x} \Lambda(d) = \psi(x)\text{,}\)</span> Chebyshev’s <span class="process-math">\(\psi\)</span> function, by definition. And recall that by Chebyshev’s estimates, <span class="process-math">\(\psi(x) = O(x)\text{.}\)</span>
+</div>
+</div> <div class="para" id="sec-proof-1-5-2-3-6">So, <span class="process-math">\(\sum_{d \leq x} \chi(d)\Lambda(d) = O(x)\text{.}\)</span> Can we conclude that <span class="process-math">\(\sum_{d \leq x} \chi(d)\Lambda(d)O(\frac{1}{x}) = O(1)\text{?}\)</span> Not immediately. The problem is that the implicit constant appearing in the <span class="process-math">\(O(1/x)\)</span> factor might a priori depend on <span class="process-math">\(d\text{;}\)</span> and it might grow as <span class="process-math">\(d\)</span> grows.</div> <div class="para logical" id="sec-proof-1-5-2-3-7">
+<div class="para">Well, the <span class="process-math">\(O(1/x)\)</span> factors are not arbitrary, independent things. They come from the same place: the tails of the sum <span class="process-math">\(\sum \frac{\chi(k)}{k}\text{.}\)</span> Specifically, we have</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-7-3">
+\begin{equation}
+\left| \sum_{k \gt x} \frac{\chi(k)}{k} \right|
+\leq C \cdot \frac{1}{x}\tag{7.6.15}
+\end{equation}
+</div>
+<div class="para">for some constant <span class="process-math">\(C\)</span> that doesn’t depend on <span class="process-math">\(x\text{.}\)</span> In particular that means</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left| \sum_{k \gt \frac{x}{d}} \frac{\chi(k)}{k} \right|
+\leq C \cdot \frac{d}{x}
+\end{equation*}
+</div>
+<div class="para">where the constant <span class="process-math">\(C\)</span> doesn’t depend on <span class="process-math">\(x\)</span> or on <span class="process-math">\(d\text{.}\)</span> So, the sum we’re trying to bound can now be bounded:</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-7-10">
+\begin{equation}
+\left| \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} O\left(\frac{d}{x}\right) \right|
+\leq \sum_{d \leq x} \left| \frac{\chi(d)\Lambda(d)}{d} \cdot C \cdot \frac{d}{x} \right|
+\leq \frac{C}{x} \sum_{d \leq x} \Lambda(d)\tag{7.6.16}
+\end{equation}
+</div>
+<div class="para">and again, the sum of <span class="process-math">\(\Lambda(d)\)</span> is equal to <span class="process-math">\(\psi(x)\)</span> which is <span class="process-math">\(O(x)\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-3-8">
+<div class="para">In conclusion,</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-8-1">
+\begin{equation}
+L(1,\chi) \sum_{d \leq x} \frac{\chi(d) \Lambda(d)}{d} + O(1)
+= \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+= O(1)\tag{7.6.17}
+\end{equation}
+</div>
+<div class="para">and so therefore</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-3-8-2">
+\begin{equation}
+L(1,\chi) \sum_{d \leq x} \frac{\chi(d) \Lambda(d)}{d} = O(1)\tag{7.6.18}
+\end{equation}
+</div>
+<div class="para">Finally, since <span class="process-math">\(L(1,\chi) \neq 0\text{,}\)</span> we can divide to get that the sum is <span class="process-math">\(O(1)\)</span> as claimed.</div>
+</div> <article class="remark remark-like" id="sec-proof-1-5-2-3-9"><h5 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.6.4</span><span class="period">.</span>
+</h5>
+<div class="para logical" id="sec-proof-1-5-2-3-9-1">
+<div class="para">It could have all gone wrong if it had been</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{d \leq x} \chi(d)\Lambda(d) \cdot O\left(\frac{1}{x}\right)
+= \sum_{d \leq x} \chi(d)\Lambda(d) \cdot \frac{C_d}{x}
+\end{equation*}
+</div>
+<div class="para">with <span class="process-math">\(C_d \to \infty\text{.}\)</span> This highlights the importance of knowing when the implicit constant in big O notation is dependent or independent of other variables.</div>
+</div></article></article><article class="proof" id="sec-proof-1-5-2-4"><h4 class="heading"><span class="title">Proof: Zero case.</span></h4> <div class="para" id="sec-proof-1-5-2-4-2">Assume that <span class="process-math">\(L(1,\chi) = 0\text{.}\)</span> We will show that <span class="process-math">\(\log x + \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}\)</span> is bounded.</div> <div class="para logical" id="sec-proof-1-5-2-4-3">
+<div class="para">Recall the identities</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d} = - \sum_{d \mid n} \mu(d) \log d\text{.}
+\end{equation*}
+</div>
+<div class="para">(As a reminder: We have mentioned the identity <span class="process-math">\(\log n = \sum_{d \mid n} \Lambda(d)\text{.}\)</span> Then Möbius inversion gives <span class="process-math">\(\Lambda = \mu * \log\text{,}\)</span> which is the first equality. The second equality is algebraic simplification.)</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-4-4">
+<div class="para">Using these identities,</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-4-4-1">
+\begin{align}
+\sum_{d \mid n} \mu(d) \log \frac{x}{d}
+\amp = (\log x) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d \tag{7.6.19}\\
+\amp = \begin{cases}
+\log x, \amp \text{if } n = 1 \\
+\Lambda(n), \amp \text{if } n \gt 1
+\end{cases}\tag{7.6.20}
+\end{align}
+</div>
+<div class="para">because if <span class="process-math">\(n = 1\)</span> then <span class="process-math">\(\Lambda(n) = 0\)</span> and <span class="process-math">\(\sum_{d \mid n} \mu(d) = 1\text{,}\)</span> while if <span class="process-math">\(n \gt 1\)</span> then <span class="process-math">\(\sum_{d \mid n} \mu(d) = 0\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="sec-proof-1-5-2-4-5">
+<div class="para">Now we consider <span class="process-math">\(\log x + \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}\text{,}\)</span> with the goal of showing it is bounded. Both of the expressions <span class="process-math">\(\log x\)</span> and <span class="process-math">\(\Lambda(n)\)</span> can be replaced with <span class="process-math">\(\sum_{d \mid n} \mu(d) \log \frac{x}{d}\text{.}\)</span> In addition, when <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(\frac{\chi(n)}{n} = \frac{\chi(1)}{1} = 1\text{.}\)</span> After we make this substitution, we will interchange the order of summation:</div>
+<div class="displaymath process-math" id="sec-proof-1-5-2-4-5-7">
+\begin{align}
+\log x + \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+\amp = \sum_{n \leq x} \frac{\chi(n)}{n} \sum_{d \mid n} \mu(d) \log \frac{x}{d}\tag{7.6.21}\\
+\amp = \sum_{d \leq x} \mu(d) \log \frac{x}{d} \sum_{k \leq \frac{x}{d}} \frac{\chi(dk)}{dk}\tag{7.6.22}\\
+\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \sum_{k \leq \frac{x}{d}} \frac{\chi(k)}{k}\tag{7.6.23}\\
+\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \left( L(1,\chi) + O\left(\frac{d}{x} \right) \right)\tag{7.6.24}\\
+\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \cdot O\left(\frac{d}{x} \right)\tag{7.6.25}\\
+\amp = O\left(\frac{1}{x}\right) \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d} \right) \chi(d)\tag{7.6.26}\\
+\amp = O\left(\frac{1}{x}\right) O\left(\sum_{d \leq x} \log \frac{x}{d} \right)\tag{7.6.27}\\
+\amp = O(1) \quad \text{(!!) (Exercise)}\tag{7.6.28}
+\end{align}
+</div>
+<div class="para">Therefore <span class="process-math">\(\sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} = -\log x + O(1)\text{.}\)</span>
+</div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-dirichlet-l-functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

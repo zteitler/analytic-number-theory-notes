@@ -327,7 +327,10 @@ L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}\text{,}\tag{7.5.1}
 \amp = \int_x^y f(t) dA(t) \tag{7.5.9}\\
 \amp = A(y)f(y) - A(x)f(x) - \int_x^y A(t) f'(t) dt \tag{7.5.10}\\
 \amp \ll f(y) + f(x) + \int_x^y |f'(t)| dt \tag{7.5.11}\\
-\amp \ll f(x) \tag{7.5.12}
+\amp = f(y) + f(x) - \int_x^y f'(t) dt \tag{7.5.12}\\
+\amp = f(y) + f(x) - (f(y)-f(x)) \tag{7.5.13}\\
+\amp = 2f(x) \tag{7.5.14}\\
+\amp \ll f(x) \tag{7.5.15}
 \end{align}
 </div>
 <div class="para">This is the first claim.</div>
@@ -346,15 +349,15 @@ L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}\text{,}\tag{7.5.1}
 </div>
 <div class="para">then these partial sums for <span class="process-math">\(x \lt n \leq y\)</span> or <span class="process-math">\(N \lt n \leq M\)</span> go to zero as <span class="process-math">\(x,N \to \infty\text{.}\)</span> Therefore the infinite series <span class="process-math">\(\sum_{n=1}^{\infty} \chi(n)f(n)\)</span> converges by the Cauchy criterion.</div>
 </div> <div class="para" id="sec-dirichlet-l-functions-8-2-5">Finally, the partial sum for <span class="process-math">\(n \leq x\)</span> is equal to to the sum of the whole series minus the sum of the tail <span class="process-math">\(n \gt x\text{.}\)</span> And the sum of that tail is equal to the limit of the sum for <span class="process-math">\(x \lt n \leq y\)</span> as <span class="process-math">\(y \to \infty\text{.}\)</span> By the first claim, the tail is <span class="process-math">\(O(f(x))\)</span> regardless of the value of <span class="process-math">\(y\text{.}\)</span>
-</div></article><article class="corollary theorem-like" id="sec-dirichlet-l-functions-9"><h3 class="heading">
+</div></article><article class="corollary theorem-like" id="dirichlet-l-function-convergence-examples"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.5.3</span><span class="period">.</span>
-</h3>Let <span class="process-math">\(\chi\)</span> be a nonprincipal Dirichlet character modulo <span class="process-math">\(q\text{.}\)</span> Then for all <span class="process-math">\(x \geq 2\)</span> we have<div class="displaymath process-math" id="sec-dirichlet-l-functions-9-1-4">
+</h3>Let <span class="process-math">\(\chi\)</span> be a nonprincipal Dirichlet character modulo <span class="process-math">\(q\text{.}\)</span> Then for all <span class="process-math">\(x \geq 2\)</span> we have<div class="displaymath process-math" id="dirichlet-l-function-convergence-examples-1-4">
 \begin{align}
-\sum_{n \leq x} \frac{\chi(n)}{n} \amp = L(1,\chi) + O\left(\frac{1}{x}\right) \tag{7.5.13}\\
-\sum_{n \leq x} \frac{\chi(n)\log n}{n} \amp = \sum_{n=1}^{\infty} \frac{\chi(n) \log n}{n} + O\left(\frac{\log x}{x}\right) \tag{7.5.14}\\
-\sum_{n \leq x} \frac{\chi(n)}{\sqrt{n}} \amp = L\left(\frac{1}{2},\chi\right) + O\left(\frac{1}{\sqrt{x}}\right) \tag{7.5.15}
+\sum_{n \leq x} \frac{\chi(n)}{n} \amp = L(1,\chi) + O\left(\frac{1}{x}\right) \tag{7.5.16}\\
+\sum_{n \leq x} \frac{\chi(n)\log n}{n} \amp = \sum_{n=1}^{\infty} \frac{\chi(n) \log n}{n} + O\left(\frac{\log x}{x}\right) \tag{7.5.17}\\
+\sum_{n \leq x} \frac{\chi(n)}{\sqrt{n}} \amp = L\left(\frac{1}{2},\chi\right) + O\left(\frac{1}{\sqrt{x}}\right) \tag{7.5.18}
 \end{align}
-</div></article><article class="proof" id="sec-dirichlet-l-functions-9-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>The previous theorem with functions <span class="process-math">\(\frac{1}{x}\text{,}\)</span> <span class="process-math">\(\frac{\log x}{x}\text{,}\)</span> and <span class="process-math">\(\frac{1}{\sqrt{x}}\)</span> respectively.</article><div class="para logical" id="sec-dirichlet-l-functions-10">
+</div></article><article class="proof" id="dirichlet-l-function-convergence-examples-2"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3>The previous theorem with functions <span class="process-math">\(\frac{1}{x}\text{,}\)</span> <span class="process-math">\(\frac{\log x}{x}\text{,}\)</span> and <span class="process-math">\(\frac{1}{\sqrt{x}}\)</span> respectively.</article><div class="para logical" id="sec-dirichlet-l-functions-10">
 <div class="para">A crucial step in the proof of Dirichlet’s theorem is to prove that <span class="process-math">\(L(1,\chi) \neq 0\text{.}\)</span> Very simply, the idea is to define a certain function <span class="process-math">\(A(x)\text{,}\)</span> and to show that</div>
 <ol class="decimal">
 <li id="sec-dirichlet-l-functions-10-3-1"><div class="para" id="p-derived-sec-dirichlet-l-functions-10-3-1">
