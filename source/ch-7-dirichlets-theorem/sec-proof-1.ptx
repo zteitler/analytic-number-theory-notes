@@ -75,7 +75,7 @@
   We have
   <men>
     \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
-    = \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+    = \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
   </men>.
   In addition, for the principal character,
   <men>
@@ -85,7 +85,7 @@
   <men>
     \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n}
     = \frac{1}{\phi(q)} \log x
-    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
     + O(1)
   </men>.
   </statement>
@@ -158,7 +158,7 @@
   <me>
     \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
     = \frac{1}{\phi(q)} \log x
-    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \neq x} \frac{\chi(n) \Lambda(n)}{n}
+    + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
     + O(1)
   </me>.
   Our goal is to show that it is equal to
@@ -305,28 +305,92 @@
   Finally, since <m>L(1,\chi) \neq 0</m>,
   we can divide to get that the sum is <m>O(1)</m> as claimed.
   </p>
-  </proof>
-  
+
   <remark>
   <p>
   It could have all gone wrong if it had been
   <me>
     \sum_{d \leq x} \chi(d)\Lambda(d) \cdot O\left(\frac{1}{x}\right)
-    = \sum_{d \leq x} \chi(d)\Lamba(d) \cdot \frac{C_d}{x}
+    = \sum_{d \leq x} \chi(d)\Lambda(d) \cdot \frac{C_d}{x}
   </me>
   with <m>C_d \to \infty</m>.
   This highlights the importance of knowing when the implicit constant
   in big O notation is dependent or independent of other variables.
   </p>
   </remark>
+  </proof>
+  
   
   <proof>
   <title> Proof: Zero case </title>
   
   <p>
   Assume that <m>L(1,\chi) = 0</m>.
+  We will show that <m>\log x + \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}</m>
+  is bounded.
   </p>
   
+  <p>
+  Recall the identities
+  <me>
+  	\Lambda(n) = \sum_{d \mid n} \mu(d) \log \frac{n}{d} = - \sum_{d \mid n} \mu(d) \log d
+  </me>.
+  (As a reminder: We have mentioned the identity <m>\log n = \sum_{d \mid n} \Lambda(d)</m>.
+  Then Möbius inversion gives <m>\Lambda = \mu * \log</m>, which is the first equality.
+  The second equality is algebraic simplification.)
+  </p>
+  
+  <p>
+  Using these identities,
+  <mdn>
+  <mrow> \sum_{d \mid n} \mu(d) \log \frac{x}{d}
+  	\amp = (\log x) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d </mrow>
+  <mrow> \amp = \begin{cases}
+  	\log x, \amp \text{if } n = 1 \\
+  	\Lambda(n), \amp \text{if } n \gt 1
+  	\end{cases}
+  </mrow>
+  </mdn>
+  because if <m>n = 1</m> then <m>\Lambda(n) = 0</m> and <m>\sum_{d \mid n} \mu(d) = 1</m>,
+  while if <m>n \gt 1</m> then <m>\sum_{d \mid n} \mu(d) = 0</m>.
+  </p>
+  
+  <p>
+  Now we consider <m>\log x + \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}</m>,
+  with the goal of showing it is bounded.
+  Both of the expressions <m>\log x</m> and <m>\Lambda(n)</m> can be replaced
+  with <m>\sum_{d \mid n} \mu(d) \log \frac{x}{d}</m>.
+  In addition, when <m>n=1</m> we have <m>\frac{\chi(n)}{n} = \frac{\chi(1)}{1} = 1</m>.
+  After we make this substitution, we will interchange the order of summation:
+  <mdn>
+  <mrow>
+  	\log x + \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+  	\amp = \sum_{n \leq x} \frac{\chi(n)}{n} \sum_{d \mid n} \mu(d) \log \frac{x}{d}
+  </mrow>
+  <mrow>
+  	\amp = \sum_{d \leq x} \mu(d) \log \frac{x}{d} \sum_{k \leq \frac{x}{d}} \frac{\chi(dk)}{dk}
+  </mrow>
+  <mrow>
+  	\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \sum_{k \leq \frac{x}{d}} \frac{\chi(k)}{k}
+  </mrow>
+  <mrow>
+  	\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \left( L(1,\chi) + O\left(\frac{d}{x} \right) \right)
+  </mrow>
+  <mrow>
+  	\amp = \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d}\right) \frac{\chi(d)}{d} \cdot O\left(\frac{d}{x} \right)
+  </mrow>
+  <mrow>
+  	\amp = O\left(\frac{1}{x}\right) \sum_{d \leq x} \mu(d) \left( \log \frac{x}{d} \right) \chi(d)
+  </mrow>
+  <mrow>
+  	\amp = O\left(\frac{1}{x}\right) O\left(\sum_{d \leq x} \log \frac{x}{d} \right)
+  </mrow>
+  <mrow>
+  	\amp = O(1) \quad \text{(!!) (Exercise)}
+  </mrow>
+  </mdn>
+  Therefore <m>\sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} = -\log x + O(1)</m>.
+  </p>
   </proof>
   
   </proposition>
