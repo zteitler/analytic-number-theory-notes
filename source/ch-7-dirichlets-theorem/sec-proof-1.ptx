@@ -193,16 +193,135 @@
   </statement>
   
   <proof>
-  <title> Bounded case </title>
+  <title> Proof: Nonzero case </title>
   
   <p>
   Assume that <m>L(1,\chi) \neq 0</m>.
+  Consider the sum
+  <me>
+    \sum_{n \leq x} \frac{\chi(n)\log n}{n}
+  </me>.
+  By <xref ref="dirichlet-l-function-convergence-examples"/>
+  this sum converges as <m>x \to \infty</m>, so it is bounded, i.e., <m>O(1)</m>.
   </p>
   
+  <p>
+  On the other hand, we have
+  <men>
+    \sum_{n \leq x} \frac{\chi(n)\log n}{n}
+    = \sum_{n \leq x} \frac{\chi(n)}{n} \sum_{d \mid n} \Lambda(n)
+    = \sum_{dk \leq x} \frac{\chi(dk)}{dk} \Lambda(d)
+  </men>.
+  The first equality follows from the identity
+  <m>\log n = \sum_{d \mid n} \Lambda(d)</m> which we have seen before.
+  The second equality is by substitution <m>n=dk</m>.
+  </p>
+  
+  <p>
+  Since every Dirichlet character is completely multiplicative,
+  we have <m>\Lambda(dk) = \Lambda(d)\Lambda(k)</m>
+  (for all <m>d,k</m>, including if <m>(d,k) \gt 1</m>).
+  So the summand in the last sum can be rewritten as
+  <men>
+    \frac{\chi(dk)}{dk} \Lambda(d) = \frac{\chi(d)\Lambda(d)}{d} \cdot \frac{\chi(k)}{k}
+  </men>.
+  </p>
+  
+  <p>
+  First we will fix <m>d</m> and evaluate the sum over <m>k \leq \frac{x}{d}</m>.
+  We know that for <m>d \leq x</m>,
+  <men>
+    \sum_{k \leq \frac{x}{d}} \frac{\chi(k)}{k} = L(1,\chi) + O\left(\frac{d}{x}\right)
+  </men>
+  by <xref ref="dirichlet-l-function-convergence-examples"/>.
+  Therefore
+  <md>
+  <mrow> \sum_{dk \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot \frac{\chi(k)}{k}
+    \amp = \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot \left( L(1,\chi) + O\left(\frac{d}{x}\right) \right) </mrow>
+  <mrow> \amp = L(1,\chi) \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d}
+      + \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} \cdot O\left(\frac{d}{x}\right) </mrow>
+  <mrow> \amp = L(1,\chi) \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d}
+      + \sum_{d \leq x} \chi(d)\Lambda(d) \cdot O\left(\frac{1}{x}\right) </mrow>
+  </md>
+  We want to simplify that last sum.
+  First, observe that we can bound the sum:
+  <me>
+    \left| \sum_{d \leq x} \chi(d)\Lambda(d) \right| \leq \sum_{d \leq x} |\Lambda(d)| = \sum_{d \leq x} \Lambda(d)
+  </me>.
+  Here we are using that <m>|\chi(d)| \leq 1</m>
+  because each <m>\chi(d)</m> is a root of unity, or zero.
+  Every value of <m>\Lambda(d)</m> is either <m>\log p</m> or zero;
+  and <m>\log p \gt 0</m> (we have <m>\log 2 \lt 1</m>, but still <m>\gt 0</m>).
+  Recall that <m>\sum_{d \leq x} \Lambda(d) = \psi(x)</m>,
+  Chebyshev's <m>\psi</m> function, by definition.
+  And recall that by Chebyshev's estimates, <m>\psi(x) = O(x)</m>.
+  </p>
+  
+  <p>
+  So, <m>\sum_{d \leq x} \chi(d)\Lambda(d) = O(x)</m>.
+  Can we conclude that <m>\sum_{d \leq x} \chi(d)\Lambda(d)O(\frac{1}{x}) = O(1)</m>?
+  Not immediately.
+  The problem is that the implicit constant appearing in the <m>O(1/x)</m> factor
+  might a priori depend on <m>d</m>; and it might grow as <m>d</m> grows.
+  </p>
+  
+  <p>
+  Well, the <m>O(1/x)</m> factors are not arbitrary, independent things.
+  They come from the same place: the tails of the sum
+  <m>\sum \frac{\chi(k)}{k}</m>.
+  Specifically, we have
+  <men>
+    \left| \sum_{k \gt x} \frac{\chi(k)}{k} \right|
+    \leq C \cdot \frac{1}{x}
+  </men>
+  for some constant <m>C</m> that doesn't depend on <m>x</m>.
+  In particular that means
+  <me>
+    \left| \sum_{k \gt \frac{x}{d}} \frac{\chi(k)}{k} \right|
+    \leq C \cdot \frac{d}{x}
+  </me>
+  where the constant <m>C</m> doesn't depend on <m>x</m> or on <m>d</m>.
+  So, the sum we're trying to bound can now be bounded:
+  <men>
+    \left| \sum_{d \leq x} \frac{\chi(d)\Lambda(d)}{d} O\left(\frac{d}{x}\right) \right|
+    \leq \sum_{d \leq x} \left| \frac{\chi(d)\Lambda(d)}{d} \cdot C \cdot \frac{d}{x} \right|
+    \leq \frac{C}{x} \sum_{d \leq x} \Lambda(d)
+  </men>
+  and again, the sum of <m>\Lambda(d)</m> is equal to <m>\psi(x)</m>
+  which is <m>O(x)</m>.
+  </p>
+  
+  <p>
+  In conclusion,
+  <men>
+    L(1,\chi) \sum_{d \leq x} \frac{\chi(d) \Lambda(d)}{d} + O(1)
+    = \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+    = O(1)
+  </men>
+  and so therefore
+  <men>
+    L(1,\chi) \sum_{d \leq x} \frac{\chi(d) \Lambda(d)}{d} = O(1)
+  </men>
+  Finally, since <m>L(1,\chi) \neq 0</m>,
+  we can divide to get that the sum is <m>O(1)</m> as claimed.
+  </p>
   </proof>
   
+  <remark>
+  <p>
+  It could have all gone wrong if it had been
+  <me>
+    \sum_{d \leq x} \chi(d)\Lambda(d) \cdot O\left(\frac{1}{x}\right)
+    = \sum_{d \leq x} \chi(d)\Lamba(d) \cdot \frac{C_d}{x}
+  </me>
+  with <m>C_d \to \infty</m>.
+  This highlights the importance of knowing when the implicit constant
+  in big O notation is dependent or independent of other variables.
+  </p>
+  </remark>
+  
   <proof>
-  <title> Unbounded case </title>
+  <title> Proof: Zero case </title>
   
   <p>
   Assume that <m>L(1,\chi) = 0</m>.

@@ -120,6 +120,9 @@
     \amp = \int_x^y f(t) dA(t) </mrow>
   <mrow> \amp = A(y)f(y) - A(x)f(x) - \int_x^y A(t) f'(t) dt </mrow>
   <mrow> \amp \ll f(y) + f(x) + \int_x^y |f'(t)| dt </mrow>
+  <mrow> \amp = f(y) + f(x) - \int_x^y f'(t) dt </mrow>
+  <mrow> \amp = f(y) + f(x) - (f(y)-f(x)) </mrow>
+  <mrow> \amp = 2f(x) </mrow>
   <mrow> \amp \ll f(x) </mrow>
   </mdn>
   This is the first claim.
@@ -163,7 +166,7 @@
   </proof>
   </theorem>
   
-  <corollary>
+  <corollary xml:id="dirichlet-l-function-convergence-examples">
   <statement>
   Let <m>\chi</m> be a nonprincipal Dirichlet character modulo <m>q</m>.
   Then for all <m>x \geq 2</m> we have
