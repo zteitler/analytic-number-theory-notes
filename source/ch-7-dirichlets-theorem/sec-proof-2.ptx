@@ -118,7 +118,7 @@
 	We have
 	<md>
 	<mrow> A(x) \amp = \sum_{n \leq x} \frac{r(n)}{\sqrt{n}} </mrow>
-	<mrow> \amp \geq \sum_{n \leq, n = m^2} \frac{1}{\sqrt{n}} </mrow>
+	<mrow> \amp \geq \sum_{n \leq x, n = m^2} \frac{1}{\sqrt{n}} </mrow>
 	<mrow> \amp = \sum_{m \leq \sqrt{x}} \frac{1}{m} </mrow>
 	</md>
 	This is a partial sum of the harmonic series; as <m>x \to \infty</m>
@@ -128,10 +128,35 @@
 	
 	</claim>
 	
+	<claim>
+	<title> Step 3 </title>
+	<statement>
+	<p>
+	<m>A(x) = 2\sqrt{x} L(1,\chi) + O(1) </m>.
+	</p>
+	</statement>
 	
+	<proof>
+	<p> (to do) (This is where Dirichlet hyperbola method comes up) </p>
+	</proof>
+	
+	</claim>
+	
+	<claim>
+	<title> Conclusion </title>
+	<statement><p><m>L(1,\chi) \neq 0</m></p></statement>
+	
+	<proof>
+	<p>
+	If <m>L(1,\chi)=0</m> then <m>A(x) = O(1)</m>,
+	contradicting that <m>A(x) \to \infty</m> as <m>x \to \infty</m>.
+	</p>
+	</proof>
+	</claim>
 	
 	</proof>
 	
+
 	</theorem>
   
   </subsection>
