@@ -253,6 +253,13 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-1.html#sec-proof-1-5" class="internal"><span class="codenumber">7.6.3</span> <span class="title">Each nonprincipal character contributes a bounded amount</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-proof-2.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Proof of Dirichlet’s theorem, part 2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-2.html#sec-proof-2-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Real nonprincipal characters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-proof-2.html#sec-proof-2-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Nonreal nonprincipal characters</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -272,8 +279,7 @@ window.MathJax = {
 \begin{equation}
 L(\chi,s) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s}\text{,}\tag{7.5.1}
 \end{equation}
-</div>called the <dfn class="terminology">Dirichlet <span class="process-math">\(L\)</span>-function</dfn> associated to <span class="process-math">\(\chi\text{.}\)</span> Here <span class="process-math">\(s\)</span> is a complex variable; <span class="process-math">\(L(\chi,s)\)</span> is a function defined on the subset of <span class="process-math">\(\bbC\)</span> where this series converges, with values in <span class="process-math">\(\bbC\text{.}\)</span></article><div class="para" id="sec-dirichlet-l-functions-3">When we think of <span class="process-math">\(s\)</span> as a complex number, we can write <span class="process-math">\(s = \sigma + it\text{,}\)</span> where <span class="process-math">\(\sigma\)</span> is the real part of <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> is the imaginary part. However for the proof of Dirichlet’s theorem we will only deal with real values of <span class="process-math">\(s\text{,}\)</span> so we will mostly just use the letter <span class="process-math">\(s\text{.}\)</span>
-</div>
+</div>called the <dfn class="terminology">Dirichlet <span class="process-math">\(L\)</span>-function</dfn> associated to <span class="process-math">\(\chi\text{.}\)</span> Here <span class="process-math">\(s\)</span> is a complex variable; <span class="process-math">\(L(\chi,s)\)</span> is a function defined on the subset of <span class="process-math">\(\bbC\)</span> where this series converges, with values in <span class="process-math">\(\bbC\text{.}\)</span></article><div class="para" id="sec-dirichlet-l-functions-3">When we think of <span class="process-math">\(s\)</span> as a complex number, we can write <span class="process-math">\(s = \sigma + it\text{,}\)</span> where <span class="process-math">\(\sigma\)</span> is the real part of <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> is the imaginary part. However for the proof of Dirichlet’s theorem we will only deal with real values of <span class="process-math">\(s\text{,}\)</span> so we will mostly just use the letter <span class="process-math">\(s\text{.}\)</span> (In fact we will mostly just deal with <span class="process-math">\(s=1\text{.}\)</span>)</div>
 <div class="para logical" id="sec-dirichlet-l-functions-4">
 <div class="para">The series converges absolutely if <span class="process-math">\(s\)</span> has real part strictly greater than <span class="process-math">\(1\text{,}\)</span> i.e., if <span class="process-math">\(\sigma \gt 1\text{.}\)</span> To see this, recall that every value <span class="process-math">\(\chi(n)\)</span> is either a root of unity, or else zero. Then,</div>
 <div class="displaymath process-math" id="sec-dirichlet-l-functions-4-5">
