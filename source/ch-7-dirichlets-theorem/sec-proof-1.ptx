@@ -24,6 +24,10 @@
   <subsection>
   <title> Going from summing over primes to summing over an arithmetic progression </title>
   
+  <p>
+  This step is similar to part of the proof of Mertens's theorem.
+  </p>
+  
   <proposition>
   <title> Step 1 </title>
   
@@ -171,6 +175,18 @@
   Since there are finitely many characters (<m>\hat{G}</m> is a finite group),
   then adding them all together gives a bounded quantity.
   </p>
+  
+  <remark>
+  <p>
+  This step is the first, last, and only place where the integer <m>a</m>
+  (as in, the primes such that <m>p \equiv a \pmod{q}</m>)
+  plays a role in the proof.
+  Specifically, the integer <m>a</m> is used to provide the coefficients
+  <m>\overline{\chi}(a)</m> used to combine the sums
+  <m>\sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}</m>.
+  </p>
+  </remark>
+  
   
   </subsection>
   

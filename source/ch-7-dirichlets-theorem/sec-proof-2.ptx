@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-proof-2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Proof of Dirichlet's theorem, part 2</title>
+
+  <introduction>
+  <p>
+  In this section we'll finish the proof of Dirichlet's theorem.
+  What is left is to
+  show that <m>L(1,\chi) \neq 0</m> for every character <m>\chi</m>.
+  We already know it for the principal character <m>\chi_0</m>
+  (in fact <m>L(1,\chi_0)=\infty</m>), so we just have to show it for nonprincipal characters.
+  This will happen in two steps:
+  First we'll show it for real nonprincipal characters.
+  The Dirichlet hyperbola method makes an appearance here.
+  Second, we'll show it for nonreal nonprincipal characters,
+  by a clever trick which hinges on complex conjugation.
+  </p>
+  
+  <p>
+  We fix a positive integer <m>q</m>.
+  For this part of the proof, the integer <m>a</m>
+  (as in, the primes such that <m>p \equiv a \pmod{q}</m>)
+  doesn't play a role.
+  </p>
+  
+  </introduction>
+  
+  <subsection>
+  <title> Real nonprincipal characters </title>
+  
+  <definition>
+  <p>
+  A character <m>\chi</m> is called <term>real</term> if its values are in the real numbers.
+  </p>
+  </definition>
+  
+  <p>
+  Since the values of <m>\chi</m> are roots of unity (or zero),
+  the only real values are <m>\pm 1, 0</m>.
+  For example (we won't use these examples in the proof):
+  <ol>
+  <li> The principal character is real. </li>
+  <li> If <m>q</m> is prime, the Legendre symbol <m>\chi(n) = \left(\frac{n}{q}\right)</m>
+  is a real character. </li>
+  <li> As an exercise, one can show that modulo a prime <m>q</m>,
+  the principal character and the Legendre symbol are the only real characters. </li>
+  </ol>
+  </p>
+	
+	<theorem>
+	<statement>
+	Let <m>\chi</m> be a real nonprincipal Dirichlet character modulo <m>q</m>.
+	Then <m>L(1,\chi) \neq 0</m>.
+	</statement>
+	
+	<proof>
+	
+	<p>
+	We know that <m>\chi</m> is completely multiplicative.
+	</p>
+	
+	<claim>
+	<title> Step 1 </title>
+	<statement>
+	<p>
+	Let <m>r(n) = \sum_{d \mid n} \chi(d)</m>.
+	Then <m>r(n) \geq 0</m> for all <m>n \in \bbN</m>
+	and <m>r(n) \geq 1</m> if <m>n</m> is a square.
+	</p>
+	</statement>
+	
+	<proof>
+	<p>
+	Since <m>\chi</m> is (completely) multiplicative
+	and <m>r = \chi * 1</m> (Dirichlet convolution),
+	it follows that <m>r</m> is multiplicative (but not necessarily completely multiplicative).
+	</p>
+	
+	<p>
+	Let <m>p</m> be a prime and <m>a \geq 1</m>.
+	Then
+	<mdn>
+	<mrow> r(p^a) \amp = \sum_{d \mid p^a} \chi(d) </mrow>
+	<mrow> \amp = \chi(1) + \chi(p) + \chi(p^2) + \dotsb + \chi(p^a) </mrow>
+	<mrow> \amp = \chi(1) + \chi(p) + \chi(p)^2 + \dotsb + \chi(p)^a </mrow>
+	<mrow> \amp = \begin{cases}
+		a+1, \amp \text{if } \chi(p) = 1; \\
+		1, \amp \text{if } \chi(p) = 0; \\
+		1, \amp \text{if } \chi(p) = -1 \text{ and } a=2k; \\
+		0, \amp \text{if } \chi(p) = -1 \text{ and } a=2k+1.
+		\end{cases} </mrow>
+	</mdn>
+	</p>
+	
+	<p>
+	Let <m>n = p_1^{a_1} \dotsm p_k^{a_k}</m>.
+	Then <m>r(n) = r(p_1^{a_1}) \dotsm r(p_k^{a_k})</m>.
+	We saw that every <m>r(p^a) \geq 0</m>, hence <m>r(n) \geq 0</m>.
+	If <m>n</m> is a perfect square, then every power <m>a_i</m> is even,
+	so each <m>r(p_i^{a_i}) \geq 1</m>.
+	It follows that <m>r(n) \geq 1</m>.
+	</p>
+	</proof>
+	</claim>
+
+	<claim>
+	<title> Step 2 </title>
+	<statement>
+	<p>
+	Let <m>A(x) = \sum_{n \leq x} \frac{r(n)}{\sqrt{n}}</m>.
+	Then <m>A(x) \to \infty</m> as <m>x \to \infty</m>.
+	</p>
+	</statement>
+	
+	<proof>
+	<p>
+	We have
+	<md>
+	<mrow> A(x) \amp = \sum_{n \leq x} \frac{r(n)}{\sqrt{n}} </mrow>
+	<mrow> \amp \geq \sum_{n \leq, n = m^2} \frac{1}{\sqrt{n}} </mrow>
+	<mrow> \amp = \sum_{m \leq \sqrt{x}} \frac{1}{m} </mrow>
+	</md>
+	This is a partial sum of the harmonic series; as <m>x \to \infty</m>
+	it diverges.
+	</p>
+	</proof>
+	
+	</claim>
+	
+	
+	
+	</proof>
+	
+	</theorem>
+  
+  </subsection>
+  
+  <subsection>
+  <title> Nonreal nonprincipal characters </title>
+  
+
+  </subsection>
+  
+</section>

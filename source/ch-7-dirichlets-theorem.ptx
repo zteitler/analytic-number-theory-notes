@@ -131,5 +131,7 @@
 
   <xi:include href="ch-7-dirichlets-theorem/sec-proof-1.ptx" />
 
+  <xi:include href="ch-7-dirichlets-theorem/sec-proof-2.ptx" />
+
 
 </chapter>
