@@ -235,7 +235,7 @@
   
   <p>
   Since every Dirichlet character is completely multiplicative,
-  we have <m>\Lambda(dk) = \Lambda(d)\Lambda(k)</m>
+  we have <m>\chi(dk) = \chi(d)\chi(k)</m>
   (for all <m>d,k</m>, including if <m>(d,k) \gt 1</m>).
   So the summand in the last sum can be rewritten as
   <men>
@@ -311,7 +311,7 @@
   In conclusion,
   <men>
     L(1,\chi) \sum_{d \leq x} \frac{\chi(d) \Lambda(d)}{d} + O(1)
-    = \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+    = \sum_{n \leq x} \frac{\chi(n)\log(n)}{n}
     = O(1)
   </men>
   and so therefore
@@ -361,13 +361,14 @@
   <mdn>
   <mrow> \sum_{d \mid n} \mu(d) \log \frac{x}{d}
   	\amp = (\log x) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d </mrow>
+  <mrow> \amp = (\log x) \sum_{d \mid n} \mu(d) - \Lambda(n) </mrow>
   <mrow> \amp = \begin{cases}
   	\log x, \amp \text{if } n = 1 \\
   	\Lambda(n), \amp \text{if } n \gt 1
   	\end{cases}
   </mrow>
   </mdn>
-  because if <m>n = 1</m> then <m>\Lambda(n) = 0</m> and <m>\sum_{d \mid n} \mu(d) = 1</m>,
+  because if <m>n = 1</m> then <m>\sum_{d \mid n} \mu(d) = 1</m> and <m>\Lambda(n) = 0</m>,
   while if <m>n \gt 1</m> then <m>\sum_{d \mid n} \mu(d) = 0</m>.
   </p>
   

@@ -137,14 +137,114 @@
 	</statement>
 	
 	<proof>
-	<p> (to do) (This is where Dirichlet hyperbola method comes up) </p>
+	<p>
+	We will use the Dirichlet hyperbola method.
+	</p>
+	
+	<p>
+	We have
+	<mdn>
+	<mrow> A(x) \amp = \sum_{n \leq x} \frac{r(n)}{\sqrt{n}} </mrow>
+	<mrow> \amp = \sum_{n \leq x} \frac{1}{\sqrt{n}} \sum_{d \mid n} \chi(d) </mrow>
+	<mrow> \amp = \sum_{dk \leq x} \frac{\chi(d)}{\sqrt{dk}} </mrow>
+	<mrow> \amp = \sum_{dk \leq x} \frac{\chi(d)}{\sqrt{d}} \cdot \frac{1}{\sqrt{k}} </mrow>
+	</mdn>
+	This sum is over lattice points <m>(d,k)</m> where <m>d,k</m> are postive
+	integers such that <m>dk \leq x</m>, i.e., lying on or underneath the
+	hyperbola <m>dk = x</m> in the <m>dk</m>-plane.
+	We separate the region under the hyperbola into three parts as follows:
+	the first part is defined by <m>d \leq \sqrt{x}</m>,
+	the second is defined by <m>k \leq \sqrt{x}</m>,
+	and the third is the intersection of the first two, so <m>d, k \leq \sqrt{x}</m> (both).
+	Visually, if <m>d</m> is the horizontal coordinate and <m>k</m> is the vertical coordinate,
+	then the region under the hyperbola with <m>d \leq \sqrt{x}</m> is the
+	<lq/>upward<rq/> branch, the region under the hyperbola with <m>k \leq \sqrt{x}</m>
+	is the <lq/>rightward<rq/> branch, and the region with both <m>d,k \leq \sqrt{x}</m>
+	is a square.
+	Define <m>S_1,S_2,S_3</m> as the sums over lattice points in these regions:
+	<men>
+		S_1 = \sum_{dk \leq x, d \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \frac{1}{\sqrt{k}},
+		\qquad
+		S_2 = \sum_{dk \leq x, k \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \frac{1}{\sqrt{k}},
+		\qquad
+		S_3 = \sum_{dk \leq x, d \leq \sqrt{x}, k \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \frac{1}{\sqrt{k}}.
+	</men>
+	We have
+	<men>
+		A(x) = S_1 + S_2 - S_3.
+	</men>
+	</p>
+	
+	<p>
+	Now our goal is to approximate the <m>S_i</m>.
+	Looking ahead, we can expect to encounter certain sums,
+	so it will be helpful to recall the following approximations:
+	<men>
+		\sum_{k \leq y} \frac{1}{k^s} = \frac{y^{-s+1}}{-s+1} + O(1)
+	</men>
+	and
+	<men>
+		\sum_{d \leq z} \frac{\chi(d)}{d^s} = L(s,\chi) + O\left(\frac{1}{z^s}\right)
+	</men>,
+	both of these holding for all <m>0 \lt s \lt 1</m>.
+	(The textbook mentions a more accurate approximation for the sum of <m>1/k^s</m>
+	that can be found by using Euler summation.)
+	We will use them for <m>s = \frac{1}{2}</m>.
+	In order to avoid headaches about fractions, here are explicit statements:
+	<men>
+		\sum_{k \leq y} \frac{1}{\sqrt{k}} = \frac{y^{1/2}}{1/2} + O(1) = 2\sqrt{y} + O(1)
+	</men>
+	and
+	<men>
+		\sum_{d \leq z} \frac{\chi(d)}{\sqrt{d}} = L(1/2,\chi) + O\left(\frac{1}{\sqrt{z}}\right)
+	</men>.
+	We will apply these with various <m>y</m>'s and <m>z</m>'s;
+	warning, sometimes we will use, for example,
+	<m>y = \sqrt{x}</m> in which case <m>\sqrt{y} = x^{1/4}</m> (similar for <m>z</m>).
+	</p>
+	
+	<p>
+	Now, here are the approximations of the <m>S_i</m>.
+	The easiest is <m>S_3</m>:
+	<mdn>
+	<mrow> S_3 \amp = \left( \sum_{d \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \right)
+		\left( \sum_{k \leq \sqrt{x}} \frac{1}{\sqrt{k}} \right) </mrow>
+	<mrow> \amp = (L(1/2,\chi) + O(1/x^{1/4})) (2x^{1/4} + O(1)) </mrow>
+	<mrow> \amp = 2x^{1/4} L(1/2,\chi) + O(1) </mrow>
+	</mdn>
+	Next, we approximate <m>S_1</m>:
+	<mdn>
+	<mrow> S_1 \amp = \sum_{d \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \sum_{k \leq \frac{x}{d}} \frac{1}{\sqrt{k}} </mrow>
+	<mrow> \amp = \sum_{d \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} \left(2\sqrt{x/d} + O(1) \right) </mrow>
+	<mrow> \amp = 2\sqrt{x} \sum_{d \leq \sqrt{x}} \frac{\chi(d)}{d} + O(1) \sum_{d \leq \sqrt{x}} \frac{\chi(d)}{\sqrt{d}} </mrow>
+	<mrow> \amp = 2\sqrt{x} (L(1,\chi) + O(1/\sqrt{x})) + O(1)(L(1/2,\chi) + O(1/x^{1/4})) </mrow>
+	<mrow> \amp = 2 \sqrt{x} L(1,\chi) + O(1) </mrow>
+	</mdn>
+	(For some reason, the textbook uses more accurate approximations here
+	and does extra work, to arrive at the same result in the end.)
+	Finally, <m>S_2</m> is similar to <m>S_1</m>:
+	<mdn>
+	<mrow> S_2 \amp = \sum_{k \leq \sqrt{x}} \frac{1}{\sqrt{k}} \sum_{d \leq \frac{x}{k}} \frac{\chi(d)}{\sqrt{d}} </mrow>
+	<mrow> \amp = \sum_{k \leq \sqrt{x}} \frac{1}{\sqrt{k}} (L(1/2,\chi) + O(1/\sqrt{x/k})) </mrow>
+	<mrow> \amp = L(1/2,\chi) \sum_{k \leq \sqrt{x}} \frac{1}{\sqrt{k}} + O(1/\sqrt{x}) \sum_{k \leq \sqrt{x}} \frac{1}{\sqrt{k}} O(\sqrt{k}) </mrow>
+	<mrow> \amp = L(1/2,\chi) (2x^{1/4} + O(1)) + O(1/\sqrt{x}) O(\sqrt{x}) </mrow>
+	<mrow> \amp = 2x^{1/4} L(1/2,\chi) + O(1) </mrow>
+	</mdn>
+	Putting it all together:
+	<mdn>
+	<mrow> A(x) \amp = S_1 + S_2 - S_3 </mrow>
+	<mrow> \amp = (2 \sqrt{x} L(1,\chi) + O(1)) + (2 x^{1/4} L(1/2,\chi) + O(1)) - (2x^{1/4}L(1,\chi) + O(1)) </mrow>
+	<mrow> \amp = 2 \sqrt{x} L(1,\chi) + O(1) </mrow>
+	</mdn>
+	which proves the claim.
+	</p>
 	</proof>
 	
 	</claim>
 	
 	<claim>
 	<title> Conclusion </title>
-	<statement><p><m>L(1,\chi) \neq 0</m></p></statement>
+	<statement><p><m>L(1,\chi) \neq 0</m>.</p></statement>
 	
 	<proof>
 	<p>
@@ -164,7 +264,120 @@
   <subsection>
   <title> Nonreal nonprincipal characters </title>
   
+	<theorem>
+	<statement>
+	Let <m>\chi</m> be any nonprincipal Dirichlet character modulo <m>q</m>.
+	Then <m>L(1,\chi) \neq 0</m>.
+	</statement>
+	
+	<proof>
+	<p>
+	Let <m>N</m> be the number of Dirichlet characters <m>\chi</m> modulo <m>q</m>
+	with <m>L(1,\chi) = 0</m>.
+	Our goal is to show that <m>N = 0</m>.
+	</p>
+	
+	<p>
+	Recall that:
+	<ol>
+	<li> For the principal character <m>\chi_0</m>, <m>\sum_{n \leq x} \frac{\chi_0(n)\Lambda(n)}{n} = \log x + O(1)</m>. </li>
+	<li> For <m>\chi \neq \chi_0</m>, if <m>L(1,\chi) \neq 0</m>, then <m>\sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} = O(1)</m>. </li>
+	<li> For <m>\chi \neq \chi_0</m>, if <m>L(1,\chi) = 0</m>, then <m>\sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} = -\log x + O(1)</m>. </li>
+	</ol>
+	Adding this up for all characters modulo <m>q</m>, we get
+	<men>
+		\sum_{\chi \mod q} \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} = (1-N)\log x + O(1)
+	</men>
+	We get <m>+1\log x</m> from the principal character, and <m>-N\log x</m>
+	from the nonprincipal characters with <m>L(1,\chi)=0</m>.
+	</p>
+	
+	<p>
+	We can use the orthogonality relations to simplify the left hand side of the equation:
+	<mdn>
+	<mrow> \sum_{\chi \mod q} \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n}
+		\amp = \sum_{n \leq x} \left( \sum_{\chi \mod q} \chi(n) \right) \frac{\Lambda(n)}{n} </mrow>
+	<mrow> \amp = \phi(q) \sum_{n \leq x, n \equiv 1 \pmod{q}} \frac{\Lambda(n)}{n} </mrow>
+	<mrow> \amp \geq 0 </mrow>
+	</mdn>
+	We used that <m>\sum_{\chi \mod q} \chi(n)</m> is equal to <m>\phi(q)</m>
+	if <m>n \equiv 1 \pmod{q}</m>, or <m>0</m> otherwise.
+	And we used that each term <m>\frac{\Lambda(n)}{n} \geq 0</m>.
+	</p>
+	
+	<p>
+	The result is that
+	<me>
+		(1-N)\log x + O(1) \geq 0
+	</me>
+	Well, if <m>N \gt 1</m> this is impossible, the left hand side will go to <m>-\infty</m>.
+	Therefore <m>N \leq 1</m>.
+	</p>
+	
+	<p>
+	Finally we rule out the possibility that <m>N=1</m>.
+	If <m>N=1</m> it means that there is a nonprincipal character <m>\chi</m>
+	with <m>L(1,\chi) = 0</m>.
+	We know that <m>\chi</m> must be nonreal, i.e., <m>\chi(a) \notin \bbR</m> for some <m>a</m>.
+	</p>
+	
+	<p>
+	But then <m>\overline{\chi}</m> is also a character, distinct from <m>\chi</m>
+	(<m>\overline{\chi} \neq \chi</m>), and we have
+	<me>
+		L(1,\overline{\chi}) = \sum \frac{\overline{\chi}(n)}{n} = \overline{\sum \frac{\chi(n)}{n}}
+		= \overline{L(1,\chi)} = 0
+	</me>
+	which would force <m>N \geq 2</m>.
+	</p>
+	
+	<p>
+	This contradiction shows that <m>N=1</m> is impossible.
+	So it must be <m>N=0</m>.
+	There are no Dirichlet characters <m>\chi</m> with <m>L(1,\chi)=0</m>.
+	</p>
+	</proof>	
+	
+	</theorem>
 
+  </subsection>
+  
+  
+  
+  <subsection>
+  <title> Conclusion: Proof of Dirichlet's theorem </title>
+  
+  <theorem>
+  <title> Dirichlet's theorem </title>
+  <statement>
+  <p>
+  Let <m>q,a</m> be positive integers with <m>(a,q)=1</m>.
+  Then
+  <me>
+  	\sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p} = \frac{1}{\phi(q)} \log x + O(1)
+  </me>.
+  In particular, there are infinitely many primes congruent to <m>a</m> modulo <m>q</m>.
+  </p>
+  </statement>
+  
+  <proof>
+  <p>
+  We have
+  <mdn>
+  <mrow> \sum_{p \leq x, p \equiv a \pmod{q}} \frac{\log p}{p}
+  	\amp = \sum_{n \leq x, n \equiv a \pmod{q}} \frac{\Lambda(n)}{n} + O(1) </mrow>
+  <mrow> \amp = \frac{1}{\phi(q)} \sum_{\chi \mod q} \overline{\chi}(a) \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} + O(1) </mrow>
+  <mrow> \amp = \frac{1}{\phi(q)} \log x + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} \sum_{n \leq x} \frac{\chi(n)\Lambda(n)}{n} + O(1) </mrow>
+  <mrow> \amp = \frac{1}{\phi(q)} \log x + \frac{1}{\phi(q)} \sum_{\chi \mod q, \chi \neq \chi_0} O(1) + O(1) </mrow>
+  <mrow> \amp = \frac{1}{\phi(q)} \log x + O(1) </mrow>
+  </mdn>
+  as claimed.
+  </p>
+  </proof>
+  </theorem>
+  
+  
+  
   </subsection>
   
 </section>
