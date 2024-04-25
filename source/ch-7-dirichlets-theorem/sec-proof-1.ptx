@@ -361,7 +361,7 @@
   <mdn>
   <mrow> \sum_{d \mid n} \mu(d) \log \frac{x}{d}
   	\amp = (\log x) \sum_{d \mid n} \mu(d) - \sum_{d \mid n} \mu(d) \log d </mrow>
-  <mrow> \amp = (\log x) \sum_{d \mid n} \mu(d) - \Lambda(n) </mrow>
+  <mrow> \amp = (\log x) \sum_{d \mid n} \mu(d) + \Lambda(n) </mrow>
   <mrow> \amp = \begin{cases}
   	\log x, \amp \text{if } n = 1 \\
   	\Lambda(n), \amp \text{if } n \gt 1
