@@ -233,7 +233,7 @@
 	Putting it all together:
 	<mdn>
 	<mrow> A(x) \amp = S_1 + S_2 - S_3 </mrow>
-	<mrow> \amp = (2 \sqrt{x} L(1,\chi) + O(1)) + (2 x^{1/4} L(1/2,\chi) + O(1)) - (2x^{1/4}L(1,\chi) + O(1)) </mrow>
+	<mrow> \amp = (2 \sqrt{x} L(1,\chi) + O(1)) + (2 x^{1/4} L(1/2,\chi) + O(1)) - (2x^{1/4}L(1/2,\chi) + O(1)) </mrow>
 	<mrow> \amp = 2 \sqrt{x} L(1,\chi) + O(1) </mrow>
 	</mdn>
 	which proves the claim.
